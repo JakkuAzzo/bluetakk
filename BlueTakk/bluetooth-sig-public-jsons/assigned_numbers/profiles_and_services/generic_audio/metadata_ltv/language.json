@@ -1,0 +1,19 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 4
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 4
+    },
+    {
+      "parameter": "Value",
+      "size": 3,
+      "description": "3-byte, lower case language code as defined in ISO 639-3"
+    }
+  ]
+}

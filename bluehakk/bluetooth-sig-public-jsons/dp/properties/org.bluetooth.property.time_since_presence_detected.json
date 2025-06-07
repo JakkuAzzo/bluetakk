@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.time_since_presence_detected",
+    "name": "Time Since Presence Detected",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.time_second_16",
+    "description": "This property represents the time that has elapsed since the sensor last detected presence.\nExample use case: To turn off lights in the absence of any activity in a space."
+  }
+}

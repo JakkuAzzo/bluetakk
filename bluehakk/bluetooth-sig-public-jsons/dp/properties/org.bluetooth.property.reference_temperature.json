@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.reference_temperature",
+    "name": "Reference Temperature",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.high_temperature",
+    "description": "This property represents the internal reference temperature of a luminaire. The value is specified by the luminaire manufacturer based on measurements at tq = 25\u00b0C, at rated luminaire power (at 100% dimming level)."
+  }
+}

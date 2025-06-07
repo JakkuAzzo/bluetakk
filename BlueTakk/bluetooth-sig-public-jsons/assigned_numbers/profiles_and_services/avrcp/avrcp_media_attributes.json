@@ -1,0 +1,36 @@
+{
+  "media_attributes": [
+    {
+      "id": 0,
+      "description": "Illegal, Should Not Be Used"
+    },
+    {
+      "id": 1,
+      "description": "Title of the Media"
+    },
+    {
+      "id": 2,
+      "description": "Name of the Artist"
+    },
+    {
+      "id": 3,
+      "description": "Name of the Album"
+    },
+    {
+      "id": 4,
+      "description": "Number of the Media (e.g., Track Number in a CD)"
+    },
+    {
+      "id": 5,
+      "description": "Total Number of the Media (e.g., Total Number of Tracks in a CD)"
+    },
+    {
+      "id": 6,
+      "description": "Genre"
+    },
+    {
+      "id": 7,
+      "description": "Playing Time, in Milliseconds"
+    }
+  ]
+}

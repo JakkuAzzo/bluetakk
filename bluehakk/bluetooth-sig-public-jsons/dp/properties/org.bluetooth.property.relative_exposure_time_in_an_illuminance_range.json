@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_exposure_time_in_an_illuminance_range",
+    "name": "Relative Exposure Time in an Illuminance Range",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.relative_value_in_an_illuminance_range",
+    "description": "This property represents a relative exposure time of a light sensor (typically a photodetector) in an illuminance range.\nThe Relative Value field is the relative exposure time, that is, the exposure time within the illuminance interval compared with the total exposure time recorded by the sensor. See the Total Light Exposure Time property in \\autoref{sec:org.bluetooth.property.total_light_exposure_time}.\nThe Minimum Illuminance and Maximum Illuminance define the illuminance range.\nExample use case: To adjust light levels or reduce the hours of display for a particular piece of art in a museum.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Minimum Illuminance"
+        },
+        {
+          "property": "Width",
+          "characteristic": "Maximum Illuminance - Minimum Illuminance"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Relative Value"
+        }
+      ]
+    }
+  }
+}

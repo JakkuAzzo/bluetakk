@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.two_zone_heart_rate_limits",
+    "name": "Two Zone Heart Rate Limits",
+    "description": "The Two Zone Heart Rate Limits characteristic is used to represent the heart rate limit between the heart rate zones for the two-zone heart rate definition (Fitness and Fat Burn) of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Two Zone Heart Rate Limit - Fat\u00a0Burn / Fitness Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

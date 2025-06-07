@@ -1,0 +1,201 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_information",
+    "name": "Battery Information",
+    "description": "The Battery Information characteristic is used to represent the physical characteristics of a battery in the context of the battery\u2019s connection in a device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_information/field/flags}."
+      },
+      {
+        "field": "Battery Features",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "The supported features of the battery. See \\autoref{sec:org.bluetooth.characteristic.battery_information/field/battery_features}."
+      },
+      {
+        "field": "Battery Manufacture Date",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Battery date of manufacture specified as days elapsed since the Epoch (Jan 1, 1970) in the Coordinated Universal Time (UTC) time zone.\nRefer to the Date UTC characteristic in \\autoref{sec:org.bluetooth.characteristic.date_utc}.\nBase unit: org.bluetooth.unit.time.day\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Expiration Date",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Battery expiration date specified as days elapsed since the Epoch (Jan 1, 1970) in the Coordinated Universal Time (UTC) time zone.\nRefer to the Date UTC characteristic in \\autoref{sec:org.bluetooth.characteristic.date_utc}.\nBase unit: org.bluetooth.unit.time.day\nPresent if bit 1 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Designed Capacity",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The capacity of the battery in kilowatt-hours at full charge in original (new) condition.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are all positive real numbers.\nPresent if bit 2 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Low Energy",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The battery energy value in kilowatt-hours when the battery is low.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are all positive real numbers.\nPresent if bit 3 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Critical Energy",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The battery energy value in kilowatt-hours when the battery is critical.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are all positive real numbers.\nPresent if bit 4 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Chemistry",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_information/field/battery_chemistry}.\nPresent if bit 5 of the Flags field is set to 1"
+      },
+      {
+        "field": "Nominal Voltage",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Nominal voltage of the battery in units of volts.\nBase unit: org.bluetooth.unit.electric_potential_difference.volt\nAllowed values are all real numbers.\nPresent if bit 6 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Aggregation Group",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Indicates the Battery Aggregation Group to which this instance of the battery service is associated.\n0: Not in an aggregation group\n1\u2013254: Battery Aggregation Group Number\n255: RFU\nPresent if bit 7 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Battery Manufacture Date Present"
+          },
+          {
+            "bit": "1",
+            "description": "Battery Expiration Date Present"
+          },
+          {
+            "bit": "2",
+            "description": "Battery Designed Capacity Present"
+          },
+          {
+            "bit": "3",
+            "description": "Battery Low Energy Present"
+          },
+          {
+            "bit": "4",
+            "description": "Battery Critical Energy Present"
+          },
+          {
+            "bit": "5",
+            "description": "Battery Chemistry Present"
+          },
+          {
+            "bit": "6",
+            "description": "Nominal Voltage Present"
+          },
+          {
+            "bit": "7",
+            "description": "Battery Aggregation Group Present"
+          },
+          {
+            "bit": "8\u201315",
+            "description": "RFU"
+          }
+        ]
+      },
+      {
+        "name": "Battery Features",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Battery Replaceable"
+          },
+          {
+            "bit": "1",
+            "description": "Battery Rechargeable"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "RFU"
+          }
+        ]
+      },
+      {
+        "name": "Battery Chemistry",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Unknown"
+          },
+          {
+            "value": "1",
+            "description": "Alkaline (zinc\u2013manganese dioxide)"
+          },
+          {
+            "value": "2",
+            "description": "Lead Acid"
+          },
+          {
+            "value": "3",
+            "description": "Lithium (lithium-iron disulfide) LiFeS\\textsubscript{2}"
+          },
+          {
+            "value": "4",
+            "description": "Lithium (lithium-manganese dioxide) LiMnO\\textsubscript{2}"
+          },
+          {
+            "value": "5",
+            "description": "Lithium Ion Li"
+          },
+          {
+            "value": "6",
+            "description": "Lithium Polymer"
+          },
+          {
+            "value": "7",
+            "description": "Nickel Oxyhydroxide (zinc-manganese dioxide/oxy nickel hydroxide) NiO\\textsubscript{x}"
+          },
+          {
+            "value": "8",
+            "description": "Nickel Cadmium NiCd"
+          },
+          {
+            "value": "9",
+            "description": "Nickel-metal Hydride NiMH"
+          },
+          {
+            "value": "10",
+            "description": "Silver Oxide (silver-zinc) AgZn"
+          },
+          {
+            "value": "11",
+            "description": "Zinc Chloride"
+          },
+          {
+            "value": "12",
+            "description": "Zinc Air"
+          },
+          {
+            "value": "13",
+            "description": "Zinc Carbon"
+          },
+          {
+            "value": "14\u2013254",
+            "description": "RFU"
+          },
+          {
+            "value": "255",
+            "description": "Other"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_level_status",
+    "name": "Battery Level Status",
+    "description": "The Battery Level Status characteristic is used to represent the power state of a battery, an identifier used to identify the specific battery associated with the data, and the battery level.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_level_status/field/flags}."
+      },
+      {
+        "field": "Power State",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_level_status/field/power_state}."
+      },
+      {
+        "field": "Identifier",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Used as an identifier for a service instance. Populated with a valid value from the GATT Bluetooth Namespace Descriptions \\RefRef{assigned_numbers}.\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Battery Level",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Refer to the Battery Level characteristic in \\autoref{sec:org.bluetooth.characteristic.battery_level}.\nPresent if bit 1 of the Flags field is set to 1"
+      },
+      {
+        "field": "Additional Status",
+        "type": "boolean[8]",
+        "size": "0 or 1",
+        "description": "Contains additional status information such as whether or not service is required.\nSee \\autoref{sec:org.bluetooth.characteristic.battery_level_status/field/additional_status}.\nPresent if bit 2 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Identifier Present"
+          },
+          {
+            "bit": "1",
+            "description": "Battery Level Present"
+          },
+          {
+            "bit": "2",
+            "description": "Additional Status Present"
+          },
+          {
+            "bit": "3\u20137",
+            "description": "RFU"
+          }
+        ]
+      },
+      {
+        "name": "Power State",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Battery Present:\n0 = No\n1 = Yes"
+          },
+          {
+            "bit": "1\u20132",
+            "description": "Wired External Power Source Connected:\n0 = No\n1 = Yes\n2 = Unknown\n3 = RFU"
+          },
+          {
+            "bit": "3\u20134",
+            "description": "Wireless External Power Source Connected:\n0 = No\n1 = Yes\n2 = Unknown\n3 = RFU"
+          },
+          {
+            "bit": "5\u20136",
+            "description": "Battery Charge State:\n0 = Unknown\n1 = Charging\n2 = Discharging: Active\n3 = Discharging: Inactive"
+          },
+          {
+            "bit": "7\u20138",
+            "description": "Battery Charge Level:\n0 = Unknown\n1 = Good\n2 = Low\n3 = Critical"
+          },
+          {
+            "bit": "9\u201311",
+            "description": "Charging Type:\n0 = Unknown or Not Charging\n1 = Constant Current\n2 = Constant Voltage\n3 = Trickle\n4 = Float\n5\u20137 = RFU"
+          },
+          {
+            "bit": "12\u201314",
+            "description": "Charging Fault Reason\nBit 12: Battery\nBit 13: External Power source\nBit 14: Other"
+          },
+          {
+            "bit": "15",
+            "description": "RFU"
+          }
+        ]
+      },
+      {
+        "name": "Additional Status",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0\u20131",
+            "description": "Service Required:\n0 = False\n1 = True\n2 = Unknown\n3 = RFU"
+          },
+          {
+            "bit": "2",
+            "description": "Battery Fault:\n0 = False or Unknown\n1 = Yes"
+          },
+          {
+            "bit": "3\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

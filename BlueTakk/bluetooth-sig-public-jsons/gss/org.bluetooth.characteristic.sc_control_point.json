@@ -1,0 +1,131 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.sc_control_point",
+    "name": "SC Control Point",
+    "description": "The SC Control Point characteristic is used to enable device-specific procedures related to a speed and cadence (SC) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Op Code",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.sc_control_point/field/op_code_and_parameter}"
+      },
+      {
+        "field": "Parameter",
+        "type": "struct",
+        "size": "0\u201318",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.sc_control_point/field/op_code_and_parameter}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Op Code and Parameter",
+        "description": "The values of these fields are defined below.",
+        "section_title": "Op Code and Parameter fields",
+        "table_caption": "Op Code and Parameter fields",
+        "values": [
+          {
+            "op_code_value": "0x00",
+            "definition": "Reserved for Future Use",
+            "parameter": "N/A",
+            "parameter_type": "N/A",
+            "description": "N/A"
+          },
+          {
+            "op_code_value": "0x01",
+            "definition": "Set Cumulative Value",
+            "parameter": "Cumulative Value as defined per service",
+            "parameter_type": "Defined per service",
+            "description": "Initiate the procedure to set a cumulative value. The new value is sent as parameter following op code (parameter defined per service).\nThe response to this control point is Op Code 0x10 followed by the appropriate Response Value."
+          },
+          {
+            "op_code_value": "0x02",
+            "definition": "Start Sensor Calibration",
+            "parameter": "N/A",
+            "parameter_type": "N/A",
+            "description": "Starts the calibration of the sensor.\nThe response to this control point is Op Code 0x10 followed by the appropriate Response Value."
+          },
+          {
+            "op_code_value": "0x03",
+            "definition": "Update Sensor Location",
+            "parameter": "Sensor Location Value (See \\autoref{sec:org.bluetooth.characteristic.sensor_location/field/sensor_location})",
+            "parameter_type": "uint8",
+            "description": "Update to the location of the sensor with the value sent as parameter to this op code.\nThe response to this control point is Op Code 0x10 followed by the appropriate Response Value."
+          },
+          {
+            "op_code_value": "0x04",
+            "definition": "Request Supported Sensor Locations",
+            "parameter": "N/A",
+            "parameter_type": "N/A",
+            "description": "Request a list of supported locations for sensor attachment.\nThe response to this control point is Op Code 0x10 followed by the appropriate Response Value, including a list of supported sensor locations (See \\autoref{sec:org.bluetooth.characteristic.sensor_location}) in the Response Parameter."
+          },
+          {
+            "op_code_value": "0x05\u20130x0F",
+            "definition": "Reserved for Future Use",
+            "parameter": "N/A",
+            "parameter_type": "N/A",
+            "description": "N/A"
+          },
+          {
+            "op_code_value": "0x10",
+            "definition": "Response Code",
+            "parameter": "Request Op Code, Response Code Value",
+            "parameter_type": "N/A",
+            "description": "See \\autoref{sec:org.bluetooth.characteristic.sc_control_point/field/response_code_values}"
+          },
+          {
+            "op_code_value": "0x11\u20130xFF",
+            "definition": "Reserved for Future Use",
+            "parameter": "N/A",
+            "parameter_type": "N/A",
+            "description": "N/A"
+          }
+        ]
+      },
+      {
+        "name": "Response Code Values",
+        "description": "The Response Code Values associated with the SC Control Point are defined below.",
+        "section_title": "Response Code Values",
+        "table_caption": "Response Code Values",
+        "values": [
+          {
+            "response_code_value": "0x00",
+            "definition": "Reserved For Future Use",
+            "response_parameter": "N/A",
+            "description": "N/A"
+          },
+          {
+            "response_code_value": "0x01",
+            "definition": "Success",
+            "response_parameter": "Defined per service",
+            "description": "Normal response for successful operation."
+          },
+          {
+            "response_code_value": "0x02",
+            "definition": "Op Code not supported",
+            "response_parameter": "N/A",
+            "description": "Response if unsupported Op Code is received"
+          },
+          {
+            "response_code_value": "0x03",
+            "definition": "Invalid Operand",
+            "response_parameter": "N/A",
+            "description": "Response if Parameter received does not meet the requirements of the service."
+          },
+          {
+            "response_code_value": "0x04",
+            "definition": "Operation Failed",
+            "response_parameter": "N/A",
+            "description": "Response if the requested procedure failed."
+          },
+          {
+            "response_code_value": "0x05\u20130xFF",
+            "definition": "Reserved for Future Use",
+            "response_parameter": "N/A",
+            "description": "N/A"
+          }
+        ]
+      }
+    ]
+  }
+}

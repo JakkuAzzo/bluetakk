@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_model_number",
+    "name": "Device Model Number",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_24",
+    "description": "This property represents the model number that is assigned by the device vendor."
+  }
+}

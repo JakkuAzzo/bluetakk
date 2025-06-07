@@ -1,0 +1,153 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.enhanced_blood_pressure_measurement",
+    "name": "Enhanced Blood Pressure Measurement",
+    "description": "The Enhanced Blood Pressure Measurement characteristic is used to represent data related to a blood pressure measurement that includes a UTC time stamp and a user facing time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/flags}."
+      },
+      {
+        "field": "Blood Pressure Measurement Compound Value (mmHg)",
+        "type": "struct",
+        "size": "0 or 6",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/blood_pressure_measurement_compound_value_(mmhg)}.\nPresent if bit 0 of Flags field is set to 0"
+      },
+      {
+        "field": "Blood Pressure Measurement Compound Value (kPa)",
+        "type": "struct",
+        "size": "0 or 6",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/blood_pressure_measurement_compound_value_(kpa)}.\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Time Stamp",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Unit: Seconds, since Epoch Start\nSee \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/time_stamp}.\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Pulse Rate",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "User ID",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_measurement/field/user_id}.\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Measurement Status",
+        "type": "boolean[16]",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_measurement/field/measurement_status}.\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "User Facing Time",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Unit: Seconds, since Epoch Start\nSee \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/user_facing_time}.\nPresent if bit 5 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Blood Pressure Measurement Units Flag\n0 = Blood pressure for Systolic, Diastolic and MAP in units of mmHg\n1 = Blood pressure for Systolic, Diastolic and MAP in units of kPa"
+          },
+          {
+            "bit": "1",
+            "description": "Time Stamp Flag\n0 = Time Stamp not present\n1 = Time Stamp present"
+          },
+          {
+            "bit": "2",
+            "description": "Pulse Rate Flag\n0 = Pulse Rate not present\n1 = Pulse Rate present"
+          },
+          {
+            "bit": "3",
+            "description": "User ID Flag\n0 = User ID not present\n1 = User ID present"
+          },
+          {
+            "bit": "4",
+            "description": "Measurement Status Flag\n0 = Measurement Status not present\n1 = Measurement Status present"
+          },
+          {
+            "bit": "5",
+            "description": "User Facing Time Flag\n0 = User Facing Time not present\n1 = User Facing Time present"
+          },
+          {
+            "bit": "6",
+            "description": "Epoch Start 2000 Flag\n0 = Epoch start is January 1, 1900 (00:00:00)\n1 = Epoch start is January 1, 2000 (00:00:00)"
+          },
+          {
+            "bit": "7",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "Blood Pressure Measurement Compound Value (mmHg)",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Systolic (mmHg)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.pressure.millimetre_of_mercury"
+          },
+          {
+            "field": "Diastolic (mmHg)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.pressure.millimetre_of_mercury"
+          },
+          {
+            "field": "Mean Arterial Pressure (mmHg)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.pressure.millimetre_of_mercury"
+          }
+        ]
+      },
+      {
+        "name": "Blood Pressure Measurement Compound Value (kPa)",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Systolic (kPa)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.pressure.pascal;\nM = 1, d = 3, and b = 0"
+          },
+          {
+            "field": "Diastolic (kPa)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.pressure.pascal;\nM = 1, d = 3, and b = 0"
+          },
+          {
+            "field": "Mean Arterial Pressure (kPa)",
+            "data_type": "medfloat16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.pressure.pascal;\nM = 1, d = 3, and b = 0"
+          }
+        ]
+      },
+      {
+        "name": "Time Stamp",
+        "description": "This field represents the Sensor time in seconds since the epoch start time. The epoch start is on January 1 of 1900, or 2000 at 00:00:00, depending on the value of the Epoch Start 2000 Flag.\nWhen both the Time Stamp field and the User Facing Time field are present, the Time Stamp field represents the base time (possibly UTC aligned) and does not take into account time zone, DST adjustments or manual adjustments of the time displayed to a user."
+      },
+      {
+        "name": "User Facing Time",
+        "description": "This field represents the user facing time in seconds since the epoch start time. The epoch start is on January 1 of 1900, or 2000 at 00:00:00, depending on the value of the Epoch Start 2000 Flag.\nUser facing time takes into account time zone, DST adjustments and manual adjustments of the time displayed to a user."
+      }
+    ]
+  }
+}

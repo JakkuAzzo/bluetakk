@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.object_type",
+    "name": "Object Type",
+    "description": "The Object Type characteristic is used to represent the type of the associated object, representing this with a UUID. The Object Type characteristic has two possible lengths, depending on whether the UUID conveyed is a 16-bit or 128-bit UUID.\nThe term gatt_uuid is not a defined Data Type but is either a 16-bit UUID using the uint16 Data Type or a 128-bit UUID using the uint128 Data Type.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Object Type",
+        "type": "gatt_uuid",
+        "size": "2 or 16",
+        "description": "Object Type UUIDs that use the 16-bit format are defined in the Bluetooth SIG Assigned Numbers \\RefRef{assigned_numbers}.\nObject Type UUIDs that use the 128-bit format are proprietary UUIDs."
+      }
+    ]
+  }
+}

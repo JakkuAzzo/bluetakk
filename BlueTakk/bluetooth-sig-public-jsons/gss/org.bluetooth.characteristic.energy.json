@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.energy",
+    "name": "Energy",
+    "description": "The Energy characteristic is used to represent a measure of energy.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Energy",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is kilowatt-hour with a resolution of 1.\nMinimum: 0\nMaximum: 16777214\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.energy.kilowatt_hour\nA value of 0xFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.glucose_feature",
+    "name": "Glucose Feature",
+    "description": "The Glucose Feature characteristic is used to represent the supported features of a glucose sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Glucose Feature",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.glucose_feature/field/glucose_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Glucose Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Low Battery Detection During Measurement support bit:\n0 = Low Battery Detection During Measurement feature not supported\n1 = Low Battery Detection During Measurement feature supported"
+          },
+          {
+            "bit": "1",
+            "description": "Sensor Malfunction Detection support bit:\n0 = Sensor Malfunction Detection feature not supported\n1 = Sensor Malfunction Detection feature supported"
+          },
+          {
+            "bit": "2",
+            "description": "Sensor Sample Size support bit:\n0 = Sensor Sample Size feature not supported\n1 = Sensor Sample Size feature supported"
+          },
+          {
+            "bit": "3",
+            "description": "Sensor Strip Insertion Error Detection support bit:\n0 = Sensor Strip Insertion Error Detection feature not supported\n1 = Sensor Strip Insertion Error Detection feature supported"
+          },
+          {
+            "bit": "4",
+            "description": "Sensor Strip Type Error Detection support bit:\n0 = Sensor Strip Type Error Detection not supported\n1 = Sensor Strip Type Error Detection supported"
+          },
+          {
+            "bit": "5",
+            "description": "Sensor Result High-Low Detection support bit:\n0 = Sensor Result High-Low Detection not supported\n1 = Sensor Result High-Low Detection supported"
+          },
+          {
+            "bit": "6",
+            "description": "Sensor Temperature High-Low Detection support bit:\n0 = Sensor Temperature High-Low Detection not supported\n1 = Sensor Temperature High-Low Detection supported"
+          },
+          {
+            "bit": "7",
+            "description": "Sensor Read Interrupt Detection support bit:\n0 = Sensor Read Interrupt Detection not supported\n1 = Sensor Read Interrupt Detection supported"
+          },
+          {
+            "bit": "8",
+            "description": "General Device Fault support bit:\n0 = General Device Fault not supported\n1 = General Device Fault supported"
+          },
+          {
+            "bit": "9",
+            "description": "Time Fault support bit:\n0 = Time Fault not supported\n1 = Time Fault supported"
+          },
+          {
+            "bit": "10",
+            "description": "Multiple Bond support bit:\n0 = Multiple Bonds not supported\n1 = Multiple Bonds supported"
+          },
+          {
+            "bit": "11\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

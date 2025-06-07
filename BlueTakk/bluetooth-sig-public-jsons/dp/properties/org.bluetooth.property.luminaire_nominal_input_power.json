@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_nominal_input_power",
+    "name": "Luminaire Nominal Input Power",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.power",
+    "description": "This property represents the luminaire nominal input power."
+  }
+}

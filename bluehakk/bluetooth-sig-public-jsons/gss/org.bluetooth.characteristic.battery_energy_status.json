@@ -1,0 +1,87 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_energy_status",
+    "name": "Battery Energy Status",
+    "description": "The Battery Energy Status characteristic is used to represent details about the energy status of the battery.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_energy_status/field/flags}."
+      },
+      {
+        "field": "External Source Power",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The total power being consumed from an external power source in watts for its Battery Aggregation Group.\nBase unit: org.bluetooth.unit.power.watt\nAllowed values are 0 and all positive real numbers.\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Present Voltage",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The present terminal voltage of the battery in volts.\nBase unit: org.bluetooth.unit.electric_potential_difference.volt\nAllowed values are all real numbers.\nPresent if bit 1 of the Flags field is set to 1"
+      },
+      {
+        "field": "Available Energy",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The available energy of the battery in kilowatt-hours in its current charge state.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are 0 and all positive real numbers.\nPresent if bit 2 of the Flags field is set to 1"
+      },
+      {
+        "field": "Available Battery Capacity",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The capacity of the battery in kilowatt-hours at full charge in its current condition.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are 0 and all positive real numbers.\nPresent if bit 3 of the Flags field is set to 1"
+      },
+      {
+        "field": "Charge Rate",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The energy flowing into the battery in watts. Positive values indicate charging, and negative values indicate discharging.\nBase unit: org.bluetooth.unit.power.watt\nAllowed values are all real numbers.\nPresent if bit 4 of the Flags field is set to 1"
+      },
+      {
+        "field": "Available Energy at Last Charge",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "The available energy of the battery in kilowatt-hours in its last charge state.\nBase unit: org.bluetooth.unit.energy.kilowatt_hour\nAllowed values are 0 and all positive real numbers.\nPresent if bit 5 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "External Source Power Present"
+          },
+          {
+            "bit": "1",
+            "description": "Present Voltage Present"
+          },
+          {
+            "bit": "2",
+            "description": "Available Energy Present"
+          },
+          {
+            "bit": "3",
+            "description": "Available Battery Capacity Present"
+          },
+          {
+            "bit": "4",
+            "description": "Charge Rate Present"
+          },
+          {
+            "bit": "5",
+            "description": "Available Energy at Last Charge Present"
+          },
+          {
+            "bit": "6\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

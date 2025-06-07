@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.rated_median_useful_life_of_luminaire",
+    "name": "Rated Median Useful Life of Luminaire",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the luminaire rated median useful life. It is useful to find out how long the light source in the luminaire is designed to work."
+  }
+}

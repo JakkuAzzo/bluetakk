@@ -1,0 +1,75 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.blood_pressure_record",
+    "name": "Blood Pressure Record",
+    "description": "The Blood Pressure Record characteristic is a container that represents a stored value of a blood pressure measurement or of any other characteristic as specified by the service using the characteristic.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Segmentation Header",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_record/field/segmentation_header}."
+      },
+      {
+        "field": "Sequence Number",
+        "type": "uint16",
+        "size": "2",
+        "description": "Contains a sequence number of the record. The sequence number starts at 0 and loops back to 0 after 65536 records (per user).\nSee \\autoref{sec:org.bluetooth.characteristic.blood_pressure_record/field/sequence_number}."
+      },
+      {
+        "field": "UUID",
+        "type": "uint16",
+        "size": "2",
+        "description": "Contains the UUID of the contained characteristic value.\nSee \\autoref{sec:org.bluetooth.characteristic.blood_pressure_record/field/uuid}."
+      },
+      {
+        "field": "Recorded Characteristic",
+        "type": "Determined by UUID",
+        "size": "Variable",
+        "description": "Contains a part of or a complete characteristic value.\nSee \\autoref{sec:org.bluetooth.characteristic.blood_pressure_record/field/recorded_characteristic}."
+      },
+      {
+        "field": "E2E-CRC",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Contains the CRC over all the data of a complete single or multi-message record.\nSee \\autoref{sec:org.bluetooth.characteristic.blood_pressure_record/field/e2e-crc}.\nThe presence of this field is defined by the service using this characteristic."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Segmentation Header",
+        "description": "The Segmentation Header field provides information about which segments to concatenate to get a complete Blood Pressure Record value.\nThe bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "First Segment: the characteristic contains the first segment of a record\n0 = False\n1 = True"
+          },
+          {
+            "bit": "1",
+            "description": "Last Segment: The characteristic contains the last segment of a record\n0 = False\n1 = True"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "Rolling Segment Counter: 0 to 63\nIf the Rolling Segment Counter is equal to 63, it rolls over to 0 when it is next incremented."
+          }
+        ]
+      },
+      {
+        "name": "Sequence Number",
+        "description": "The sequence number field contains the sequence number of a record. The sequence number starts at 0 and loops back to 0 after 65536 records and is used to number a sequence of records as defined by the service."
+      },
+      {
+        "name": "UUID",
+        "description": "The UUID field contains the 16-bit Bluetooth SIG assigned number for a Bluetooth SIG defined characteristic. Supported values are typically constrained by the service. See \\RefRef{assigned_numbers} for the list of SIG Assigned Numbers for GATT characteristic UUIDs."
+      },
+      {
+        "name": "Recorded Characteristic",
+        "description": "The Recorded Characteristic field contains a partial or a complete characteristic value. The characteristic value is identified by the UUID field. For most UUID values, the definition of the corresponding characteristic value is included in this document."
+      },
+      {
+        "name": "E2E-CRC",
+        "description": "If the service using the Blood Pressure Record characteristic supports E2E-CRC, the status of the recorded characteristic is secured by a CRC calculated over all fields of all parts of a multi-message record not including the E2E-CRC-field itself. See \\autoref{sec:crc_calculation} for further information about the CRC calculation."
+      }
+    ]
+  }
+}

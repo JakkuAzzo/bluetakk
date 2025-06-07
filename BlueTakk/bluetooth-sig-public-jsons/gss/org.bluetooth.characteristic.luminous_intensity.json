@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.luminous_intensity",
+    "name": "Luminous Intensity",
+    "description": "The Luminous Intensity characteristic is used to represent the luminous intensity of a beam of light.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Luminous Intensity",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is candela with a resolution of 1.\nMinimum: 0\nMaximum: 65534\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.luminous_intensity.candela\nA value of 0xFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

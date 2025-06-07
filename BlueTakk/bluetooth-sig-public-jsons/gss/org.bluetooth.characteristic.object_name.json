@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.object_name",
+    "name": "Object Name",
+    "description": "The Object Name characteristic is used to represent the name of the associated object.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Object Name",
+        "type": "utf8s",
+        "size": "0\u2013120",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

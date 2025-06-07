@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.anaerobic_heart_rate_upper_limit",
+    "name": "Anaerobic Heart Rate Upper Limit",
+    "description": "The Anaerobic Heart Rate Upper Limit characteristic is used to represent the desired upper limit of the heart rate, where a user enhances his or her anaerobic tolerance while exercising.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Anaerobic Heart Rate Upper Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

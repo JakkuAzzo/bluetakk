@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.pressure",
+    "name": "Pressure",
+    "description": "The Pressure characteristic is used to represent pressure.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Pressure",
+        "type": "uint32",
+        "size": "4",
+        "description": "Base Unit: org.bluetooth.unit.pressure.pascal\nRepresented values: M = 1, d = -1, b = 0\nUnit is Pascals with a resolution of 0.1 Pa"
+      }
+    ]
+  }
+}

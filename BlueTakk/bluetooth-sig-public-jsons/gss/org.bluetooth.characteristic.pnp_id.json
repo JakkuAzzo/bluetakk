@@ -1,0 +1,57 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.pnp_id",
+    "name": "PnP ID",
+    "description": "The PnP ID characteristic is used to represent a set of values that are used to create a device ID value that is unique for this device. These values are used to identify all devices of a given type/model/version using numbers.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Vendor ID Source",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.pnp_id/field/vendor_id_source}"
+      },
+      {
+        "field": "Vendor ID",
+        "type": "uint16",
+        "size": "2",
+        "description": "Identifies the product vendor from the namespace in the Vendor ID Source"
+      },
+      {
+        "field": "Product ID",
+        "type": "uint16",
+        "size": "2",
+        "description": "Manufacturer managed identifier for this product"
+      },
+      {
+        "field": "Product Version",
+        "type": "uint16",
+        "size": "2",
+        "description": "Manufacturer managed version for this product"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Vendor ID Source",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Reserved for Future Use"
+          },
+          {
+            "value": "1",
+            "description": "Assigned Company Identifier value from the Bluetooth SIG Assigned Numbers \\RefRef{assigned_numbers}"
+          },
+          {
+            "value": "2",
+            "description": "USB Implementer\u2019s Forum assigned Vendor ID value"
+          },
+          {
+            "value": "3\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.rotational_speed",
+    "name": "Rotational Speed",
+    "description": "The Rotational Speed characteristic is used to represent the rotational speed of an object rotating around a device-specific axis.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Rotational Speed",
+        "type": "sint32",
+        "size": "4",
+        "description": "Base Unit:\norg.bluetooth.unit.rotational_speed.revolutions_per_minute\nRepresented values: M = 1, d = 0, b = 0\nUnit is revolutions per minute (RPM) with a resolution of 1 RPM.\nNegative values indicate counter-clockwise rotation.\nPositive values indicate clockwise rotation.\nA value of 0x7FFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

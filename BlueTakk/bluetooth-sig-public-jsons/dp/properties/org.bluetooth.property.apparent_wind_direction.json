@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.apparent_wind_direction",
+    "name": "Apparent Wind Direction",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.apparent_wind_direction",
+    "description": "This property represents the apparent wind direction as measured by the device."
+  }
+}

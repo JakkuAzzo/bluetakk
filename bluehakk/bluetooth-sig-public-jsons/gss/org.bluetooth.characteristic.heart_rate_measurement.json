@@ -1,0 +1,99 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.heart_rate_measurement",
+    "name": "Heart Rate Measurement",
+    "description": "The Heart Rate Measurement characteristic is used to represent data related to a heart rate measurement.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.heart_rate_measurement/field/flags}"
+      },
+      {
+        "field": "Heart Rate Measurement Value (8 bit resolution)",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if bit 0 of Flags field is set to 0"
+      },
+      {
+        "field": "Heart Rate Measurement Value (16 bit resolution)",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Energy Expended",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.energy.joule\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "RR-interval",
+        "type": "uint16[n]",
+        "size": "0 or n*2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.heart_rate_measurement/field/rr-interval}\nPresent if bit 4 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Heart Rate Value Format:\n0 = Heart Rate Value Format is set to uint8\n1 = Heart Rate Value Format is set to uint16"
+          },
+          {
+            "bit": "1",
+            "description": "Sensor Contact detected"
+          },
+          {
+            "bit": "2",
+            "description": "Sensor Contact Supported"
+          },
+          {
+            "bit": "3",
+            "description": "Energy Expended present"
+          },
+          {
+            "bit": "4",
+            "description": "RR-Interval present"
+          },
+          {
+            "bit": "5\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "RR-Interval",
+        "description": "The RR-Interval value represents the time between two R-Wave detections. Each RR-Interval value is represented by a uint16 with 1/1024 second as the unit. Because it is possible to measure several RR-Intervals between transmissions of the Heart Rate Measurement characteristic, multiple RR-Interval sub-fields can be present in the characteristic. The number of RR-Interval sub-fields present is determined by a combination of the overall length of the characteristic and whether or not the characteristic contains the Energy Expended field.\nWhere there are multiple RR-Interval values transmitted in the Heart Rate Measurement characteristic, the structure of this field is defined below.",
+        "value_header": "RR-Interval Field",
+        "description_header": "Description",
+        "values": [
+          {
+            "value": "RR-Interval Value 0",
+            "description": "Oldest RR-Interval value"
+          },
+          {
+            "value": "RR-Interval Value 1",
+            "description": ""
+          },
+          {
+            "value": "RR-Interval Value 2",
+            "description": ""
+          },
+          {
+            "value": "\\textellipsis",
+            "description": ""
+          },
+          {
+            "value": "RR-Interval Value n",
+            "description": "Newest RR-Interval value"
+          }
+        ]
+      }
+    ]
+  }
+}

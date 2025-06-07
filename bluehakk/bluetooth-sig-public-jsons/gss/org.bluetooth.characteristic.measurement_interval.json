@@ -1,0 +1,31 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.measurement_interval",
+    "name": "Measurement Interval",
+    "description": "The Measurement Interval characteristic is used to represent the time between measurements.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Measurement Interval",
+        "type": "uint16",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.measurement_interval/field/measurement_interval}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Measurement Interval",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "No periodic measurement"
+          },
+          {
+            "value": "1\u201365535",
+            "description": "Duration of measurement interval. 65535 seconds is equal to 18 hours, 12 minutes, and 15 seconds.\nUnit: org.bluetooth.unit.time.second"
+          }
+        ]
+      }
+    ]
+  }
+}

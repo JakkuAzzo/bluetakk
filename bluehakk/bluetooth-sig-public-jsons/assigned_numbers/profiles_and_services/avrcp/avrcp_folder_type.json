@@ -1,0 +1,32 @@
+{
+  "folder_type": [
+    {
+      "value": 0,
+      "description": "Mixed"
+    },
+    {
+      "value": 1,
+      "description": "Titles"
+    },
+    {
+      "value": 2,
+      "description": "Albums"
+    },
+    {
+      "value": 3,
+      "description": "Artists"
+    },
+    {
+      "value": 4,
+      "description": "Genres"
+    },
+    {
+      "value": 5,
+      "description": "Playlists"
+    },
+    {
+      "value": 6,
+      "description": "Years"
+    }
+  ]
+}

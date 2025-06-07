@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cgm_status",
+    "name": "CGM Status",
+    "description": "The CGM Status characteristic is used to represent the current status of a continuous glucose monitor (CGM) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Offset",
+        "type": "uint16",
+        "size": "2",
+        "description": "The Time Offset field specifies the time since the Session Start Time (see \\autoref{sec:org.bluetooth.characteristic.cgm_session_start_time})."
+      },
+      {
+        "field": "CGM Status",
+        "type": "boolean[24]",
+        "size": "3",
+        "description": "The structure of this field is identical to the structure of the combined Status fields as defined in \\autoref{sec:org.bluetooth.characteristic.cgm_measurement/field/sensor_status_annunciation}, but it always consists of three octets regardless of the value."
+      },
+      {
+        "field": "E2E-CRC",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "CRC calculated over all fields except the E2E-CRC field itself. See \\autoref{sec:crc_calculation} for details.\nPresent if E2E-CRC Supported bit in CGM Feature characteristic is set to 1"
+      }
+    ]
+  }
+}

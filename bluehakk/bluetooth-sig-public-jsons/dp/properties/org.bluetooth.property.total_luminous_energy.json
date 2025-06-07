@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_luminous_energy",
+    "name": "Total Luminous Energy",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.luminous_energy",
+    "description": "This property represents the total recorded luminous energy produced by a light source or a lighting fixture."
+  }
+}

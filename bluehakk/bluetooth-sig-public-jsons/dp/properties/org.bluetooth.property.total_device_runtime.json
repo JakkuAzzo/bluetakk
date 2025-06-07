@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_runtime",
+    "name": "Total Device Runtime",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the total time that the element has been operating (has been in an On-state)."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.mass_flow",
+    "name": "Mass Flow",
+    "description": "The Mass Flow characteristic is used to represent a flow of mass.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Mass Flow",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is gram/second with a resolution of 1.\nMinimum: 0\nMaximum: 65534\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.mass_flow.gram_per_second\nA value of 0xFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

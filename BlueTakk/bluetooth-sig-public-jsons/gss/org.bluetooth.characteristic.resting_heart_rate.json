@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.resting_heart_rate",
+    "name": "Resting Heart Rate",
+    "description": "The Resting Heart Rate characteristic is used to represent the resting heart rate of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Resting Heart Rate",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

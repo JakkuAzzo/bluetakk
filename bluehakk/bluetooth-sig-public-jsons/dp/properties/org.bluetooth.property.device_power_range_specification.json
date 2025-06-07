@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_power_range_specification",
+    "name": "Device Power Range Specification",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.power_specification",
+    "description": "The Power Range Specification property represents the minimum, typical, and maximum power consumption of the device as specified by the manufacturer of the device."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": "Varies"
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 7
+    },
+    {
+      "parameter": "Value",
+      "size": "Varies",
+      "description": "A UTF-8 formatted URL link used to present more information about Program_Info"
+    }
+  ]
+}

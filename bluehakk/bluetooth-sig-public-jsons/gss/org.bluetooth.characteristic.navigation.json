@@ -1,0 +1,89 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.navigation",
+    "name": "Navigation",
+    "description": "The Navigation characteristic is used to represent data related to a navigation sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.navigation/field/flags}"
+      },
+      {
+        "field": "Bearing",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1*10\\textsuperscript{-2} degrees"
+      },
+      {
+        "field": "Heading",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1*10\\textsuperscript{-2} degrees"
+      },
+      {
+        "field": "Remaining Distance",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 m\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Remaining Vertical Distance",
+        "type": "sint24",
+        "size": "0 or 3",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 m\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Estimated Time of Arrival",
+        "type": "struct",
+        "size": "0 or 7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}.\nPresent if bit 2 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Remaining Distance Present"
+          },
+          {
+            "bit": "1",
+            "description": "Remaining Vertical Distance Present"
+          },
+          {
+            "bit": "2",
+            "description": "Estimated Time of Arrival Present"
+          },
+          {
+            "bit": "3\u20134",
+            "description": "Position Status:\n0b00 = No Position\n0b01 = Position Ok\n0b10 = Estimated Position\n0b11 = Last Known Position"
+          },
+          {
+            "bit": "5",
+            "description": "Heading Source\n0 = Heading based on movement\n1 = Heading based on magnetic compass"
+          },
+          {
+            "bit": "6",
+            "description": "Navigation Indicator Type\n0 = To Waypoint\n1 = To Destination"
+          },
+          {
+            "bit": "7",
+            "description": "Waypoint Reached\n0 = False\n1 = True"
+          },
+          {
+            "bit": "8",
+            "description": "Destination Reached\n0 = False\n1 = True"
+          },
+          {
+            "bit": "9\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

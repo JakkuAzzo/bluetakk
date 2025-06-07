@@ -1,0 +1,219 @@
+{
+  "mesh_model_opcodes": [
+    {
+      "name": "BLOB Partial Block Report",
+      "opcode": 104,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Chunk Transfer",
+      "opcode": 102,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Block Status",
+      "opcode": 103,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Transfer Get",
+      "opcode": 33536,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Transfer Start",
+      "opcode": 33537,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Transfer Cancel",
+      "opcode": 33538,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Transfer Status",
+      "opcode": 33539,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Block Start",
+      "opcode": 33540,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Block Get",
+      "opcode": 33541,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Information Get",
+      "opcode": 33542,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Information Status",
+      "opcode": 33543,
+      "type": "mbt"
+    },
+    {
+      "name": "Firmware Update Information Get",
+      "opcode": 33544,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Information Status",
+      "opcode": 33545,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Firmware Metadata Check",
+      "opcode": 33546,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Firmware Metadata Status",
+      "opcode": 33547,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Get",
+      "opcode": 33548,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Start",
+      "opcode": 33549,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Cancel",
+      "opcode": 33550,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Apply",
+      "opcode": 33551,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Status",
+      "opcode": 33552,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Receivers Add",
+      "opcode": 33553,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Receivers Delete All",
+      "opcode": 33554,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Receivers Status",
+      "opcode": 33555,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Receivers Get",
+      "opcode": 33556,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Receivers List",
+      "opcode": 33557,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Capabilities Get",
+      "opcode": 33558,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Capabilities Status",
+      "opcode": 33559,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Get",
+      "opcode": 33560,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Start",
+      "opcode": 33561,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Suspend",
+      "opcode": 33562,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Cancel",
+      "opcode": 33563,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Apply",
+      "opcode": 33564,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Status",
+      "opcode": 33565,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Upload Get",
+      "opcode": 33566,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Upload Start",
+      "opcode": 33567,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Upload OOB Start",
+      "opcode": 33568,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Upload Cancel",
+      "opcode": 33569,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Upload Status",
+      "opcode": 33570,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Firmware Get",
+      "opcode": 33571,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Firmware Get By Index",
+      "opcode": 33572,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Firmware Delete",
+      "opcode": 33573,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Firmware Delete All",
+      "opcode": 33574,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Firmware Status",
+      "opcode": 33575,
+      "type": "dfu"
+    }
+  ]
+}

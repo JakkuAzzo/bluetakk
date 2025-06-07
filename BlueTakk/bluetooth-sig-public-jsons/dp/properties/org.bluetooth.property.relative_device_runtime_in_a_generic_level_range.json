@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_device_runtime_in_a_generic_level_range",
+    "name": "Relative Device Runtime in a Generic Level Range",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.relative_runtime_in_a_generic_level_range",
+    "description": "This property represents a relative runtime of a device within a generic level range.\nThe Relative Value field is the relative runtime, that is, the runtime within the interval compared with the total runtime recorded by the device. See the Total Device Runtime property in \\autoref{sec:org.bluetooth.property.total_device_runtime}.\nThe Minimum Generic Level and Maximum Generic Level define the generic level range.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Minimum Generic Level"
+        },
+        {
+          "property": "Width",
+          "characteristic": "Maximum Generic Level - Minimum Generic Level"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Relative Value"
+        }
+      ]
+    }
+  }
+}

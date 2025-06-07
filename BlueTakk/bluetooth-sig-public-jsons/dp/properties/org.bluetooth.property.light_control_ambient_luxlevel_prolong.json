@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_ambient_luxlevel_prolong",
+    "name": "Light Control Ambient LuxLevel Prolong",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.illuminance",
+    "description": "This property represents the ambient light level for a light or a group of lights in the prolong state. The prolong state is the intermediate state in between the run state and the standby state of a light."
+  }
+}

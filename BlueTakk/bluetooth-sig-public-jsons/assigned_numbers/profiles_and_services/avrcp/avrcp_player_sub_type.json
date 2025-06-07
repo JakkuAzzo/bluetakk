@@ -1,0 +1,12 @@
+{
+  "player_sub_type": [
+    {
+      "value": 1,
+      "description": "Audio Book"
+    },
+    {
+      "value": 2,
+      "description": "Podcast"
+    }
+  ]
+}

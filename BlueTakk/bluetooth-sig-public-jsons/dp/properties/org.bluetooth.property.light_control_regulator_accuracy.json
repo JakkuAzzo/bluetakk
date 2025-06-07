@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_regulator_accuracy",
+    "name": "Light Control Regulator Accuracy",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the accuracy of a proportional-integral light regulator. This represents the regulation error that does not result in changing the regulator output."
+  }
+}

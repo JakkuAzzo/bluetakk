@@ -1,0 +1,9 @@
+{
+  "mesh_model_opcodes": [
+    {
+      "name": "IEC 62386-104 Frame",
+      "opcode": 101,
+      "type": "model"
+    }
+  ]
+}

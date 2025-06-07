@@ -1,0 +1,39 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.csc_feature",
+    "name": "CSC Feature",
+    "description": "The CSC Feature characteristic is used to represent the supported features of a cycling speed and cadence (CSC) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "CSC Feature",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.csc_feature/field/csc_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "CSC Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Wheel Revolution Data Supported"
+          },
+          {
+            "bit": "1",
+            "description": "Crank Revolution Data Supported"
+          },
+          {
+            "bit": "2",
+            "description": "Multiple Sensor Locations Supported"
+          },
+          {
+            "bit": "3\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

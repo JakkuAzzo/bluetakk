@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_manufacturer_name",
+    "name": "Device Manufacturer Name",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_36",
+    "description": "This property represents the name of the manufacturer of the device. This value is set by the manufacturer or supplier of the device."
+  }
+}

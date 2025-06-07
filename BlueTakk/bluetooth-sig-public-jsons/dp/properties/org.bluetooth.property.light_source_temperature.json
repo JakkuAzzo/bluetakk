@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_temperature",
+    "name": "Light Source Temperature",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.high_temperature",
+    "description": "This property represents the light source temperature."
+  }
+}

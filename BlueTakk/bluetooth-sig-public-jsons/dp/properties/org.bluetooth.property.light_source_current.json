@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_current",
+    "name": "Light Source Current",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.average_current",
+    "description": "This property represents the current needed to be provided for the light source to reach the nominal output."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.high_temperature",
+    "name": "High Temperature",
+    "description": "The High Temperature characteristic is used to represent a temperature within a wide range of possible temperatures.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "High Temperature",
+        "type": "sint16",
+        "size": "2",
+        "description": "Unit is degree Celsius with a resolution of 0.5.\nMinimum value: -273\nMaximum value: 16383.5\nRepresented values: M = 1, d = 0, b = -1\nUnit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nA value of 0x8001 represents \"value is not valid\".\nA value of 0x8000 represents \"value is not known\".\nAll other values are prohibited."
+      }
+    ]
+  }
+}

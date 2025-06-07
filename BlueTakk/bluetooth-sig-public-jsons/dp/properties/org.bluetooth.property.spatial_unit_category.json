@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.spatial_unit_category",
+    "name": "Spatial Unit Category",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_36",
+    "description": "This property represents the category or the principal function of the spatial unit the device is located in. The zero-length empty UTF-8 string \"\" indicates the value is unknown or invalid.\nExample use case: Identify the category of room where a device is located, such as the values \"classroom\" or \"restroom\"."
+  }
+}

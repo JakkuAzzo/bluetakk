@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.external_supply_voltage_frequency",
+    "name": "External Supply Voltage Frequency",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.voltage_frequency",
+    "description": "This property represents the external supply voltage frequency."
+  }
+}

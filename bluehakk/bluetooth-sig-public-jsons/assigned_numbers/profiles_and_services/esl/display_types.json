@@ -1,0 +1,48 @@
+{
+  "display_types": [
+    {
+      "name": "black white",
+      "value": 1
+    },
+    {
+      "name": "three gray scale",
+      "value": 2
+    },
+    {
+      "name": "four gray scale",
+      "value": 3
+    },
+    {
+      "name": "eight gray scale",
+      "value": 4
+    },
+    {
+      "name": "sixteen gray scale",
+      "value": 5
+    },
+    {
+      "name": "red black white",
+      "value": 6
+    },
+    {
+      "name": "yellow black white",
+      "value": 7
+    },
+    {
+      "name": "red yellow black white",
+      "value": 8
+    },
+    {
+      "name": "seven color",
+      "value": 9
+    },
+    {
+      "name": "sixteen color",
+      "value": 10
+    },
+    {
+      "name": "full RGB",
+      "value": 11
+    }
+  ]
+}

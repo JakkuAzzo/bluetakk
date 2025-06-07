@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.wind_chill",
+    "name": "Wind Chill",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.wind_chill",
+    "description": "This property represents the wind chill factor as measured by the device."
+  }
+}

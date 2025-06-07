@@ -1,0 +1,16 @@
+{
+  "tds_org_ids": [
+    {
+      "name": "Bluetooth SIG",
+      "value": 1
+    },
+    {
+      "name": "Wi-Fi Alliance Neighbor Awareness Networking",
+      "value": 2
+    },
+    {
+      "name": "Wi-Fi Alliance Service Advertisement",
+      "value": 3
+    }
+  ]
+}

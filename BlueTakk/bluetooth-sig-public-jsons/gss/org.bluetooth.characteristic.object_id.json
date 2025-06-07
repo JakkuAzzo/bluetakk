@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.object_id",
+    "name": "Object ID",
+    "description": "The Object ID characteristic is used to represent an object ID for the associated object.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Object ID",
+        "type": "uint48",
+        "size": "6",
+        "description": "Locally unique object identifier. Values are defined per service."
+      }
+    ]
+  }
+}

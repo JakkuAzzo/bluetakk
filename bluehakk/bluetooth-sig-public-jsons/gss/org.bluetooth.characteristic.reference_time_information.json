@@ -1,0 +1,33 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.reference_time_information",
+    "name": "Reference Time Information",
+    "description": "The Reference Time Information characteristic is used to represent information about the reference time source.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Source",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Source characteristic in \\autoref{sec:org.bluetooth.characteristic.time_source}"
+      },
+      {
+        "field": "Time Accuracy",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Accuracy characteristic in \\autoref{sec:org.bluetooth.characteristic.time_accuracy}"
+      },
+      {
+        "field": "Days Since Update",
+        "type": "uint8",
+        "size": "1",
+        "description": "Number of days portion of the time span since the last update from the reference.\nValid range is 0 to 254 days\nA value of 255 is used when the time span is greater than or equal to 255 days"
+      },
+      {
+        "field": "Hours Since Update",
+        "type": "uint8",
+        "size": "1",
+        "description": "Number of hours portion of the time span since the last update from the reference.\nValid range is 0 to 23 hours\nA value of 255 is used when the time span is greater than or equal to 255 days"
+      }
+    ]
+  }
+}

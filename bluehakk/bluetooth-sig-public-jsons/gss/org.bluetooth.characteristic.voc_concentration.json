@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.voc_concentration",
+    "name": "VOC Concentration",
+    "description": "The VOC Concentration characteristic is used to represent a measure of volatile organic compounds concentration.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "VOC Concentration",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is parts per billion (ppb) with a resolution of 1.\nUnit: org.bluetooth.unit.ppb\nRepresented values: M = 1, d = 0, b =0\nAllowed range is: 0 to 65533.\nA value of 0xFFFE represents \"value is 65534 or greater\".\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_country_of_origin",
+    "name": "Device Country of Origin",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.country_code",
+    "description": "This property represents the country of origin of the device using ISO 3166-1 numeric M49 Country codes as maintained by the United Nations \\RefRef{iso_3166}."
+  }
+}

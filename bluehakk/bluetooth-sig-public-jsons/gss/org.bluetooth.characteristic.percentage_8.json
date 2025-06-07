@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.percentage_8",
+    "name": "Percentage 8",
+    "description": "The Percentage 8 characteristic is used to represent a percentage.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Percentage 8",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is a percentage with a resolution of 0.5.\nMinimum: 0\nMaximum: 100\nRepresented values: M = 1, d = 0, b = -1\nUnit: org.bluetooth.unit.percentage\nA value of 0xFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

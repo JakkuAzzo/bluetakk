@@ -1,0 +1,53 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_health_information",
+    "name": "Battery Health Information",
+    "description": "The Battery Health Information characteristic is used to represent the health of a battery.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_health_information/field/flags}."
+      },
+      {
+        "field": "Cycle Count Designed Lifetime",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Represents the designed number of charge cycles supported by the device where one charge cycle is a discharge equivalent to the capacity of the battery at full charge in its current condition.\nUnit is unitless with a resolution of 1.\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Min Designed Operating Temperature",
+        "type": "sint8",
+        "size": "0 or 1",
+        "description": "Represents the minimum designed operating temperature of the battery.\nBase Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nA raw value of 0x7F represents: Greater than 126.\nA raw value of 0x80 represents: Less than -127.\nPresent if bit 1 of the Flags field is set to 1"
+      },
+      {
+        "field": "Max Designed Operating Temperature",
+        "type": "sint8",
+        "size": "0 or 1",
+        "description": "Represents the maximum designed operating temperature of the battery.\nBase Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nA raw value of 0x7F represents: Greater than 126.\nA raw value of 0x80 represents: Less than -127.\nPresent if bit 1 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Cycle Count Designed Lifetime Present"
+          },
+          {
+            "bit": "1",
+            "description": "Min and Max Designed Operating Temperature Present"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

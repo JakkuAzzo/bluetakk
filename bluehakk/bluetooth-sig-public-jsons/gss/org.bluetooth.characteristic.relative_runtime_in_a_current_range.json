@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_runtime_in_a_current_range",
+    "name": "Relative Runtime in a Current Range",
+    "description": "The Relative Runtime in a Current Range characteristic is used to represent a relative value in an electric current range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Runtime Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Minimum Current",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Maximum Current",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      }
+    ]
+  }
+}

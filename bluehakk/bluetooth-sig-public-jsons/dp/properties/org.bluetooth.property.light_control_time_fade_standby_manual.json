@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_fade_standby_manual",
+    "name": "Light Control Time Fade Standby Manual",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the time lights take to transition to a standby state when the transition is triggered by a manual operation (e.g., by a user operating a light switch)."
+  }
+}

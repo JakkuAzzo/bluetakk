@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.local_asset_name",
+    "name": "Local Asset Name",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_36",
+    "description": "This property represents a localized asset name used to distinguish the device from other devices at its location. If the Spatial Unit Name property (see Section 3.x.y) is also supported and has a non-zero length, the Asset Local Name property provides local context within the corresponding spatial unit. The zero-length empty UTF-8 string \"\" indicates the value is unknown or invalid.\nExample use case: The string \"left-side bed\" identifies the left-side bed light within a main bedroom. The string \"W054\" represents a wheelchair asset (with a zero-length Spatial Unit Name property) at an airport."
+  }
+}

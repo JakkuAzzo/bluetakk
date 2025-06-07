@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_current_range",
+    "name": "Output Current Range",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.electric_current_range",
+    "description": "This property represents an output current range of a device and consists of two fields: the Minimum Electric Current field represents the minimum output current for a device, and the Maximum Electric Current field represents the maximum output current for a device."
+  }
+}

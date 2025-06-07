@@ -1,0 +1,44 @@
+{
+  "audio_input_type_definitions": [
+    {
+      "label": "Unspecified",
+      "description": "Unspecified Input",
+      "value": 0
+    },
+    {
+      "label": "Bluetooth",
+      "description": "Bluetooth Audio Stream",
+      "value": 1
+    },
+    {
+      "label": "Microphone",
+      "description": "Microphone",
+      "value": 2
+    },
+    {
+      "label": "Analog",
+      "description": "Analog Interface",
+      "value": 3
+    },
+    {
+      "label": "Digital",
+      "description": "Digital Interface",
+      "value": 4
+    },
+    {
+      "label": "Radio",
+      "description": "AM/FM/XM/etc.",
+      "value": 5
+    },
+    {
+      "label": "Streaming",
+      "description": "Streaming Audio Source",
+      "value": 6
+    },
+    {
+      "label": "Ambient",
+      "description": "Transparency/Pass-through",
+      "value": 7
+    }
+  ]
+}

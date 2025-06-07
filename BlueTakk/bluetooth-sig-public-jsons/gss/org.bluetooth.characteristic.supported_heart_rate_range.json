@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_heart_rate_range",
+    "name": "Supported Heart Rate Range",
+    "description": "The Supported Heart Rate Range characteristic is used to represent the heart rate range supported by a fitness machine.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Heart Rate",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      },
+      {
+        "field": "Maximum Heart Rate",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      },
+      {
+        "field": "Minimum Increment",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

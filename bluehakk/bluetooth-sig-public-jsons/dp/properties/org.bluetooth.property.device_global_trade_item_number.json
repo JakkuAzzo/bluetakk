@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_global_trade_item_number",
+    "name": "Device Global Trade Item Number",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.global_trade_item_number",
+    "description": "This property represents a 14-digit Global Trade Item Number, which is typically used in product barcodes."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.light_source_type",
+    "name": "Light Source Type",
+    "description": "The Light Source Type characteristic is used to represent the means by which a luminaire generates light.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Light Source Type",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.light_source_type/field/light_source_type}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Light Source Type",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Type not specified"
+          },
+          {
+            "value": "0x01",
+            "description": "Low pressure fluorescent"
+          },
+          {
+            "value": "0x02",
+            "description": "High intensity discharge (HID)"
+          },
+          {
+            "value": "0x03",
+            "description": "Low voltage halogen"
+          },
+          {
+            "value": "0x04",
+            "description": "Incandescent"
+          },
+          {
+            "value": "0x05",
+            "description": "Light emitting diode (LED)"
+          },
+          {
+            "value": "0x06",
+            "description": "Organic light emitting diode (OLED)"
+          },
+          {
+            "value": "0xFD",
+            "description": "Other than listed above"
+          },
+          {
+            "value": "0xFE",
+            "description": "No light source"
+          },
+          {
+            "value": "0xFF",
+            "description": "Multiple light source types"
+          },
+          {
+            "value": "All other values",
+            "description": "Reserved for Future Use."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.body_sensor_location",
+    "name": "Body Sensor Location",
+    "description": "The Body Sensor Location characteristic is used to represent the location of a sensor on a human body.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Body Sensor Location",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.body_sensor_location/field/body_sensor_location}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Body Sensor Location",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Other"
+          },
+          {
+            "value": "0x01",
+            "description": "Chest"
+          },
+          {
+            "value": "0x02",
+            "description": "Wrist"
+          },
+          {
+            "value": "0x03",
+            "description": "Finger"
+          },
+          {
+            "value": "0x04",
+            "description": "Hand"
+          },
+          {
+            "value": "0x05",
+            "description": "Ear Lobe"
+          },
+          {
+            "value": "0x06",
+            "description": "Foot"
+          },
+          {
+            "value": "0x07\u20130xFF",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

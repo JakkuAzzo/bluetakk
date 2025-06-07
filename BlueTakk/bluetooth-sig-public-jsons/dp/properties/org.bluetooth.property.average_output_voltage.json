@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.average_output_voltage",
+    "name": "Average Output Voltage",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.average_voltage",
+    "description": "This property represents the average output voltage for the device. This property consists of two fields: the Voltage Value field is the average of a series of output voltage values, and the Sensing Duration field is the period over which the series of output voltage values were measured."
+  }
+}

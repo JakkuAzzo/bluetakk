@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.humidity",
+    "name": "Humidity",
+    "description": "The Humidity characteristic is used to represent the humidity.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Humidity",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.percentage\nRepresented values: M = 1, d = -2, b = 0\nUnit is in percent with a resolution of 0.01 percent.\nAllowed range is: 0.00 to 100.00\nA value of 0xFFFF represents \"value is not known\".\nAll other values are prohibited."
+      }
+    ]
+  }
+}

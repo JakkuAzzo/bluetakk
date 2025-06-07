@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.global_trade_item_number",
+    "name": "Global Trade Item Number",
+    "description": "The Global Trade Item Number characteristic is used to represent an identifier as defined by GS1 \\RefRef{gs1}, with up to 14 digits.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Global Trade Item Number",
+        "type": "uint48",
+        "size": "6",
+        "description": "An identifier for trade items, defined by GS1 \\RefRef{gs1}."
+      }
+    ]
+  }
+}

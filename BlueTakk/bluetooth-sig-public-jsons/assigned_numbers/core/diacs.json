@@ -1,0 +1,12 @@
+{
+  "diacs": [
+    {
+      "value": 10390323,
+      "name": "General Inquiry Access Code (GIAC)"
+    },
+    {
+      "value": 10390272,
+      "name": "Limited Inquiry Access Code (LIAC)"
+    }
+  ]
+}

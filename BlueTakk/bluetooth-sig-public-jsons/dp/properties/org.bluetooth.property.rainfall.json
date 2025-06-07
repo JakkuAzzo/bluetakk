@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.rainfall",
+    "name": "Rainfall",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.rainfall",
+    "description": "This property represents the rainfall as measured by a rain sensor."
+  }
+}

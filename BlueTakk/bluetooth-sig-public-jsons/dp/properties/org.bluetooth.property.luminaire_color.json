@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_color",
+    "name": "Luminaire Color",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_24",
+    "description": "This property represents the luminaire color description. This property is mapped to the luminaire color field in memory bank 1, which is defined by the DiiA specification \u201cDALI Part 251 -- Memory Bank 1 Extension\u201d \\RefRef{dali_251}."
+  }
+}

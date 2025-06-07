@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_ambient_luxlevel_standby",
+    "name": "Light Control Ambient LuxLevel Standby",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.illuminance",
+    "description": "This property represents the ambient light level for a light or a group of lights to remain in a standby state. The standby state is a state when the light is switched on and controlled, but operating at minimum level. This minimum level can be zero but can also be set to a low value so that the lights are never fully turned\u00a0off."
+  }
+}

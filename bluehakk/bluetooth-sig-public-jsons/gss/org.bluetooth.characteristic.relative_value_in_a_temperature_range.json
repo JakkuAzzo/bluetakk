@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_value_in_a_temperature_range",
+    "name": "Relative Value in a Temperature Range",
+    "description": "The Relative Value in a Temperature Range characteristic is used to represent the combination of the Percentage 8 characteristic and two instances of the Temperature characteristic.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Minimum Temperature Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Temperature characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature}"
+      },
+      {
+        "field": "Maximum Temperature Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Temperature characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature}"
+      }
+    ]
+  }
+}

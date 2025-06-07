@@ -1,0 +1,63 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.intermediate_temperature",
+    "name": "Intermediate Temperature",
+    "description": "The Intermediate Temperature characteristic is used to send intermediate temperature values to a device for display purposes while a measurement is in progress. The Intermediate Temperature characteristic has the same format as the Temperature Measurement characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_measurement} except that, due to a different context, the Measurement Value field is referred to as the Intermediate Temperature field.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.intermediate_temperature/field/flags}."
+      },
+      {
+        "field": "Intermediate Temperature (Celsius)",
+        "type": "medfloat32",
+        "size": "0 or 4",
+        "description": "This field contains a measurement value.\nUnit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius.\nPresent if bit 0 of Flags field is set to 0"
+      },
+      {
+        "field": "Intermediate Temperature (Fahrenheit)",
+        "type": "medfloat32",
+        "size": "0 or 4",
+        "description": "This field contains a measurement value.\nUnit: org.bluetooth.unit.thermodynamic_temperature.degree_fahrenheit.\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Time Stamp",
+        "type": "struct",
+        "size": "0 or 7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}.\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Temperature Type",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "The format of this field is the same as the format of the Temperature Type characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_type}.\nPresent if bit 2 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Temperature Units Flag\n0 = Intermediate Temperature in units of Celsius\n1 = Intermediate Temperature in units of Fahrenheit"
+          },
+          {
+            "bit": "1",
+            "description": "Time Stamp Flag\n0 = Time Stamp field not present\n1 = Time Stamp field present"
+          },
+          {
+            "bit": "2",
+            "description": "Temperature Type Flag\n0 = Temperature Type field not present\n1 = Temperature Type field present"
+          },
+          {
+            "bit": "3\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

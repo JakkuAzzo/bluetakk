@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_energy_use_since_turn_on",
+    "name": "Device Energy Use Since Turn On",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.energy",
+    "description": "This property reports the energy used by the element since it was turned on. The runtime since turn on can be obtained from the Device Runtime Since Turn On property in \\autoref{sec:org.bluetooth.property.device_runtime_since_turn_on}."
+  }
+}

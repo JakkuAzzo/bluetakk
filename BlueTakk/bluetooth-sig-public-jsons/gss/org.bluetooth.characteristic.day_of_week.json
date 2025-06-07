@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.day_of_week",
+    "name": "Day of Week",
+    "description": "The Day of Week characteristic is used to represent the day within a seven-day week as specified in ISO 8601 \\RefRef{iso_8601}.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Day of Week",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Unknown\n1: Monday\n2: Tuesday\n3: Wednesday\n4: Thursday\n5: Friday\n6: Saturday\n7: Sunday\n8\u2013255: Reserved for Future Use"
+      }
+    ]
+  }
+}

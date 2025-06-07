@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.local_asset_identifier",
+    "name": "Local Asset Identifier",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_36",
+    "description": "This property represents a locally unique identifier intended for asset tracking or inventory management. The zero-length empty UTF-8 string \"\" indicates the value is unknown or invalid.\nExample use case: An identifier from an architectural floor plan \"D18237-001\", an inventory asset number of a portable projector issued by an accounting department \"00135897\", or a device without an assigned/valid identifier with the empty string \"\"."
+  }
+}

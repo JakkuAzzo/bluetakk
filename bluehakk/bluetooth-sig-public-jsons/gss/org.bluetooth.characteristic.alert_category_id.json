@@ -1,0 +1,71 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.alert_category_id",
+    "name": "Alert Category ID",
+    "description": "The Alert Category ID characteristic is used to represent predefined categories of alerts and messages.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Category ID",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.alert_category_id/field/category_id}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Category ID",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Simple Alert"
+          },
+          {
+            "value": "1",
+            "description": "Email"
+          },
+          {
+            "value": "2",
+            "description": "News"
+          },
+          {
+            "value": "3",
+            "description": "Call"
+          },
+          {
+            "value": "4",
+            "description": "Missed Call"
+          },
+          {
+            "value": "5",
+            "description": "SMS/MMS"
+          },
+          {
+            "value": "6",
+            "description": "Voice Mail"
+          },
+          {
+            "value": "7",
+            "description": "Schedule"
+          },
+          {
+            "value": "8",
+            "description": "High Prioritized Alert"
+          },
+          {
+            "value": "9",
+            "description": "Instant Message"
+          },
+          {
+            "value": "10\u2013250",
+            "description": "Reserved for Future Use"
+          },
+          {
+            "value": "251\u2013255",
+            "description": "Defined by Service Specification"
+          }
+        ]
+      }
+    ]
+  }
+}

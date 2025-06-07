@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.dst_offset",
+    "name": "DST Offset",
+    "description": "The DST Offset characteristic is used to represent daylight saving time information associated with time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "DST Offset",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Standard Time\n2: Half an hour Daylight Time (+ 0.5h)\n4: Daylight Time (+ 1h)\n8: Double Daylight Time (+ 2h)\n255: DST offset unknown\nAll other values: Reserved for Future Use"
+      }
+    ]
+  }
+}

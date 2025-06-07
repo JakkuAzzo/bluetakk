@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.magnetic_flux_density_-_3d",
+    "name": "Magnetic Flux Density - 3D",
+    "description": "The Magnetic Flux Density - 3D characteristic is used to represent measurements of magnetic flux density for three orthogonal axes: X, Y, and Z. Note that 1 x 10\\textsuperscript{-7} Tesla equals 0.001 Gauss.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "X-Axis",
+        "type": "sint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.magnetic_flux_density.tesla\nRepresented values: M = 1, d = -7, b = 0\nUnit is 10\\textsuperscript{-7} Tesla."
+      },
+      {
+        "field": "Y-Axis",
+        "type": "sint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.magnetic_flux_density.tesla\nRepresented values: M = 1, d = -7, b = 0\nUnit is 10\\textsuperscript{-7} Tesla."
+      },
+      {
+        "field": "Z-Axis",
+        "type": "sint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.magnetic_flux_density.tesla\nRepresented values: M = 1, d = -7, b = 0\nUnit is 10\\textsuperscript{-7} Tesla."
+      }
+    ]
+  }
+}

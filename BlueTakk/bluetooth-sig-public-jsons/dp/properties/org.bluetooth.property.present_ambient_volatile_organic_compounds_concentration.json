@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_ambient_volatile_organic_compounds_concentration",
+    "name": "Present Ambient Volatile Organic Compounds Concentration",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.voc_concentration",
+    "description": "This property represents the present ambient volatile organic compounds concentration measured by a VOC sensor."
+  }
+}

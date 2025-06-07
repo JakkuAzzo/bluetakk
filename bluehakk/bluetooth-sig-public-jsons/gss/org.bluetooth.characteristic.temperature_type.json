@@ -1,0 +1,67 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.temperature_type",
+    "name": "Temperature Type",
+    "description": "The Temperature Type characteristic is used to represent the location of a temperature measurement. These values correspond to the Temperature Type descriptions used in IEEE 11073-10408-2008 \\RefRef{ieee_11073_10408}.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Temperature Type Description",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.temperature_type/field/temperature_text_description}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Temperature Type Description",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Reserved for Future Use"
+          },
+          {
+            "value": "1",
+            "description": "Armpit"
+          },
+          {
+            "value": "2",
+            "description": "Body (general)"
+          },
+          {
+            "value": "3",
+            "description": "Ear (usually earlobe)"
+          },
+          {
+            "value": "4",
+            "description": "Finger"
+          },
+          {
+            "value": "5",
+            "description": "Gastrointestinal Tract"
+          },
+          {
+            "value": "6",
+            "description": "Mouth"
+          },
+          {
+            "value": "7",
+            "description": "Rectum"
+          },
+          {
+            "value": "8",
+            "description": "Toe"
+          },
+          {
+            "value": "9",
+            "description": "Tympanum (ear drum)"
+          },
+          {
+            "value": "10\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

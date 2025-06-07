@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.wind_chill",
+    "name": "Wind Chill",
+    "description": "The Wind Chill characteristic is used to represent the wind chill factor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Wind Chill",
+        "type": "sint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius"
+      }
+    ]
+  }
+}

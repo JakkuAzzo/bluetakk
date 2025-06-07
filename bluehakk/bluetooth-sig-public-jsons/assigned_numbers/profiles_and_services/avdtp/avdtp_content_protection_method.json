@@ -1,0 +1,16 @@
+{
+  "content_protection_method": [
+    {
+      "identifier": 1,
+      "mnemonic": "DTCP",
+      "content_security": "Please see www.dtcp.com for details of how Digital Transmission Content Protection (DTCP) is mapped to the Bluetooth AV transport services and for information about DTCP licensing by the Digital Transmission Licensing Administrator (DTLA).",
+      "reference": "Bluetooth A/V Distribution Transport Protocol Specification \"Content Protection Capabilities\", Section 8.19.6"
+    },
+    {
+      "identifier": 2,
+      "mnemonic": "SCMS-T",
+      "content_security": "SCMS-T uses Cp-bit and L-bit that are defined by IEC60958-3:1999 and IEC61119-6:1992. For definition of L-bit, normal logic, instead of reverse situation defined in section 4.3.1 of IEC60958-3, shall be applied.",
+      "reference": "The Contents Protection Header (CP Header) defined by A2DP is used for transmitting these two bits (Cp-bit and L-bit). CP Header has a one-byte length. The bit0 field of CP Headers is used for the L-bit and the bit 1 field of CP Header is used for the Cp-bit. Other bits (from bit2 to bit7) are defined as the RFA field."
+    }
+  ]
+}

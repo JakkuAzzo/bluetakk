@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.rated_median_useful_light_source_starts",
+    "name": "Rated Median Useful Light Source Starts",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property represents the light source median useful time. The parameter represents the rated median useful lifetime of the luminaire (including light source and other components)."
+  }
+}

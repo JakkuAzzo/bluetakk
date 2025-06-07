@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_current_percent",
+    "name": "Output Current Percent",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the output current of a luminaire power supply related to the nominal output current. It includes the luminaire dim level and all internal reductions of the output current except the reduction by constant lumen functionality.\nExample use case: To provide predictive maintenance services."
+  }
+}

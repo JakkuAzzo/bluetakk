@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.correlated_color_temperature",
+    "name": "Correlated Color Temperature",
+    "description": "The Correlated Color Temperature characteristic is used to represent correlated color temperature.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Correlated Color Temperature",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is Kelvin with a resolution of 1.\nMinimum: 800\nMaximum: 65534\nUnit: org.bluetooth.unit.thermodynamic_temperature.kelvin\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.heat_index",
+    "name": "Heat Index",
+    "description": "The Heat Index characteristic is used to represent the heat index.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Heat Index",
+        "type": "sint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius"
+      }
+    ]
+  }
+}

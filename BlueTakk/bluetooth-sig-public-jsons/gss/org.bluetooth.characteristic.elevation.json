@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.elevation",
+    "name": "Elevation",
+    "description": "The Elevation characteristic is used to represent the elevation. The elevation is relative to sea level unless otherwise specified in the service.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Elevation",
+        "type": "sint24",
+        "size": "3",
+        "description": "Base Unit: org.bluetooth.unit.length.meter\nRepresented values: M = 1, d = -2, b = 0\nUnit is in meters with a resolution of 0.01 m."
+      }
+    ]
+  }
+}

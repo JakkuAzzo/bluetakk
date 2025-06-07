@@ -1,0 +1,28 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": "Varies"
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 254
+    },
+    {
+      "parameter": "Value",
+      "size": "Varies",
+      "value": [
+        {
+          "key": "Octet 0--1",
+          "definition": "Extended Metadata Type"
+        },
+        {
+          "key": "Octet 2--254",
+          "definition": "Extended Metadata"
+        }
+      ]
+    }
+  ]
+}

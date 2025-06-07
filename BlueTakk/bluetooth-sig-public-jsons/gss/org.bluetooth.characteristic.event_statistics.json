@@ -1,0 +1,33 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.event_statistics",
+    "name": "Event Statistics",
+    "description": "The Event Statistics characteristic is used to represent statistical values of events.\nThe structure of this characteristic is defined below",
+    "structure": [
+      {
+        "field": "Number of Events",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Count 16 characteristic in \\autoref{sec:org.bluetooth.characteristic.count_16}"
+      },
+      {
+        "field": "Average Event Duration",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Time Second 16 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_second_16}"
+      },
+      {
+        "field": "Time Elapsed Since Last Event",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}"
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}"
+      }
+    ]
+  }
+}

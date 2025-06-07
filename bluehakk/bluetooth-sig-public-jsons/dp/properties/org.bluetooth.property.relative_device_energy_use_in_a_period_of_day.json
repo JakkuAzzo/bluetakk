@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_device_energy_use_in_a_period_of_day",
+    "name": "Relative Device Energy Use in a Period of Day",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.energy_in_a_period_of_day",
+    "description": "This property represents the energy use by a device over a period of time during the day. This property can be used to update a column in a bar chart.\nA period of time is represented with a start time of 0, which corresponds to midnight (local time), and the maximum value for the start time is 23.9.\nThe values reported represent the average values for these periods during the past 24 hours.\nExample use case: If the current time is 11:00AM, and an average is reported for a time period with a start value of 11.5 and an end value of 11.7 (corresponding to a time period from 11:30AM to 11:42AM), then that measurement represents the average energy use during that time period on the previous day.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Start Time"
+        },
+        {
+          "property": "Width",
+          "characteristic": "If End Time is greater than or equal to Start Time:\nEnd Time - Start Time\n\\vspace{1\\baselineskip} Otherwise:\nEnd Time - Start Time + 24"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Energy Value"
+        }
+      ]
+    }
+  }
+}

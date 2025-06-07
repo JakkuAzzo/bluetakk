@@ -1,0 +1,35 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_critical_status",
+    "name": "Battery Critical Status",
+    "description": "The Battery Critical Status characteristic is used to represent that the device will possibly not function as expected due to low energy or service required.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Battery Critical Status",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_critical_status/field/battery_critical_status}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Battery Critical Status",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Critical Power State"
+          },
+          {
+            "bit": "1",
+            "description": "Immediate Service Required"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

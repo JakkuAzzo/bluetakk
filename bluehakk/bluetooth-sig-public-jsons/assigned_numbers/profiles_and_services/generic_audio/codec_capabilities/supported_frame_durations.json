@@ -1,0 +1,40 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "value": [
+        {
+          "key": "Bit 0",
+          "definition": "7.5 ms frame duration",
+          "description": "0b1 = supported, 0b0 = not supported"
+        },
+        {
+          "key": "Bit 1",
+          "definition": "10 ms frame duration",
+          "description": "0b1 = supported, 0b0 = not supported"
+        },
+        {
+          "key": "Bit 4",
+          "definition": "7.5 ms preferred",
+          "description": "Valid only when 7.5 ms is supported and 10 ms is supported."
+        },
+        {
+          "key": "Bit 5",
+          "definition": "10 ms preferred",
+          "description": "Valid only when 7.5 ms is supported and 10 ms is supported."
+        }
+      ]
+    }
+  ]
+}

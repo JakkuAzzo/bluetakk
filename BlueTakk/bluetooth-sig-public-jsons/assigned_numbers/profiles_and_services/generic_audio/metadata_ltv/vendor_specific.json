@@ -1,0 +1,29 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": "Varies"
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 255
+    },
+    {
+      "parameter": "Value",
+      "size": "Varies",
+      "value": [
+        {
+          "key": "Octet 0--1",
+          "definition": "Company_ID",
+          "description": "Company ID values are defined in Bluetooth Assigned Numbers"
+        },
+        {
+          "key": "Octet 2--254",
+          "definition": "Vendor-Specific Metadata"
+        }
+      ]
+    }
+  ]
+}

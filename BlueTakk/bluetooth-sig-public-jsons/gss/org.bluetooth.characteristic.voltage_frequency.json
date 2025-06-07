@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.voltage_frequency",
+    "name": "Voltage Frequency",
+    "description": "The Voltage Frequency characteristic is used to represent power supply voltage frequency.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Voltage Frequency",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is hertz with resolution of 1.\nMinimum: 1\nMaximum: 65533\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.hertz\nA value of 0 represents DC power supply.\nA value of 0xFFFE represents \"value is not valid\".\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

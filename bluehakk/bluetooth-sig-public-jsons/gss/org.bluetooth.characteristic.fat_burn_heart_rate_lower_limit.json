@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.fat_burn_heart_rate_lower_limit",
+    "name": "Fat Burn Heart Rate Lower Limit",
+    "description": "The Fat Burn Heart Rate Lower Limit characteristic is used to represent the desired lower limit of the heart rate, where a user maximizes the fat burn while exercising.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Fat Burn Heart Rate Lower Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

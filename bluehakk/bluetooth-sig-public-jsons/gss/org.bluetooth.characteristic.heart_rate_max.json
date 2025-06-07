@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.heart_rate_max",
+    "name": "Heart Rate Max",
+    "description": "The Heart Rate Max characteristic is used to represent the maximum heart rate of a user which the user intends not to exceed.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Heart Rate Max",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_value_in_an_illuminance_range",
+    "name": "Relative Value in an Illuminance Range",
+    "description": "The Relative Value in an Illuminance Range characteristic is used to represent a relative value in an illuminance range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Minimum Illuminance",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to Illuminance characteristic in \\autoref{sec:org.bluetooth.characteristic.illuminance}"
+      },
+      {
+        "field": "Maximum Illuminance",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to Illuminance characteristic in \\autoref{sec:org.bluetooth.characteristic.illuminance}"
+      }
+    ]
+  }
+}

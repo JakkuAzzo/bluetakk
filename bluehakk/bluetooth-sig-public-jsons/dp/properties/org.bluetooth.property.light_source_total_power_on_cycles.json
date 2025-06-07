@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_total_power_on_cycles",
+    "name": "Light Source Total Power On Cycles",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property represents the number of times the light source has been turned on since manufacturing. This property is not resettable. It is useful for predictive maintenance."
+  }
+}

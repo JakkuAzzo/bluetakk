@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.torque",
+    "name": "Torque",
+    "description": "The Torque characteristic is used to represent the measured magnitude of torque (or moment of force) around a device-specific axis.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Torque",
+        "type": "sint32",
+        "size": "4",
+        "description": "Base Unit: org.bluetooth.unit.moment_of_force.newton_metre\nRepresented values: M = 1, d = - 2, b = 0\nUnit is Newton meters with a resolution of 0.01 Nm.\nTorque is positive when the force is applied in the clockwise direction around the given axis.\nA value of 0x7FFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

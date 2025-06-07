@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.four_zone_heart_rate_limits",
+    "name": "Four Zone Heart Rate Limits",
+    "description": "The Four Zone Heart Rate Limits characteristic is used to represent the limits between the heart rate zones for the four-zone heart rate definition (Maximum, Hard, Moderate, and Light) of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Four Zone Heart Rate Limits - Light / Moderate Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      },
+      {
+        "field": "Four Zone Heart Rate Limits - Moderate / Hard Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      },
+      {
+        "field": "Four Zone Heart Rate Limits - Hard / Maximum Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

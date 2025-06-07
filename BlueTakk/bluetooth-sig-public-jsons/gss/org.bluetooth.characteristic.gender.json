@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.gender",
+    "name": "Gender",
+    "description": "The Gender characteristic is used to represent the gender of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Gender",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Male\n1: Female\n2: Unspecified\n3\u2013255: Reserved for Future Use"
+      }
+    ]
+  }
+}

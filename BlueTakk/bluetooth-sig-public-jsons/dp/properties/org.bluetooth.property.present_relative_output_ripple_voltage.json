@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_relative_output_ripple_voltage",
+    "name": "Present Relative Output Ripple Voltage",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the relative ripple voltage value. The relative ripple voltage is the ripple voltage value divided by the average voltage (as reported by the Average Output Voltage property in \\autoref{sec:org.bluetooth.property.average_output_voltage}). These values could be used to monitor the performance of power supplies because an increase in the ripple voltage value could indicate that the capacitors in these power supplies are starting to fail.\nExample use case: To indicate an early sign of a power supply failure."
+  }
+}

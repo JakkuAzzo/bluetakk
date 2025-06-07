@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.external_supply_voltage",
+    "name": "External Supply Voltage",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.high_voltage",
+    "description": "This property represents the external supply voltage."
+  }
+}

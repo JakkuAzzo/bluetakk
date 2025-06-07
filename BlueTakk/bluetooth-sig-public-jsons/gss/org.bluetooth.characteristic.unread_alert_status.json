@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.unread_alert_status",
+    "name": "Unread Alert Status",
+    "description": "The Unread Alert Status characteristic is used to represent the number of unread alerts in the specific category.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Category ID",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Alert Category ID characteristic in \\autoref{sec:org.bluetooth.characteristic.alert_category_id}"
+      },
+      {
+        "field": "Unread Count",
+        "type": "uint8",
+        "size": "1",
+        "description": "This field provides the number of unread alerts in the server.\nThe range is 0\u2013254.\nThe value of 255 means that there are more than 254 unread alerts in the server."
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "protocol_parameters": [
+    {
+      "protocol": "L2CAP",
+      "name": "PSM",
+      "index": 1
+    },
+    {
+      "protocol": "RFCOMM",
+      "name": "Channel",
+      "index": 1
+    },
+    {
+      "protocol": "TCP",
+      "name": "Port",
+      "index": 1
+    },
+    {
+      "protocol": "UDP",
+      "name": "Port",
+      "index": 1
+    },
+    {
+      "protocol": "BNEP",
+      "name": "Version",
+      "index": 1
+    },
+    {
+      "protocol": "BNEP",
+      "name": "Supported Network Packet Type List",
+      "index": 2
+    }
+  ]
+}

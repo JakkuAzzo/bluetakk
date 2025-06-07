@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.average_input_voltage",
+    "name": "Average Input Voltage",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.average_voltage",
+    "description": "This property represents the average voltage for the element. It consists of the average voltage value and the averaging period."
+  }
+}

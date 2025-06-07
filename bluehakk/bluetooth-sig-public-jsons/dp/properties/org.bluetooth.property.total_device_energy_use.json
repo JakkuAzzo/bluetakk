@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_energy_use",
+    "name": "Total Device Energy Use",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.energy",
+    "description": "This property represents the total energy used by the device since meter reset. If the meter cannot be reset, then the energy usage value is the value measured over the lifetime of the element."
+  }
+}

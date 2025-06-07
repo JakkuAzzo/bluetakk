@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.average_input_current",
+    "name": "Average Input Current",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.average_current",
+    "description": "This property represents the average current for the element. It consists of the average current value and the averaging period."
+  }
+}

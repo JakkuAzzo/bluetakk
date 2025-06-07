@@ -1,0 +1,16 @@
+{
+  "attribute_ids": [
+    {
+      "name": "Supported Scenarios MPSD",
+      "value": 512
+    },
+    {
+      "name": "Supported Scenarios MPMD",
+      "value": 513
+    },
+    {
+      "name": "Supported Profile and Protocol Dependecies",
+      "value": 514
+    }
+  ]
+}

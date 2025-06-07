@@ -1,0 +1,32 @@
+{
+  "presence": [
+    {
+      "name": "Unknown",
+      "value": 0
+    },
+    {
+      "name": "Offline",
+      "value": 1
+    },
+    {
+      "name": "Online",
+      "value": 2
+    },
+    {
+      "name": "Away",
+      "value": 3
+    },
+    {
+      "name": "Do Not Disturb",
+      "value": 4
+    },
+    {
+      "name": "Busy",
+      "value": 5
+    },
+    {
+      "name": "In a Meeting",
+      "value": 6
+    }
+  ]
+}

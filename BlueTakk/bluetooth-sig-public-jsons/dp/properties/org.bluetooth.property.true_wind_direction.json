@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.true_wind_direction",
+    "name": "True Wind Direction",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.true_wind_direction",
+    "description": "This property represents the true wind direction as measured by the device."
+  }
+}

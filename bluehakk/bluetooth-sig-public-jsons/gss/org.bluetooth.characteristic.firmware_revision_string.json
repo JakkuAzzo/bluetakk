@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.firmware_revision_string",
+    "name": "Firmware Revision String",
+    "description": "The Firmware Revision String characteristic is used to represent the revision of the firmware within the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Firmware Revision",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

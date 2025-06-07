@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.average_ambient_temperature_in_a_period_of_day",
+    "name": "Average Ambient Temperature in a Period of Day",
+    "group": "org.bluetooth.property_group.ambient_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_8_in_a_period_of_day",
+    "description": "This property represents an average ambient temperature measured over a period of time during the day.\nA period of time is represented with a start time of 0, which corresponds to midnight (local time), and the maximum value for the end time is 23.9. The values reported represent the measured average values for the periods in the past 24 hours.\nExample use case: If the current time is 11:00, and an average is reported for a time period with a start value of 11.5 and with an end value of 11.6 (corresponding to a time period from 11:30 to 11:36), then that measurement represents the average temperature of that time period during the previous day.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Start Time"
+        },
+        {
+          "property": "Width",
+          "characteristic": "If End Time is greater than or equal to Start Time:\nEnd Time - Start Time\n\\vspace{1\\baselineskip} Otherwise:\nEnd Time - Start Time + 24"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Temperature"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.sport_type_for_aerobic_and_anaerobic_thresholds",
+    "name": "Sport Type for Aerobic and Anaerobic Thresholds",
+    "description": "The Sport Type for Aerobic and Anaerobic Thresholds characteristic is used to represent the sport type applicable to aerobic and anaerobic thresholds for a user. The value identifies how the measurement(s) were performed. The Aerobic Threshold and Anaerobic Threshold characteristics together with the Sport Type For Aerobic And Anaerobic Thresholds characteristic describe the metabolic thresholds of the user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Sport Type for Aerobic and Anaerobic Thresholds",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.sport_type_for_aerobic_and_anaerobic_thresholds/field/sport_type_for_aerobic_and_anaerobic_thresholds}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Sport Type for Aerobic and Anaerobic Thresholds",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Unspecified"
+          },
+          {
+            "value": "1",
+            "description": "Running (Treadmill)"
+          },
+          {
+            "value": "2",
+            "description": "Cycling (Ergometer)"
+          },
+          {
+            "value": "3",
+            "description": "Rowing (Ergometer)"
+          },
+          {
+            "value": "4",
+            "description": "Cross Training (Elliptical)"
+          },
+          {
+            "value": "5",
+            "description": "Climbing"
+          },
+          {
+            "value": "6",
+            "description": "Skiing"
+          },
+          {
+            "value": "7",
+            "description": "Skating"
+          },
+          {
+            "value": "8",
+            "description": "Arm exercising"
+          },
+          {
+            "value": "9",
+            "description": "Lower body exercising"
+          },
+          {
+            "value": "10",
+            "description": "Upper body exercising"
+          },
+          {
+            "value": "11",
+            "description": "Whole body exercising"
+          },
+          {
+            "value": "12\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

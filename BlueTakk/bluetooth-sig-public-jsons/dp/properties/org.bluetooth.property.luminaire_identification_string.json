@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_identification_string",
+    "name": "Luminaire Identification String",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_64",
+    "description": "This property represents the luminaire identification string."
+  }
+}

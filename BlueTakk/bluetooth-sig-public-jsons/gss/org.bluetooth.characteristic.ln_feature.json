@@ -1,0 +1,111 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.ln_feature",
+    "name": "LN Feature",
+    "description": "The LN Feature characteristic is used to represent the supported features of a location and navigation (LN) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "LN Feature",
+        "type": "boolean[32]",
+        "size": "4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.ln_feature/field/ln_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "LN Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Instantaneous Speed Supported"
+          },
+          {
+            "bit": "1",
+            "description": "Total Distance Supported"
+          },
+          {
+            "bit": "2",
+            "description": "Location Supported"
+          },
+          {
+            "bit": "3",
+            "description": "Elevation Supported"
+          },
+          {
+            "bit": "4",
+            "description": "Heading Supported"
+          },
+          {
+            "bit": "5",
+            "description": "Rolling Time Supported"
+          },
+          {
+            "bit": "6",
+            "description": "UTC Time Supported"
+          },
+          {
+            "bit": "7",
+            "description": "Remaining Distance Supported"
+          },
+          {
+            "bit": "8",
+            "description": "Remaining Vertical Distance Supported"
+          },
+          {
+            "bit": "9",
+            "description": "Estimated Time of Arrival Supported"
+          },
+          {
+            "bit": "10",
+            "description": "Number of Beacons in Solution Supported"
+          },
+          {
+            "bit": "11",
+            "description": "Number of Beacons in View Supported"
+          },
+          {
+            "bit": "12",
+            "description": "Time to First Fix Supported"
+          },
+          {
+            "bit": "13",
+            "description": "Estimated Horizontal Position Error Supported"
+          },
+          {
+            "bit": "14",
+            "description": "Estimated Vertical Position Error Supported"
+          },
+          {
+            "bit": "15",
+            "description": "Horizontal Dilution of Precision Supported"
+          },
+          {
+            "bit": "16",
+            "description": "Vertical Dilution of Precision Supported"
+          },
+          {
+            "bit": "17",
+            "description": "Location and Speed Characteristic Content Masking Supported"
+          },
+          {
+            "bit": "18",
+            "description": "Fix Rate Setting Supported"
+          },
+          {
+            "bit": "19",
+            "description": "Elevation Setting Supported"
+          },
+          {
+            "bit": "20",
+            "description": "Position Status Supported"
+          },
+          {
+            "bit": "21\u201331",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

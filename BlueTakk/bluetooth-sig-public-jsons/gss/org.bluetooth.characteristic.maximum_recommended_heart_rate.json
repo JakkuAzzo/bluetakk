@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.maximum_recommended_heart_rate",
+    "name": "Maximum Recommended Heart Rate",
+    "description": "The Maximum Recommended Heart Rate characteristic is used to represent the maximum recommended heart rate of a user. Maximum recommended heart rate is a threshold that is intended to be set to limit exertion. The maximum recommended heart rate is less than or equal to the maximum heart rate recommended for a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Maximum Recommended Heart Rate",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

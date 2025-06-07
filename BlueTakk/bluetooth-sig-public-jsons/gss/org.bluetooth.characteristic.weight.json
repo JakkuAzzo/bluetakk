@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.weight",
+    "name": "Weight",
+    "description": "The Weight characteristic is used to represent the weight of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Weight",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.mass.kilogram\nRepresented values: M = 5, d = -3, b = 0\nUnit is 0.005 kilogram."
+      }
+    ]
+  }
+}

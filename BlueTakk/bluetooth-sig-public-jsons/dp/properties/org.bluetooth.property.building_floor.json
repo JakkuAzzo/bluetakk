@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.building_floor",
+    "name": "Building Floor",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.floor_number",
+    "description": "This property represents the building floor where the device is located. If the device does not have a fixed location, the property should be set to the value 255, which means \"no floor number is configured\"."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.chromaticity_tolerance",
+    "name": "Chromaticity Tolerance",
+    "description": "The Chromaticity Tolerance characteristic is used to represent the tolerance of a tuple of chromaticity values. This tolerance represents the value of a radius of a circle in the CIE 1976 \\RefRef{cie_1976} (u\u2019,v\u2019) diagram. This tolerance value corresponds to the 3-sigma values of the expected chromaticity deviations.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Chromaticity Tolerance",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is unitless with a resolution of 0.0001\nMinimum: 0\nMaximum: 0.0255\nRepresented values: M = 1, d = -4, b = 0"
+      }
+    ]
+  }
+}

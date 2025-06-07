@@ -1,0 +1,42 @@
+bleak_stats.py script: 
+Provides all current information about currently connectted bluetooth devices:
+matlab diagrams, 
+json file of details for the current invoke / session 
+
+bleak_stats.py can be called by other scripts in this project such as :
+bleak_connect.py (used to connect to a bluetooth device), 
+bleak_discover.py (used to list nearby devices), 
+bleak_reverseshell.py (used to create a shell for the currently connected device)
+
+bluehakk.py (cli application) that can run bleak_discover.py to show devices nearby  and list them in a numbered list of device name and address.
+(upon entering the number corresponding to that device, further details about that device should be shown as well as an option to connect (y/n).) 
+
+This should then use bleak_connect.py to connect to the selected device and list details about the connection, 
+(there should be 1 minute max wait time for a successful connection, if failed it should show failed to connect to device and go back to the main screen.) 
+
+when connectted to a device successfully, an option should be available called bleak_reverseshell.py 
+(which should attempt to create a shell where bluetooth commands can be run on the device such as shutdown, AT+BOND.. etc...) 
+
+During all of these steps bleak_stats.py should be available to run which should output current static and active details to matplot charts. 
+
+–––––  
+### How It Works
+
+- **bluehakk.py**  
+  When the user selects "rs" after connecting to a device, the script calls blueshell.py, passing the connected device’s address and name as arguments.
+
+- **blueshell.py**  
+  On start, blueshell.py reads command‑line arguments and uses `bleak_discover_2.get_shell_service_uuids()` (an assumed helper function in your workspace) to retrieve the UUIDs needed for the shell service. The shell session then uses these UUIDs to start notifications and send/receive shell commands.
+
+Make sure that bleak_discover_2.py implements the function `get_shell_service_uuids(device_address)` so that blueshell.py can retrieve the required UUIDs.
+
+
+1. modify all uuids discovered so that they always show the 48-bit and 16-bit address for them and that they are figured out. 
+2. use multithreading to allow quicker scanning and testing. 
+3. modify to remove legacy constructs ex. "BLEDevice.metadata is deprecated and will be removed in a future version of Bleak, use AdvertisementData instead"
+4. fix print statement in chipset_discovery_tool.py to show the chipset dict
+
+Utility Scripts:
+update_bluetooth_sig_jsons.py will pull the latest hex codes and references and convert them to json so discovered devices, services and uuids can be identified in detail via deepBle detailed scans
+For Windows - Bluetooth Test Platform is required to sniff packets on wireshark - https://learn.microsoft.com/en-us/windows-hardware/drivers/bluetooth/testing-btp-setup-package
+For Mac - Bluetooth packets can only be sniffed using packetlogger on wireshark - https://developer.apple.com/bug-reporting/profiles-and-logs/?name=bluetooth

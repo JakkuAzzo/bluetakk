@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_value_in_a_voltage_range",
+    "name": "Relative Value in a Voltage Range",
+    "description": "The Relative Value in a Voltage Range characteristic is used to represent a relative value in a voltage range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Minimum Voltage",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      },
+      {
+        "field": "Maximum Voltage",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      }
+    ]
+  }
+}

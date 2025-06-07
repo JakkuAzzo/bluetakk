@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.luminous_flux_range",
+    "name": "Luminous Flux Range",
+    "description": "The Luminous Flux Range characteristic is used to represent a luminous flux range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Luminous Flux",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Luminous Flux characteristic in \\autoref{sec:org.bluetooth.characteristic.luminous_flux}"
+      },
+      {
+        "field": "Maximum Luminous Flux",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Luminous Flux characteristic in \\autoref{sec:org.bluetooth.characteristic.luminous_flux}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.volume_flow",
+    "name": "Volume Flow",
+    "description": "The Volume Flow characteristic is used to represent a flow of a general volume such as a volume of material or gas.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Volume Flow",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is liter/second with a resolution of 0.001 (1 milliliter).\nMinimum: 0\nMaximum: 65534\nRepresented values: M = 1, d = -3, b = 0\nUnit: org.bluetooth.unit.volume_flow.litre_per_second\nA value of 0xFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

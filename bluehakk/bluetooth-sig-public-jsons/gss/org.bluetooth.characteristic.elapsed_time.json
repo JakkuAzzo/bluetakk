@@ -1,0 +1,65 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.elapsed_time",
+    "name": "Elapsed Time",
+    "description": "The Elapsed Time characteristic is used to represent the current time of a clock or tick counter at the time an event occurred. The Time Value allows easy calculation of time differences and easy comparison of times. The characteristic is a fixed-size structure that provides sufficient information to interpret the reported time in many contexts.\n\\newpage\nThe flags determine if the Time Value represents a tick counter, UTC time or local time. The following formula gives the relation between local time and UTC time{{:}}\n\\hspace{1cm} \\textit{Local time} = \\textit{UTC time} + \\textit{TZ/DST Offset} * \\textit{15 minutes}\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.elapsed_time/field/flags}."
+      },
+      {
+        "field": "Time Value",
+        "type": "uint48",
+        "size": "6",
+        "description": "The actual time value in the resolution as defined by the flags.\nThe Time Value field contains a counter of the number of time units as determined by the time resolution of the clock. The starting point of the timeline is 2000-01-01 00:00:00 when reporting a time of day or is implementation-dependent for a tick counter."
+      },
+      {
+        "field": "Time Sync Source Type",
+        "type": "uint8",
+        "size": "1",
+        "description": "The type of time source used for synchronization. See \\autoref{sec:org.bluetooth.characteristic.time_source} for the supported values.\nThis field has no meaning for a tick counter."
+      },
+      {
+        "field": "TZ/DST Offset",
+        "type": "sint8",
+        "size": "1",
+        "description": "Combined TZ/DST offset from UTC in 15-minute units.\nThis field has no meaning for a tick counter and is relevant only when the TZ/DST offset used flag is set."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Time is a tick counter\n0 = Time Value reports a time of day\n1 = Time Value reports a counter (also known as \"relative time\")"
+          },
+          {
+            "bit": "1",
+            "description": "Time is UTC\n0 = Time Value reports local time\n1 = Time Value reports UTC \nThis field has no meaning for a tick counter."
+          },
+          {
+            "bit": "2-3",
+            "description": "Time resolution\n00 = 1 second\n01 = 100 milliseconds\n10 = 1 millisecond\n11 = 100 microseconds"
+          },
+          {
+            "bit": "4",
+            "description": "TZ/DST offset is used\n0 = TZ/DST offset is not used \n1 = TZ/DST offset is used\nThis field has no meaning for a tick counter."
+          },
+          {
+            "bit": "5",
+            "description": "Time stamp is from the current timeline\n0 = Time stamp is not from the current timeline\n1 = Time stamp is from the current timeline\nThis bit indicates if the time comes from the current timeline as reported by the clock that is used for keeping track of time."
+          },
+          {
+            "bit": "6-7",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

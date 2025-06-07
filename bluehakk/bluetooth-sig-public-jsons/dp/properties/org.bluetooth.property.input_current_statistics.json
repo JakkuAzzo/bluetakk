@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.input_current_statistics",
+    "name": "Input Current Statistics",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.electric_current_statistics",
+    "description": "This property represents the average, standard deviation, minimum, and maximum values of the input current and the data recording period."
+  }
+}

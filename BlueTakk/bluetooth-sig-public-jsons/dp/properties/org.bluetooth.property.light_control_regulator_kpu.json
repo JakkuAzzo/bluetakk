@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_regulator_kpu",
+    "name": "Light Control Regulator Kpu",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.coefficient",
+    "description": "This property represents the proportional coefficient K_p in an increasing output operation mode of a proportional-integral light controller. This represents the proportional coefficient when the light is increasing its light output \u2014 indicated by the third character, u (\u201cup\u201d), in Kpu, as opposed to the coefficient used when the light output is decreasing, indicated by the third character, d (\u201cdown\u201d), in Kpd."
+  }
+}

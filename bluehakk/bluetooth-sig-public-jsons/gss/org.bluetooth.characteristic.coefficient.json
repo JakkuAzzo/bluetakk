@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.coefficient",
+    "name": "Coefficient",
+    "description": "The Coefficient characteristic is used to represent a general coefficient value.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Coefficient",
+        "type": "float32",
+        "size": "4",
+        "description": "Unit is unitless."
+      }
+    ]
+  }
+}

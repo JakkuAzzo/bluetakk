@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_inclination_range",
+    "name": "Supported Inclination Range",
+    "description": "The Supported Inclination Range characteristic is used to represent the inclination range supported by a fitness machine.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Inclination",
+        "type": "sint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.percentage\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 of a percent"
+      },
+      {
+        "field": "Maximum Inclination",
+        "type": "sint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.percentage\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 of a percent"
+      },
+      {
+        "field": "Minimum Increment",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.percentage\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 of a percent"
+      }
+    ]
+  }
+}

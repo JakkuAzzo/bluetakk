@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.input_voltage_range_specification",
+    "name": "Input Voltage Range Specification",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.voltage_specification",
+    "description": "This property represents the minimum, typical, and maximum input voltage range as specified for a device.\nExample use case: When these values are used together with the measured input voltages, verifying whether the device is operating within specification."
+  }
+}

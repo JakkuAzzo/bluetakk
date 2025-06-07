@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.acceleration",
+    "name": "Acceleration",
+    "description": "The Acceleration characteristic is used to represent the acceleration of an object along a given axis as determined by the service.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Acceleration",
+        "type": "sint32",
+        "size": "4",
+        "description": "Base Unit:\norg.bluetooth.unit.acceleration.metres_per_seconds_squared\nRepresented values: M = 1, d = -3, b = 0\nUnit is meter per second squared with a resolution of 1mm per second squared.\nA value of 0x7FFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_source",
+    "name": "Time Source",
+    "description": "The Time Source characteristic is used to represent the type of time source that is used for reference time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Source",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.time_source/field/time_source_values}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Time Source values",
+        "description": "The values of this field are defined below.",
+        "section_title": "Time Source values",
+        "table_caption": "Time Source field",
+        "description_header": "Description",
+        "values": [
+          {
+            "value": "0",
+            "definition": "Unknown",
+            "description": "A time source not listed in the following categories or an otherwise unknown time source"
+          },
+          {
+            "value": "1",
+            "definition": "Network Time Protocol",
+            "description": "Any version of the (Simple) Network Time Protocol"
+          },
+          {
+            "value": "2",
+            "definition": "GPS",
+            "description": "A time source based on GPS information (GPS, Galileo, GLONASS, BeiDou, or similar)"
+          },
+          {
+            "value": "3",
+            "definition": "Radio Time Signal",
+            "description": "(Atomic) Clock synchronized through RF (in most cases the same as Time Source value 5 - Atomic Clock)"
+          },
+          {
+            "value": "4",
+            "definition": "Manual",
+            "description": "A manually set time, by 'eyeball and wristwatch'"
+          },
+          {
+            "value": "5",
+            "definition": "Atomic Clock",
+            "description": "Atomic Clock (synchronized through RF) (legacy, in most cases the same as Time Source value 3 - Radio Time Signal)"
+          },
+          {
+            "value": "6",
+            "definition": "Cellular Network",
+            "description": "A mobile network clock (GSM, CDMA, 4G, or similar)"
+          },
+          {
+            "value": "7",
+            "definition": "Not Synchronized",
+            "description": "The clock is not synchronized"
+          },
+          {
+            "value": "8-255",
+            "definition": "Reserved for Future Use",
+            "description": "-"
+          }
+        ]
+      }
+    ]
+  }
+}

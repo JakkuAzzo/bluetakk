@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.database_change_increment",
+    "name": "Database Change Increment",
+    "description": "The Database Change Increment characteristic is used to represent a count of the changes made to a set of related characteristic(s) as defined by the containing service. It is used to determine the need to synchronize this set between a Server and a Client.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Database Change Increment",
+        "type": "uint32",
+        "size": "4",
+        "description": "Unit: org.bluetooth.unit.unitless\nThe Database Change Increment is a unitless integer value."
+      }
+    ]
+  }
+}

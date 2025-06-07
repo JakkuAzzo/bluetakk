@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.day_date_time",
+    "name": "Day Date Time",
+    "description": "The Day Date Time characteristic is used to represent weekday, date, and time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Date Time",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to the Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}"
+      },
+      {
+        "field": "Day of Week",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Day of Week characteristic in \\autoref{sec:org.bluetooth.characteristic.day_of_week}"
+      }
+    ]
+  }
+}

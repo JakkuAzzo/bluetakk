@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.open_circuit_event_statistics",
+    "name": "Open Circuit Event Statistics",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents the open circuit event statistics and is composed of four fields. The Number of Events field represents the count of open circuit events. The Average Event Duration field represents the average duration of all the open circuit events in the data-recording period. The Time Elapsed Since Last Event field represents the time elapsed since the last open circuit event occurred. The Sensing Duration field represents the total data-recording period."
+  }
+}

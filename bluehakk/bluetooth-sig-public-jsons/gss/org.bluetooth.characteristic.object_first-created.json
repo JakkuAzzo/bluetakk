@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.object_first-created",
+    "name": "Object First-Created",
+    "description": "The Object First-Created characteristic is used to represent the date and time when the associated object\u2019s contents were first created.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Object First Created",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}."
+      }
+    ]
+  }
+}

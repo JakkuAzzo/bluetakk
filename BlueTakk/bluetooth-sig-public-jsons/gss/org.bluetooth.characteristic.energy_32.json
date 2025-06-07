@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.energy_32",
+    "name": "Energy 32",
+    "description": "The Energy 32 characteristic is used to represent a measure of energy.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Energy 32",
+        "type": "uint32",
+        "size": "4",
+        "description": "Unit is kilowatt-hour with a resolution of 1 Watt\u2013hour.\nMinimum: 0\nMaximum: 4294967.293\nRepresented values: M = 1, d = -3, b = 0\nUnit: org.bluetooth.unit.energy.kilowatt_hour\nA value of 0xFFFFFFFE represents \"value is not valid\".\nA value of 0xFFFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

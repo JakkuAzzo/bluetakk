@@ -1,0 +1,45 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.date_time",
+    "name": "Date Time",
+    "description": "The Date Time characteristic is used to represent date and time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Year",
+        "type": "uint16",
+        "size": "2",
+        "description": "Year as defined by the Gregorian calendar. Valid range 1582 to 9999. A value of 0 means that the year is not known. All other values are Reserved for Future Use."
+      },
+      {
+        "field": "Month",
+        "type": "uint8",
+        "size": "1",
+        "description": "Month of the year as defined by the Gregorian calendar. Valid range 1 (January) to 12 (December). A value of 0 means that the month is not known. All other values are Reserved for Future Use."
+      },
+      {
+        "field": "Day",
+        "type": "uint8",
+        "size": "1",
+        "description": "Day of the month as defined by the Gregorian calendar. Valid range 1 to 31. A value of 0 means that the day of month is not known. All other values are Reserved for Future Use."
+      },
+      {
+        "field": "Hours",
+        "type": "uint8",
+        "size": "1",
+        "description": "Number of hours past midnight. Valid range 0 to 23. All other values are Reserved for Future Use."
+      },
+      {
+        "field": "Minutes",
+        "type": "uint8",
+        "size": "1",
+        "description": "Number of minutes since the start of the hour. Valid range 0 to 59. All other values are Reserved for Future Use."
+      },
+      {
+        "field": "Seconds",
+        "type": "uint8",
+        "size": "1",
+        "description": "Number of seconds since the start of the minute. Valid range 0 to 59. All other values are Reserved for Future Use."
+      }
+    ]
+  }
+}

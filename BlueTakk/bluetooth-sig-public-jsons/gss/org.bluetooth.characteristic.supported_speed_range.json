@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_speed_range",
+    "name": "Supported Speed Range",
+    "description": "The Supported Speed Range characteristic is used to represent the speed range supported by a fitness machine.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Speed",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.kilometre_per_hour\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a kilometer per hour"
+      },
+      {
+        "field": "Maximum Speed",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.kilometre_per_hour\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a kilometer per hour"
+      },
+      {
+        "field": "Minimum Increment",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.kilometre_per_hour\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a kilometer per hour"
+      }
+    ]
+  }
+}

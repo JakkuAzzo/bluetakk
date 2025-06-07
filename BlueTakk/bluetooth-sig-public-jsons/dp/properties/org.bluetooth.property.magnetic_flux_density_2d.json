@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.magnetic_flux_density_2d",
+    "name": "Magnetic Flux Density - 2D",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.magnetic_flux_density_2d",
+    "description": "This property represents the magnetic flux density in two dimensions as measured by the device for two orthogonal axes: X and Y."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.magnetic_declination",
+    "name": "Magnetic Declination",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.magnetic_declination",
+    "description": "This property represents the magnetic declination as measured by the device."
+  }
+}

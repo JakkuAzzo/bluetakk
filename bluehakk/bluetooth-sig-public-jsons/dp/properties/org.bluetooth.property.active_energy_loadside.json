@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.active_energy_loadside",
+    "name": "Active Energy Loadside",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.energy_32",
+    "description": "This property represents the active energy loadside used by the device to either change it into work and heat in alternating current or into work in direct current."
+  }
+}

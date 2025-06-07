@@ -1,0 +1,120 @@
+{
+  "audio_location_definitions": [
+    {
+      "value": 0,
+      "audio_location": "Mono Audio (no specified Audio Location)"
+    },
+    {
+      "value": 1,
+      "audio_location": "Front Left"
+    },
+    {
+      "value": 2,
+      "audio_location": "Front Right"
+    },
+    {
+      "value": 4,
+      "audio_location": "Front Center"
+    },
+    {
+      "value": 8,
+      "audio_location": "Low Frequency Effects 1"
+    },
+    {
+      "value": 16,
+      "audio_location": "Back Left"
+    },
+    {
+      "value": 32,
+      "audio_location": "Back Right"
+    },
+    {
+      "value": 64,
+      "audio_location": "Front Left of Center"
+    },
+    {
+      "value": 128,
+      "audio_location": "Front Right of Center"
+    },
+    {
+      "value": 256,
+      "audio_location": "Back Center"
+    },
+    {
+      "value": 512,
+      "audio_location": "Low Frequency Effects 2"
+    },
+    {
+      "value": 1024,
+      "audio_location": "Side Left"
+    },
+    {
+      "value": 2048,
+      "audio_location": "Side Right"
+    },
+    {
+      "value": 4096,
+      "audio_location": "Top Front Left"
+    },
+    {
+      "value": 8192,
+      "audio_location": "Top Front Right"
+    },
+    {
+      "value": 16384,
+      "audio_location": "Top Front Center"
+    },
+    {
+      "value": 32768,
+      "audio_location": "Top Center"
+    },
+    {
+      "value": 65536,
+      "audio_location": "Top Back Left"
+    },
+    {
+      "value": 131072,
+      "audio_location": "Top Back Right"
+    },
+    {
+      "value": 262144,
+      "audio_location": "Top Side Left"
+    },
+    {
+      "value": 524288,
+      "audio_location": "Top Side Right"
+    },
+    {
+      "value": 1048576,
+      "audio_location": "Top Back Center"
+    },
+    {
+      "value": 2097152,
+      "audio_location": "Bottom Front Center"
+    },
+    {
+      "value": 4194304,
+      "audio_location": "Bottom Front Left"
+    },
+    {
+      "value": 8388608,
+      "audio_location": "Bottom Front Right"
+    },
+    {
+      "value": 16777216,
+      "audio_location": "Front Left Wide"
+    },
+    {
+      "value": 33554432,
+      "audio_location": "Front Right Wide"
+    },
+    {
+      "value": 67108864,
+      "audio_location": "Left Surround"
+    },
+    {
+      "value": 134217728,
+      "audio_location": "Right Surround"
+    }
+  ]
+}

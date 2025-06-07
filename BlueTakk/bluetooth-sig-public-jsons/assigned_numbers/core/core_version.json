@@ -1,0 +1,64 @@
+{
+  "core_version": [
+    {
+      "value": 0,
+      "name": "Bluetooth\u00ae Core Specification 1.0b (Withdrawn)"
+    },
+    {
+      "value": 1,
+      "name": "Bluetooth\u00ae Core Specification 1.1 (Withdrawn)"
+    },
+    {
+      "value": 2,
+      "name": "Bluetooth\u00ae Core Specification 1.2 (Withdrawn)"
+    },
+    {
+      "value": 3,
+      "name": "Bluetooth\u00ae Core Specification 2.0+EDR (Withdrawn)"
+    },
+    {
+      "value": 4,
+      "name": "Bluetooth\u00ae Core Specification 2.1+EDR (Withdrawn)"
+    },
+    {
+      "value": 5,
+      "name": "Bluetooth\u00ae Core Specification 3.0+HS (Withdrawn)"
+    },
+    {
+      "value": 6,
+      "name": "Bluetooth\u00ae Core Specification 4.0 (Withdrawn)"
+    },
+    {
+      "value": 7,
+      "name": "Bluetooth\u00ae Core Specification 4.1 (Deprecated)"
+    },
+    {
+      "value": 8,
+      "name": "Bluetooth\u00ae Core Specification 4.2"
+    },
+    {
+      "value": 9,
+      "name": "Bluetooth\u00ae Core Specification 5.0"
+    },
+    {
+      "value": 10,
+      "name": "Bluetooth\u00ae Core Specification 5.1"
+    },
+    {
+      "value": 11,
+      "name": "Bluetooth\u00ae Core Specification 5.2"
+    },
+    {
+      "value": 12,
+      "name": "Bluetooth\u00ae Core Specification 5.3"
+    },
+    {
+      "value": 13,
+      "name": "Bluetooth\u00ae Core Specification 5.4"
+    },
+    {
+      "value": 14,
+      "name": "Bluetooth\u00ae Core Specification 6.0"
+    }
+  ]
+}

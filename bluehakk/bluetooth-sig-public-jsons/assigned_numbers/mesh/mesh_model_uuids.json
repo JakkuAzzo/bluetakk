@@ -1,0 +1,114 @@
+{
+  "mesh_model_uuids": [
+    {
+      "name": "Configuration Server",
+      "uuid": 0,
+      "type": "foundation"
+    },
+    {
+      "name": "Configuration Client",
+      "uuid": 1,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Server",
+      "uuid": 2,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Client",
+      "uuid": 3,
+      "type": "foundation"
+    },
+    {
+      "name": "Directed Forwarding Configuration Server",
+      "uuid": 6,
+      "type": "foundation"
+    },
+    {
+      "name": "Directed Forwarding Configuration Client",
+      "uuid": 7,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Server",
+      "uuid": 4,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Client",
+      "uuid": 5,
+      "type": "foundation"
+    },
+    {
+      "name": "Bridge Configuration Server",
+      "uuid": 8,
+      "type": "foundation"
+    },
+    {
+      "name": "Bridge Configuration Client",
+      "uuid": 9,
+      "type": "foundation"
+    },
+    {
+      "name": "Mesh Private Beacon Server",
+      "uuid": 10,
+      "type": "foundation"
+    },
+    {
+      "name": "Mesh Private Beacon Client",
+      "uuid": 11,
+      "type": "foundation"
+    },
+    {
+      "name": "On-Demand Private Proxy Server",
+      "uuid": 12,
+      "type": "foundation"
+    },
+    {
+      "name": "On-Demand Private Proxy Client",
+      "uuid": 13,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR Configuration Server",
+      "uuid": 14,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR Configuration Client",
+      "uuid": 15,
+      "type": "foundation"
+    },
+    {
+      "name": "Opcodes Aggregator Server",
+      "uuid": 16,
+      "type": "foundation"
+    },
+    {
+      "name": "Opcodes Aggregator Client",
+      "uuid": 17,
+      "type": "foundation"
+    },
+    {
+      "name": "Large Composition Data Server",
+      "uuid": 18,
+      "type": "foundation"
+    },
+    {
+      "name": "Large Composition Data Client",
+      "uuid": 19,
+      "type": "foundation"
+    },
+    {
+      "name": "Solicitation PDU RPL Configuration Server",
+      "uuid": 20,
+      "type": "foundation"
+    },
+    {
+      "name": "Solicitation PDU RPL Configuration Client",
+      "uuid": 21,
+      "type": "foundation"
+    }
+  ]
+}

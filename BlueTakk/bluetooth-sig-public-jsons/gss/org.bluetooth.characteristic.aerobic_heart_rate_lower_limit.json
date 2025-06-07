@@ -1,0 +1,16 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.aerobic_heart_rate_lower_limit",
+    "name": "Aerobic Heart Rate Lower Limit",
+    "description": "The Aerobic Heart Rate Lower Limit characteristic is used to represent the desired lower limit of the heart rate, where a user enhances his or her endurance while exercising.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Aerobic Heart Rate Lower Limit",
+        "type": "uint8",
+        "size": "1",
+        "unit": "org.bluetooth.unit.period.beats_per_minute",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

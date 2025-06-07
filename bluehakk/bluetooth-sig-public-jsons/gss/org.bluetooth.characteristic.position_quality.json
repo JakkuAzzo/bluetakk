@@ -1,0 +1,101 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.position_quality",
+    "name": "Position Quality",
+    "description": "The Position Quality characteristic is used to represent data related to the quality of a position measurement.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.position_quality/field/flags}"
+      },
+      {
+        "field": "Number of Beacons in Solution",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.unitless\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Number of Beacons in View",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.unitless\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Time to First Fix",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 seconds\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "EHPE",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 m\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "EVPE",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 m\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "HDOP",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 2, d = -1, b = 0\nPresent if bit 5 of Flags field is set to 1"
+      },
+      {
+        "field": "VDOP",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 2, d = -1, b = 0\nPresent if bit 6 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Number of Beacons in Solution Present"
+          },
+          {
+            "bit": "1",
+            "description": "Number of Beacons in View Present"
+          },
+          {
+            "bit": "2",
+            "description": "Time to First Fix Present"
+          },
+          {
+            "bit": "3",
+            "description": "EHPE Present"
+          },
+          {
+            "bit": "4",
+            "description": "EVPE Present"
+          },
+          {
+            "bit": "5",
+            "description": "HDOP Present"
+          },
+          {
+            "bit": "6",
+            "description": "VDOP Present"
+          },
+          {
+            "bit": "7\u20138",
+            "description": "Position Status:\n0b00 = No Position\n0b01 = Position Ok\n0b10 = Estimated Position\n0b11 = Last Known Position"
+          },
+          {
+            "bit": "9\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

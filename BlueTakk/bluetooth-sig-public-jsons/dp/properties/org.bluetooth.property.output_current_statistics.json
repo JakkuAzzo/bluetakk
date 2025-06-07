@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_current_statistics",
+    "name": "Output Current Statistics",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.electric_current_statistics",
+    "description": "This property represents a set of statistical values for the output current of a device. It consists of five fields. The Average Electric Current Value field represents the average current of a series of measured current values over a period of time. The Standard Deviation Electric Current Value field represents the standard deviation of a series of measured current values over a period of time. The Minimum Electric Current Value field represents the minimum of a series of measured current values over a period of time. The Maximum Electric Current Value field represents the maximum of a series of measured current values over a period of time. The Sensing Duration field represents the total data-recording period."
+  }
+}

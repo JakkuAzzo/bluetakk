@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.nominal_light_output",
+    "name": "Nominal Light Output",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.light_output",
+    "description": "This property represents the nominal light output of the light source."
+  }
+}

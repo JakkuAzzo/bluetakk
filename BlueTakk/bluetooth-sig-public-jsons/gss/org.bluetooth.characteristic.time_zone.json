@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_zone",
+    "name": "Time Zone",
+    "description": "The Time Zone characteristic is used to represent the time difference in 15-minute increments between local standard time and UTC.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Zone",
+        "type": "sint8",
+        "size": "1",
+        "description": "This field represents the offset from UTC in number of 15-minute increments.\nValid range from -48 to +56.\nA value of -128 means that the time zone offset is not known.\nAll other values are Reserved for Future Use.\nThe offset defined in this characteristic is constant regardless of whether daylight savings is in effect."
+      }
+    ]
+  }
+}

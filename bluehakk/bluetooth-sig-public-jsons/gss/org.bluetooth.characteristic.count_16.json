@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.count_16",
+    "name": "Count 16",
+    "description": "The Count 16 characteristic is used to represent a general count value.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Count",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: 0\nMaximum: 65534\nRepresented values: M = 1, d = 0, b = 0\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

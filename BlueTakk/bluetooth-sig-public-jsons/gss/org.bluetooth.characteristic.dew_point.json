@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.dew_point",
+    "name": "Dew Point",
+    "description": "The Dew Point characteristic is used to represent the dew point.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Dew Point",
+        "type": "sint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nRepresented values: M = 1, d = 0, b = 0\nUnit is in degrees Celsius with a resolution of 1 degree Celsius."
+      }
+    ]
+  }
+}

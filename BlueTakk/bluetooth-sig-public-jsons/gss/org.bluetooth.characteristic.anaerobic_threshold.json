@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.anaerobic_threshold",
+    "name": "Anaerobic Threshold",
+    "description": "The Anaerobic Threshold characteristic is used to represent the anaerobic threshold of a user. The Aerobic Threshold and Anaerobic Threshold characteristics together with the Sport Type For Aerobic And Anaerobic Thresholds characteristic describe the metabolic thresholds of the user. The Sport Type For Aerobic And Anaerobic Thresholds characteristic value identifies how the measurement was performed.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Anaerobic Threshold",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

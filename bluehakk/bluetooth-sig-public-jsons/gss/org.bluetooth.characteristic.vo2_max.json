@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.vo2_max",
+    "name": "VO2 Max",
+    "description": "The VO2 Max characteristic is used to represent the maximal oxygen uptake of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "VO2 Max",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.transfer_rate.milliliter_per_kilogram_per_minute"
+      }
+    ]
+  }
+}

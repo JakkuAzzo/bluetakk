@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.rainfall",
+    "name": "Rainfall",
+    "description": "The Rainfall characteristic is used to represent the amount of rain that has fallen.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Rainfall",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.length.meter\nRepresented values: M = 1, d = -3, b = 0\nUnit is meters with a resolution of 1mm"
+      }
+    ]
+  }
+}

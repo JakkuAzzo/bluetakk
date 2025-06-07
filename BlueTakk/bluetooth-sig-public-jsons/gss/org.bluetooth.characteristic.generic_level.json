@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.generic_level",
+    "name": "Generic Level",
+    "description": "The Generic Level characteristic is used to represent a general level value of a setting of a device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Generic Level",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: 0\nMaximum: 65535\nRepresented values: M = 1, d = 0, b = 0"
+      }
+    ]
+  }
+}

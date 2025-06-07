@@ -1,0 +1,25 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 10
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "description": [
+        "1 octet enumeration of Assisted Listening Stream method",
+        " ",
+        "0x00 \u2013 unspecified audio enhancement",
+        " ",
+        "All other values \u2013 RFU"
+      ]
+    }
+  ]
+}

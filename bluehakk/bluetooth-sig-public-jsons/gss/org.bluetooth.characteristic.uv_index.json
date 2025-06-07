@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.uv_index",
+    "name": "UV Index",
+    "description": "The UV Index characteristic is used to represent the UV Index.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "UV Index",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.unitless"
+      }
+    ]
+  }
+}

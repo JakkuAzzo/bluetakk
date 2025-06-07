@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.language",
+    "name": "Language",
+    "description": "The Language characteristic is used to represent the preferred language of a user.\nThe Language definition is based on ISO 639-1 \\RefRef{iso_639_1}.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Language",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

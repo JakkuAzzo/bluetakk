@@ -1,0 +1,19 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": "Varies"
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 11
+    },
+    {
+      "parameter": "Value",
+      "size": "Varies (4 \u2013 128)",
+      "description": "The UTF-8 string of the Broadcast_Name AD Type"
+    }
+  ]
+}

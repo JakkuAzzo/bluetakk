@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.luminous_exposure",
+    "name": "Luminous Exposure",
+    "description": "The Luminous Exposure characteristic is used to represent a measure of luminous exposure.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Luminous Exposure",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is lux hour with a resolution of 1000.\nMinimum: 0\nMaximum: 16777214000\nRepresented values: M = 1, d = 3, b = 0\nUnit: org.bluetooth.unit.luminous_exposure.lux_hour\nA value of 0xFFFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

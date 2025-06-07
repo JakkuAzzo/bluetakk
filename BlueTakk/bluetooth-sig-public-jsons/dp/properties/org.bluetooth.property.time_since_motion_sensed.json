@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.time_since_motion_sensed",
+    "name": "Time Since Motion Sensed",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the time that has elapsed since the sensor last detected any activity.\nExample use case: To achieve simultaneous reaction of a group of lights in response to a series of repeated messages sent by a motion sensor (see Section 6.5.1.7.1, Receiving a Sensor Status message in \\RefRef{msh_mdl})."
+  }
+}

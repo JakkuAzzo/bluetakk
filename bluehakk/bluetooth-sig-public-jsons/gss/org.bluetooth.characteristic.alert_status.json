@@ -1,0 +1,39 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.alert_status",
+    "name": "Alert Status",
+    "description": "The Alert Status characteristic is used to represent the status of a phone alert.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Alert Status",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.alert_status/field/alert_status}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Alert Status",
+        "description": "This field is a bit map of bits that represents alert states of the server device.\nThe bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Ringer State\n0 = Ringer State not active\n1 = Ringer State active"
+          },
+          {
+            "bit": "1",
+            "description": "Vibrate State\n0 = Vibrate State not active\n1 = Vibrate State active"
+          },
+          {
+            "bit": "2",
+            "description": "Display Alert Status\n0 = Display Alert Status not active\n1 = Display Alert Status active"
+          },
+          {
+            "bit": "3\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

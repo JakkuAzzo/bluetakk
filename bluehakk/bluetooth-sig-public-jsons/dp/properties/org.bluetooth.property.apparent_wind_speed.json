@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.apparent_wind_speed",
+    "name": "Apparent Wind Speed",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.apparent_wind_speed",
+    "description": "This property represents the apparent wind speed as measured by the device."
+  }
+}

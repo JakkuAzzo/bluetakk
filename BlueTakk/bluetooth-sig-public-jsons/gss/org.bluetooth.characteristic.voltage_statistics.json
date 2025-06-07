@@ -1,0 +1,39 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.voltage_statistics",
+    "name": "Voltage Statistics",
+    "description": "The Voltage Statistics characteristic is used to represent a set of statistical voltage values over a period of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Average Voltage Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      },
+      {
+        "field": "Standard Deviation Voltage Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      },
+      {
+        "field": "Minimum Voltage Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      },
+      {
+        "field": "Maximum Voltage Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}"
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_serial_number",
+    "name": "Device Serial Number",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_16",
+    "description": "This property represents the serial number for a particular instance of the device."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_starts",
+    "name": "Total Device Starts",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property is a counter that represents the number of device starts since the first start.\nExample use case: To provide predictive maintenance services."
+  }
+}

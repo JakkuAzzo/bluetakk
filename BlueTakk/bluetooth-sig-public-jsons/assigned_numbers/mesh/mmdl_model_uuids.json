@@ -1,0 +1,264 @@
+{
+  "mesh_model_uuids": [
+    {
+      "name": "Generic OnOff Server",
+      "uuid": 4096,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnOff Client",
+      "uuid": 4097,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Server",
+      "uuid": 4098,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Client",
+      "uuid": 4099,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Server",
+      "uuid": 4100,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Client",
+      "uuid": 4101,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power OnOff Server",
+      "uuid": 4102,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power OnOff Setup Server",
+      "uuid": 4103,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power OnOff Client",
+      "uuid": 4104,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Server",
+      "uuid": 4105,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Setup Server",
+      "uuid": 4106,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Client",
+      "uuid": 4107,
+      "type": "model"
+    },
+    {
+      "name": "Generic Battery Server",
+      "uuid": 4108,
+      "type": "model"
+    },
+    {
+      "name": "Generic Battery Client",
+      "uuid": 4109,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Server",
+      "uuid": 4110,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Setup Server",
+      "uuid": 4111,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Client",
+      "uuid": 4112,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Property Server",
+      "uuid": 4113,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Property Server",
+      "uuid": 4114,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Property Server",
+      "uuid": 4115,
+      "type": "model"
+    },
+    {
+      "name": "Generic Client Property Server",
+      "uuid": 4116,
+      "type": "model"
+    },
+    {
+      "name": "Generic Property Client",
+      "uuid": 4117,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Server",
+      "uuid": 4352,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Setup Server",
+      "uuid": 4353,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Client",
+      "uuid": 4354,
+      "type": "model"
+    },
+    {
+      "name": "Time Server",
+      "uuid": 4608,
+      "type": "model"
+    },
+    {
+      "name": "Time Setup Server",
+      "uuid": 4609,
+      "type": "model"
+    },
+    {
+      "name": "Time Client",
+      "uuid": 4610,
+      "type": "model"
+    },
+    {
+      "name": "Scene Server",
+      "uuid": 4611,
+      "type": "model"
+    },
+    {
+      "name": "Scene Setup Server",
+      "uuid": 4612,
+      "type": "model"
+    },
+    {
+      "name": "Scene Client",
+      "uuid": 4613,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Server",
+      "uuid": 4614,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Setup Server",
+      "uuid": 4615,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Client",
+      "uuid": 4616,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Server",
+      "uuid": 4864,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Setup Server",
+      "uuid": 4865,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Client",
+      "uuid": 4866,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Server",
+      "uuid": 4867,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Setup Server",
+      "uuid": 4868,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Client",
+      "uuid": 4869,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Server",
+      "uuid": 4870,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Server",
+      "uuid": 4871,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Setup Server",
+      "uuid": 4872,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Client",
+      "uuid": 4873,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Hue Server",
+      "uuid": 4874,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Saturation Server",
+      "uuid": 4875,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Server",
+      "uuid": 4876,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Setup Server",
+      "uuid": 4877,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Client",
+      "uuid": 4878,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Server",
+      "uuid": 4879,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Setup Server",
+      "uuid": 4880,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Client",
+      "uuid": 4881,
+      "type": "model"
+    }
+  ]
+}

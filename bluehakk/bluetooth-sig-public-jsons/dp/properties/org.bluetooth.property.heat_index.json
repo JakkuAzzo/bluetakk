@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.heat_index",
+    "name": "Heat Index",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.heat_index",
+    "description": "This property represents the heat index as measured by the device."
+  }
+}

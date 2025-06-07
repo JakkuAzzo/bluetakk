@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.apparent_wind_direction",
+    "name": "Apparent Wind Direction",
+    "description": "The Apparent Wind Direction characteristic is used to represent the apparent wind direction. The apparent wind direction is the wind experienced by an observer in motion and is the relative direction of the wind in relation to the observer. For example, the apparent wind direction aboard a boat is given in degrees relative to the heading of the boat. The apparent wind direction is reported by the direction from which it appears to originate. For example, an apparent wind coming from a direction that is 45 degrees clockwise relative to the heading of the observer is given as 45 degrees; one that is from a direction 45 degrees anti-clockwise relative to the heading of the observer is given as 315 degrees.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Apparent Wind Direction",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nMinimum value: 0\nMaximum value: 359.99\nRepresented values: M = 1, d = -2, b = 0\nUnit is degrees with a resolution of 0.01 degrees."
+      }
+    ]
+  }
+}

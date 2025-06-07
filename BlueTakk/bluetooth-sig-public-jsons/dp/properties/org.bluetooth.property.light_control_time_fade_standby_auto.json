@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_fade_standby_auto",
+    "name": "Light Control Time Fade Standby Auto",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the time lights transition from a prolong state to a standby state when the transition is automatic (such as when triggered by an occupancy or light sensor)."
+  }
+}

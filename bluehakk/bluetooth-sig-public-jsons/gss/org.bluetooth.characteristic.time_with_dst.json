@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_with_dst",
+    "name": "Time with DST",
+    "description": "The Time with DST characteristic is used to represent information about a DST change event.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Date Time",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}"
+      },
+      {
+        "field": "DST Offset",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to DST Offset characteristic in \\autoref{sec:org.bluetooth.characteristic.dst_offset}"
+      }
+    ]
+  }
+}

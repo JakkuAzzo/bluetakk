@@ -1,0 +1,24 @@
+{
+  "message_extended_data": [
+    {
+      "format": "Integer",
+      "name": "Number of Facebook Likes",
+      "value": 0
+    },
+    {
+      "format": "Integer",
+      "name": "Number of Twitter Followers",
+      "value": 1
+    },
+    {
+      "format": "Integer",
+      "name": "Number of Twitter Retweets",
+      "value": 2
+    },
+    {
+      "format": "Integer",
+      "name": "Number of Google +1s",
+      "value": 3
+    }
+  ]
+}

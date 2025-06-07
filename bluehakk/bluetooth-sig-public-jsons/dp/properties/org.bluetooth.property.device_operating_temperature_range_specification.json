@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_operating_temperature_range_specification",
+    "name": "Device Operating Temperature Range Specification",
+    "group": "org.bluetooth.property_group.device_operating_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_range",
+    "description": "This property represents the minimum and maximum operating temperatures for the element. These parameters are used to detect under and over temperature events."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.email_address",
+    "name": "Email Address",
+    "description": "The Email Address characteristic is used to represent the email address of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Email Address",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

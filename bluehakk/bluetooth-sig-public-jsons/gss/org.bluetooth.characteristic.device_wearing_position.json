@@ -1,0 +1,191 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.device_wearing_position",
+    "name": "Device Wearing Position",
+    "description": "The Device Wearing Position characteristic is used to represent the position where a user is wearing the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Device Wearing Position",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.device_wearing_position/field/device_wearing_position}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Device Wearing Position",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Other"
+          },
+          {
+            "value": "0x01",
+            "description": "Head"
+          },
+          {
+            "value": "0x02",
+            "description": "Head_Ear"
+          },
+          {
+            "value": "0x03",
+            "description": "Head_Ear_Right"
+          },
+          {
+            "value": "0x04",
+            "description": "Head_Ear_Left"
+          },
+          {
+            "value": "0x05",
+            "description": "Head_Neck"
+          },
+          {
+            "value": "0x06",
+            "description": "Trunk"
+          },
+          {
+            "value": "0x07",
+            "description": "Trunk_Pelvis"
+          },
+          {
+            "value": "0x08",
+            "description": "Trunk_Pelvis_Right"
+          },
+          {
+            "value": "0x09",
+            "description": "Trunk_Pelvis_Left"
+          },
+          {
+            "value": "0x0A",
+            "description": "Trunk_Thorax"
+          },
+          {
+            "value": "0x0B",
+            "description": "Trunk_Thorax_Right"
+          },
+          {
+            "value": "0x0C",
+            "description": "Trunk_Thorax_Left"
+          },
+          {
+            "value": "0x0D",
+            "description": "Trunk_Back"
+          },
+          {
+            "value": "0x0E",
+            "description": "UpperExtremity"
+          },
+          {
+            "value": "0x0F",
+            "description": "UpperExtremity_Right"
+          },
+          {
+            "value": "0x10",
+            "description": "UpperExtremity_Left"
+          },
+          {
+            "value": "0x11",
+            "description": "UpperExtremity_Wrist"
+          },
+          {
+            "value": "0x12",
+            "description": "UpperExtremity_Wrist_Right"
+          },
+          {
+            "value": "0x13",
+            "description": "UpperExtremity_Wrist_Left"
+          },
+          {
+            "value": "0x14",
+            "description": "UpperExtremity_Finger"
+          },
+          {
+            "value": "0x15",
+            "description": "UpperExtremity_Finger_Right"
+          },
+          {
+            "value": "0x16",
+            "description": "UpperExtremity_Finger_Left"
+          },
+          {
+            "value": "0x17",
+            "description": "UpperExtremity_Hand"
+          },
+          {
+            "value": "0x18",
+            "description": "UpperExtremity_Hand_Right"
+          },
+          {
+            "value": "0x19",
+            "description": "UpperExtremity_Hand_Left"
+          },
+          {
+            "value": "0x1A",
+            "description": "LowerExtremity"
+          },
+          {
+            "value": "0x1B",
+            "description": "LowerExtremity_Right"
+          },
+          {
+            "value": "0x1C",
+            "description": "LowerExtremity_Left"
+          },
+          {
+            "value": "0x1D",
+            "description": "LowerExtremity_Ankle"
+          },
+          {
+            "value": "0x1E",
+            "description": "LowerExtremity_Ankle_Right"
+          },
+          {
+            "value": "0x1F",
+            "description": "LowerExtremity_Ankle_Left"
+          },
+          {
+            "value": "0x20",
+            "description": "LowerExtremity_Foot"
+          },
+          {
+            "value": "0x21",
+            "description": "LowerExtremity_Foot_Right"
+          },
+          {
+            "value": "0x22",
+            "description": "LowerExtremity_Foot_Left"
+          },
+          {
+            "value": "0x23",
+            "description": "Pants_Pocket"
+          },
+          {
+            "value": "0x24",
+            "description": "Pants_Pocket_Right"
+          },
+          {
+            "value": "0x25",
+            "description": "Pants_Pocket_Left"
+          },
+          {
+            "value": "0x26",
+            "description": "Chest_Pocket"
+          },
+          {
+            "value": "0x27",
+            "description": "Chest_Pocket_Right"
+          },
+          {
+            "value": "0x28",
+            "description": "Chest_Pocket_Left"
+          },
+          {
+            "value": "0x29\u20130xFF",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

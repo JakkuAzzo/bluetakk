@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_ambient_carbon_dioxide_concentration",
+    "name": "Present Ambient Carbon Dioxide Concentration",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.co2_concentration",
+    "description": "This property represents the present ambient carbon dioxide concentration measured by a CO\\textsubscript{2} sensor."
+  }
+}

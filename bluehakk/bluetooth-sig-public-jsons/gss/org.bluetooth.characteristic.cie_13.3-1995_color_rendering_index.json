@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cie_13.3-1995_color_rendering_index",
+    "name": "CIE 13.3-1995 Color Rendering Index",
+    "description": "The CIE 13.3-1995 Color Rendering Index characteristic is used to represent a color rendition index value for a color patch as calculated in accordance with the CIE 13.3-1995 standard.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Color Rendering Index",
+        "type": "sint8",
+        "size": "1",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: -128\nMaximum: 100\nRepresented values: M = 1, d = 0, b = 0"
+      }
+    ]
+  }
+}

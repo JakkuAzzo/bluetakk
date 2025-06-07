@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cosine_of_the_angle",
+    "name": "Cosine of the Angle",
+    "description": "The Cosine of the Angle characteristic represents a value of the cosine of an angle.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Cosine of the Angle",
+        "type": "sint8",
+        "size": "1",
+        "description": "This is a unitless value, expressed as Cos(\u03b8) x 100, with a resolution of 1.\nUnit: org.bluetooth.unit.unitless\nMinimum: -100\nMaximum: 100\nRepresented values: M = 1, d = -2, b = 0\nA raw value of 0x7F represents \"value is not known\".\nAll other values are prohibited."
+      }
+    ]
+  }
+}

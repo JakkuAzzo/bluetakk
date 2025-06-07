@@ -1,0 +1,91 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.date_of_threshold_assessment",
+    "name": "Date of Threshold Assessment",
+    "description": "The Date of Threshold Assessment characteristic is used to represent the date of threshold assessment of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Year",
+        "type": "uint16",
+        "size": "2",
+        "description": "Year as defined by the Gregorian calendar.\nUnit; org.bluetooth.unit.time.year\nThe Year is an integer value.\nMinimum value: 1582\nMaximum value: 9999\nIn addition to the above range, a special value is defined: 0 = Year is not known"
+      },
+      {
+        "field": "Month",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.date_of_threshold_assessment/field/month}."
+      },
+      {
+        "field": "Day",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.time.day \nThe Day is an integer value. \nMinimum value: 1 \nMaximum value: 31 \nIn addition to the above range, a special value is defined: 0 = Day of Month is not known"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Month",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Month is not known"
+          },
+          {
+            "value": "1",
+            "description": "January"
+          },
+          {
+            "value": "2",
+            "description": "February"
+          },
+          {
+            "value": "3",
+            "description": "March"
+          },
+          {
+            "value": "4",
+            "description": "April"
+          },
+          {
+            "value": "5",
+            "description": "May"
+          },
+          {
+            "value": "6",
+            "description": "June"
+          },
+          {
+            "value": "7",
+            "description": "July"
+          },
+          {
+            "value": "8",
+            "description": "August"
+          },
+          {
+            "value": "9",
+            "description": "September"
+          },
+          {
+            "value": "10",
+            "description": "October"
+          },
+          {
+            "value": "11",
+            "description": "November"
+          },
+          {
+            "value": "12",
+            "description": "December"
+          },
+          {
+            "value": "13\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

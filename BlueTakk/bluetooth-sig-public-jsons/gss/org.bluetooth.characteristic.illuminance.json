@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.illuminance",
+    "name": "Illuminance",
+    "description": "The Illuminance characteristic is used to represent a measure of illuminance.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Illuminance",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is lux with a resolution of 0.01.\nMinimum: 0\nMaximum: 167772.14\nRepresented values: M = 1, d = -2, b = 0\nUnit: org.bluetooth.unit.illuminance.lux\nA value of 0xFFFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

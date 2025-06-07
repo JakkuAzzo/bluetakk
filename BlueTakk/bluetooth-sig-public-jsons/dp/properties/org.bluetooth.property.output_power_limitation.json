@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_power_limitation",
+    "name": "Output Power Limitation",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "Output power limitation is a condition when a power supply device limits the output current due to its internal power limitation. This property represents a count of the total number of output power limitation events, the average duration of the events, the time elapsed since the last event, and the total data recording period.\nExample use case: To provide predictive maintenance services."
+  }
+}

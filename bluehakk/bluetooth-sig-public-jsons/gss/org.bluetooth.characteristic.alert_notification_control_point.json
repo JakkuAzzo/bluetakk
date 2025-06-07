@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.alert_notification_control_point",
+    "name": "Alert Notification Control Point",
+    "description": "The Alert Notification Control Point characteristic is used to enable device-specific procedures related to alert notification.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Command ID",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Enable New Incoming Alert Notification\n1: Enable Unread Category Status Notification\n2: Disable New Incoming Alert Notification\n3: Disable Unread Category Status Notification\n4: Notify New Incoming Alert immediately\n5: Notify Unread Category Status immediately\n6\u2013255: Reserved for Future Use"
+      },
+      {
+        "field": "Category ID",
+        "type": "struct",
+        "size": "1",
+        "description": "This field shows the target category to which the command ID applies. Refer to \\autoref{sec:org.bluetooth.characteristic.alert_category_id}, Alert Category ID characteristic."
+      }
+    ]
+  }
+}

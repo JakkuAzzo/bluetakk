@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_output_voltage",
+    "name": "Present Output Voltage",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.voltage",
+    "description": "This property represents the present output voltage of the power supply."
+  }
+}

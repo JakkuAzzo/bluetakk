@@ -1,0 +1,12 @@
+{
+  "attribute_ids": [
+    {
+      "name": "CTN InstanceID",
+      "value": 789
+    },
+    {
+      "name": "CTN Supported Features",
+      "value": 791
+    }
+  ]
+}

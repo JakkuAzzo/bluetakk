@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_manufacturer_gtin",
+    "name": "Luminaire Manufacturer GTIN",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.global_trade_item_number",
+    "description": "This property represents the luminaire manufacturer Global Trade Item Number (GTIN)."
+  }
+}

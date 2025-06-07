@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_device_operating_efficiency",
+    "name": "Present Device Operating Efficiency",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the power efficiency of the operating device. The power efficiency is the useful output power divided by the total input power of the device. This efficiency is most affected by the output level or the input power conditions. The reported value either can be determined by measurement or can be calculated by the device based on manufacturer model data. This value can be used by building management systems to operate devices in a building with greater power efficiency."
+  }
+}

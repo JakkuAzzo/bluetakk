@@ -1,0 +1,111 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cycling_power_feature",
+    "name": "Cycling Power Feature",
+    "description": "The Cycling Power Feature characteristic is used to represent the supported features of a cycling power sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Cycling Power Feature",
+        "type": "boolean[32]",
+        "size": "4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_feature/field/cycling_power_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Cycling Power Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Pedal Power Balance Supported"
+          },
+          {
+            "bit": "1",
+            "description": "Accumulated Torque Supported"
+          },
+          {
+            "bit": "2",
+            "description": "Wheel Revolution Data Supported"
+          },
+          {
+            "bit": "3",
+            "description": "Crank Revolution Data Supported"
+          },
+          {
+            "bit": "4",
+            "description": "Extreme Magnitudes Supported"
+          },
+          {
+            "bit": "5",
+            "description": "Extreme Angles Supported"
+          },
+          {
+            "bit": "6",
+            "description": "Top and Bottom Dead Spot Angles Supported"
+          },
+          {
+            "bit": "7",
+            "description": "Accumulated Energy Supported"
+          },
+          {
+            "bit": "8",
+            "description": "Offset Compensation Indicator Supported"
+          },
+          {
+            "bit": "9",
+            "description": "Offset Compensation Supported"
+          },
+          {
+            "bit": "10",
+            "description": "Cycling Power Measurement Characteristic Content Masking Supported"
+          },
+          {
+            "bit": "11",
+            "description": "Multiple Sensor Locations Supported"
+          },
+          {
+            "bit": "12",
+            "description": "Crank Length Adjustment Supported"
+          },
+          {
+            "bit": "13",
+            "description": "Chain Length Adjustment Supported"
+          },
+          {
+            "bit": "14",
+            "description": "Chain Weight Adjustment Supported"
+          },
+          {
+            "bit": "15",
+            "description": "Span Length Adjustment Supported"
+          },
+          {
+            "bit": "16",
+            "description": "Sensor Measurement Context\n0 = Force based\n1 = Torque based"
+          },
+          {
+            "bit": "17",
+            "description": "Instantaneous Measurement Direction Supported"
+          },
+          {
+            "bit": "18",
+            "description": "Factory Calibration Date Supported"
+          },
+          {
+            "bit": "19",
+            "description": "Enhanced Offset Compensation Procedure Supported"
+          },
+          {
+            "bit": "20\u201321",
+            "description": "Distributed System Support\n0b00 = Unspecified (Legacy Sensor)\n0b01 = Not for use in a distributed system\n0b10 = For use in a distributed system\n0b11 = Reserved for Future Use"
+          },
+          {
+            "bit": "22\u201331",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

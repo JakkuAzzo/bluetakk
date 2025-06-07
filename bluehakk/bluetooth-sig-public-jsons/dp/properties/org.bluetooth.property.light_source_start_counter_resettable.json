@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_start_counter_resettable",
+    "name": "Light Source Start Counter Resettable",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property represents the number of times a light source has been turned on since the last reset. This property is resettable."
+  }
+}

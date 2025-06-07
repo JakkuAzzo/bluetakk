@@ -1,0 +1,51 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.light_distribution",
+    "name": "Light Distribution",
+    "description": "The Light Distribution characteristic is used to represent the projected pattern of outdoor light that a fixture disperses onto a surface. This type of lighting is used in the middle of a pathway and is great for narrow pathways. Type II is commonly used on larger walkways and in roadway lighting because it is good for a larger but still narrow areas. This type is often used on side streets or jogging paths. Type III is very commonly used in roadway lighting, because it gives a bit more coverage further from the point source outward. Type III lighting needs to be placed to the side of the area, allowing the light to project outward and fill the area. Type IV light distribution produces a semicircular light that is intended to be used on the sides of buildings and walls. This type also does a great job lighting up a parking area perimeter.\nType V, the widest distribution pattern, is excellent for illuminating the inside portions of a parking lot, or for a 4-way intersection.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Light Distribution",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.light_distribution/field/light_distribution}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Light Distribution",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Type not specified"
+          },
+          {
+            "value": "0x01",
+            "description": "Type I"
+          },
+          {
+            "value": "0x02",
+            "description": "Type II"
+          },
+          {
+            "value": "0x03",
+            "description": "Type III"
+          },
+          {
+            "value": "0x04",
+            "description": "Type IV"
+          },
+          {
+            "value": "0x05",
+            "description": "Type V"
+          },
+          {
+            "value": "All other values",
+            "description": "Reserved for Future Use."
+          }
+        ]
+      }
+    ]
+  }
+}

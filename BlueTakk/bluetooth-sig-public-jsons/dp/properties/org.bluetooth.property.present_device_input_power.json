@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_device_input_power",
+    "name": "Present Device Input Power",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.power",
+    "description": "This property reports the power usage of a device. It can be either measured by the device if the device has the capability to measure power directly, or it can be obtained from a mathematical model and a level setting value."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_planckian_distance",
+    "name": "Present Planckian Distance",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.chromatic_distance_from_planckian",
+    "description": "This property represents the present distance of a chromaticity coordinate from the Planckian locus on the (u\u2019, 2/3v\u2019) diagram as defined by ANSI standard C78.377-2008 \\RefRef{ansi_c78}. The value typically is measured by a spectrometer or a chroma meter, but also can be reported by a device that is aware of its chromaticity values, either by measurement, or as a result of an association of its operating parameters with a color model."
+  }
+}

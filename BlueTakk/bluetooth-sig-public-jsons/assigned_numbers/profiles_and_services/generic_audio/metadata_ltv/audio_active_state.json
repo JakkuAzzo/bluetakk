@@ -1,0 +1,28 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 8
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "value": [
+        {
+          "key": 0,
+          "definition": "No audio data is being transmitted"
+        },
+        {
+          "key": 1,
+          "definition": "Audio data is being transmitted"
+        }
+      ]
+    }
+  ]
+}

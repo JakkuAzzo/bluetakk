@@ -1,0 +1,12 @@
+__pycache__
+.venv
+venv
+/bluetooth-sig-public-jsons
+bluetooth-sig-public-jsons.zip
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+bluetooth_sig_jsons.txt

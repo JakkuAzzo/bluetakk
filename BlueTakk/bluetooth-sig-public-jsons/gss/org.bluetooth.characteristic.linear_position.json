@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.linear_position",
+    "name": "Linear Position",
+    "description": "The Linear Position characteristic is used to represent the linear position of an object along a given axis and referencing to the device-specific zero point.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Linear Position",
+        "type": "sint32",
+        "size": "4",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = - 7, b = 0\nUnit is meter with a resolution of 1/10000000 m (100 nm).\nA value of 0x7FFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

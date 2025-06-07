@@ -1,0 +1,208 @@
+{
+  "device_data_specializations": [
+    {
+      "data_type": "Hydra",
+      "MDEP_data_type": 4096,
+      "document_name": "IEEE 11073 Part 10101: Nomenclature; IEEE 11073-20601: Application profile - Optimized Exchange Protocol",
+      "document_number": "11073-20601"
+    },
+    {
+      "data_type": "Pulse Oximeter",
+      "MDEP_data_type": 4100,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Pulse oximeter",
+      "document_number": "11073-10404"
+    },
+    {
+      "data_type": "Basic ECG (heart rate)",
+      "MDEP_data_type": 4102,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Basic ECG (heart rate)",
+      "document_number": "11073-10406"
+    },
+    {
+      "data_type": "Blood Pressure Monitor",
+      "MDEP_data_type": 4103,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Blood pressure monitor",
+      "document_number": "11073-10407"
+    },
+    {
+      "data_type": "Body Thermometer",
+      "MDEP_data_type": 4104,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Body thermometer",
+      "document_number": "11073-10408"
+    },
+    {
+      "data_type": "Body Weight Scale",
+      "MDEP_data_type": 4111,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Body weight scale",
+      "document_number": "11073-10415"
+    },
+    {
+      "data_type": "Glucose Meter",
+      "MDEP_data_type": 4113,
+      "document_name": "Health informatics - Personal health device communication - Device Specialization - Glucose meter",
+      "document_number": "11073-10417"
+    },
+    {
+      "data_type": "International Normalized Ratio (INR) Monitor",
+      "MDEP_data_type": 4114,
+      "document_name": "Health informatics - Personal health device communication - Device Specialization - International Normalized Ratio (INR) Monitor",
+      "document_number": "11073-10418"
+    },
+    {
+      "data_type": "Body Composition Analyzer",
+      "MDEP_data_type": 4116,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Body composition analyzer",
+      "document_number": "11073-10420"
+    },
+    {
+      "data_type": "Peak Flow Monitor",
+      "MDEP_data_type": 4117,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Peak flow monitor",
+      "document_number": "11073-10421"
+    },
+    {
+      "data_type": "Cardiovascular Fitness and Activity Monitor",
+      "MDEP_data_type": 4137,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Cardiovascular Fitness and Activity Monitor",
+      "document_number": "11073-10441",
+      "reference": "Note 1"
+    },
+    {
+      "data_type": "Generic",
+      "MDEP_data_type": 4169,
+      "document_name": "IEEE 11073 Part 10101: Nomenclature; IEEE 11073-20601: Application profile - Optimized Exchange Protocol",
+      "document_number": "11073-20601"
+    },
+    {
+      "data_type": "Step Counter based on 10441",
+      "MDEP_data_type": 4200,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Step Counter based on 10441",
+      "document_number": "11073-10441",
+      "reference": "Note 2"
+    },
+    {
+      "data_type": "Strength Fitness Equipment",
+      "MDEP_data_type": 4138,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Strength fitness equipment",
+      "document_number": "11073-10442",
+      "reference": "Note 1"
+    },
+    {
+      "data_type": "Independent Living Activity Hub",
+      "MDEP_data_type": 4167,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Independent Living Activity Hub",
+      "document_number": "11073-10471",
+      "reference": "Note 1"
+    },
+    {
+      "data_type": "Fall Sensor",
+      "MDEP_data_type": 4213,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Fall Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Personal Emergency Response Sensor",
+      "MDEP_data_type": 4214,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Personal Emergency Response Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Smoke Sensor",
+      "MDEP_data_type": 4215,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Smoke Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Carbon Monoxide (CO) Sensor",
+      "MDEP_data_type": 4216,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Carbon Monoxide (CO) Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Water Sensor",
+      "MDEP_data_type": 4217,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - WaterSensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Gas Sensor",
+      "MDEP_data_type": 4218,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Gas Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Motion Sensor",
+      "MDEP_data_type": 4219,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Motion Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Property Exit Sensor",
+      "MDEP_data_type": 4220,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Property Exit Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Enuresis Sensor",
+      "MDEP_data_type": 4221,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Enuresis Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Contact Closure Sensor",
+      "MDEP_data_type": 4222,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Contact Closure Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Usage Sensor",
+      "MDEP_data_type": 4223,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Usage Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Switch Sensor",
+      "MDEP_data_type": 4224,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Switch Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Medication Dosing Sensor",
+      "MDEP_data_type": 4225,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Medication Dosing Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Temperature Sensor",
+      "MDEP_data_type": 4226,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Temperature Sensor",
+      "document_number": "11073-10471",
+      "reference": "Note 3"
+    },
+    {
+      "data_type": "Medication monitor",
+      "MDEP_data_type": 4168,
+      "document_name": "Health informatics - Personal health device communication - Device specialization - Medication monitor",
+      "document_number": "11073-10472"
+    },
+    {
+      "data_type": "Power Status Monitor",
+      "MDEP_data_type": 4124,
+      "document_name": "Health infomatics - Personal health device communication - Part 10427: Device specialization - Power Status Monitor of Personal Health Devices",
+      "document_number": "11073-10427"
+    }
+  ]
+}

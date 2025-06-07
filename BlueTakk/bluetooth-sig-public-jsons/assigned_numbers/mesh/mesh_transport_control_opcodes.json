@@ -1,0 +1,94 @@
+{
+  "mesh_transport_control_opcodes": [
+    {
+      "name": "\u2013",
+      "opcode": 0,
+      "description": "Reserved for the lower transport layer."
+    },
+    {
+      "name": "Friend Poll",
+      "opcode": 1,
+      "description": "Sent by a Low Power node to its Friend node to request any messages that it has stored for the Low Power node."
+    },
+    {
+      "name": "Friend Update",
+      "opcode": 2,
+      "description": "Sent by a Friend node to a Low Power node to inform it about security updates."
+    },
+    {
+      "name": "Friend Request",
+      "opcode": 3,
+      "description": "Sent by a Low Power node to the all-friends fixed group address to initiate a search for a friend."
+    },
+    {
+      "name": "Friend Offer",
+      "opcode": 4,
+      "description": "Sent by a Friend node to a Low Power node to offer to become its friend."
+    },
+    {
+      "name": "Friend Clear",
+      "opcode": 5,
+      "description": "Sent to a Friend node to inform a previous friend of a Low Power node about the removal of a friendship."
+    },
+    {
+      "name": "Friend Clear Confirm",
+      "opcode": 6,
+      "description": "Sent from a previous friend to the Friend node to confirm that a prior friend relationship has been removed."
+    },
+    {
+      "name": "Friend Subscription List Add",
+      "opcode": 7,
+      "description": "Sent to a Friend node to add one or more addresses to the Friend Subscription List."
+    },
+    {
+      "name": "Friend Subscription List Remove",
+      "opcode": 8,
+      "description": "Sent to a Friend node to remove one or more addresses from the Friend Subscription List."
+    },
+    {
+      "name": "Friend Subscription List Confirm",
+      "opcode": 9,
+      "description": "Sent by a Friend node to confirm Friend Subscription List updates."
+    },
+    {
+      "name": "Heartbeat",
+      "opcode": 10,
+      "description": "Sent by a node to let other nodes determine topology of a subnet."
+    },
+    {
+      "name": "PATH_REQUEST",
+      "opcode": 11,
+      "description": "Sent by a Path Origin or by a Directed Relay node to discover a path to a destination."
+    },
+    {
+      "name": "PATH_REPLY",
+      "opcode": 12,
+      "description": "Sent by a Path Target or by a Directed Relay node to establish a path from a Path Origin to a Path Target."
+    },
+    {
+      "name": "PATH_CONFIRMATION",
+      "opcode": 13,
+      "description": "Sent by a Path Origin or by a Directed Relay node to confirm that a two-way path has been established from the Path Origin to a Path Target."
+    },
+    {
+      "name": "PATH_ECHO_REQUEST",
+      "opcode": 14,
+      "description": "Sent by a Path Origin to validate a path from the Path Origin to a destination."
+    },
+    {
+      "name": "PATH_ECHO_REPLY",
+      "opcode": 15,
+      "description": "Sent by a Path Target in order to confirm that a path exists from a Path Origin to the destination."
+    },
+    {
+      "name": "DEPENDENT_NODE_UPDATE",
+      "opcode": 16,
+      "description": "Sent by a path endpoint or a Directed Relay node to notify nodes in a subnet that element addresses of a dependent node are to be added to or removed from the Forwarding Table."
+    },
+    {
+      "name": "PATH_REQUEST_SOLICITATION",
+      "opcode": 17,
+      "description": "Sent by a Directed Forwarding node or a Configuration Manager to solicit the discovery of paths toward unicast addresses, group addresses, or virtual addresses."
+    }
+  ]
+}

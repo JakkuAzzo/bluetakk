@@ -1,0 +1,33 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cgm_session_start_time",
+    "name": "CGM Session Start Time",
+    "description": "The CGM Session Start Time characteristic is used to represent the time the continuous glucose monitor (CGM) session is started.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Session Start Time",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to the Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}"
+      },
+      {
+        "field": "Time Zone",
+        "type": "uint8",
+        "size": "1",
+        "description": "Refer to the Time Zone characteristic in \\autoref{sec:org.bluetooth.characteristic.time_zone}"
+      },
+      {
+        "field": "DST Offset",
+        "type": "uint8",
+        "size": "1",
+        "description": "Refer to the DST Offset characteristic in \\autoref{sec:org.bluetooth.characteristic.dst_offset}"
+      },
+      {
+        "field": "E2E-CRC",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "CRC calculated over all fields. See \\autoref{sec:crc_calculation} for details.\nPresent if E2E-CRC Supported bit in CGM Feature characteristic is set to 1"
+      }
+    ]
+  }
+}

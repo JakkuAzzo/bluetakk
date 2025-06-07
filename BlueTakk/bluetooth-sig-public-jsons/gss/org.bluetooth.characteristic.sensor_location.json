@@ -1,0 +1,95 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.sensor_location",
+    "name": "Sensor Location",
+    "description": "The Sensor Location characteristic is used to represent the location of the sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Sensor Location",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.sensor_location/field/sensor_location}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Sensor Location",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Other"
+          },
+          {
+            "value": "1",
+            "description": "Top of shoe"
+          },
+          {
+            "value": "2",
+            "description": "In shoe"
+          },
+          {
+            "value": "3",
+            "description": "Hip"
+          },
+          {
+            "value": "4",
+            "description": "Front Wheel"
+          },
+          {
+            "value": "5",
+            "description": "Left Crank"
+          },
+          {
+            "value": "6",
+            "description": "Right Crank"
+          },
+          {
+            "value": "7",
+            "description": "Left Pedal"
+          },
+          {
+            "value": "8",
+            "description": "Right Pedal"
+          },
+          {
+            "value": "9",
+            "description": "Front Hub"
+          },
+          {
+            "value": "10",
+            "description": "Rear Dropout"
+          },
+          {
+            "value": "11",
+            "description": "Chainstay"
+          },
+          {
+            "value": "12",
+            "description": "Rear Wheel"
+          },
+          {
+            "value": "13",
+            "description": "Rear Hub"
+          },
+          {
+            "value": "14",
+            "description": "Chest"
+          },
+          {
+            "value": "15",
+            "description": "Spider"
+          },
+          {
+            "value": "16",
+            "description": "Chain Ring"
+          },
+          {
+            "value": "17\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

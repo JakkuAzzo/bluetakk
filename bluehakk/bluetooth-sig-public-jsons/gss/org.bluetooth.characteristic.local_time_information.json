@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.local_time_information",
+    "name": "Local Time Information",
+    "description": "The Local Time Information characteristic is used to represent the relation (offset) between local time and UTC. It contains time zone and Daylight Savings Time (DST) offset information.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Zone",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Zone characteristic in \\autoref{sec:org.bluetooth.characteristic.time_zone}"
+      },
+      {
+        "field": "DST Offset",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to DST Offset characteristic in \\autoref{sec:org.bluetooth.characteristic.dst_offset}"
+      }
+    ]
+  }
+}

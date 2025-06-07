@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cgm_session_run_time",
+    "name": "CGM Session Run Time",
+    "description": "The CGM Session Run Time characteristic is used to represent the expected run time of the continuous glucose monitor (CGM) session.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "CGM Session Run Time",
+        "type": "uint16",
+        "size": "2",
+        "description": "The expected run time of the CGM session in hours.\nUnit: org.bluetooth.unit.time.hour"
+      },
+      {
+        "field": "E2E-CRC",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "CRC calculated over all fields. See \\autoref{sec:crc_calculation} for details.\nPresent if E2E-CRC Supported bit in CGM Feature characteristic is set to 1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.percentage_8_steps",
+    "name": "Percentage 8 Steps",
+    "description": "The Percentage 8 Steps characteristic is used to represent a number of steps between 0% and 100% when configuring a Percentage 8 characteristic value (see \\autoref{sec:org.bluetooth.characteristic.percentage_8}).\nFor example:\n\\begin{itemize}\n\\item A value of 1 represents one step: 0% to 100% in one 100% step.\n\\item A value of 5 represents five steps: 0% to 100% in five 20% steps.\n\\item A value of 200 represents 200 steps: 0% to 100% in 200 0.5% steps.\n\\end{itemize}",
+    "structure": [
+      {
+        "field": "Percentage 8 Steps",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is the number of steps from the minimum to the maximum value.\nMinimum: 1\nMaximum: 200\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.unitless\nA value of 0xFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

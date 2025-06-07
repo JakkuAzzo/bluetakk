@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_accuracy",
+    "name": "Time Accuracy",
+    "description": "The Time Accuracy characteristic is used to represent the accuracy (drift) of time information compared to a reference time source.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Accuracy",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -3\nThis field represents accuracy (drift) of time information in steps of 1/8 of a second (125ms) compared to a reference time source.\nValid range from 0 to 253 (0s to 31.625s).\nA value of 254 means drift is larger than 31.625s.\nA value of 255 means drift is unknown."
+      }
+    ]
+  }
+}

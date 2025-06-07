@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.length",
+    "name": "Length",
+    "description": "The Length characteristic is used to represent the measured dimension of an object along a given axis.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Length",
+        "type": "uint32",
+        "size": "4",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = - 7, b = 0\nUnit is meters with a resolution of 1/10000000 m (100 nm).\nA value of 0xFFFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

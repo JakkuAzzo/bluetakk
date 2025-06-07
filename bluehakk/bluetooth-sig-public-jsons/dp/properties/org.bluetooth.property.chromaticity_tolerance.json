@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.chromaticity_tolerance",
+    "name": "Chromaticity Tolerance",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.chromaticity_tolerance",
+    "description": "This property represents the tolerance as a circle in the CIE 1976 \\RefRef{cie1976} (u\u2019,v\u2019) diagram of the chromaticity of the light produced by a device, such as a light source or a lighting fixture. This tolerance could be dependent on the current setting, temperature, or operating history of the device.\nExample use case: To replace a light in quality-sensitive lighting applications."
+  }
+}

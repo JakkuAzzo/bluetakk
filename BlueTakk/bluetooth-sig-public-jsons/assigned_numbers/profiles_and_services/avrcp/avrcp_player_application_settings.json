@@ -1,0 +1,85 @@
+{
+  "player_application_settings": [
+    {
+      "attribute": 0,
+      "description": "Illegal - Should Not Be Used",
+      "value": "None"
+    },
+    {
+      "attribute": 1,
+      "description": "Equalizer ON/OFF Status",
+      "defined_values": [
+        {
+          "id": 1,
+          "description": "OFF"
+        },
+        {
+          "id": 2,
+          "description": "ON"
+        }
+      ]
+    },
+    {
+      "attribute": 2,
+      "description": "Repeat Mode Status",
+      "defined_values": [
+        {
+          "id": 1,
+          "description": "OFF"
+        },
+        {
+          "id": 2,
+          "description": "Single Track Repeat"
+        },
+        {
+          "id": 3,
+          "description": "All Track Repeat"
+        },
+        {
+          "id": 4,
+          "description": "Group Repeat"
+        }
+      ]
+    },
+    {
+      "attribute": 3,
+      "description": "Shuffle ON/OFF Status",
+      "defined_values": [
+        {
+          "id": 1,
+          "description": "OFF"
+        },
+        {
+          "id": 2,
+          "description": "All Tracks Shuffle"
+        },
+        {
+          "id": 3,
+          "description": "Group Shuffle"
+        }
+      ]
+    },
+    {
+      "attribute": 4,
+      "description": "Scan ON/OFF Status",
+      "defined_values": [
+        {
+          "id": 1,
+          "description": "OFF"
+        },
+        {
+          "id": 2,
+          "description": "All Tracks Scan"
+        },
+        {
+          "id": 3,
+          "description": "Group Scan"
+        }
+      ]
+    },
+    {
+      "attribute": "0x80-0xFF",
+      "description": "Provided for TG Driven Static Media Player Menu Extension by CT"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_power_on_time",
+    "name": "Total Device Power On Time",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the total of the recorded duration the device has been powered on. A value of 0 represents that this time is not known."
+  }
+}

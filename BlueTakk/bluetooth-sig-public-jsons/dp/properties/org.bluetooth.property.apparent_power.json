@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.apparent_power",
+    "name": "Apparent Power",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.apparent_power",
+    "description": "This property represents the apparent power that is the product of the RMS values of the voltage and the current, expressed as volt-amperes."
+  }
+}

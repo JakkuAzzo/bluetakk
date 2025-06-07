@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.motion_threshold",
+    "name": "Motion Threshold",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the activity level, for example, as detected by a motion or an occupancy sensor, below which motion or occupancy is not reported. For instance, a Passive Infrared (PIR) sensor does not report presence when the level of activity observed by the sensor is below this value.\nIncreasing the value of the Motion Threshold decreases the sensitivity of the sensor and decreasing the value of the Motion Threshold increases the sensitivity of the sensor. Setting the Motion Threshold to 0 percent results in the sensor operating at maximum sensitivity. Setting the Motion Threshold to 100 percent results in the sensor operating at minimum sensitivity."
+  }
+}

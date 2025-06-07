@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.initial_cie_1931_chromaticity_coordinates",
+    "name": "Initial CIE 1931 Chromaticity Coordinates",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.chromaticity_coordinates",
+    "description": "This property represents the initial chromaticity coordinates x and y of a device using CIE 1931 \\RefRef{cie1931} Cx and Cy chromaticity coordinates at first use of the device. The value typically is measured by a spectrometer or a chroma meter, but can also be reported by a device that is aware of its chromaticity values, either by measurement or as a result of an association of its operating parameters with a color model. The property value typically is configured by the manufacturer of the device."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_occupancy_delay",
+    "name": "Light Control Time Occupancy Delay",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the time delay between receiving a signal from an occupancy sensor and a light controller executing a state change as a result of the signal.\nExample use case: To synchronize state changes between multiple lights."
+  }
+}

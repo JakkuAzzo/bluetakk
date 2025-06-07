@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.electric_current",
+    "name": "Electric Current",
+    "description": "The Electric Current characteristic is used to represent an electric current.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Current",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is ampere with a resolution of 0.01.\nMinimum: 0\nMaximum: 655.34\nRepresented values: M = 1, d = -2, b = 0\nUnit: org.bluetooth.unit.electric_current.ampere\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.preferred_units",
+    "name": "Preferred Units",
+    "description": "The Preferred Units characteristic is the list of units the user prefers.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Units",
+        "type": "uint16 [1-256]",
+        "size": "2\u2013512",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.preferred_units/field/units}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Units",
+        "description": "This field is an array of 16-bit UUIDs from the available units defined in the Bluetooth SIG Assigned Numbers \\RefRef{assigned_numbers}.\nIf there are multiple entries for the same physical quantity in the array, the order of the units defines the preference (the first unit is the most preferred; the last unit is the least preferred)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "mesh_model_opcodes": [
+    {
+      "name": "Config AppKey Add",
+      "opcode": 0,
+      "type": "foundation"
+    },
+    {
+      "name": "Config AppKey Delete",
+      "opcode": 32768,
+      "type": "foundation"
+    },
+    {
+      "name": "Config AppKey Get",
+      "opcode": 32769,
+      "type": "foundation"
+    },
+    {
+      "name": "Config AppKey List",
+      "opcode": 32770,
+      "type": "foundation"
+    },
+    {
+      "name": "Config AppKey Status",
+      "opcode": 32771,
+      "type": "foundation"
+    },
+    {
+      "name": "Config AppKey Update",
+      "opcode": 1,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Beacon Get",
+      "opcode": 32777,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Beacon Set",
+      "opcode": 32778,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Beacon Status",
+      "opcode": 32779,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Composition Data Get",
+      "opcode": 32776,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Composition Data Status",
+      "opcode": 2,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Publication Set",
+      "opcode": 3,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Default TTL Get",
+      "opcode": 32780,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Default TTL Set",
+      "opcode": 32781,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Default TTL Status",
+      "opcode": 32782,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Friend Get",
+      "opcode": 32783,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Friend Set",
+      "opcode": 32784,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Friend Status",
+      "opcode": 32785,
+      "type": "foundation"
+    },
+    {
+      "name": "Config GATT Proxy Get",
+      "opcode": 32786,
+      "type": "foundation"
+    },
+    {
+      "name": "Config GATT Proxy Set",
+      "opcode": 32787,
+      "type": "foundation"
+    },
+    {
+      "name": "Config GATT Proxy Status",
+      "opcode": 32788,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Publication Get",
+      "opcode": 32824,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Publication Set",
+      "opcode": 32825,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Publication Status",
+      "opcode": 6,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Subscription Get",
+      "opcode": 32826,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Subscription Set",
+      "opcode": 32827,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Heartbeat Subscription Status",
+      "opcode": 32828,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Key Refresh Phase Get",
+      "opcode": 32789,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Key Refresh Phase Set",
+      "opcode": 32790,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Key Refresh Phase Status",
+      "opcode": 32791,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Low Power Node PollTimeout Get",
+      "opcode": 32813,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Low Power Node PollTimeout Status",
+      "opcode": 32814,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model App Bind",
+      "opcode": 32829,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model App Status",
+      "opcode": 32830,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model App Unbind",
+      "opcode": 32831,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Publication Get",
+      "opcode": 32792,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Publication Status",
+      "opcode": 32793,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Publication Virtual Address Set",
+      "opcode": 32794,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Add",
+      "opcode": 32795,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Delete",
+      "opcode": 32796,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Delete All",
+      "opcode": 32797,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Overwrite",
+      "opcode": 32798,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Status",
+      "opcode": 32799,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Virtual Address Add",
+      "opcode": 32800,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Virtual Address Delete",
+      "opcode": 32801,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Model Subscription Virtual Address Overwrite",
+      "opcode": 32802,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey Add",
+      "opcode": 32832,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey Delete",
+      "opcode": 32833,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey Get",
+      "opcode": 32834,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey List",
+      "opcode": 32835,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey Status",
+      "opcode": 32836,
+      "type": "foundation"
+    },
+    {
+      "name": "Config NetKey Update",
+      "opcode": 32837,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Network Transmit Get",
+      "opcode": 32803,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Network Transmit Set",
+      "opcode": 32804,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Network Transmit Status",
+      "opcode": 32805,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Node Identity Get",
+      "opcode": 32838,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Node Identity Set",
+      "opcode": 32839,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Node Identity Status",
+      "opcode": 32840,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Node Reset",
+      "opcode": 32841,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Node Reset Status",
+      "opcode": 32842,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Relay Get",
+      "opcode": 32806,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Relay Set",
+      "opcode": 32807,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Relay Status",
+      "opcode": 32808,
+      "type": "foundation"
+    },
+    {
+      "name": "Config SIG Model App Get",
+      "opcode": 32843,
+      "type": "foundation"
+    },
+    {
+      "name": "Config SIG Model App List",
+      "opcode": 32844,
+      "type": "foundation"
+    },
+    {
+      "name": "Config SIG Model Subscription Get",
+      "opcode": 32809,
+      "type": "foundation"
+    },
+    {
+      "name": "Config SIG Model Subscription List",
+      "opcode": 32810,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Vendor Model App Get",
+      "opcode": 32845,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Vendor Model App List",
+      "opcode": 32846,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Vendor Model Subscription Get",
+      "opcode": 32811,
+      "type": "foundation"
+    },
+    {
+      "name": "Config Vendor Model Subscription List",
+      "opcode": 32812,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Attention Get",
+      "opcode": 32772,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Attention Set",
+      "opcode": 32773,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Attention Set Unacknowledged",
+      "opcode": 32774,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Attention Status",
+      "opcode": 32775,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Current Status",
+      "opcode": 4,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Clear",
+      "opcode": 32815,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Clear Unacknowledged",
+      "opcode": 32816,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Get",
+      "opcode": 32817,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Status",
+      "opcode": 5,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Test",
+      "opcode": 32818,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Fault Test Unacknowledged",
+      "opcode": 32819,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Period Get",
+      "opcode": 32820,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Period Set",
+      "opcode": 32821,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Period Set Unacknowledged",
+      "opcode": 32822,
+      "type": "foundation"
+    },
+    {
+      "name": "Health Period Status",
+      "opcode": 32823,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Capabilities Get",
+      "opcode": 32847,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Capabilities Status",
+      "opcode": 32848,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Get",
+      "opcode": 32849,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Start",
+      "opcode": 32850,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Stop",
+      "opcode": 32851,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Status",
+      "opcode": 32852,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Scan Report",
+      "opcode": 32853,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Extended Scan Start",
+      "opcode": 32854,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Extended Scan Report",
+      "opcode": 32855,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Link Get",
+      "opcode": 32856,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Link Open",
+      "opcode": 32857,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Link Close",
+      "opcode": 32858,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Link Status",
+      "opcode": 32859,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning Link Report",
+      "opcode": 32860,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning PDU Send",
+      "opcode": 32861,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning PDU Outbound Report",
+      "opcode": 32862,
+      "type": "foundation"
+    },
+    {
+      "name": "Remote Provisioning PDU Report",
+      "opcode": 32863,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_GET",
+      "opcode": 32891,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_SET",
+      "opcode": 32892,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_STATUS",
+      "opcode": 32893,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_METRIC_GET",
+      "opcode": 32894,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_METRIC_SET",
+      "opcode": 32895,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_METRIC_STATUS",
+      "opcode": 32896,
+      "type": "foundation"
+    },
+    {
+      "name": "DISCOVERY_TABLE_CAPABILITIES_GET",
+      "opcode": 32897,
+      "type": "foundation"
+    },
+    {
+      "name": "DISCOVERY_TABLE_CAPABILITIES_SET",
+      "opcode": 32898,
+      "type": "foundation"
+    },
+    {
+      "name": "DISCOVERY_TABLE_CAPABILITIES_STATUS",
+      "opcode": 32899,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_ADD",
+      "opcode": 32900,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DELETE",
+      "opcode": 32901,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_STATUS",
+      "opcode": 32902,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DEPENDENTS_ADD",
+      "opcode": 32903,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DEPENDENTS_DELETE",
+      "opcode": 32904,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DEPENDENTS_STATUS",
+      "opcode": 32905,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DEPENDENTS_GET",
+      "opcode": 32906,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_DEPENDENTS_GET_STATUS",
+      "opcode": 32907,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_ENTRIES_COUNT_GET",
+      "opcode": 32908,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_ENTRIES_COUNT_STATUS",
+      "opcode": 32909,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_ENTRIES_GET",
+      "opcode": 32910,
+      "type": "foundation"
+    },
+    {
+      "name": "FORWARDING_TABLE_ENTRIES_STATUS",
+      "opcode": 32911,
+      "type": "foundation"
+    },
+    {
+      "name": "WANTED_LANES_GET",
+      "opcode": 32912,
+      "type": "foundation"
+    },
+    {
+      "name": "WANTED_LANES_SET",
+      "opcode": 32913,
+      "type": "foundation"
+    },
+    {
+      "name": "WANTED_LANES_STATUS",
+      "opcode": 32914,
+      "type": "foundation"
+    },
+    {
+      "name": "TWO_WAY_PATH_GET",
+      "opcode": 32915,
+      "type": "foundation"
+    },
+    {
+      "name": "TWO_WAY_PATH_SET",
+      "opcode": 32916,
+      "type": "foundation"
+    },
+    {
+      "name": "TWO_WAY_PATH_STATUS",
+      "opcode": 32917,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_ECHO_INTERVAL_GET",
+      "opcode": 32918,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_ECHO_INTERVAL_SET",
+      "opcode": 32919,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_ECHO_INTERVAL_STATUS",
+      "opcode": 32920,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_NETWORK_TRANSMIT_GET",
+      "opcode": 32921,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_NETWORK_TRANSMIT_SET",
+      "opcode": 32922,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_NETWORK_TRANSMIT_STATUS",
+      "opcode": 32923,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_RELAY_RETRANSMIT_GET",
+      "opcode": 32924,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_RELAY_RETRANSMIT_SET",
+      "opcode": 32925,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_RELAY_RETRANSMIT_STATUS",
+      "opcode": 32926,
+      "type": "foundation"
+    },
+    {
+      "name": "RSSI_THRESHOLD_GET",
+      "opcode": 32927,
+      "type": "foundation"
+    },
+    {
+      "name": "RSSI_THRESHOLD_SET",
+      "opcode": 32928,
+      "type": "foundation"
+    },
+    {
+      "name": "RSSI_THRESHOLD_STATUS",
+      "opcode": 32929,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_PATHS_GET",
+      "opcode": 32930,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_PATHS_STATUS",
+      "opcode": 32931,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_PUBLISH_POLICY_GET",
+      "opcode": 32932,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_PUBLISH_POLICY_SET",
+      "opcode": 32933,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_PUBLISH_POLICY_STATUS",
+      "opcode": 32934,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_DISCOVERY_TIMING_CONTROL_GET",
+      "opcode": 32935,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_DISCOVERY_TIMING_CONTROL_SET",
+      "opcode": 32936,
+      "type": "foundation"
+    },
+    {
+      "name": "PATH_DISCOVERY_TIMING_CONTROL_STATUS",
+      "opcode": 32937,
+      "type": "foundation"
+    },
+    {
+      "name": "this opcode is not used",
+      "opcode": 32938,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_NETWORK_TRANSMIT_GET",
+      "opcode": 32939,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_NETWORK_TRANSMIT_SET",
+      "opcode": 32940,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_NETWORK_TRANSMIT_STATUS",
+      "opcode": 32941,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_RELAY_RETRANSMIT_GET",
+      "opcode": 32942,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_RELAY_RETRANSMIT_SET",
+      "opcode": 32943,
+      "type": "foundation"
+    },
+    {
+      "name": "DIRECTED_CONTROL_RELAY_RETRANSMIT_STATUS",
+      "opcode": 32944,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_BEACON_GET",
+      "opcode": 32864,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_BEACON_SET",
+      "opcode": 32865,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_BEACON_STATUS",
+      "opcode": 32866,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_GATT_PROXY_GET",
+      "opcode": 32867,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_GATT_PROXY_SET",
+      "opcode": 32868,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_GATT_PROXY_STATUS",
+      "opcode": 32869,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_NODE_IDENTITY_GET",
+      "opcode": 32870,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_NODE_IDENTITY_SET",
+      "opcode": 32871,
+      "type": "foundation"
+    },
+    {
+      "name": "PRIVATE_NODE_IDENTITY_STATUS",
+      "opcode": 32872,
+      "type": "foundation"
+    },
+    {
+      "name": "ON_DEMAND_PRIVATE_PROXY_GET",
+      "opcode": 32873,
+      "type": "foundation"
+    },
+    {
+      "name": "ON_DEMAND_PRIVATE_PROXY_SET",
+      "opcode": 32874,
+      "type": "foundation"
+    },
+    {
+      "name": "ON_DEMAND_PRIVATE_PROXY_STATUS",
+      "opcode": 32875,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_TRANSMITTER_GET",
+      "opcode": 32876,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_TRANSMITTER_SET",
+      "opcode": 32877,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_TRANSMITTER_STATUS",
+      "opcode": 32878,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_RECEIVER_GET",
+      "opcode": 32879,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_RECEIVER_SET",
+      "opcode": 32880,
+      "type": "foundation"
+    },
+    {
+      "name": "SAR_RECEIVER_STATUS",
+      "opcode": 32881,
+      "type": "foundation"
+    },
+    {
+      "name": "OPCODES_AGGREGATOR_SEQUENCE",
+      "opcode": 32882,
+      "type": "foundation"
+    },
+    {
+      "name": "OPCODES_AGGREGATOR_STATUS",
+      "opcode": 32883,
+      "type": "foundation"
+    },
+    {
+      "name": "LARGE_COMPOSITION_DATA_GET",
+      "opcode": 32884,
+      "type": "foundation"
+    },
+    {
+      "name": "LARGE_COMPOSITION_DATA_STATUS",
+      "opcode": 32885,
+      "type": "foundation"
+    },
+    {
+      "name": "MODELS_METADATA_GET",
+      "opcode": 32886,
+      "type": "foundation"
+    },
+    {
+      "name": "MODELS_METADATA_STATUS",
+      "opcode": 32887,
+      "type": "foundation"
+    },
+    {
+      "name": "SOLICITATION_PDU_RPL_ITEM_CLEAR",
+      "opcode": 32888,
+      "type": "foundation"
+    },
+    {
+      "name": "SOLICITATION_PDU_RPL_ITEM_CLEAR_UNACKNOWLEDGED",
+      "opcode": 32889,
+      "type": "foundation"
+    },
+    {
+      "name": "SOLICITATION_PDU_RPL_ITEM_STATUS",
+      "opcode": 32890,
+      "type": "foundation"
+    },
+    {
+      "name": "SUBNET_BRIDGE_GET",
+      "opcode": 32945,
+      "type": "foundation"
+    },
+    {
+      "name": "SUBNET_BRIDGE_SET",
+      "opcode": 32946,
+      "type": "foundation"
+    },
+    {
+      "name": "SUBNET_BRIDGE_STATUS",
+      "opcode": 32947,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_ADD",
+      "opcode": 32948,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_REMOVE",
+      "opcode": 32949,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_STATUS",
+      "opcode": 32950,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGED_SUBNETS_GET",
+      "opcode": 32951,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGED_SUBNETS_LIST",
+      "opcode": 32952,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_GET",
+      "opcode": 32953,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_LIST",
+      "opcode": 32954,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_SIZE_GET",
+      "opcode": 32955,
+      "type": "foundation"
+    },
+    {
+      "name": "BRIDGING_TABLE_SIZE_STATUS",
+      "opcode": 32956,
+      "type": "foundation"
+    }
+  ]
+}

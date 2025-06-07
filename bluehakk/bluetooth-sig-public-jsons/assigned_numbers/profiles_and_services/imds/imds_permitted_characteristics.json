@@ -1,0 +1,16 @@
+{
+  "permitted_characteristics": [
+    {
+      "service": "org.bluetooth.service.industrial_measurement_device",
+      "characteristics": [
+        "org.bluetooth.characteristic.acceleration",
+        "org.bluetooth.characteristic.force",
+        "org.bluetooth.characteristic.linear_position",
+        "org.bluetooth.characteristic.rotational_speed",
+        "org.bluetooth.characteristic.length",
+        "org.bluetooth.characteristic.torque",
+        "org.bluetooth.characteristic.temperature"
+      ]
+    }
+  ]
+}

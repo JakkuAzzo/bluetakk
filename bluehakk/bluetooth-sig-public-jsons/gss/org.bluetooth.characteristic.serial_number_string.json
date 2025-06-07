@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.serial_number_string",
+    "name": "Serial Number String",
+    "description": "The Serial Number String characteristic is used to represent the serial number for a device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Serial Number",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

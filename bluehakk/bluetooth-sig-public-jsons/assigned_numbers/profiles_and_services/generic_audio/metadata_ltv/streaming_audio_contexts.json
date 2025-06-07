@@ -1,0 +1,26 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 3
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Value",
+      "size": 2,
+      "description": [
+        "Bitfield of Context Type values",
+        " ",
+        "See Context Type values defined in \\autoref{sec:context_type}. ",
+        " ",
+        "0b0 = Context Type is not an intended use case for this Audio Stream.",
+        "0b1 = Context Type is an intended use case for this Audio Stream."
+      ]
+    }
+  ]
+}

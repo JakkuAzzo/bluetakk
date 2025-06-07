@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.object_last-modified",
+    "name": "Object Last-Modified",
+    "description": "The Object Last-Modified characteristic is used to represent the date and time when the associated object\u2019s contents were last modified.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Object Last Modified",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}."
+      }
+    ]
+  }
+}

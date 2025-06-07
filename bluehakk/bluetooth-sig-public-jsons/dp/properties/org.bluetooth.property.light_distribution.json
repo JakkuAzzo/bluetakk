@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_distribution",
+    "name": "Light Distribution",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.light_distribution",
+    "description": "This property represents luminaire light distribution. It is the projected pattern of light a fixture disperses onto a surface. It is mostly applicable for outdoor lighting."
+  }
+}

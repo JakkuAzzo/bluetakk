@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.lumen_maintenance_factor",
+    "name": "Lumen Maintenance Factor",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the maximum luminous flux capability of a lamp or lighting fixture relative to the initial maximum luminous flux capability. This value could be measured using an integrated sensor of a device or could be calculated based on its operational runtime and other operating history parameters based on a mathematical model."
+  }
+}

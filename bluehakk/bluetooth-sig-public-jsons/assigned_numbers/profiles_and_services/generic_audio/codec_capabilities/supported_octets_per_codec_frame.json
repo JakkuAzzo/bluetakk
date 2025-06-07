@@ -1,0 +1,28 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 5
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 4
+    },
+    {
+      "parameter": "Value",
+      "size": 4,
+      "value": [
+        {
+          "key": "Octet 0-1",
+          "definition": "Minimum number of octets supported per codec frame"
+        },
+        {
+          "key": "Octet 2-3",
+          "definition": "Maximum number of octets supported per codec frame"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.new_alert",
+    "name": "New Alert",
+    "description": "The New Alert characteristic is used to represent the category of the alert, how many new alerts of that category have occurred in a device and brief text information for the last alert.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Category ID",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Alert Category ID characteristic in \\autoref{sec:org.bluetooth.characteristic.alert_category_id}"
+      },
+      {
+        "field": "Number of New Alert",
+        "type": "uint8",
+        "size": "1",
+        "description": "This field provides the number of new alerts in the server ranging from 0 to 255."
+      },
+      {
+        "field": "Text String Information",
+        "type": "utf8s",
+        "size": "variable\n0\u201318",
+        "description": "This field provides brief text information for the last alert.\nSee \\autoref{sec:org.bluetooth.characteristic.new_alert/field/text_string_information}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Text String Information",
+        "description": "The values of this field are defined below.",
+        "value_header": "Category",
+        "description_header": "Recommended Description",
+        "values": [
+          {
+            "value": "Simple Alert",
+            "description": "The title of the alert"
+          },
+          {
+            "value": "Email",
+            "description": "Sender name"
+          },
+          {
+            "value": "News",
+            "description": "Title of the news feed"
+          },
+          {
+            "value": "Call",
+            "description": "Caller name or caller ID"
+          },
+          {
+            "value": "Missed Call",
+            "description": "Caller name or caller ID"
+          },
+          {
+            "value": "SMS",
+            "description": "Sender name or caller ID"
+          },
+          {
+            "value": "Voice Mail",
+            "description": "Sender name or caller ID"
+          },
+          {
+            "value": "Schedule",
+            "description": "Title of the schedule"
+          },
+          {
+            "value": "High Prioritized Alert",
+            "description": "Title of the alert"
+          },
+          {
+            "value": "Instant Messaging",
+            "description": "Sender name"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_type",
+    "name": "Light Source Type",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.light_source_type",
+    "description": "This property specifies means by which a luminaire generates light and is an enumeration. The defined values include low pressure fluorescent, HID, low voltage halogen, incandescent, LED, and OLED. Special values are defined to indicate the light source type has not been specified, is other than any of the defined types, is not installed, or multiple light sources are installed."
+  }
+}

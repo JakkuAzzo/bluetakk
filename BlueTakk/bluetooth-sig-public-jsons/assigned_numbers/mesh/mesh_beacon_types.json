@@ -1,0 +1,16 @@
+{
+  "mesh_beacon_types": [
+    {
+      "name": "Unprovisioned Device beacon",
+      "value": 0
+    },
+    {
+      "name": "Secure Network beacon",
+      "value": 1
+    },
+    {
+      "name": "Mesh Private beacon",
+      "value": 2
+    }
+  ]
+}

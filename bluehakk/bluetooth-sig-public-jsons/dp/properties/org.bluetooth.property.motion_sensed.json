@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.motion_sensed",
+    "name": "Motion Sensed",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the activity level, as, for example, detected by a motion sensor. Typically, this is detected by a Passive Infrared (PIR) sensor. The motion activity is represented by a relative value ranging from 0 percent to 100 percent, with 100 percent the maximum activity that the sensor can record."
+  }
+}

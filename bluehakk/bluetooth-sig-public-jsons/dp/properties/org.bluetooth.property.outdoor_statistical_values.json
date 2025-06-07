@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.outdoor_statistical_values",
+    "name": "Outdoor Statistical Values",
+    "group": "org.bluetooth.property_group.ambient_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_8_statistics",
+    "description": "This property represents the average, standard deviation, and minimum and maximum values for a set measured ambient outdoor temperatures, and the period of time over which the measurements were taken."
+  }
+}

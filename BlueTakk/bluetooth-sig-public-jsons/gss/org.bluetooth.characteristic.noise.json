@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.noise",
+    "name": "Noise",
+    "description": "The Noise characteristic is used to represent a measure of sound pressure level.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Noise",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is decibel with a resolution of 1.\nUnit: org.bluetooth.unit.sound_pressure.decibel_spl\nAllowed range is: 0 to 253.\nA value of 0xFE represents \u2018value is 254 or greater\u2019.\nA value of 0xFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

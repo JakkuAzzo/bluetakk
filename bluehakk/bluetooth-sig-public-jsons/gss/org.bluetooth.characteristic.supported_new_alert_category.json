@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_new_alert_category",
+    "name": "Supported New Alert Category",
+    "description": "The Supported New Alert Category characteristic is used to represent the category that the server supports for a new alert.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Category ID Bit Mask",
+        "type": "struct",
+        "size": "1 or 2",
+        "description": "Refer to Alert Category ID Bit Mask characteristic in \\autoref{sec:org.bluetooth.characteristic.alert_category_id_bit_mask}"
+      }
+    ]
+  }
+}

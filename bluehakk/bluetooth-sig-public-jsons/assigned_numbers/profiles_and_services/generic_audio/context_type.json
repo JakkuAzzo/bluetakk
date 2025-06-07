@@ -1,0 +1,69 @@
+{
+  "context_type": [
+    {
+      "label": "Prohibited",
+      "description": "Prohibited",
+      "value": 0
+    },
+    {
+      "label": "Unspecified",
+      "description": "Identifies audio where the use case context does not match any other defined value, or where the context is unknown or cannot be determined.",
+      "value": 1
+    },
+    {
+      "label": "Conversational",
+      "description": "Conversation between humans, for example, in telephony or video calls, including traditional cellular as well as VoIP and Push-to-Talk",
+      "value": 2
+    },
+    {
+      "label": "Media",
+      "description": "Media, for example, music playback, radio, podcast or movie soundtrack, or tv audio",
+      "value": 4
+    },
+    {
+      "label": "Game",
+      "description": "Audio associated with video gaming, for example gaming media; gaming effects; music and in-game voice chat between participants; or a mix of all the above",
+      "value": 8
+    },
+    {
+      "label": "Instructional",
+      "description": "Instructional audio, for example, in navigation, announcements, or user guidance",
+      "value": 16
+    },
+    {
+      "label": "Voice Assistants",
+      "description": "Man-machine communication, for example, with voice recognition or virtual assistants",
+      "value": 32
+    },
+    {
+      "label": "Live",
+      "description": "Live audio, for example, from a microphone where audio is perceived both through a direct acoustic path and through an LE Audio Stream",
+      "value": 64
+    },
+    {
+      "label": "Sound Effects",
+      "description": "Sound effects including keyboard and touch feedback; menu and user interface sounds; and other system sounds",
+      "value": 128
+    },
+    {
+      "label": "Notifications",
+      "description": "Notification and reminder sounds; attention-seeking audio, for example, in beeps signaling the arrival of a message",
+      "value": 256
+    },
+    {
+      "label": "Ringtone",
+      "description": "Alerts the user to an incoming call, for example, an incoming telephony or video call, including traditional cellular as well as VoIP and Push-to-Talk",
+      "value": 512
+    },
+    {
+      "label": "Alerts",
+      "description": "Alarms and timers; immediate alerts, for example, in a critical battery alarm, timer expiry or alarm clock, toaster, cooker, kettle, microwave, etc.",
+      "value": 1024
+    },
+    {
+      "label": "Emergency Alarm",
+      "description": "Emergency alarm Emergency sounds, for example, fire alarms or other urgent alerts",
+      "value": 2048
+    }
+  ]
+}

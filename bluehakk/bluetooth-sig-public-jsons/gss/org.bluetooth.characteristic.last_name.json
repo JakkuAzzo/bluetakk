@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.last_name",
+    "name": "Last Name",
+    "description": "The Last Name characteristic is used to represent the last name of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Last Name",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

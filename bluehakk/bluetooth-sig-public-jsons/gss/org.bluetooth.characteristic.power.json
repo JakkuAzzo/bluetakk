@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.power",
+    "name": "Power",
+    "description": "The Power characteristic is used to represent a measure of power.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Power",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is watt with a resolution of 0.1.\nMinimum: 0\nMaximum: 1677721.3\nRepresented values: M = 1, d = -1, b = 0\nUnit: org.bluetooth.unit.power.watt\nA value of 0xFFFFFE represents \"value is not valid\".\nA value of 0xFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

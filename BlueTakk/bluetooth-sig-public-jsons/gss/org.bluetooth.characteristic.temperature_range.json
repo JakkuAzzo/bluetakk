@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.temperature_range",
+    "name": "Temperature Range",
+    "description": "The Temperature Range characteristic is used to represent a temperature range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Temperature",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Temperature characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature}"
+      },
+      {
+        "field": "Maximum Temperature",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Temperature characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature}"
+      }
+    ]
+  }
+}

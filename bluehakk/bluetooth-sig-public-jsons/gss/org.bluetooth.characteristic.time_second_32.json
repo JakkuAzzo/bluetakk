@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_second_32",
+    "name": "Time Second 32",
+    "description": "The Time Second 32 characteristic is used to represent a period of time with a unit of 1 second.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Second 32",
+        "type": "uint32",
+        "size": "4",
+        "description": "Unit is second with a resolution of 1.\nMinimum: 0\nMaximum: 4294967294\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.time.second\nA value of 0xFFFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

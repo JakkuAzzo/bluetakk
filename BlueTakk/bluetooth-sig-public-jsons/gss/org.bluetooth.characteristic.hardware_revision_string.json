@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.hardware_revision_string",
+    "name": "Hardware Revision String",
+    "description": "The Hardware Revision String characteristic is used to represent the hardware revision for the hardware within the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Hardware Revision",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

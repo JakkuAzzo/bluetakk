@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.first_name",
+    "name": "First Name",
+    "description": "The First Name characteristic is used to represent the first name of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "First Name",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_second_8",
+    "name": "Time Second 8",
+    "description": "The Time Second 8 characteristic is used to represent a period of time with a unit of 1 second.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Second 8",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is second with a resolution of 1.\nMinimum: 0\nMaximum: 254\nUnit: org.bluetooth.unit.time.second\nA value of 0xFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

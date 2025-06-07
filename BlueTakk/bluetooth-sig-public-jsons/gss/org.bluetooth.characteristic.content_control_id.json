@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.content_control_id",
+    "name": "Content Control ID",
+    "description": "The Content Control ID (CCID) characteristic is used to represent a unique instance of a service that either controls or provides status information on an audio-related feature. Examples of audio-related features include media players and telephone bearers. The value of a CCID characteristic is a unique identifier for each instance of the characteristic on the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Content Control ID",
+        "type": "uint8",
+        "size": "1",
+        "description": "The ID of the content control service instance containing this characteristic."
+      }
+    ]
+  }
+}

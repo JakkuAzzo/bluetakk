@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.overall_failure_condition",
+    "name": "Overall Failure Condition",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of device failure events, the average duration of the events, the time elapsed since the last event, and the total data recording period.\nExample use case: To provide predictive maintenance services."
+  }
+}

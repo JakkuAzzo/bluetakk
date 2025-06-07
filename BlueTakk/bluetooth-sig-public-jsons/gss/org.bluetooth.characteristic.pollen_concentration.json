@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.pollen_concentration",
+    "name": "Pollen Concentration",
+    "description": "The Pollen Concentration characteristic is used to represent the pollen count.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Pollen Concentration",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit: org.bluetooth.unit.concentration.count_per_cubic_metre"
+      }
+    ]
+  }
+}

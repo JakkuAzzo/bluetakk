@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_value_in_a_period_of_day",
+    "name": "Relative Value in a Period of Day",
+    "description": "The Relative Value in a Period of Day characteristic is used to represent the combination of the Percentage 8 characteristic and two instances of the Time Decihour 8 characteristic.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Start Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      },
+      {
+        "field": "End Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      }
+    ]
+  }
+}

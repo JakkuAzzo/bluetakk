@@ -1,0 +1,39 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.temperature_8_statistics",
+    "name": "Temperature 8 Statistics",
+    "description": "The Temperature 8 Statistics characteristic is used to represent temperature statistics over a period of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Average",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Temperature 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_8}"
+      },
+      {
+        "field": "Standard Deviation Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Temperature 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_8}"
+      },
+      {
+        "field": "Minimum Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Temperature 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_8}"
+      },
+      {
+        "field": "Maximum Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Temperature 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_8}"
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}"
+      }
+    ]
+  }
+}

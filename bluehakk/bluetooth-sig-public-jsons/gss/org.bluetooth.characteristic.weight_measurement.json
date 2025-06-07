@@ -1,0 +1,73 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.weight_measurement",
+    "name": "Weight Measurement",
+    "description": "The Weight Measurement characteristic is used to represent data related to a weight measurement.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.weight_measurement/field/flags}"
+      },
+      {
+        "field": "Weight",
+        "type": "uint16",
+        "size": "2",
+        "description": "This field is in kilograms with resolution 0.005 if the bit 0 of the Flag field is 0 or in pounds with a resolution of 0.01 if the bit 0 of the Flag field is 1."
+      },
+      {
+        "field": "Time Stamp",
+        "type": "struct",
+        "size": "0 or 7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "User ID",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "The special value of 0xFF for User ID represents \"unknown user\".\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "BMI",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit is 0.1 kg/m2 or org.bluetooth.unit.kilogram_per_square_metre\nRepresented values: M = 1, d = -1, b = 0.\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Height",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "This field is in meters with a resolution of 0.001 if the bit 0 of the Flag field is 0 or in inches with a resolution of 0.1 if the bit 0 of the Flag field is 1.\nPresent if bit 3 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Measurement Units:\n0 = SI (Weight and Mass in units of kilogram (kg) and Height in units of meter)\n1 = Imperial (Weight and Mass in units of pound (lb) and Height in units of inch (in))"
+          },
+          {
+            "bit": "1",
+            "description": "Time Stamp present"
+          },
+          {
+            "bit": "2",
+            "description": "User ID present"
+          },
+          {
+            "bit": "3",
+            "description": "BMI and Height present"
+          },
+          {
+            "bit": "4\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

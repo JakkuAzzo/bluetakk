@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_run_on",
+    "name": "Light Control Time Run On",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the duration of the run state after last occupancy was detected.\nExample use case: To prevent lights from entering a standby state when people are still in a room and occupancy detectors fail to detect occupancy (which could occur, for example, with passive infrared motion sensors and people in the room not moving for a period of time)."
+  }
+}

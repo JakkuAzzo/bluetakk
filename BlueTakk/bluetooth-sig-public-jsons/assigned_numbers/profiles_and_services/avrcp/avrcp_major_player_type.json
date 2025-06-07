@@ -1,0 +1,20 @@
+{
+  "major_player_type": [
+    {
+      "value": 1,
+      "description": "Audio"
+    },
+    {
+      "value": 2,
+      "description": "Video"
+    },
+    {
+      "value": 4,
+      "description": "Broadcasting Audio"
+    },
+    {
+      "value": 8,
+      "description": "Broadcasting Video"
+    }
+  ]
+}

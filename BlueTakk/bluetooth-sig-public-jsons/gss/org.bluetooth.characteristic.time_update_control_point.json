@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_update_control_point",
+    "name": "Time Update Control Point",
+    "description": "The Time Update Control Point characteristic is used to enable device-specific procedures related to a time server.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Update Control Point",
+        "type": "uint8",
+        "size": "1",
+        "description": "1: Get Reference Update\n2: Cancel Reference Update\nAll other values: Reserved for Future Use"
+      }
+    ]
+  }
+}

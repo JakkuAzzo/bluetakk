@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.gust_factor",
+    "name": "Gust Factor",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.gust_factor",
+    "description": "This property represents the gust factor as measured by the device."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.nitrogen_dioxide_concentration",
+    "name": "Nitrogen Dioxide Concentration",
+    "description": "The Nitrogen Dioxide Concentration characteristic is used to represent a measure of nitrogen dioxide (NO\\textsubscript{2}) concentration.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Nitrogen Dioxide Concentration",
+        "type": "medfloat16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.density.kilogram_per_cubic_meter\nThe special value NRes is used to report a value outside the available range and resolution, possibly resulting from an overflow or underflow situation.\nThe special value NaN is used to report an invalid result from a computation step or to indicate missing data due to the hardware\u2019s inability to provide a valid measurement, perhaps from sensor perturbation."
+      }
+    ]
+  }
+}

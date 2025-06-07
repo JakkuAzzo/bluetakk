@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.temperature_8_in_a_period_of_day",
+    "name": "Temperature 8 in a Period of Day",
+    "description": "The Temperature 8 in a Period of Day characteristic is used to represent a temperature setting over a period of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Temperature",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Temperature 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.temperature_8}"
+      },
+      {
+        "field": "Start Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      },
+      {
+        "field": "End Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      }
+    ]
+  }
+}

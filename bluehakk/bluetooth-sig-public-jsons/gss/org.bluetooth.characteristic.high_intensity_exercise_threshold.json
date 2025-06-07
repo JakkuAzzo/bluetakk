@@ -1,0 +1,71 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.high_intensity_exercise_threshold",
+    "name": "High Intensity Exercise Threshold",
+    "description": "The High Intensity Exercise Threshold characteristic is used to represent the high intensity exercise threshold of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Field Selector",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.high_intensity_exercise_threshold/field/field_selector}"
+      },
+      {
+        "field": "Threshold as Energy Expenditure per Hour",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.energy.joule\nRepresented values: M = 1, d = 3, b = 0\nUnit is joule with a resolution of 1000 joules\nPresent if value of Field Selector field is 1"
+      },
+      {
+        "field": "Threshold as Metabolic Equivalent",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.metabolic_equivalent\nRepresented values: M = 1, d = -1, b = 0\nUnit is MET with a resolution of 0.1 MET (i.e., kcal/kg/hour)\nPresent if value of Field Selector field is 2"
+      },
+      {
+        "field": "Threshold as Percentage of Maximum Heart Rate",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.percentage\nPresent if value of Field Selector field is 3"
+      },
+      {
+        "field": "Threshold as Heart Rate",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if value of Field Selector field is 4"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Field Selector",
+        "description": "The Field Selector field determines the High Intensity Exercise Threshold characteristic field selected to express the high intensity threshold. The selected field is present in the High Intensity Exercise Threshold characteristic, whereas the remaining fields are not present.\nThe values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "No field is selected"
+          },
+          {
+            "value": "1",
+            "description": "The Threshold as Energy Expenditure per Hour field is selected"
+          },
+          {
+            "value": "2",
+            "description": "The Threshold as Metabolic Equivalent field is selected"
+          },
+          {
+            "value": "3",
+            "description": "The Threshold as Percentage of Maximum Heart Rate field is selected"
+          },
+          {
+            "value": "4",
+            "description": "The Threshold as Heart Rate field is selected"
+          },
+          {
+            "value": "5\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

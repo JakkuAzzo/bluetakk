@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.count_24",
+    "name": "Count 24",
+    "description": "The Count 24 characteristic is used to represent a general count value.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Count",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: 0\nMaximum: 16777214\nRepresented values: M = 1, d = 0, b = 0\nA value of 0xFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

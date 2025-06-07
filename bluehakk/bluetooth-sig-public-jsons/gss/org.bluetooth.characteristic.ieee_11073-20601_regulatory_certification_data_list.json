@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.ieee_11073-20601_regulatory_certification_data_list",
+    "name": "IEEE 11073-20601 Regulatory Certification Data List",
+    "description": "The IEEE 11073-20601 Regulatory Certification Data List characteristic is used to represent regulatory and certification information for a product in a list defined in IEEE 11073-20601 \\RefRef{ieee_11073_20601}.\nThe content of this characteristic is determined by the authorizing organization that provides certifications.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "IEEE 11073-20601 Regulatory Certification Data List",
+        "type": "struct",
+        "size": "variable",
+        "description": "Refer to 11073-20601 \\RefRef{ieee_11073_20601} or Continua Design Guidelines \\RefRef{continua_design_guidelines} for more information on the format of this list"
+      }
+    ]
+  }
+}

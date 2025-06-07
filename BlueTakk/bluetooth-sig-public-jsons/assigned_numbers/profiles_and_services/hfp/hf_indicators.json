@@ -1,0 +1,26 @@
+{
+  "hf_indicators": [
+    {
+      "description": [
+        {
+          "description": "Enhanced Safety is Disabled",
+          "value": 0
+        },
+        {
+          "description": "Enhanced Safety is Enabled",
+          "value": 1
+        }
+      ],
+      "value": 1
+    },
+    {
+      "description": [
+        {
+          "description": "Remaining level of Battery",
+          "value": "0 - 100"
+        }
+      ],
+      "value": 2
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.voltage",
+    "name": "Voltage",
+    "description": "The Voltage characteristic is used to represent a measure of positive electric potential difference.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Voltage Value",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is volt with a resolution of 1/64V.\nMinimum: 0.0\nMaximum: 1022.0\nRepresented values: M = 1, d = 0, b = -6\nUnit: org.bluetooth.unit.electric_potential_difference.volt\nA value of 0xFFFF represents \"value is not known\".\nThe minimum representable value represents the minimum value or lower, the maximum representable value represents the maximum value or higher."
+      }
+    ]
+  }
+}

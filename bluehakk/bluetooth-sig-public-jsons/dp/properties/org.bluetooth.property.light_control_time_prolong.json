@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_prolong",
+    "name": "Light Control Time Prolong",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the duration of the prolong state, which is the state of a device between its run state and its standby state."
+  }
+}

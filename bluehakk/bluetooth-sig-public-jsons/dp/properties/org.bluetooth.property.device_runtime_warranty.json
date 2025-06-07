@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_runtime_warranty",
+    "name": "Device Runtime Warranty",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the total operating time covered by the warranty."
+  }
+}

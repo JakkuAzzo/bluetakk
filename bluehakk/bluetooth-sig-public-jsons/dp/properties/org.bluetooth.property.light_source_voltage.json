@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_voltage",
+    "name": "Light Source Voltage",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.average_voltage",
+    "description": "This property represents the voltage needed to be provided to use the light source with a constant current driver."
+  }
+}

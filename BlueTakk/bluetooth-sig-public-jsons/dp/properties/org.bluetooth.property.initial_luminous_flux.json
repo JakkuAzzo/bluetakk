@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.initial_luminous_flux",
+    "name": "Initial Luminous Flux",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.luminous_flux",
+    "description": "This property represents the maximum luminous output flux capability of a device at time of first use of the device. This value is typically configured by the manufacturer of the device."
+  }
+}

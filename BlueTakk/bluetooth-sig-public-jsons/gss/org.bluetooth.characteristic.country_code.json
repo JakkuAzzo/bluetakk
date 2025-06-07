@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.country_code",
+    "name": "Country Code",
+    "description": "The Country Code characteristic is used to represent a country or dependent areas in accordance with the ISO 3166-1 Numeric standard \\RefRef{iso_3166_1}.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Country Code",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: 0\nMaximum: 4095\nRepresented values: M = 1, d = 0, b = 0\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

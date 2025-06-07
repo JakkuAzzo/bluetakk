@@ -1,0 +1,63 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.blood_pressure_feature",
+    "name": "Blood Pressure Feature",
+    "description": "The Blood Pressure Feature characteristic is used to represent the supported features of a blood pressure sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Blood Pressure Feature",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_feature/field/blood_pressure_feature}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Blood Pressure Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Body Movement Detection Support\n0 = Body Movement Detection feature not supported\n1 = Body Movement Detection feature supported"
+          },
+          {
+            "bit": "1",
+            "description": "Cuff Fit Detection Support\n0 = Cuff Fit Detection feature not supported\n1 = Cuff Fit Detection feature supported"
+          },
+          {
+            "bit": "2",
+            "description": "Irregular Pulse Detection Support\n0 = Irregular Pulse Detection feature not supported\n1 = Irregular Pulse Detection feature supported"
+          },
+          {
+            "bit": "3",
+            "description": "Pulse Rate Range Detection Support\n0 = Pulse Rate Range Detection feature not supported\n1 = Pulse Rate Range Detection feature supported"
+          },
+          {
+            "bit": "4",
+            "description": "Measurement Position Detection Support\n0 = Measurement Position Detection feature not supported\n1 = Measurement Position Detection feature supported"
+          },
+          {
+            "bit": "5",
+            "description": "Multiple Bond Support\n0 = Multiple Bonds not supported\n1 = Multiple Bonds supported"
+          },
+          {
+            "bit": "6",
+            "description": "E2E-CRC Support\n0 = E2E-CRC not supported\n1 = E2E-CRC supported"
+          },
+          {
+            "bit": "7",
+            "description": "User Data Service Support\n0 = User Data Service not supported\n1 = User Data Service supported"
+          },
+          {
+            "bit": "8",
+            "description": "User Facing Time Support\n0 = User Facing Time not supported\n1 = User Facing Time supported"
+          },
+          {
+            "bit": "9\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

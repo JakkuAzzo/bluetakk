@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.color_rendering_index_r9",
+    "name": "Color Rendering Index R9",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.cie_13_3_1995_color_rendering_index",
+    "description": "This property represents the Color Rendering Index R9 value of the light output of a lamp or light fixture calculated in accordance with CIE standard CIE 13.3-1995 \u201dMethod of Measuring and Specifying Color Rendering Properties of Light Sources\u201d \\RefRef{cie1995}. The R9 value is the ninth index of the set provided by the CIE 13.3-1995 standard. It represents the precision of the rendering of red color patches, and can be an indication of how well skin tones are rendered. This index value can be dependent on the operating conditions. The value reported by the property represents the Color Rendering Index at its present state."
+  }
+}
