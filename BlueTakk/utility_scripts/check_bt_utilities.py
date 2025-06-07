@@ -80,6 +80,14 @@ def check_windows_dependencies():
         errors.append(f"Bluetooth Test Platform Pack MSI not found: {btpack_path}")
     return errors
 
+def check_linux_dependencies():
+    """Simple checks for common linux BLE utilities."""
+    errors = []
+    for tool in ("bluetoothctl", "btmon"):
+        if not is_tool_installed(tool):
+            errors.append(f"{tool} is not installed or not in PATH.")
+    return errors
+
 def check_and_setup():
     platform = sys.platform
     errors = []
@@ -89,8 +97,11 @@ def check_and_setup():
     elif platform.startswith("win"):
         print("Checking dependencies for Windows...")
         errors = check_windows_dependencies()
+    elif platform.startswith("linux"):
+        print("Checking dependencies for Linux/iSH...")
+        errors = check_linux_dependencies()
     else:
-        print("Unsupported OS. This module supports macOS and Windows only.")
+        print("Unsupported OS. This module supports macOS, Windows and Linux.")
         return False
 
     if errors:
@@ -142,6 +153,15 @@ def run_os_monitoring():
                 print(f"Failed to launch btp.exe: {e}")
         else:
             print("btp.exe not found. Please ensure the Bluetooth monitoring tools (btp) are installed.")
+    elif platform.startswith("linux"):
+        if is_tool_installed("btmon"):
+            print("Launching btmon for Bluetooth monitoring...")
+            try:
+                subprocess.Popen(["btmon"])
+            except Exception as e:
+                print(f"Failed to launch btmon: {e}")
+        else:
+            print("btmon not found. Install bluez-utils for monitoring support.")
     else:
         print("No OS monitoring tool available for this platform.")
 
@@ -255,3 +275,7 @@ if __name__ == "__main__":
         elif platform.startswith("win"):
             asyncio.run(run_windows_live_scan())
             export_os_capture()
+        elif platform.startswith("linux"):
+            asyncio.run(run_deepble_live_scan())
+            export_os_capture()
+

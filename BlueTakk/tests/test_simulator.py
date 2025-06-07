@@ -1,5 +1,6 @@
 import asyncio
 from types import SimpleNamespace
+import pytest
 
 import deepBle_discovery_tool as deep
 import bleshellexploit as ble
@@ -70,7 +71,10 @@ def test_exploit_device(monkeypatch):
 
 def test_gui_triggers_scan(monkeypatch):
     import os
-    from PyQt6.QtWidgets import QApplication
+    try:
+        from PyQt6.QtWidgets import QApplication
+    except Exception:
+        pytest.skip("PyQt6 not available")
 
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
     app = QApplication.instance() or QApplication([])
