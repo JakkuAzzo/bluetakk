@@ -8,7 +8,7 @@ mplcursors==0.6
 nest-asyncio==1.6.0
 numpy==2.2.3
 packaging==24.2
-pandas==2.2.3
+pandas
 pillow==11.1.0
 pyobjc-core==10.3.2
 pyobjc-framework-Cocoa==10.3.2

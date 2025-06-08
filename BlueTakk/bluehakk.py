@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt  # For live chart closing
 import deepBle_discovery_tool as deep
 import bleshellexploit  # BLE shell exploit module (vulnerability tests are defined here)
 from utility_scripts import check_bt_utilities as bt_util
+from utility_scripts.check_bt_utilities import detect_os
 import bleak_stats  # BLE session statistics module
 from peripheral_simulator import DEVICE_PROFILES, start_simulator
 
@@ -22,19 +23,16 @@ import pandas as pd  # Used for vulnerability result visualization
 current_os = None
 
 def get_current_device():
+    """Determine the simplified OS string."""
     global current_os
-    if sys.platform.startswith('win'):
-        current_os = 'nt'
-        print("Windows detected.")
-    elif sys.platform.startswith('darwin'):
-        current_os = 'osx'
-        print("Mac OS detected.")
-    elif sys.platform.startswith('linux'):
-        current_os = 'posix'
-        print("Linux detected.")
-    else:
-        print("Unsupported OS.")
-        current_os = None
+    os_type = detect_os()
+    current_os = {
+        "windows": "nt",
+        "mac": "osx",
+        "linux": "posix",
+        "ish": "posix",
+    }.get(os_type)
+    print(f"{os_type.capitalize()} detected." if current_os else "Unsupported OS.")
     return current_os
 
 def store_session_details(device, details):
@@ -155,14 +153,5 @@ async def main_menu():
 
 if __name__ == "__main__":
     current_os = get_current_device()
-    # Check if the required modules are installed
-    if current_os == 'nt':
-        subprocess.run(["pip", "install", "-r", "win_requirements.txt"])
-    elif current_os == 'osx':
-        subprocess.run(["pip", "install", "-r", "mac_requirements.txt"])
-    elif current_os == 'posix':
-        subprocess.run(["pip", "install", "-r", "requirements.txt"])
-    else:
-        print("Unsupported OS. Some features may not work.")
-        subprocess.run(["pip", "install", "-r", "requirements.txt"])
+    bt_util.check_and_setup()
     asyncio.get_event_loop().run_until_complete(main_menu())

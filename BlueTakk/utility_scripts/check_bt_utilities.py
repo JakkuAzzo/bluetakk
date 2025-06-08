@@ -4,13 +4,29 @@ import subprocess
 import shutil
 import asyncio
 import json
+import platform
 from datetime import datetime
 from bleak import BleakScanner
 
 # ----------------- Dependency Checks -----------------
-def is_tool_installed(name):
-    """Check if a tool is in PATH."""
+def is_tool_installed(name: str) -> bool:
+    """Return True if a tool is available in the user's PATH."""
     return shutil.which(name) is not None
+
+
+def detect_os() -> str:
+    """Return a simplified string identifying the host OS."""
+    plat = sys.platform
+    release = platform.release().lower()
+    if "ish" in release or os.environ.get("ISH_VERSION"):
+        return "ish"
+    if plat == "darwin":
+        return "mac"
+    if plat.startswith("win"):
+        return "windows"
+    if plat.startswith("linux"):
+        return "linux"
+    return "unknown"
 
 def ensure_wireshark_in_path():
     """
@@ -46,14 +62,43 @@ def ensure_wireshark_in_path():
         print("Homebrew is not installed; cannot auto-install Wireshark.")
     return False
 
+
+def ensure_wireshark():
+    """Attempt to ensure Wireshark is installed on the current OS."""
+    os_type = detect_os()
+    if os_type == "mac":
+        return ensure_wireshark_in_path()
+    if os_type in {"linux", "ish"}:
+        if is_tool_installed("wireshark"):
+            return True
+        if shutil.which("apt-get"):
+            try:
+                subprocess.run(["apt-get", "update"], check=True)
+                subprocess.run(["apt-get", "install", "-y", "wireshark"], check=True)
+                return True
+            except Exception:
+                return False
+    if os_type == "windows":
+        if is_tool_installed("wireshark") or is_tool_installed("Wireshark.exe"):
+            return True
+        if is_tool_installed("choco"):
+            try:
+                subprocess.run(["choco", "install", "wireshark", "-y"], check=True)
+                return True
+            except Exception:
+                return False
+    return False
+
 def check_macos_dependencies():
     errors = []
     profile_path = os.path.join("utility_scripts", "BluetoothProfileForMac", "Bluetooth_macOS.mobileconfig")
     if not os.path.exists(profile_path):
         errors.append(f"Configuration profile not found: {profile_path}")
 
-    if not ensure_wireshark_in_path():
-        errors.append("Wireshark is not installed or could not be added to PATH.")
+    if not ensure_wireshark():
+        errors.append(
+            "Wireshark is not installed or could not be added to PATH. BLE capture will be limited."
+        )
 
     if not is_tool_installed("brew"):
         errors.append("Homebrew is not installed. Please install Homebrew to manage required casks.")
@@ -73,8 +118,10 @@ def check_macos_dependencies():
 
 def check_windows_dependencies():
     errors = []
-    if not (is_tool_installed("Wireshark.exe") or is_tool_installed("wireshark")):
-        errors.append("Wireshark is not installed or not in your PATH. Please install Wireshark.")
+    if not ensure_wireshark():
+        errors.append(
+            "Wireshark is not installed. Packet capture will be disabled unless installed."
+        )
     btpack_path = os.path.join("utility_scripts", "BluetoothToolforWindows", "BluetoothTestPlatformPack-1.14.0.msi")
     if not os.path.exists(btpack_path):
         errors.append(f"Bluetooth Test Platform Pack MSI not found: {btpack_path}")
@@ -86,23 +133,31 @@ def check_linux_dependencies():
     for tool in ("bluetoothctl", "btmon"):
         if not is_tool_installed(tool):
             errors.append(f"{tool} is not installed or not in PATH.")
+    if not ensure_wireshark():
+        errors.append(
+            "Wireshark is not installed. Live capture features will be disabled."
+        )
     return errors
 
-def check_and_setup():
-    platform = sys.platform
-    errors = []
-    if platform == "darwin":
+def check_and_setup() -> bool:
+    os_type = detect_os()
+    errors: list[str] = []
+
+    if os_type == "mac":
         print("Checking dependencies for macOS...")
         errors = check_macos_dependencies()
-    elif platform.startswith("win"):
+        req = "mac_requirements.txt"
+    elif os_type == "windows":
         print("Checking dependencies for Windows...")
         errors = check_windows_dependencies()
-    elif platform.startswith("linux"):
+        req = "win_requirements.txt"
+    elif os_type in {"linux", "ish"}:
         print("Checking dependencies for Linux/iSH...")
         errors = check_linux_dependencies()
+        req = "requirements.txt"
     else:
-        print("Unsupported OS. This module supports macOS, Windows and Linux.")
-        return False
+        print("Unsupported OS. Some features may not work.")
+        req = "requirements.txt"
 
     if errors:
         print("Dependency check failed with the following errors:")
@@ -112,12 +167,16 @@ def check_and_setup():
         return False
     else:
         print("All required dependencies are installed and configured.")
+        try:
+            subprocess.run([sys.executable, "-m", "pip", "install", "-r", req], check=True)
+        except Exception as exc:
+            print(f"Failed to install Python requirements from {req}: {exc}")
         return True
 
 # ----------------- OS-Specific Monitoring -----------------
 def run_os_monitoring():
-    platform = sys.platform
-    if platform == "darwin":
+    os_type = detect_os()
+    if os_type == "mac":
         print("Launching Wireshark to analyze the Bluetooth interface...")
         try:
             subprocess.Popen(["open", "-a", "Wireshark"])
@@ -132,7 +191,7 @@ def run_os_monitoring():
         # (Stub) Configure Bluetooth interface for monitoring.
         print("Configuring Bluetooth interface for monitoring (stub)...")
         # For example, you might run a shell script or system command here.
-    elif platform.startswith("win"):
+    elif os_type == "windows":
         bt_tool_dir = os.path.join("utility_scripts", "BluetoothToolforWindows")
         btvs_exe = os.path.join(bt_tool_dir, "btvs.exe")
         if not os.path.exists(btvs_exe):
@@ -153,7 +212,7 @@ def run_os_monitoring():
                 print(f"Failed to launch btp.exe: {e}")
         else:
             print("btp.exe not found. Please ensure the Bluetooth monitoring tools (btp) are installed.")
-    elif platform.startswith("linux"):
+    elif os_type in {"linux", "ish"}:
         if is_tool_installed("btmon"):
             print("Launching btmon for Bluetooth monitoring...")
             try:
@@ -202,7 +261,6 @@ async def run_windows_live_scan():
     print(f"Filtered scan results saved to {output_file}.")
 
 async def run_deepble_live_scan():
-    print("\nStarting deepBLE live scan (press 'q' then Enter to cancel)...")
     cancel_event = asyncio.Event()
 
     async def wait_for_cancel():
@@ -228,14 +286,14 @@ async def run_deepble_live_scan():
 
 # ----------------- Export & Visualization -----------------
 def export_os_capture():
-    platform = sys.platform
-    if platform == "darwin":
+    os_type = detect_os()
+    if os_type == "mac":
         output_file = "capture.btsnoop"
         print(f"Exporting PacketLogger capture to {output_file} ...")
         with open(output_file, "w") as f:
             f.write("")
         print("Export complete.")
-    elif platform.startswith("win"):
+    elif os_type == "windows":
         print("Using filtered_scan_results.json for further analysis and visualization.")
     else:
         print("Export not supported on this platform.")
@@ -256,26 +314,8 @@ def visualize_results(live=False):
         bleak_stats.live_update_stats("filtered_scan_results.json")
     else:
         print("Generating visualization from last captured session...")
-        data_file = "capture.btsnoop" if sys.platform == "darwin" else "filtered_scan_results.json"
+        data_file = "capture.btsnoop" if detect_os() == "mac" else "filtered_scan_results.json"
         with open(data_file, "r") as f:
             try:
                 data = json.load(f)
-            except json.decoder.JSONDecodeError:
-                data = {}
-        bleak_stats.show_stats(data)
-
-# ----------------- Module Interface -----------------
-if __name__ == "__main__":
-    if check_and_setup():
-        run_os_monitoring()
-        platform = sys.platform
-        if platform == "darwin":
-            asyncio.run(run_deepble_live_scan())
-            export_os_capture()
-        elif platform.startswith("win"):
-            asyncio.run(run_windows_live_scan())
-            export_os_capture()
-        elif platform.startswith("linux"):
-            asyncio.run(run_deepble_live_scan())
-            export_os_capture()
 
