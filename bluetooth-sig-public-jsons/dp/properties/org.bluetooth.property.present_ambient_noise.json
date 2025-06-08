@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_ambient_noise",
+    "name": "Present Ambient Noise",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.noise",
+    "description": "This property represents the present ambient noise level measured by a sound level sensor."
+  }
+}

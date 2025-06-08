@@ -1,0 +1,29 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "description": "Selected codec frame duration",
+      "value": [
+        {
+          "key": 0,
+          "definition": "Use 7.5 ms codec frames"
+        },
+        {
+          "key": 1,
+          "definition": "Use 10 ms codec frames"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_runtime_in_a_correlated_color_temperature_range",
+    "name": "Relative Runtime in a Correlated Color Temperature Range",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.relative_runtime_in_a_correlated_color_temperature_range",
+    "description": "This property represents a relative runtime of a device in a correlated color temperature range. The Relative Runtime is the relative value, that is, the runtime in the interval compared to the total runtime recorded by the device. See the Total Device Runtime property in \\autoref{sec:org.bluetooth.property.total_device_runtime}. The Minimum Correlated Color Temperature and Maximum Correlated Color Temperature define the correlated color temperature range as minimum and maximum values of a range.\nExample use case: To see if the device powered by the supply has been operating within the specified correlated color temperature boundaries for warranty purposes, or to predict the remaining life of the device.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Minimum Correlated Color Temperature"
+        },
+        {
+          "property": "Width",
+          "characteristic": "Maximum Correlated Color Temperature - Minimum Correlated Color Temperature"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Relative Runtime"
+        }
+      ]
+    }
+  }
+}

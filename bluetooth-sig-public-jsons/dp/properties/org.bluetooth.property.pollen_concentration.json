@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.pollen_concentration",
+    "name": "Pollen Concentration",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.pollen_concentration",
+    "description": "This property represents the pollen concentration as measured by the device."
+  }
+}

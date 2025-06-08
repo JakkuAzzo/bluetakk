@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_runtime_in_an_input_current_range",
+    "name": "Relative Runtime in an Input Current Range",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.relative_runtime_in_a_current_range",
+    "description": "This property represents a relative runtime of a device within a current range.\nExample use case: To update a column in a bar chart in order to check whether or not the device powered by the supply has been operating within the specified current boundaries for warranty purposes, or to predict the remaining life of the device.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Minimum Current"
+        },
+        {
+          "property": "Width",
+          "characteristic": "Maximum Current - Minimum Current"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Relative Runtime Value"
+        }
+      ]
+    }
+  }
+}

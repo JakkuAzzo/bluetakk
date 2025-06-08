@@ -1,0 +1,83 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.csc_measurement",
+    "name": "CSC Measurement",
+    "description": "The CSC Measurement characteristic is used to represent data related to a cycling speed and cadence (CSC) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.csc_measurement/field/flags}"
+      },
+      {
+        "field": "Wheel Revolution Data",
+        "type": "struct",
+        "size": "0 or 6",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.csc_measurement/field/wheel_revolution_data}\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Crank Revolution Data",
+        "type": "struct",
+        "size": "0 or 4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.csc_measurement/field/crank_revolution_data}\nPresent if bit 1 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Wheel Revolution Data Present"
+          },
+          {
+            "bit": "1",
+            "description": "Crank Revolution Data Present"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "Wheel Revolution Data",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Cumulative Wheel Revolutions",
+            "data_type": "uint32",
+            "size": "4",
+            "description": "Unit: org.bluetooth.unitless"
+          },
+          {
+            "field": "Last Wheel Event Time",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -10\nUnit is 1/1024th of a second"
+          }
+        ]
+      },
+      {
+        "name": "Crank Revolution Data",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Cumulative Crank Revolutions",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unitless"
+          },
+          {
+            "field": "Last Crank Event Time",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -10\nUnit is 1/1024 second"
+          }
+        ]
+      }
+    ]
+  }
+}

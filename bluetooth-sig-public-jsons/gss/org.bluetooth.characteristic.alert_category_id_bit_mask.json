@@ -1,0 +1,67 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.alert_category_id_bit_mask",
+    "name": "Alert Category ID Bit Mask",
+    "description": "The Alert Category ID Bit Mask characteristic is used to represent support for predefined Category IDs.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Category ID Bit Mask",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.alert_category_id_bit_mask/field/category_id_bit_mask}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Category ID Bit Mask",
+        "description": "This field is a bit mask spanning one or more octets. If a bit is set to 0, the associated feature is not supported. If the bit is set to 1, the associated feature is supported.\nThe following bits are defined for the Category ID Bit Mask field:",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Simple Alert"
+          },
+          {
+            "bit": "1",
+            "description": "Email"
+          },
+          {
+            "bit": "2",
+            "description": "News"
+          },
+          {
+            "bit": "3",
+            "description": "Call"
+          },
+          {
+            "bit": "4",
+            "description": "Missed Call"
+          },
+          {
+            "bit": "5",
+            "description": "SMS/MMS"
+          },
+          {
+            "bit": "6",
+            "description": "Voice Mail"
+          },
+          {
+            "bit": "7",
+            "description": "Schedule"
+          },
+          {
+            "bit": "8",
+            "description": "High Prioritized Alert"
+          },
+          {
+            "bit": "9",
+            "description": "Instant Message"
+          },
+          {
+            "bit": "10\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

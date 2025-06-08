@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.manufacturer_name_string",
+    "name": "Manufacturer Name String",
+    "description": "The Manufacturer Name String characteristic is used to represent the name of the manufacturer of the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Manufacturer Name",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

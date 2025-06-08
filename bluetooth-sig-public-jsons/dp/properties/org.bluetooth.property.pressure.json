@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.pressure",
+    "name": "Pressure",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.pressure",
+    "description": "This property represents a pressure measured by a pressure sensor. This property is typically for sensors designed to report measured pressure other than the air pressure."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 3
+    },
+    {
+      "parameter": "value",
+      "size": 1,
+      "description": [
+        "Bitfield",
+        "0b0 = Channel count not supported",
+        "0b1 = Channel count supported"
+      ],
+      "value": [
+        {
+          "key": "Bit 0",
+          "definition": "Channel count: 1"
+        },
+        {
+          "key": "Bit 1",
+          "definition": "Channel count: 2"
+        },
+        {
+          "key": "Bit 2",
+          "definition": "Channel count: 3"
+        },
+        {
+          "key": "Bit 3",
+          "definition": "Channel count: 4"
+        },
+        {
+          "key": "Bit 4",
+          "definition": "Channel count: 5"
+        },
+        {
+          "key": "Bit 5",
+          "definition": "Channel count: 6"
+        },
+        {
+          "key": "Bit 6",
+          "definition": "Channel count: 7"
+        },
+        {
+          "key": "Bit 7",
+          "definition": "Channel count: 8"
+        }
+      ]
+    }
+  ]
+}

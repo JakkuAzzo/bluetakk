@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_nominal_minimum_ac_mains_voltage",
+    "name": "Luminaire Nominal Minimum AC Mains Voltage",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.voltage",
+    "description": "This property represents the luminaire nominal minimum AC mains voltage."
+  }
+}

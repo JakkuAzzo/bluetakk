@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.true_wind_direction",
+    "name": "True Wind Direction",
+    "description": "The True Wind Direction characteristic is used to represent the true wind direction. Wind direction is reported by the direction from which it originates and is an angle measured clockwise relative to Geographic North. For example, a wind coming from the north is given as 0 degrees, a wind coming from the south is given as 180 degrees, a wind coming from the east is given as 90 degrees, and a wind coming from the west is given as 270 degrees.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "True Wind Direction",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree \nMinimum value: 0 \nMaximum value: 359.99\nRepresented values: M = 1, d = -2, b = 0\nUnit is degrees with a resolution of 0.01 degrees."
+      }
+    ]
+  }
+}

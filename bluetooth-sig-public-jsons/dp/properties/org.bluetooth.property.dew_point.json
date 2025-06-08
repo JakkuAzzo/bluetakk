@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.dew_point",
+    "name": "Dew Point",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.dew_point",
+    "description": "This property represents the Dew Point temperature as measured by the device."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.true_wind_speed",
+    "name": "True Wind Speed",
+    "description": "The True Wind Speed characteristic is used to represent the true wind speed.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "True Wind Speed",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.metres_per_second\nRepresented values: M = 1, d = -2, b = 0\nUnit is in meters per second with a resolution of 0.01 m/s."
+      }
+    ]
+  }
+}

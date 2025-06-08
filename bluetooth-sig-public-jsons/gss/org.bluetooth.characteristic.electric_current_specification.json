@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.electric_current_specification",
+    "name": "Electric Current Specification",
+    "description": "The Electric Current Specification characteristic is used to represent a specification of an electric current value.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Typical Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Maximum Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      }
+    ]
+  }
+}

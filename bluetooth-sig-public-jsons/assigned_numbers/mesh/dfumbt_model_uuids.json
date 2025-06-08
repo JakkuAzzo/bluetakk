@@ -1,0 +1,34 @@
+{
+  "mesh_model_uuids": [
+    {
+      "name": "BLOB Transfer Server",
+      "uuid": 5120,
+      "type": "mbt"
+    },
+    {
+      "name": "BLOB Transfer Client",
+      "uuid": 5121,
+      "type": "mbt"
+    },
+    {
+      "name": "Firmware Update Server",
+      "uuid": 5122,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Update Client",
+      "uuid": 5123,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Server",
+      "uuid": 5124,
+      "type": "dfu"
+    },
+    {
+      "name": "Firmware Distribution Client",
+      "uuid": 5125,
+      "type": "dfu"
+    }
+  ]
+}

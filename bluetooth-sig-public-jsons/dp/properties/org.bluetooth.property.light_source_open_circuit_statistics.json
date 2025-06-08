@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_open_circuit_statistics",
+    "name": "Light Source Open Circuit Statistics",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of light source open circuit events in the light source, the average duration of the events, the time elapsed since the last open circuit event, and the total data recording period.\nExample use case: To provide predictive maintenance services."
+  }
+}

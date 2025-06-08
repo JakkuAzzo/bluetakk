@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.average_output_current",
+    "name": "Average Output Current",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.average_current",
+    "description": "This property represents the average output current for the device. This property consists of two fields: the Electric Current Value field is the average of a series of output current values, and the Sensing Duration field is the period over which the series of output current values were measured."
+  }
+}

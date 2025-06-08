@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.gust_factor",
+    "name": "Gust Factor",
+    "description": "The Gust Factor characteristic is used to represent the gust factor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Gust Factor",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 1, d = -1, b = 0 \nThe factor has a fixed-point representation, where the actual factor is (attribute value * 0.1)."
+      }
+    ]
+  }
+}

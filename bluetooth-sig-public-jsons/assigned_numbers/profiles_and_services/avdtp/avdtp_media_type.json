@@ -1,0 +1,16 @@
+{
+  "media_types": [
+    {
+      "value": 0,
+      "description": "Audio"
+    },
+    {
+      "value": 1,
+      "description": "Video"
+    },
+    {
+      "value": 2,
+      "description": "Multimedia"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.true_wind_speed",
+    "name": "True Wind Speed",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.true_wind_speed",
+    "description": "This property represents the true wind speed as measured by the device."
+  }
+}

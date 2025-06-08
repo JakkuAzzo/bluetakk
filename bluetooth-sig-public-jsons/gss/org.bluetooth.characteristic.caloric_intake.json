@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.caloric_intake",
+    "name": "Caloric Intake",
+    "description": "The Caloric Intake characteristic is used to represent the calorie intake per day of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Caloric Intake",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.energy.kilogram_calorie"
+      }
+    ]
+  }
+}

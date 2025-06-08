@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_level",
+    "name": "Battery Level",
+    "description": "The Battery Level characteristic is used to represent the charge level of a battery.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Battery Level",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.percentage.\nAllowed range is 0 to 100.\n100% represents fully charged; 0% represents fully discharged.\nAll other values are reserved for future use."
+      }
+    ]
+  }
+}

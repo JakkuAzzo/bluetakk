@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.presence_detected",
+    "name": "Presence Detected",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.boolean",
+    "description": "This property represents whether or not an occupant is detected within range of the occupancy detector."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.barometric_pressure_trend",
+    "name": "Barometric Pressure Trend",
+    "description": "The Barometric Pressure Trend characteristic is used to represent the trend observed for barometric pressure.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Barometric Pressure Trend",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.barometric_pressure_trend/field/barometric_pressure_trend}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Barometric Pressure Trend",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "Unknown"
+          },
+          {
+            "value": "1",
+            "description": "Continuously falling"
+          },
+          {
+            "value": "2",
+            "description": "Continuously rising"
+          },
+          {
+            "value": "3",
+            "description": "Falling, then steady"
+          },
+          {
+            "value": "4",
+            "description": "Rising, then steady"
+          },
+          {
+            "value": "5",
+            "description": "Falling before a lesser rise"
+          },
+          {
+            "value": "6",
+            "description": "Falling before a greater rise"
+          },
+          {
+            "value": "7",
+            "description": "Rising before a greater fall"
+          },
+          {
+            "value": "8",
+            "description": "Rising before a lesser fall"
+          },
+          {
+            "value": "9",
+            "description": "Steady"
+          },
+          {
+            "value": "10\u2013255",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

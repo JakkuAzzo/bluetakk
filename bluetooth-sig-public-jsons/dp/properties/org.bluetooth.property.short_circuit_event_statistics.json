@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.short_circuit_event_statistics",
+    "name": "Short Circuit Event Statistics",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents the short circuit event statistics and is composed of four values. The Number of Events field represents the count of short circuit events. The Average Event Duration field represents the average duration of all the short circuit events in the data-recording period. The Time Elapsed Since Last Event field represents the time elapsed since the last short circuit event occurred. The Sensing Duration field represents the total data-recording period."
+  }
+}

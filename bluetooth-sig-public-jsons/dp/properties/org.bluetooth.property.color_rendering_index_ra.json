@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.color_rendering_index_ra",
+    "name": "Color Rendering Index Ra",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.cie_13_3_1995_color_rendering_index",
+    "description": "This property represents the Color Rendering Index Ra value of the light output of a lamp or light fixture calculated in accordance with CIE standard CIE 13.3-1995 \u201dMethod of Measuring and Specifying Color Rendering Properties of Light Sources\u201d  \\RefRef{cie1995}. The Ra value is the average of the color rendering indexes (indexes 1 through 8). This index value can be dependent on the operating conditions. The value reported by the property represents the Color Rendering Index at its present state."
+  }
+}

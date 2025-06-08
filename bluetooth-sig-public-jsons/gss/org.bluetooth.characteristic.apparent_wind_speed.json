@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.apparent_wind_speed",
+    "name": "Apparent Wind Speed",
+    "description": "The Apparent Wind Speed characteristic is used to represent the apparent wind speed. The apparent wind speed is the wind experienced by an observer in motion and is the relative speed of the wind in relation to the observer.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Apparent Wind Speed",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.metres_per_second\nRepresented values: M = 1, d = -2, b = 0\nUnit is in meters per second with a resolution of 0.01 m/s."
+      }
+    ]
+  }
+}

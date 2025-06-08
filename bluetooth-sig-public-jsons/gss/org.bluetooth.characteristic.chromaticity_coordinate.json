@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.chromaticity_coordinate",
+    "name": "Chromaticity Coordinate",
+    "description": "The Chromaticity Coordinate characteristic is used to represent an x- or y-coordinate in a color diagram such as the CIE1931 diagram \\RefRef{cie_1931}.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Chromaticity Coordinate",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is unitless with a resolution of 1/65535\nMinimum: 0\nMaximum: 1.0\nRepresented values: M = 1, d = 0, b = -16"
+      }
+    ]
+  }
+}

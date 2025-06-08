@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.motion_threshold_steps",
+    "name": "Motion Threshold Steps",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.percentage_8_steps",
+    "description": "This property represents the number of steps available when configuring the Motion Threshold property (see \\autoref{sec:org.bluetooth.property.motion_threshold}).\nOccupancy sensors may have user-configurable sensitivity, represented by the Motion Threshold property. Some sensors may only allow a discrete number of sensitivity steps between 0% and 100%. This property is intended to be defined by device manufacturers and represents the number of steps available when configuring the Motion Threshold property.\nFor example:\n\\begin{itemize}\n\\item A value of 1 represents one step available for the configuration of the Motion Threshold: 0% to 100% in one 100% step.\n\\item A value of 5 represents five steps available for the configuration of the Motion Threshold: 0% to 100% in five 20% steps.\n\\item A value of 200 represents 200 steps available for the configuration of the Motion Threshold: 0% to 100% in 200 0.5% steps.\n\\end{itemize}"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.input_current_range_specification",
+    "name": "Input Current Range Specification",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.electric_current_specification",
+    "description": "This property represents the minimum, typical, and maximum input current range specification values. These values can be used together with the measured input current to check whether or not the device is operating within its specification."
+  }
+}

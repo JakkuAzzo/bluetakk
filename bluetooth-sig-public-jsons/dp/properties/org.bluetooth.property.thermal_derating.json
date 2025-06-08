@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.thermal_derating",
+    "name": "Thermal Derating",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "Thermal derating is a condition when the temperature of a device exceeds a threshold defined by the manufacturer. This property represents a count of the total number of thermal derating events, the average duration of the events, the time elapsed since the last event, and the total data recording period.\nExample use case: To provide predictive maintenance services."
+  }
+}

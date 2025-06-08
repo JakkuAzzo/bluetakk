@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.input_under_voltage_event_statistics",
+    "name": "Input Under Voltage Event Statistics",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of under-voltage events, the average duration of the events, the time elapsed since the over-voltage event, and the total data recording period.\nExample use case: To verify whether manufacturer warranty conditions have been maintained."
+  }
+}

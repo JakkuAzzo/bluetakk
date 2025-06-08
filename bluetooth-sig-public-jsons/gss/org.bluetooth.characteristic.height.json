@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.height",
+    "name": "Height",
+    "description": "The Height characteristic is used to represent the height of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Height",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.length.meter\nRepresented values: M = 1, d = -2, b = 0\nUnit is 0.01 meter."
+      }
+    ]
+  }
+}

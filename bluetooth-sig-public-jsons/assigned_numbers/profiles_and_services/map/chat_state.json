@@ -1,0 +1,28 @@
+{
+  "chat_state": [
+    {
+      "name": "Unknown",
+      "value": 0
+    },
+    {
+      "name": "Inactive",
+      "value": 1
+    },
+    {
+      "name": "Active",
+      "value": 2
+    },
+    {
+      "name": "Composing",
+      "value": 3
+    },
+    {
+      "name": "Paused Composing",
+      "value": 4
+    },
+    {
+      "name": "Gone",
+      "value": 5
+    }
+  ]
+}

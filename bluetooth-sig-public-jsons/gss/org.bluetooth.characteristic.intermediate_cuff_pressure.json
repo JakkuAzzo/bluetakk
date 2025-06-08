@@ -1,0 +1,139 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.intermediate_cuff_pressure",
+    "name": "Intermediate Cuff Pressure",
+    "description": "The Intermediate Cuff Pressure characteristic is used to send intermediate Cuff Pressure values to a device for display purposes while a measurement is in progress. The Intermediate Cuff Pressure characteristic has the same format as the Blood Pressure Measurement characteristic in \\autoref{sec:org.bluetooth.characteristic.blood_pressure_measurement}. However, due to a different context, the Blood Pressure Measurement Compound Value field is used for the Intermediate Cuff Pressure Compound Value field and the Systolic sub-field is used for the Current Cuff Pressure sub-field. The Diastolic and Mean Arterial Pressure fields are unused.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.intermediate_cuff_pressure/field/flags}."
+      },
+      {
+        "field": "Intermediate Cuff Pressure Compound Value - Current Cuff Pressure (mmHg)",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.pressure.millimetre_of_mercury\nPresent if bit 0 of Flags field is set to 0"
+      },
+      {
+        "field": "Intermediate Cuff Pressure Compound Value - Current Cuff Pressure (kPa)",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.pressure.pascal;\nM = 1, d = 3, and b = 0\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Intermediate Cuff Pressure Compound Value - Diastolic (unused)",
+        "type": "medfloat16",
+        "size": "2",
+        "description": "This subfield is not used and is set to the special value NaN."
+      },
+      {
+        "field": "Intermediate Cuff Pressure Compound Value - Mean Arterial Pressure (unused)",
+        "type": "medfloat16",
+        "size": "2",
+        "description": "This subfield is not used and is set to the special value NaN."
+      },
+      {
+        "field": "Time Stamp",
+        "type": "struct",
+        "size": "0 or 7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Pulse Rate",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "User ID",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.intermediate_cuff_pressure/field/user_id}.\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Measurement Status",
+        "type": "boolean[16]",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.intermediate_cuff_pressure/field/measurement_status}.\nPresent if bit 4 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "These flags define which data fields are present in the characteristic value.\nThe bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Intermediate Cuff Pressure Units Flag\n0 = Intermediate Cuff pressure for Systolic, Diastolic and MAP in units of mmHg\n1 = Intermediate Cuff pressure for Systolic, Diastolic and MAP in units of kPa"
+          },
+          {
+            "bit": "1",
+            "description": "Time Stamp Flag\n0 = Time Stamp not present\n1 = Time Stamp present"
+          },
+          {
+            "bit": "2",
+            "description": "Pulse Rate Flag\n0 = Pulse Rate not present\n1 = Pulse Rate present"
+          },
+          {
+            "bit": "3",
+            "description": "User ID Flag\n0 = User ID not present\n1 = User ID present"
+          },
+          {
+            "bit": "4",
+            "description": "Measurement Status Flag\n0 = Measurement Status not present\n1 = Measurement Status present"
+          },
+          {
+            "bit": "5\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "User ID",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00\u20130xFE",
+            "description": "Defined by the service specification"
+          },
+          {
+            "value": "0xFF",
+            "description": "Unknown User"
+          }
+        ]
+      },
+      {
+        "name": "Measurement Status",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Body Movement Detection Flag\n0 = No body movement\n1 = Body movement detected during measurement"
+          },
+          {
+            "bit": "1",
+            "description": "Cuff Fit Detection Flag\n0 = Cuff fits properly\n1 = Cuff too loose"
+          },
+          {
+            "bit": "2",
+            "description": "Irregular Pulse Detection Flag\n0 = No irregular pulse detected\n1 = Irregular pulse detected"
+          },
+          {
+            "bit": "3\u20134",
+            "description": "Pulse Rate Range Detection Flags\n0b00 = Pulse rate is within the range\n0b01 = Pulse rate exceeds upper limit\n0b10 = Pulse rate is less than lower limit\n0b11 = Reserved for Future Use"
+          },
+          {
+            "bit": "5",
+            "description": "Measurement Position Detection Flag\n0 = Proper measurement position\n1 = Improper measurement position"
+          },
+          {
+            "bit": "6\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

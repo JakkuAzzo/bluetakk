@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.average_current",
+    "name": "Average Current",
+    "description": "The Average Current characteristic is used to represent average electric current over a period of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}."
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}."
+      }
+    ]
+  }
+}

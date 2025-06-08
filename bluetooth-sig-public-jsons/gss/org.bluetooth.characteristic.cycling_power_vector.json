@@ -1,0 +1,93 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cycling_power_vector",
+    "name": "Cycling Power Vector",
+    "description": "The Cycling Power Vector characteristic is used to represent power vector data related to a cycling power sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_vector/field/flags}"
+      },
+      {
+        "field": "Crank Revolution Data",
+        "type": "struct",
+        "size": "0 or 4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_vector/field/crank_revolution_data}\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "First Crank Measurement Angle",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_vector/field/first_crank_measurement_angle}\nUnit: org.bluetooth.unit.plane_angle.degree\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Instantaneous Force Magnitude Array",
+        "type": "sint16 [0\u20139]",
+        "size": "0\u201318",
+        "description": "Unit: org.bluetooth.unit.force.newton\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "Instantaneous Torque Magnitude Array",
+        "type": "sint16 [0\u20139]",
+        "size": "0\u201318",
+        "description": "Base Unit: org.bluetooth.unit.moment_of_force.newton_metre\nRepresented values: M = 1, d = 0, b = -5\nUnit is 1/32 Newton meter\nPresent if bit 3 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Crank Revolution Data Present"
+          },
+          {
+            "bit": "1",
+            "description": "First Crank Measurement Angle Present"
+          },
+          {
+            "bit": "2",
+            "description": "Instantaneous Force Magnitude Array Present"
+          },
+          {
+            "bit": "3",
+            "description": "Instantaneous Torque Magnitude Array Present"
+          },
+          {
+            "bit": "4\u20135",
+            "description": "Instantaneous Measurement Direction\n0b00 = Unknown\n0b01 = Tangential Component\n0b10 = Radial Component\n0b11 = Lateral Component"
+          },
+          {
+            "bit": "6\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "Crank Revolution Data",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Cumulative Crank Revolutions",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.unitless"
+          },
+          {
+            "field": "Last Crank Event Time",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -10\nUnit is 1/1024 second"
+          }
+        ]
+      },
+      {
+        "name": "First Crank Measurement Angle",
+        "description": "When observed with the front wheel to the right of the pedals, a value of 0 degrees represents the angle when the crank is in the 12 o'clock position and a value of 90 degrees represents the angle, measured clockwise, when the crank points towards the front wheel in a 3 o'clock position. The left crank sensor (if fitted) detects the 0\u00b0 when the crank it is attached to is in the 12 o'clock position and the right sensor (if fitted) detects the 0\u00b0 when the crank it is attached to is in its 12 o'clock position; thus, there is a constant 180\u00b0 difference between the right crank and the left crank position signals."
+      }
+    ]
+  }
+}

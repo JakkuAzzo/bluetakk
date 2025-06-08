@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.energy_in_a_period_of_day",
+    "name": "Energy in a Period of Day",
+    "description": "The Energy in a Period of Day characteristic is used to represent energy use in a period of a day.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Energy Value",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to the Energy characteristic in \\autoref{sec:org.bluetooth.characteristic.energy}"
+      },
+      {
+        "field": "Start Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      },
+      {
+        "field": "End Time",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Decihour 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_decihour_8}"
+      }
+    ]
+  }
+}

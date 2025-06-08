@@ -1,4 +1,5 @@
 import asyncio
+import pytest
 from peripheral_simulator import VirtualPeripheral, simulate_exchange
 
 

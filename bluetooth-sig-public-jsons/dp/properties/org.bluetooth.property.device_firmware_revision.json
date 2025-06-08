@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_firmware_revision",
+    "name": "Device Firmware Revision",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_8",
+    "description": "This property represents a revision identifier for the firmware within the device."
+  }
+}

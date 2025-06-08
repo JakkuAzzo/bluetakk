@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_thermal_shutdown_statistics",
+    "name": "Light Source Thermal Shutdown Statistics",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of light source thermal shutdown events in light source, the average duration of the events, the time elapsed since the last thermal shutdown event of the light source, and the total data recording period.\nExample use case: To provide predictive maintenance services."
+  }
+}

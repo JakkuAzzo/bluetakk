@@ -1,0 +1,31 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.user_index",
+    "name": "User Index",
+    "description": "The User Index characteristic is used to represent the index of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "User Index",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.user_index/field/user_index}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "User Index",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0\u2013254",
+            "description": "Index of the current user."
+          },
+          {
+            "value": "255",
+            "description": "Unknown User"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_ambient_light_level",
+    "name": "Present Ambient Light Level",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.illuminance",
+    "description": "This property represents the light level as measured by a light sensor measuring illuminance (Lux)."
+  }
+}

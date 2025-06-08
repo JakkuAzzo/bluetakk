@@ -1,0 +1,19 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": "Varies"
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 3
+    },
+    {
+      "parameter": "Value",
+      "size": "Varies",
+      "description": "Title and/or summary of Audio Stream content: UTF-8 format"
+    }
+  ]
+}

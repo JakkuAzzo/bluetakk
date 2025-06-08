@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_over_temperature_event_statistics",
+    "name": "Device Over Temperature Event Statistics",
+    "group": "org.bluetooth.property_group.device_operating_temperature",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of operating over-temperature events, the average duration of the events, the time elapsed since the over-temperature event, and the total data recording period.\nExample use case: To verify whether food items in a refrigerator have been exposed to high temperature."
+  }
+}

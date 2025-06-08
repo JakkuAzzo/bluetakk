@@ -1,0 +1,40 @@
+{
+  "bearer_technology": [
+    {
+      "name": "3G",
+      "value": 1
+    },
+    {
+      "name": "4G",
+      "value": 2
+    },
+    {
+      "name": "LTE",
+      "value": 3
+    },
+    {
+      "name": "Wi-Fi",
+      "value": 4
+    },
+    {
+      "name": "5G",
+      "value": 5
+    },
+    {
+      "name": "GSM",
+      "value": 6
+    },
+    {
+      "name": "CDMA",
+      "value": 7
+    },
+    {
+      "name": "2G",
+      "value": 8
+    },
+    {
+      "name": "WCDMA",
+      "value": 9
+    }
+  ]
+}

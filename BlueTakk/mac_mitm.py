@@ -1,8 +1,17 @@
 import asyncio
 import logging
 from bleak import BleakClient
+from bleak.exc import BleakError
 import objc
-from Foundation import NSObject, NSLog
+
+def safe_define_objc_class(name, bases, attrs):
+    class_list = getattr(objc, "classList", None)
+    look_up_class = getattr(objc, "lookUpClass", None)
+    if class_list and look_up_class:
+        if name in class_list():
+            return look_up_class(name)
+    return type(name, bases, attrs)
+
 # Import CoreBluetooth classes via pyobjc
 objc.loadBundle("CoreBluetooth", globals(), bundle_path="/System/Library/Frameworks/CoreBluetooth.framework")
 
@@ -26,6 +35,10 @@ class MITMPeripheralDelegate(NSObject):
 
     # Additional delegate methods can be defined here.
 
+PeripheralDelegate = safe_define_objc_class("PeripheralDelegate", (NSObject,), {
+    # ...class attributes and methods...
+})
+
 # MITM Proxy Class
 class MacMITMProxy:
     def __init__(self, target_address):
@@ -37,11 +50,23 @@ class MacMITMProxy:
         # Peripheral Manager setup (pseudocode)
         self.peripheral_manager = self.setup_peripheral_manager()
 
-    async def connect_to_target(self):
-        await self.client.connect()
-        self.target_services = await self.client.get_services()
-        logging.info("Connected to target: %s", self.target_address)
-        logging.info("Discovered Services: %s", self.target_services)
+    async def connect_to_target(self, max_retries=3, retry_delay=2):
+        for attempt in range(1, max_retries + 1):
+            try:
+                await self.client.connect()
+                if self.client.is_connected:
+                    print(f"Connected to target on attempt {attempt}.")
+                    return
+                else:
+                    print(f"Attempt {attempt}: Not connected after connect().")
+            except BleakError as e:
+                print(f"Attempt {attempt}: BleakError: {e}")
+            except Exception as e:
+                print(f"Attempt {attempt}: Unexpected error: {e}")
+            if attempt < max_retries:
+                print(f"Retrying in {retry_delay} seconds...")
+                await asyncio.sleep(retry_delay)
+        raise BleakError(f"Failed to connect to target after {max_retries} attempts.")
 
     def setup_peripheral_manager(self):
         # Using pyobjc to create a CBPeripheralManager instance
@@ -81,7 +106,11 @@ class MacMITMProxy:
             logging.error("Error forwarding write: %s", e)
 
     async def run(self):
-        await self.connect_to_target()
+        try:
+            await self.connect_to_target()
+        except BleakError as e:
+            print(f"Could not connect to target: {e}")
+            return
         try:
             while True:
                 await asyncio.sleep(1)

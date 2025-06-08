@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_power_on_cycles",
+    "name": "Total Device Power On Cycles",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property represents the total recorded power-on event count for a device."
+  }
+}

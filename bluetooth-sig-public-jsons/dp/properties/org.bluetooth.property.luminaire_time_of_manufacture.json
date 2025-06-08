@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_time_of_manufacture",
+    "name": "Luminaire Time of Manufacture",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.date_utc",
+    "description": "This property represents the luminaire time of manufacture."
+  }
+}

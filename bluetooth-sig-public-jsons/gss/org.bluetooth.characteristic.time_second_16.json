@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_second_16",
+    "name": "Time Second 16",
+    "description": "The Time Second 16 characteristic is used to represent a period of time with a unit of 1 second.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Second 16",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is second with a resolution of 1.\nMinimum: 0\nMaximum: 65534\nUnit: org.bluetooth.unit.time.second\nA value of 0xFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

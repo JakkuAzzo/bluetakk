@@ -1,0 +1,27 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.relative_runtime_in_an_input_voltage_range",
+    "name": "Relative Runtime in an Input Voltage Range",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.relative_value_in_a_voltage_range",
+    "description": "This property represents a relative runtime of a device within a voltage range.\nExample use case: To update a column in a bar chart in order to check whether or not the device powered by the supply has been operating within the specified voltage boundaries for warranty purposes, or to predict the remaining life of the device.",
+    "mapping": {
+      "description": "This property has three fields, each of which derives its value from the characteristic. These fields are shown in the table below.",
+      "caption": "Mapping from property fields to characteristic fields",
+      "fields": [
+        {
+          "property": "Start",
+          "characteristic": "Minimum Voltage"
+        },
+        {
+          "property": "Width",
+          "characteristic": "Maximum Voltage - Minimum Voltage"
+        },
+        {
+          "property": "Value",
+          "characteristic": "Relative Value"
+        }
+      ]
+    }
+  }
+}

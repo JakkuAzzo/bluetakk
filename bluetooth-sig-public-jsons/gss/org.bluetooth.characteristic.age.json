@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.age",
+    "name": "Age",
+    "description": "The Age characteristic is used to represent the age of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Age",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.time.year"
+      }
+    ]
+  }
+}

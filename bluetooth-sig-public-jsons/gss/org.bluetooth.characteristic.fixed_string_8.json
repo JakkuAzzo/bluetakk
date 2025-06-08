@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.fixed_string_8",
+    "name": "Fixed String 8",
+    "description": "The Fixed String 8 characteristic is used to represent a variable-length UTF-8 string with a maximum length of 8 octets, see Volume 1, Part E, Section 2.9.3 in [1].\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Fixed String",
+        "type": "utf8s\\{8\\}",
+        "size": "8",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

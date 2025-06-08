@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.temperature_8",
+    "name": "Temperature 8",
+    "description": "The Temperature 8 characteristic is used to represent a measure of temperature with a limited range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Temperature 8",
+        "type": "sint8",
+        "size": "1",
+        "description": "Unit is degree Celsius with a resolution of 0.5.\nMinimum: -64.0\nMaximum: 63.0\nRepresented values: M = 1, d = 0, b = -1\nUnit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nA value of 0x7F represents \"value is not known\"."
+      }
+    ]
+  }
+}

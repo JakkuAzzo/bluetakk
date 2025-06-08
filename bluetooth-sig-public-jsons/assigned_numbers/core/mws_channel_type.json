@@ -1,0 +1,12 @@
+{
+  "mws_channel_types": [
+    {
+      "value": 0,
+      "name": "TDD"
+    },
+    {
+      "value": 1,
+      "name": "FDD"
+    }
+  ]
+}

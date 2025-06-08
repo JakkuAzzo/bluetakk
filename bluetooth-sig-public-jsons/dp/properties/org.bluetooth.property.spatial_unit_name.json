@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.spatial_unit_name",
+    "name": "Spatial Unit Name",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.fixed_string_36",
+    "description": "This property represents a localized name for the immediate spatial area container in which the device is located. The zero-length empty UTF-8 string \"\" indicates the value is unknown or invalid.\nExample use case: Identify the room in a house where a device is installed, such as \"Sam's room\", or the name of a store in a mall \"Candy Delight\". A mobile cleaning robot is configured with empty string \"\"."
+  }
+}

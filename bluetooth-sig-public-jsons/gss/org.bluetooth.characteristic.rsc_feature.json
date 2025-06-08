@@ -1,0 +1,47 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.rsc_feature",
+    "name": "RSC Feature",
+    "description": "The RSC Feature characteristic is used to represent the supported features of a running speed and cadence (RSC) sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "RSC Feature",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.rsc_feature/field/rsc_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "RSC Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Instantaneous Stride Length Measurement Supported"
+          },
+          {
+            "bit": "1",
+            "description": "Total Distance Measurement Supported"
+          },
+          {
+            "bit": "2",
+            "description": "Walking or Running Status Supported"
+          },
+          {
+            "bit": "3",
+            "description": "Calibration Procedure Supported"
+          },
+          {
+            "bit": "4",
+            "description": "Multiple Sensor Locations Supported"
+          },
+          {
+            "bit": "5\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

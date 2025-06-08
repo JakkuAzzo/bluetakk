@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.perceived_lightness",
+    "name": "Perceived Lightness",
+    "description": "The Perceived Lightness characteristic is used to represent the perceived lightness of a light.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Perceived Lightness",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is unitless with a resolution of 1.\nMinimum: 0\nMaximum: 65535\nRepresented values: M = 1, d = 0, b = 0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.magnetic_flux_density_3d",
+    "name": "Magnetic Flux Density - 3D",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.magnetic_flux_density_3d",
+    "description": "This property represents the magnetic flux density in three dimensions as measured by the device for three orthogonal axes: X, Y, and Z."
+  }
+}

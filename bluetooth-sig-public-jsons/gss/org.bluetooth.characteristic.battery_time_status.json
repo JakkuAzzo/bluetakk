@@ -1,0 +1,53 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_time_status",
+    "name": "Battery Time Status",
+    "description": "The Battery Time Status characteristic is used to represent time estimates for discharging and charging.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_time_status/field/flags}."
+      },
+      {
+        "field": "Time until Discharged",
+        "type": "uint24",
+        "size": "3",
+        "description": "Estimated time in minutes until discharged.\nBase unit: org.bluetooth.unit.time.minute\nA value of 0xFFFFFF represents: Unknown\nA value of 0xFFFFFE represents: Greater than 0xFFFFFD"
+      },
+      {
+        "field": "Time until Discharged on Standby",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Estimated time in minutes until discharged assuming for the remaining time the device is in standby.\nBase unit: org.bluetooth.unit.time.minute\nA value of 0xFFFFFF represents: Unknown\nA value of 0xFFFFFE: represents: Greater than 0xFFFFFD\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Time until Recharged",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Estimated time in minutes until recharged.\nBase unit: org.bluetooth.unit.time.minute\nA value of 0xFFFFFF represents: Unknown\nA value of 0xFFFFFE represents: Greater than 0xFFFFFD\nPresent if bit 1 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Time until Discharged on Standby Present"
+          },
+          {
+            "bit": "1",
+            "description": "Time until Recharged Present"
+          },
+          {
+            "bit": "2\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

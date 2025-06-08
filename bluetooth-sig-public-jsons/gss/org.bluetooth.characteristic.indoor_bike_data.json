@@ -1,0 +1,169 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.indoor_bike_data",
+    "name": "Indoor Bike Data",
+    "description": "The Indoor Bike Data characteristic is used to represent data related to the use of an indoor bike.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.indoor_bike_data/field/flags}"
+      },
+      {
+        "field": "Instantaneous Speed",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.kilometre_per_hour\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a kilometer per hour\nThe Instantaneous Speed field represents the instantaneous speed of the user.\nPresent if bit 0 of Flags field is set to 0"
+      },
+      {
+        "field": "Average Speed",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.kilometre_per_hour\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a kilometer per hour\nThe Average Speed field represents the average speed since the beginning of the training session.\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Instantaneous Cadence",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.angular_velocity.revolution_per_minute\nRepresented values: M = 1, d = 0, b = -1\nUnit is 1/2 of a revolution per minute\nThe Instantaneous Cadence field represents the instantaneous cadence of the user.\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "Average Cadence",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.angular_velocity.revolution_per_minute\nRepresented values: M = 1, d = 0, b = -1\nUnit is 1/2 of a revolution per minute\nThe Average Speed field represents the average cadence since the beginning of the training session.\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Total Distance",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Unit: org.bluetooth.unit.length.metre\nThe Total Distance field represents the total distance reported by the Server since the beginning of the training session.\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "Resistance Level",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 1, d = 1, b = 0\nUnit is 1\nThe Resistance Level field represents the value of the current value of the resistance level of the Server.\nPresent if bit 5 of Flags field is set to 1"
+      },
+      {
+        "field": "Instantaneous Power",
+        "type": "sint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.power.watt\nThe Instantaneous Power field represents the value of the instantaneous power measured by the Server.\nPresent if bit 6 of Flags field is set to 1"
+      },
+      {
+        "field": "Average Power",
+        "type": "sint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.power.watt\nThe Average Power field represents the value of the average power measured by the Server since the beginning of the training session.\nPresent if bit 7 of Flags field is set to 1"
+      },
+      {
+        "field": "Total Energy",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.energy.kilogram_calorie\nThe Total Energy field represents the total expended energy of a user since the training session has started.\nPresent if bit 8 of Flags field is set to 1"
+      },
+      {
+        "field": "Energy Per Hour",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.energy.kilogram_calorie\nThe Energy per Hour field represents the average expended energy of a user during a period of one hour.\nPresent if bit 8 of Flags field is set to 1"
+      },
+      {
+        "field": "Energy Per Minute",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.energy.kilogram_calorie\nThe Energy per Minute field represents the average expended energy of a user during a period of one minute.\nPresent if bit 8 of Flags field is set to 1"
+      },
+      {
+        "field": "Heart Rate",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nThe Heart Rate field represents the current heart rate value of the user (e.g., measured via the contact heart rate or any other means).\nPresent if bit 9 of Flags field is set to 1"
+      },
+      {
+        "field": "Metabolic Equivalent",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.metabolic_equivalent\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 metabolic equivalent\nThe Metabolic Equivalent field represents the metabolic equivalent of the user.\nPresent if bit 10 of Flags field is set to 1"
+      },
+      {
+        "field": "Elapsed Time",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.time.second\nThe Elapsed Time field represents the elapsed time of a training session since the training session has started.\nPresent if bit 11 of Flags field is set to 1"
+      },
+      {
+        "field": "Remaining Time",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.time.second\nThe Remaining Time field represents the remaining time of a selected training session.\nPresent if bit 12 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "More Data"
+          },
+          {
+            "bit": "1",
+            "description": "Average Speed present"
+          },
+          {
+            "bit": "2",
+            "description": "Instantaneous Cadence present"
+          },
+          {
+            "bit": "3",
+            "description": "Average Cadence present"
+          },
+          {
+            "bit": "4",
+            "description": "Total Distance present"
+          },
+          {
+            "bit": "5",
+            "description": "Resistance Level present"
+          },
+          {
+            "bit": "6",
+            "description": "Instantaneous Power present"
+          },
+          {
+            "bit": "7",
+            "description": "Average Power present"
+          },
+          {
+            "bit": "8",
+            "description": "Expended Energy present"
+          },
+          {
+            "bit": "9",
+            "description": "Heart Rate present"
+          },
+          {
+            "bit": "10",
+            "description": "Metabolic Equivalent present"
+          },
+          {
+            "bit": "11",
+            "description": "Elapsed Time present"
+          },
+          {
+            "bit": "12",
+            "description": "Remaining Time present"
+          },
+          {
+            "bit": "13\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

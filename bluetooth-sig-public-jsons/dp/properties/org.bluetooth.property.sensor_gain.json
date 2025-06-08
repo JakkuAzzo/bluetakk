@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.sensor_gain",
+    "name": "Sensor Gain",
+    "group": "org.bluetooth.property_group.settings",
+    "characteristic": "org.bluetooth.characteristic.coefficient",
+    "description": "This property represents the ratio of the value reported by the sensor to the raw value measured by the sensor.\nExample use case: To calibrate reported values using a multiplier acting as an attenuator or amplifier. A negative Sensor Gain value is used when the sensor reports values in reverse to the measured values."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_luminous_flux",
+    "name": "Present Luminous Flux",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.luminous_flux",
+    "description": "This property represents the luminous flux as output by a device."
+  }
+}

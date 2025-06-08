@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.apparent_energy",
+    "name": "Apparent Energy",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.apparent_energy_32",
+    "description": "This property represents the apparent energy used by the device to either change it into work and heat in alternating current or into work in direct current."
+  }
+}

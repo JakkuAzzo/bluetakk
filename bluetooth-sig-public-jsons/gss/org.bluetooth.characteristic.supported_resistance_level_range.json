@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_resistance_level_range",
+    "name": "Supported Resistance Level Range",
+    "description": "The Supported Resistance Level Range characteristic is used to represent the resistance level range supported by a fitness machine.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Resistance Level",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 1, d = 1, b = 0\nUnit is 1"
+      },
+      {
+        "field": "Maximum Resistance Level",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 1, d = 1, b = 0\nUnit is 1"
+      },
+      {
+        "field": "Minimum Increment",
+        "type": "uint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.unitless\nRepresented values: M = 1, d = 1, b = 0\nUnit is 1"
+      }
+    ]
+  }
+}

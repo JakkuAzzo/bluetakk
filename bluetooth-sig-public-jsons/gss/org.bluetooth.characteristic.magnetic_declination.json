@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.magnetic_declination",
+    "name": "Magnetic Declination",
+    "description": "The Magnetic Declination characteristic is used to represent the magnetic declination. The magnetic declination is the angle on the horizontal plane between the direction of True North (geographic) and the direction of Magnetic North, measured clockwise from True North to Magnetic North.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Magnetic Declination",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree. Minimum value: 0 Maximum value: 359.99\nRepresented values: M = 1, d = -2, b = 0\nUnit is degrees with a resolution of 0.01 degrees."
+      }
+    ]
+  }
+}

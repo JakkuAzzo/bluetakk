@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_decihour_8",
+    "name": "Time Decihour 8",
+    "description": "The Time Decihour 8 characteristic is used to represent a period of time in tenths of an hour.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Decihour 8",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit is hour with a resolution of 0.1.\nMinimum: 0.0\nMaximum: 23.9\nRepresented values: M = 1, d = -1, b = 0\nUnit: org.bluetooth.unit.time.hour\nA value of 0xFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

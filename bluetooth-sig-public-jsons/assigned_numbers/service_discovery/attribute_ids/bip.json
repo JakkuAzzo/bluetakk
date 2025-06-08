@@ -1,0 +1,24 @@
+{
+  "attribute_ids": [
+    {
+      "name": "GoepL2capPsm (BIP v1.1 and later)",
+      "value": 512
+    },
+    {
+      "name": "Supported Capabilities",
+      "value": 784
+    },
+    {
+      "name": "Supported Features",
+      "value": 785
+    },
+    {
+      "name": "Supported Functions",
+      "value": 786
+    },
+    {
+      "name": "Total Imaging Data Capacity",
+      "value": 787
+    }
+  ]
+}

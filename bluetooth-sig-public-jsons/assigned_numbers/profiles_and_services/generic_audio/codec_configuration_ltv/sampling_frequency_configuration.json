@@ -1,0 +1,73 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 1
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "description": "Selected codec sampling frequency",
+      "value": [
+        {
+          "key": 1,
+          "definition": "8000 Hz"
+        },
+        {
+          "key": 2,
+          "definition": "11025 Hz"
+        },
+        {
+          "key": 3,
+          "definition": "16000 Hz"
+        },
+        {
+          "key": 4,
+          "definition": "22050 Hz"
+        },
+        {
+          "key": 5,
+          "definition": "24000 Hz"
+        },
+        {
+          "key": 6,
+          "definition": "32000 Hz"
+        },
+        {
+          "key": 7,
+          "definition": "44100 Hz"
+        },
+        {
+          "key": 8,
+          "definition": "48000 Hz"
+        },
+        {
+          "key": 9,
+          "definition": "88200 Hz"
+        },
+        {
+          "key": 10,
+          "definition": "96000 Hz"
+        },
+        {
+          "key": 11,
+          "definition": "176400 Hz"
+        },
+        {
+          "key": 12,
+          "definition": "192000 Hz"
+        },
+        {
+          "key": 13,
+          "definition": "384000 Hz"
+        }
+      ]
+    }
+  ]
+}

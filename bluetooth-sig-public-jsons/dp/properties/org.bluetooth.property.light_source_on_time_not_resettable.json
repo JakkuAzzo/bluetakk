@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_source_on_time_not_resettable",
+    "name": "Light Source On Time Not Resettable",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.time_second_32",
+    "description": "This property represents the total time the light source has been on since manufacturing. This property is not resettable."
+  }
+}

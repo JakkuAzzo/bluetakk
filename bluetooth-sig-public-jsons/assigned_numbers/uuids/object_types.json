@@ -1,0 +1,34 @@
+{
+  "uuids": [
+    {
+      "uuid": 10954,
+      "name": "Unspecified",
+      "id": "org.bluetooth.object.unspecified"
+    },
+    {
+      "uuid": 10955,
+      "name": "Directory Listing",
+      "id": "org.bluetooth.object.directory_listing"
+    },
+    {
+      "uuid": 11177,
+      "name": "Media Player Icon",
+      "id": "org.bluetooth.object.media_player_icon"
+    },
+    {
+      "uuid": 11178,
+      "name": "Track Segment",
+      "id": "org.bluetooth.object.track_segments"
+    },
+    {
+      "uuid": 11179,
+      "name": "Track",
+      "id": "org.bluetooth.object.track"
+    },
+    {
+      "uuid": 11180,
+      "name": "Group",
+      "id": "org.bluetooth.object.group"
+    }
+  ]
+}

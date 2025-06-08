@@ -1,23 +1,99 @@
 import os
 import re
-import yaml
 import json
 import asyncio
 import subprocess
-from bleak import BleakScanner, BleakClient
+from datetime import datetime
+
+# --- Attempt to Import Optional Dependencies ---
+try:
+    import yaml
+except ImportError:
+    yaml = None
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    plt = None
+try:
+    from bleak import BleakScanner, BleakClient
+except ImportError:
+    class BleakScanner:
+        @staticmethod
+        async def discover(*args, **kwargs):
+            return []
+    class BleakClient:
+        def __init__(self, *a, **k):
+            self.services = []
+        async def __aenter__(self): return self
+        async def __aexit__(self, exc_type, exc, tb): pass
+        async def get_services(self): return []
+        async def read_gatt_char(self, uuid): return b""
 
 # Import centralized utilities
 from utility_scripts import check_bt_utilities as bt_util
 import bleak_stats
-import matplotlib.pyplot as plt
-
-import json
-from datetime import datetime
 
 # --- Custom YAML Loader to Preserve Hex Strings ---
-class HexStringLoader(yaml.SafeLoader):
-    pass
+# YAML loader guard
+if yaml is not None and hasattr(yaml, "SafeLoader") and 'hex_int_constructor' in globals():
+    class HexStringLoader(yaml.SafeLoader):
+        pass
+    if hasattr(HexStringLoader, "add_constructor"):
+        HexStringLoader.add_constructor('tag:yaml.org,2002:int', hex_int_constructor)
+else:
+    class HexStringLoader(object):
+        pass
 
+# YAML safe_load guard
+
+def load_yaml_file(path):
+    if yaml is not None and hasattr(yaml, "safe_load"):
+        with open(path) as f:
+            return yaml.safe_load(f)
+    return {}
+
+# Matplotlib guards
+
+def close_all_figures():
+    if plt is not None and hasattr(plt, "get_fignums") and hasattr(plt, "close"):
+        while plt.get_fignums():
+            plt.close("all")
+
+# bleak_stats guards
+async def guarded_live_update_stats_data(bleak_stats, live_scan_data):
+    live_update = getattr(bleak_stats, "async_live_update_stats_data", None)
+    if callable(live_update):
+        await live_update(live_scan_data)
+    else:
+        print("async_live_update_stats_data not found in bleak_stats.")
+
+async def guarded_live_update_detailed_stats_data(bleak_stats, live_scan_data):
+    detailed_update = getattr(bleak_stats, "async_live_update_detailed_stats_data", None)
+    if callable(detailed_update):
+        await detailed_update(live_scan_data)
+    else:
+        print("async_live_update_detailed_stats_data not found in bleak_stats.")
+
+# BleakClient fallback with all expected methods/attributes
+try:
+    from bleak import BleakScanner, BleakClient
+except ImportError:
+    class BleakScanner:
+        @staticmethod
+        async def discover(*args, **kwargs):
+            return []
+    class BleakClient:
+        def __init__(self, *a, **k):
+            self.services = []
+        async def __aenter__(self): return self
+        async def __aexit__(self, exc_type, exc, tb): pass
+        async def get_services(self): return []
+        async def read_gatt_char(self, uuid): return b""
+
+# Always initialize raw_val before use
+raw_val = None
+
+# --- Device Detail Functions ---
 async def get_device_details(address):
     details = []
     try:
@@ -72,8 +148,6 @@ def hex_int_constructor(loader, node):
         return int(value)
     except ValueError:
         return value
-
-HexStringLoader.add_constructor('tag:yaml.org,2002:int', hex_int_constructor)
 
 # --- Basic Reference Loaders ---
 def load_company_identifiers(folder_path='bluetooth-sig-public-jsons'):
@@ -369,7 +443,11 @@ async def run_live_scan():
         await live_scan_loop_task
     except asyncio.CancelledError:
         pass
-    plt.close("all")
+    # Only use plt.get_fignums and plt.close if available
+    if plt is not None and hasattr(plt, "get_fignums"):
+        while plt.get_fignums():
+            if hasattr(plt, "close"):
+                plt.close("all")
 
 async def run_detailed_live_scan():
     """
@@ -427,7 +505,11 @@ async def read_all_characteristics(address):
                         decoded_val = raw_val.decode(errors="ignore")
                     except Exception as e:
                         decoded_val = f"Error: {e}"
-                    print(f"  Characteristic {char.uuid}: {decoded_val} (raw: {raw_val.hex()})")
+                    # When printing raw_val, check before using .hex()
+                    if raw_val is not None:
+                        print(f"  Characteristic {char.uuid}: {decoded_val} (raw: {raw_val.hex()})")
+                    else:
+                        print(f"  Characteristic {char.uuid}: {decoded_val} (raw: None)")
                     print(f"    {lookup_details(char.uuid, category='characteristic_uuids')}")
     except Exception as e:
         print(f"Error connecting to {address}: {e}")

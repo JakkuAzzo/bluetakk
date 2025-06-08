@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_voltage_range",
+    "name": "Output Voltage Range",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.voltage_specification",
+    "description": "This property represents the minimum and maximum output voltage of the power supply."
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.glucose_measurement",
+    "name": "Glucose Measurement",
+    "description": "The Glucose Measurement characteristic is used to represent data related to a glucose measurement record.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/field/flags}"
+      },
+      {
+        "field": "Sequence Number",
+        "type": "uint16",
+        "size": "2",
+        "description": "Contains a sequence number of the record. It is used to number a sequence of measurements as defined by the service."
+      },
+      {
+        "field": "Base Time",
+        "type": "struct",
+        "size": "7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}"
+      },
+      {
+        "field": "Time Offset",
+        "type": "int16",
+        "size": "0 or 2",
+        "description": "Specifies the time difference from the value of the Base Time field.\nSee \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/field/time_offset}\nunit: org.bluetooth.unit.time.minute\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Glucose Concentration",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "If bit 2 of Flags field is set to 0,\nunit: org.bluetooth.unit.mass_density.kilogram_per_liter\nIf bit 2 of Flags field is set to 1,\nunit: org.bluetooth.unit.mass_density.mole_per_litre\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Type-Sample Location",
+        "type": "struct",
+        "size": "0 or 1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/field/type-sample_location}\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Sensor Status Annunciation",
+        "type": "boolean[16]",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/field/sensor_status_annunciation}\nPresent if bit 3 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Time Offset Flag:\n0 = Time Offset field not present\n1 = Time Offset field present"
+          },
+          {
+            "bit": "1",
+            "description": "Glucose Concentration and Type-Sample Location Flag:\n0 = Glucose Concentration and Type-Sample Location fields not present\n1 = Glucose Concentration and Type-Sample Location fields present"
+          },
+          {
+            "bit": "2",
+            "description": "Glucose Units Flag:\n0 = Glucose concentration in units of mg/dL\n1 = Glucose concentration in units of mmol/L"
+          },
+          {
+            "bit": "3",
+            "description": "Sensor Status Annunciation Flag:\n0 = Sensor Status Annunciation field not present\n1 = Sensor Status Annunciation field present"
+          },
+          {
+            "bit": "4",
+            "description": "Context Information Flag:\n0 = This record does not include context information\n1 = This record includes context information"
+          },
+          {
+            "bit": "5\u20137",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "Time Offset",
+        "description": "The values of this field are defined below",
+        "values": [
+          {
+            "value": "0x0000\u20130xFFFF",
+            "description": "Time offset in minutes"
+          }
+        ]
+      },
+      {
+        "name": "Type-Sample Location",
+        "description": "The structure of this field is defined below.",
+        "size_in_bits": true,
+        "values": [
+          {
+            "field": "Type",
+            "data_type": "uint4",
+            "size": "4",
+            "description": "Unit: org.bluetooth.unit.unitless\nSee \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/subfield/type}"
+          },
+          {
+            "field": "Sample Location",
+            "data_type": "uint4",
+            "size": "4",
+            "description": "Unit: org.bluetooth.unit.unitless\nSee \\autoref{sec:org.bluetooth.characteristic.glucose_measurement/subfield/sample_location}"
+          }
+        ],
+        "subfields": [
+          {
+            "name": "Type",
+            "description": "The values of this field are defined below.",
+            "values": [
+              {
+                "value": "0x0",
+                "description": "Reserved for Future Use"
+              },
+              {
+                "value": "0x1",
+                "description": "Capillary Whole blood"
+              },
+              {
+                "value": "0x2",
+                "description": "Capillary Plasma"
+              },
+              {
+                "value": "0x3",
+                "description": "Venous Whole blood"
+              },
+              {
+                "value": "0x4",
+                "description": "Venous Plasma"
+              },
+              {
+                "value": "0x5",
+                "description": "Arterial Whole blood"
+              },
+              {
+                "value": "0x6",
+                "description": "Arterial Plasma"
+              },
+              {
+                "value": "0x7",
+                "description": "Undetermined Whole blood"
+              },
+              {
+                "value": "0x8",
+                "description": "Undetermined Plasma"
+              },
+              {
+                "value": "0x9",
+                "description": "Interstitial Fluid (ISF)"
+              },
+              {
+                "value": "0xA",
+                "description": "Control Solution"
+              },
+              {
+                "value": "0xB\u20130xF",
+                "description": "Reserved for Future Use"
+              }
+            ]
+          },
+          {
+            "name": "Sample Location",
+            "description": "The values of this field are defined below",
+            "values": [
+              {
+                "value": "0x0",
+                "description": "Reserved for Future Use"
+              },
+              {
+                "value": "0x1",
+                "description": "Finger"
+              },
+              {
+                "value": "0x2",
+                "description": "Alternate Site Test (AST)"
+              },
+              {
+                "value": "0x3",
+                "description": "Earlobe"
+              },
+              {
+                "value": "0x4",
+                "description": "Control solution"
+              },
+              {
+                "value": "0x5\u20130xE",
+                "description": "Reserved for Future Use"
+              },
+              {
+                "value": "0xF",
+                "description": "Sample Location value not available"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sensor Status Annunciation",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Device battery low:\n0 = The battery was not low at the time of measurement.\n1 = The battery was low at the time of measurement."
+          },
+          {
+            "bit": "1",
+            "description": "Sensor malfunction:\n0 = The sensor was not malfunctioning or faulting at the time of measurement.\n1 = The sensor was malfunctioning or faulting at the time of measurement."
+          },
+          {
+            "bit": "2",
+            "description": "Sample size insufficient:\n0 = There was enough blood or control solution on the strip during the measurement.\n1 = There was not enough blood or control solution on the strip during the measurement."
+          },
+          {
+            "bit": "3",
+            "description": "Strip insertion error:\n0 = The strip was inserted correctly.\n1 = The strip was not inserted correctly."
+          },
+          {
+            "bit": "4",
+            "description": "Strip type incorrect:\n0 = The strip was the right type for the device.\n1 = The strip was not the right type for the device."
+          },
+          {
+            "bit": "5",
+            "description": "Sensor result too high:\n0 = The reading or value was not higher than the device can process.\n1 = The reading or value was higher than the device can process."
+          },
+          {
+            "bit": "6",
+            "description": "Sensor result too low:\n0 = The reading or value was not lower than the device can process.\n1 = The reading or value was lower than the device can process."
+          },
+          {
+            "bit": "7",
+            "description": "Sensor temperature too high:\n0 = The ambient temperature was not too high for a valid test/result at the time of measurement.\n1 = The ambient temperature was too high for a valid test/result at the time of measurement."
+          },
+          {
+            "bit": "8",
+            "description": "Sensor temperature too low:\n0 = The ambient temperature was not too low for a valid test/result at the time of measurement.\n1 = The ambient temperature was too low for a valid test/result at the time of measurement."
+          },
+          {
+            "bit": "9",
+            "description": "Sensor read interrupted:\n0 = The reading was not interrupted and the strip was not pulled too soon during the measurement.\n1 = The reading was interrupted or the strip was pulled too soon during the measurement."
+          },
+          {
+            "bit": "10",
+            "description": "General device fault:\n0 = A general device fault has not occurred in the sensor device.\n1 = A general device fault has occurred in the sensor device."
+          },
+          {
+            "bit": "11",
+            "description": "Time fault:\n0 = A time fault has not occurred in the sensor device.\n1 = A time fault has occurred in the sensor device and the time is inaccurate."
+          },
+          {
+            "bit": "12\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

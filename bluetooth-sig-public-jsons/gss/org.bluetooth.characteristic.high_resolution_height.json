@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.high_resolution_height",
+    "name": "High Resolution Height",
+    "description": "The High Resolution Height characteristic is used to represent the height of a user and is used when a resolution of 0.1 mm is required.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Height",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.length.meter\nRepresented values: M = 1, d = -4, b = 0\nUnit is meter with 0.0001 m (e.g., 0.1 mm)"
+      }
+    ]
+  }
+}

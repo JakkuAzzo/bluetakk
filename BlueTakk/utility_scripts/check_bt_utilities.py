@@ -6,7 +6,6 @@ import asyncio
 import json
 import platform
 from datetime import datetime
-from bleak import BleakScanner
 
 # ----------------- Dependency Checks -----------------
 def is_tool_installed(name: str) -> bool:
@@ -31,36 +30,37 @@ def detect_os() -> str:
 def ensure_wireshark_in_path():
     """
     Ensure Wireshark is available in PATH.
-    If not, check if Wireshark.app exists in /Applications, and if found, add its executable folder to PATH.
-    If not found, attempt to install it using Homebrew.
-    Returns True if Wireshark is found/installed, False otherwise.
+    On Windows, check for both 'wireshark.exe' and 'Wireshark.exe' in common install locations.
+    On macOS, check for Wireshark.app and add its bin to PATH if needed.
+    On Linux, check for 'wireshark' in PATH.
+    Returns True if Wireshark is found, False otherwise.
     """
-    if is_tool_installed("wireshark"):
-        return True
-
-    wireshark_app = "/Applications/Wireshark.app"
-    if os.path.exists(wireshark_app):
-        ws_exec = os.path.join(wireshark_app, "Contents", "MacOS")
-        os.environ["PATH"] += os.pathsep + ws_exec
-        if is_tool_installed("wireshark"):
-            print(f"Added Wireshark from {ws_exec} to PATH.")
+    if sys.platform.startswith("win"):
+        # Check for Wireshark in PATH or common install locations
+        if is_tool_installed("wireshark.exe") or is_tool_installed("Wireshark.exe"):
             return True
-
-    if is_tool_installed("brew"):
-        try:
-            print("Wireshark not found. Installing via Homebrew...")
-            subprocess.run(["brew", "install", "--cask", "wireshark"], check=True)
+        possible_paths = [
+            r"C:\\Program Files\\Wireshark\\Wireshark.exe",
+            r"C:\\Program Files (x86)\\Wireshark\\Wireshark.exe"
+        ]
+        for path in possible_paths:
+            if os.path.exists(path):
+                os.environ["PATH"] += os.pathsep + os.path.dirname(path)
+                return True
+        return False
+    elif sys.platform == "darwin":
+        if is_tool_installed("wireshark"):
+            return True
+        wireshark_app = "/Applications/Wireshark.app"
+        if os.path.exists(wireshark_app):
             ws_exec = os.path.join(wireshark_app, "Contents", "MacOS")
             os.environ["PATH"] += os.pathsep + ws_exec
             if is_tool_installed("wireshark"):
-                print("Wireshark successfully installed and added to PATH.")
+                print(f"Added Wireshark from {ws_exec} to PATH.")
                 return True
-        except subprocess.CalledProcessError as e:
-            print(f"Error installing Wireshark via Homebrew: {e}")
-            return False
-    else:
-        print("Homebrew is not installed; cannot auto-install Wireshark.")
-    return False
+        return False
+    else:  # Linux and others
+        return is_tool_installed("wireshark")
 
 
 def ensure_wireshark():
@@ -175,23 +175,20 @@ def check_and_setup() -> bool:
 
 # ----------------- OS-Specific Monitoring -----------------
 def run_os_monitoring():
-    os_type = detect_os()
-    if os_type == "mac":
+    platform = sys.platform
+    if platform == "darwin":
         print("Launching Wireshark to analyze the Bluetooth interface...")
         try:
             subprocess.Popen(["open", "-a", "Wireshark"])
         except Exception as e:
             print(f"Failed to launch Wireshark: {e}")
-        # Launch PacketLogger (typically located in /Applications/Utilities)
         print("Launching PacketLogger to monitor the Bluetooth interface...")
         try:
             subprocess.Popen(["open", "-a", "PacketLogger"])
         except Exception as e:
             print(f"Failed to launch PacketLogger: {e}")
-        # (Stub) Configure Bluetooth interface for monitoring.
         print("Configuring Bluetooth interface for monitoring (stub)...")
-        # For example, you might run a shell script or system command here.
-    elif os_type == "windows":
+    elif platform.startswith("win"):
         bt_tool_dir = os.path.join("utility_scripts", "BluetoothToolforWindows")
         btvs_exe = os.path.join(bt_tool_dir, "btvs.exe")
         if not os.path.exists(btvs_exe):
@@ -202,7 +199,6 @@ def run_os_monitoring():
             subprocess.Popen([btvs_exe, "-Mode", "Wireshark"], cwd=bt_tool_dir)
         except Exception as e:
             print(f"Failed to launch btvs.exe: {e}")
-        # Attempt to launch btp.exe to configure the Bluetooth interface.
         btp_exe = os.path.join(bt_tool_dir, "btp.exe")
         if os.path.exists(btp_exe):
             print("Launching btp.exe to configure the Bluetooth interface for monitoring...")
@@ -212,20 +208,26 @@ def run_os_monitoring():
                 print(f"Failed to launch btp.exe: {e}")
         else:
             print("btp.exe not found. Please ensure the Bluetooth monitoring tools (btp) are installed.")
-    elif os_type in {"linux", "ish"}:
-        if is_tool_installed("btmon"):
-            print("Launching btmon for Bluetooth monitoring...")
-            try:
-                subprocess.Popen(["btmon"])
-            except Exception as e:
-                print(f"Failed to launch btmon: {e}")
-        else:
-            print("btmon not found. Install bluez-utils for monitoring support.")
+    elif platform.startswith("linux"):
+        print("Launching Wireshark for Linux...")
+        try:
+            subprocess.Popen(["wireshark"])
+        except Exception as e:
+            print(f"Failed to launch Wireshark: {e}")
+        print("For live BLE capture, ensure you have the correct permissions and tools (e.g., btmon, bluetoothctl).")
     else:
         print("No OS monitoring tool available for this platform.")
 
 # ----------------- Live Scan Functions -----------------
 async def run_windows_live_scan():
+    try:
+        from bleak import BleakScanner
+    except ImportError:
+        print("Bleak is not installed. Please install bleak to use Windows live scan.")
+        return
+    if BleakScanner is None or not hasattr(BleakScanner, "discover"):
+        print("BleakScanner is not available or discover method missing.")
+        return
     filter_addr = input("Enter filter for btle.advertising_address (e.g. AA:BB:CC:DD:EE:FF) or leave blank: ").strip().upper()
     filtered_devices = {}
     cancel_event = asyncio.Event()
@@ -311,7 +313,11 @@ def visualize_results(live=False):
     
     if live:
         print("Starting live updating visualization...")
-        bleak_stats.live_update_stats("filtered_scan_results.json")
+        live_update = getattr(bleak_stats, "live_update_stats", None)
+        if callable(live_update):
+            live_update("filtered_scan_results.json")
+        else:
+            print("live_update_stats not found in bleak_stats.")
     else:
         print("Generating visualization from last captured session...")
         data_file = "capture.btsnoop" if detect_os() == "mac" else "filtered_scan_results.json"
@@ -320,7 +326,11 @@ def visualize_results(live=False):
                 data = json.load(f)
             except json.decoder.JSONDecodeError:
                 data = {}
-        bleak_stats.show_stats(data)
+        show_stats = getattr(bleak_stats, "show_stats", None)
+        if callable(show_stats):
+            show_stats(data)
+        else:
+            print("show_stats not found in bleak_stats.")
 
 # ----------------- Module Interface -----------------
 if __name__ == "__main__":
@@ -333,4 +343,10 @@ if __name__ == "__main__":
         elif os_type == "windows":
             asyncio.run(run_windows_live_scan())
             export_os_capture()
+
+try:
+    from bleak import BleakScanner, BleakClient
+except ImportError:
+    BleakScanner = None
+    BleakClient = None
 

@@ -1,0 +1,984 @@
+{
+  "mesh_model_opcodes": [
+    {
+      "name": "Generic OnOff Get",
+      "opcode": 33281,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnOff Set",
+      "opcode": 33282,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnOff Set Unacknowledged",
+      "opcode": 33283,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnOff Status",
+      "opcode": 33284,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Get",
+      "opcode": 33285,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Set",
+      "opcode": 33286,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Set Unacknowledged",
+      "opcode": 33287,
+      "type": "model"
+    },
+    {
+      "name": "Generic Level Status",
+      "opcode": 33288,
+      "type": "model"
+    },
+    {
+      "name": "Generic Delta Set",
+      "opcode": 33289,
+      "type": "model"
+    },
+    {
+      "name": "Generic Delta Set Unacknowledged",
+      "opcode": 33290,
+      "type": "model"
+    },
+    {
+      "name": "Generic Move Set",
+      "opcode": 33291,
+      "type": "model"
+    },
+    {
+      "name": "Generic Move Set Unacknowledged",
+      "opcode": 33292,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Get",
+      "opcode": 33293,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Set",
+      "opcode": 33294,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Set Unacknowledged",
+      "opcode": 33295,
+      "type": "model"
+    },
+    {
+      "name": "Generic Default Transition Time Status",
+      "opcode": 33296,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnPowerUp Get",
+      "opcode": 33297,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnPowerUp Status",
+      "opcode": 33298,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnPowerUp Set",
+      "opcode": 33299,
+      "type": "model"
+    },
+    {
+      "name": "Generic OnPowerUp Set Unacknowledged",
+      "opcode": 33300,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Get",
+      "opcode": 33301,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Set",
+      "opcode": 33302,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Set Unacknowledged",
+      "opcode": 33303,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Level Status",
+      "opcode": 33304,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Last Get",
+      "opcode": 33305,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Last Status",
+      "opcode": 33306,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Default Get",
+      "opcode": 33307,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Default Status",
+      "opcode": 33308,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Range Get",
+      "opcode": 33309,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Range Status",
+      "opcode": 33310,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Default Set",
+      "opcode": 33311,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Default Set Unacknowledged",
+      "opcode": 33312,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Range Set",
+      "opcode": 33313,
+      "type": "model"
+    },
+    {
+      "name": "Generic Power Range Set Unacknowledged",
+      "opcode": 33314,
+      "type": "model"
+    },
+    {
+      "name": "Generic Battery Get",
+      "opcode": 33315,
+      "type": "model"
+    },
+    {
+      "name": "Generic Battery Status",
+      "opcode": 33316,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Global Get",
+      "opcode": 33317,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Global Status",
+      "opcode": 64,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Local Get",
+      "opcode": 33318,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Local Status",
+      "opcode": 33319,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Global Set",
+      "opcode": 65,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Global Set Unacknowledged",
+      "opcode": 66,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Local Set",
+      "opcode": 33320,
+      "type": "model"
+    },
+    {
+      "name": "Generic Location Local Set Unacknowledged",
+      "opcode": 33321,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Properties Get",
+      "opcode": 33322,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Properties Status",
+      "opcode": 67,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Property Get",
+      "opcode": 33323,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Property Set",
+      "opcode": 68,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Property Set Unacknowledged",
+      "opcode": 69,
+      "type": "model"
+    },
+    {
+      "name": "Generic Manufacturer Property Status",
+      "opcode": 70,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Properties Get",
+      "opcode": 33324,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Properties Status",
+      "opcode": 71,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Property Get",
+      "opcode": 33325,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Property Set",
+      "opcode": 72,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Property Set Unacknowledged",
+      "opcode": 73,
+      "type": "model"
+    },
+    {
+      "name": "Generic Admin Property Status",
+      "opcode": 74,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Properties Get",
+      "opcode": 33326,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Properties Status",
+      "opcode": 75,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Property Get",
+      "opcode": 33327,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Property Set",
+      "opcode": 76,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Property Set Unacknowledged",
+      "opcode": 77,
+      "type": "model"
+    },
+    {
+      "name": "Generic User Property Status",
+      "opcode": 78,
+      "type": "model"
+    },
+    {
+      "name": "Generic Client Properties Get",
+      "opcode": 79,
+      "type": "model"
+    },
+    {
+      "name": "Generic Client Properties Status",
+      "opcode": 80,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Descriptor Get",
+      "opcode": 33328,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Descriptor Status",
+      "opcode": 81,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Get",
+      "opcode": 33329,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Status",
+      "opcode": 82,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Column Get",
+      "opcode": 33330,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Column Status",
+      "opcode": 83,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Series Get",
+      "opcode": 33331,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Series Status",
+      "opcode": 84,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Cadence Get",
+      "opcode": 33332,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Cadence Set",
+      "opcode": 85,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Cadence Set Unacknowledged",
+      "opcode": 86,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Cadence Status",
+      "opcode": 87,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Settings Get",
+      "opcode": 33333,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Settings Status",
+      "opcode": 88,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Setting Get",
+      "opcode": 33334,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Setting Set",
+      "opcode": 89,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Setting Set Unacknowledged",
+      "opcode": 90,
+      "type": "model"
+    },
+    {
+      "name": "Sensor Setting Status",
+      "opcode": 91,
+      "type": "model"
+    },
+    {
+      "name": "Time Get",
+      "opcode": 33335,
+      "type": "model"
+    },
+    {
+      "name": "Time Set",
+      "opcode": 92,
+      "type": "model"
+    },
+    {
+      "name": "Time Status",
+      "opcode": 93,
+      "type": "model"
+    },
+    {
+      "name": "Time Role Get",
+      "opcode": 33336,
+      "type": "model"
+    },
+    {
+      "name": "Time Role Set",
+      "opcode": 33337,
+      "type": "model"
+    },
+    {
+      "name": "Time Role Status",
+      "opcode": 33338,
+      "type": "model"
+    },
+    {
+      "name": "Time Zone Get",
+      "opcode": 33339,
+      "type": "model"
+    },
+    {
+      "name": "Time Zone Set",
+      "opcode": 33340,
+      "type": "model"
+    },
+    {
+      "name": "Time Zone Status",
+      "opcode": 33341,
+      "type": "model"
+    },
+    {
+      "name": "TAI-UTC Delta Get",
+      "opcode": 33342,
+      "type": "model"
+    },
+    {
+      "name": "TAI-UTC Delta Set",
+      "opcode": 33343,
+      "type": "model"
+    },
+    {
+      "name": "TAI-UTC Delta Status",
+      "opcode": 33344,
+      "type": "model"
+    },
+    {
+      "name": "Scene Get",
+      "opcode": 33345,
+      "type": "model"
+    },
+    {
+      "name": "Scene Recall",
+      "opcode": 33346,
+      "type": "model"
+    },
+    {
+      "name": "Scene Recall Unacknowledged",
+      "opcode": 33347,
+      "type": "model"
+    },
+    {
+      "name": "Scene Status",
+      "opcode": 94,
+      "type": "model"
+    },
+    {
+      "name": "Scene Register Get",
+      "opcode": 33348,
+      "type": "model"
+    },
+    {
+      "name": "Scene Register Status",
+      "opcode": 33349,
+      "type": "model"
+    },
+    {
+      "name": "Scene Store",
+      "opcode": 33350,
+      "type": "model"
+    },
+    {
+      "name": "Scene Store Unacknowledged",
+      "opcode": 33351,
+      "type": "model"
+    },
+    {
+      "name": "Scene Delete",
+      "opcode": 33438,
+      "type": "model"
+    },
+    {
+      "name": "Scene Delete Unacknowledged",
+      "opcode": 33439,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Action Get",
+      "opcode": 33352,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Action Status",
+      "opcode": 95,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Get",
+      "opcode": 33353,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Status",
+      "opcode": 33354,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Action Set",
+      "opcode": 96,
+      "type": "model"
+    },
+    {
+      "name": "Scheduler Action Set Unacknowledged",
+      "opcode": 97,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Get",
+      "opcode": 33355,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Set",
+      "opcode": 33356,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Set Unacknowledged",
+      "opcode": 33357,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Status",
+      "opcode": 33358,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Linear Get",
+      "opcode": 33359,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Linear Set",
+      "opcode": 33360,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Linear Set Unacknowledged",
+      "opcode": 33361,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Linear Status",
+      "opcode": 33362,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Last Get",
+      "opcode": 33363,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Last Status",
+      "opcode": 33364,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Default Get",
+      "opcode": 33365,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Default Status",
+      "opcode": 33366,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Range Get",
+      "opcode": 33367,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Range Status",
+      "opcode": 33368,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Default Set",
+      "opcode": 33369,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Default Set Unacknowledged",
+      "opcode": 33370,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Range Set",
+      "opcode": 33371,
+      "type": "model"
+    },
+    {
+      "name": "Light Lightness Range Set Unacknowledged",
+      "opcode": 33372,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Get",
+      "opcode": 33373,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Set",
+      "opcode": 33374,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Set Unacknowledged",
+      "opcode": 33375,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Status",
+      "opcode": 33376,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Get",
+      "opcode": 33377,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Range Get",
+      "opcode": 33378,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Range Status",
+      "opcode": 33379,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Set",
+      "opcode": 33380,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Set Unacknowledged",
+      "opcode": 33381,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Status",
+      "opcode": 33382,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Default Get",
+      "opcode": 33383,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Default Status",
+      "opcode": 33384,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Default Set",
+      "opcode": 33385,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Default Set Unacknowledged",
+      "opcode": 33386,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Range Set",
+      "opcode": 33387,
+      "type": "model"
+    },
+    {
+      "name": "Light CTL Temperature Range Set Unacknowledged",
+      "opcode": 33388,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Get",
+      "opcode": 33389,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Hue Get",
+      "opcode": 33390,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Hue Set",
+      "opcode": 33391,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Hue Set Unacknowledged",
+      "opcode": 33392,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Hue Status",
+      "opcode": 33393,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Saturation Get",
+      "opcode": 33394,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Saturation Set",
+      "opcode": 33395,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Saturation Set Unacknowledged",
+      "opcode": 33396,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Saturation Status",
+      "opcode": 33397,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Set",
+      "opcode": 33398,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Set Unacknowledged",
+      "opcode": 33399,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Status",
+      "opcode": 33400,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Target Get",
+      "opcode": 33401,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Target Status",
+      "opcode": 33402,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Default Get",
+      "opcode": 33403,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Default Status",
+      "opcode": 33404,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Range Get",
+      "opcode": 33405,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Range Status",
+      "opcode": 33406,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Default Set",
+      "opcode": 33407,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Default Set Unacknowledged",
+      "opcode": 33408,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Range Set",
+      "opcode": 33409,
+      "type": "model"
+    },
+    {
+      "name": "Light HSL Range Set Unacknowledged",
+      "opcode": 33410,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Get",
+      "opcode": 33411,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Set",
+      "opcode": 33412,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Set Unacknowledged",
+      "opcode": 33413,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Status",
+      "opcode": 33414,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Target Get",
+      "opcode": 33415,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Target Status",
+      "opcode": 33416,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Default Get",
+      "opcode": 33417,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Default Status",
+      "opcode": 33418,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Range Get",
+      "opcode": 33419,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Range Status",
+      "opcode": 33420,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Default Set",
+      "opcode": 33421,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Default Set Unacknowledged",
+      "opcode": 33422,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Range Set",
+      "opcode": 33423,
+      "type": "model"
+    },
+    {
+      "name": "Light xyL Range Set Unacknowledged",
+      "opcode": 33424,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Mode Get",
+      "opcode": 33425,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Mode Set",
+      "opcode": 33426,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Mode Set Unacknowledged",
+      "opcode": 33427,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Mode Status",
+      "opcode": 33428,
+      "type": "model"
+    },
+    {
+      "name": "Light LC OM Get",
+      "opcode": 33429,
+      "type": "model"
+    },
+    {
+      "name": "Light LC OM Set",
+      "opcode": 33430,
+      "type": "model"
+    },
+    {
+      "name": "Light LC OM Set Unacknowledged",
+      "opcode": 33431,
+      "type": "model"
+    },
+    {
+      "name": "Light LC OM Status",
+      "opcode": 33432,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Light OnOff Get",
+      "opcode": 33433,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Light OnOff Set",
+      "opcode": 33434,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Light OnOff Set Unacknowledged",
+      "opcode": 33435,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Light OnOff Status",
+      "opcode": 33436,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Property Get",
+      "opcode": 33437,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Property Set",
+      "opcode": 98,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Property Set Unacknowledged",
+      "opcode": 99,
+      "type": "model"
+    },
+    {
+      "name": "Light LC Property Status",
+      "opcode": 100,
+      "type": "model"
+    }
+  ]
+}

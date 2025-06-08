@@ -1,0 +1,241 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.cycling_power_measurement",
+    "name": "Cycling Power Measurement",
+    "description": "The Cycling Power Measurement characteristic is used to represent data related to a cycling power sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/flags}"
+      },
+      {
+        "field": "Instantaneous Power",
+        "type": "sint16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.power.watt"
+      },
+      {
+        "field": "Pedal Power Balance",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Base Unit: org.bluetooth.unit.percentage\nRepresented values: M = 1, d = 0, b = -1\nUnit is 1/2 of a percent\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Accumulated Torque",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.moment_of_force.newton_metre\nRepresented values: M = 1, d = 0, b = -5\nUnit is 1/32 Newton meter\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "Wheel Revolution Data",
+        "type": "struct",
+        "size": "0 or 6",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/wheel_revolution_data}\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "Crank Revolution Data",
+        "type": "struct",
+        "size": "0 or 4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/crank_revolution_data}\nPresent if bit 5 of Flags field is set to 1"
+      },
+      {
+        "field": "Extreme Force Magnitudes",
+        "type": "struct",
+        "size": "0 or 4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/extreme_force_magnitudes}\nPresent if bit 6 of Flags field is set to 1"
+      },
+      {
+        "field": "Extreme Torque Magnitudes",
+        "type": "struct",
+        "size": "0 or 4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/extreme_torque_magnitudes}\nPresent if bit 7 of Flags field is set to 1"
+      },
+      {
+        "field": "Extreme Angles",
+        "type": "struct",
+        "size": "0 or 3",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/extreme_angles}\nPresent if bit 8 of Flags field is set to 1"
+      },
+      {
+        "field": "Top Dead Spot Angle",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/top_and_bottom_dead_spot_angles}\nUnit: org.bluetooth.unit.plane_angle.degree\nPresent if bit 9 of Flags field is set to 1"
+      },
+      {
+        "field": "Bottom Dead Spot Angle",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.cycling_power_measurement/field/top_and_bottom_dead_spot_angles}\nUnit: org.bluetooth.unit.plane_angle.degree\nPresent if bit 10 of Flags field is set to 1"
+      },
+      {
+        "field": "Accumulated Energy",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.energy.joule\nRepresented values: M = 1, d = 3, b = 0\nUnit is kilojoule\nPresent if bit 11 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Pedal Power Balance Present"
+          },
+          {
+            "bit": "1",
+            "description": "Pedal Power Balance Reference\n0 = Unknown\n1 = Left"
+          },
+          {
+            "bit": "2",
+            "description": "Accumulated Torque Present"
+          },
+          {
+            "bit": "3",
+            "description": "Accumulated Torque Source\n0 = Wheel based\n1 = Crank based"
+          },
+          {
+            "bit": "4",
+            "description": "Wheel Revolution Data Present"
+          },
+          {
+            "bit": "5",
+            "description": "Crank Revolution Data Present"
+          },
+          {
+            "bit": "6",
+            "description": "Extreme Force Magnitudes Present"
+          },
+          {
+            "bit": "7",
+            "description": "Extreme Torque Magnitudes Present"
+          },
+          {
+            "bit": "8",
+            "description": "Extreme Angles Present"
+          },
+          {
+            "bit": "9",
+            "description": "Top Dead Spot Angle Present"
+          },
+          {
+            "bit": "10",
+            "description": "Bottom Dead Spot Angle Present"
+          },
+          {
+            "bit": "11",
+            "description": "Accumulated Energy Present"
+          },
+          {
+            "bit": "12",
+            "description": "Offset Compensation Indicator\n0 = False\n1 = True"
+          },
+          {
+            "bit": "13\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      },
+      {
+        "name": "Wheel Revolution Data",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Cumulative Wheel Revolutions",
+            "data_type": "uint32",
+            "size": "4",
+            "description": "Unit: org.bluetooth.unit.unitless"
+          },
+          {
+            "field": "Last Wheel Event Time",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -11\nUnit is 1/2048 second"
+          }
+        ]
+      },
+      {
+        "name": "Crank Revolution Data",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Cumulative Crank Revolutions",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.unitless"
+          },
+          {
+            "field": "Last Crank Event Time",
+            "data_type": "uint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.time.second\nRepresented values: M = 1, d = 0, b = -10\nUnit is 1/1024 second"
+          }
+        ]
+      },
+      {
+        "name": "Extreme Force Magnitudes",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Maximum Force Magnitude",
+            "data_type": "sint16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.force.newton"
+          },
+          {
+            "field": "Minimum Force Magnitude",
+            "data_type": "sint16",
+            "size": "2",
+            "description": "Unit: org.bluetooth.unit.force.newton"
+          }
+        ]
+      },
+      {
+        "name": "Extreme Torque Magnitudes",
+        "description": "The structure of this field is defined below.",
+        "values": [
+          {
+            "field": "Maximum Torque Magnitude",
+            "data_type": "sint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.moment_of_force.newton_metre\nRepresented values: M = 1, d = 0, b = -5\nUnit is 1/32 Newton meter"
+          },
+          {
+            "field": "Minimum Torque Magnitude",
+            "data_type": "sint16",
+            "size": "2",
+            "description": "Base Unit: org.bluetooth.unit.moment_of_force.newton_metre\nRepresented values: M = 1, d = 0, b = -5\nUnit is 1/32 Newton meter"
+          }
+        ]
+      },
+      {
+        "name": "Extreme Angles",
+        "description": "When observed with the front wheel to the right of the pedals, a value of 0 degrees represents the angle when the crank is in the 12 o'clock position and a value of 90 degrees represents the angle, measured clockwise, when the crank points towards the front wheel in the 3 o'clock position. The left crank sensor (if\u00a0fitted) detects 0 degrees when the crank it is attached to is in the 12 o'clock position, and the right sensor (if\u00a0fitted) detects 0 degrees when the crank it is attached to is in the 12 o'clock position; thus, there is a constant 180-degree difference between the right crank and the left crank position signals.\nWhen present, both subfields \"Extreme Angles - Minimum Angle\" and \"Extreme Angles - Maximum Angle\" are always present as a pair and are concatenated into a uint24 value (3 octets). As an example, if the Maximum Angle is 0xABC and the Minimum Angle is 0x123, the field value is represented as 0x123ABC.\nThe structure of this field is defined below.",
+        "size_in_bits": true,
+        "values": [
+          {
+            "field": "Maximum Angle",
+            "data_type": "uint12",
+            "size": "12",
+            "description": "Unit: org.bluetooth.unit.plane_angle.degree"
+          },
+          {
+            "field": "Minimum Angle",
+            "data_type": "uint12",
+            "size": "12",
+            "description": "Unit: org.bluetooth.unit.plane_angle.degree"
+          }
+        ]
+      },
+      {
+        "name": "Top and Bottom Dead Spot Angles",
+        "section_title": "Top and Bottom Dead Spot Angles fields",
+        "description": "When observed with the front wheel to the right of the pedals, a value of 0 degrees represents the angle when the crank is in the 12 o'clock position and a value of 90 degrees represents the angle, measured clockwise, when the crank points towards the front wheel in the 3 o'clock position. The left crank sensor (if\u00a0fitted) detects 0 degrees when the crank it is attached to is in the 12 o'clock position, and the right sensor (if\u00a0fitted) detects 0 degrees when the crank it is attached to is in the 12 o'clock position; thus, there is a constant 180-degree difference between the right crank and the left crank position signals."
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 1
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 9
+    }
+  ]
+}

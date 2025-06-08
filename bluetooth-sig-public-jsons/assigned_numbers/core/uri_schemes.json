@@ -1,0 +1,748 @@
+{
+  "uri_schemes": [
+    {
+      "value": 1,
+      "name": "empty scheme name"
+    },
+    {
+      "value": 2,
+      "name": "aaa:"
+    },
+    {
+      "value": 3,
+      "name": "aaas:"
+    },
+    {
+      "value": 4,
+      "name": "about:"
+    },
+    {
+      "value": 5,
+      "name": "acap:"
+    },
+    {
+      "value": 6,
+      "name": "acct:"
+    },
+    {
+      "value": 7,
+      "name": "cap:"
+    },
+    {
+      "value": 8,
+      "name": "cid:"
+    },
+    {
+      "value": 9,
+      "name": "coap:"
+    },
+    {
+      "value": 10,
+      "name": "coaps:"
+    },
+    {
+      "value": 11,
+      "name": "crid:"
+    },
+    {
+      "value": 12,
+      "name": "data:"
+    },
+    {
+      "value": 13,
+      "name": "dav:"
+    },
+    {
+      "value": 14,
+      "name": "dict:"
+    },
+    {
+      "value": 15,
+      "name": "dns:"
+    },
+    {
+      "value": 16,
+      "name": "file:"
+    },
+    {
+      "value": 17,
+      "name": "ftp:"
+    },
+    {
+      "value": 18,
+      "name": "geo:"
+    },
+    {
+      "value": 19,
+      "name": "go:"
+    },
+    {
+      "value": 20,
+      "name": "gopher:"
+    },
+    {
+      "value": 21,
+      "name": "h323:"
+    },
+    {
+      "value": 22,
+      "name": "http:"
+    },
+    {
+      "value": 23,
+      "name": "https:"
+    },
+    {
+      "value": 24,
+      "name": "iax:"
+    },
+    {
+      "value": 25,
+      "name": "icap:"
+    },
+    {
+      "value": 26,
+      "name": "im:"
+    },
+    {
+      "value": 27,
+      "name": "imap:"
+    },
+    {
+      "value": 28,
+      "name": "info:"
+    },
+    {
+      "value": 29,
+      "name": "ipp:"
+    },
+    {
+      "value": 30,
+      "name": "ipps:"
+    },
+    {
+      "value": 31,
+      "name": "iris:"
+    },
+    {
+      "value": 32,
+      "name": "iris.beep:"
+    },
+    {
+      "value": 33,
+      "name": "iris.xpc:"
+    },
+    {
+      "value": 34,
+      "name": "iris.xpcs:"
+    },
+    {
+      "value": 35,
+      "name": "iris.lwz:"
+    },
+    {
+      "value": 36,
+      "name": "jabber:"
+    },
+    {
+      "value": 37,
+      "name": "ldap:"
+    },
+    {
+      "value": 38,
+      "name": "mailto:"
+    },
+    {
+      "value": 39,
+      "name": "mid:"
+    },
+    {
+      "value": 40,
+      "name": "msrp:"
+    },
+    {
+      "value": 41,
+      "name": "msrps:"
+    },
+    {
+      "value": 42,
+      "name": "mtqp:"
+    },
+    {
+      "value": 43,
+      "name": "mupdate:"
+    },
+    {
+      "value": 44,
+      "name": "news:"
+    },
+    {
+      "value": 45,
+      "name": "nfs:"
+    },
+    {
+      "value": 46,
+      "name": "ni:"
+    },
+    {
+      "value": 47,
+      "name": "nih:"
+    },
+    {
+      "value": 48,
+      "name": "nntp:"
+    },
+    {
+      "value": 49,
+      "name": "opaquelocktoken:"
+    },
+    {
+      "value": 50,
+      "name": "pop:"
+    },
+    {
+      "value": 51,
+      "name": "pres:"
+    },
+    {
+      "value": 52,
+      "name": "reload:"
+    },
+    {
+      "value": 53,
+      "name": "rtsp:"
+    },
+    {
+      "value": 54,
+      "name": "rtsps:"
+    },
+    {
+      "value": 55,
+      "name": "rtspu:"
+    },
+    {
+      "value": 56,
+      "name": "service:"
+    },
+    {
+      "value": 57,
+      "name": "session:"
+    },
+    {
+      "value": 58,
+      "name": "shttp:"
+    },
+    {
+      "value": 59,
+      "name": "sieve:"
+    },
+    {
+      "value": 60,
+      "name": "sip:"
+    },
+    {
+      "value": 61,
+      "name": "sips:"
+    },
+    {
+      "value": 62,
+      "name": "sms:"
+    },
+    {
+      "value": 63,
+      "name": "snmp:"
+    },
+    {
+      "value": 64,
+      "name": "soap.beep:"
+    },
+    {
+      "value": 65,
+      "name": "soap.beeps:"
+    },
+    {
+      "value": 66,
+      "name": "stun:"
+    },
+    {
+      "value": 67,
+      "name": "stuns:"
+    },
+    {
+      "value": 68,
+      "name": "tag:"
+    },
+    {
+      "value": 69,
+      "name": "tel:"
+    },
+    {
+      "value": 70,
+      "name": "telnet:"
+    },
+    {
+      "value": 71,
+      "name": "tftp:"
+    },
+    {
+      "value": 72,
+      "name": "thismessage:"
+    },
+    {
+      "value": 73,
+      "name": "tn3270:"
+    },
+    {
+      "value": 74,
+      "name": "tip:"
+    },
+    {
+      "value": 75,
+      "name": "turn:"
+    },
+    {
+      "value": 76,
+      "name": "turns:"
+    },
+    {
+      "value": 77,
+      "name": "tv:"
+    },
+    {
+      "value": 78,
+      "name": "urn:"
+    },
+    {
+      "value": 79,
+      "name": "vemmi:"
+    },
+    {
+      "value": 80,
+      "name": "ws:"
+    },
+    {
+      "value": 81,
+      "name": "wss:"
+    },
+    {
+      "value": 82,
+      "name": "xcon:"
+    },
+    {
+      "value": 83,
+      "name": "xcon-userid:"
+    },
+    {
+      "value": 84,
+      "name": "xmlrpc.beep:"
+    },
+    {
+      "value": 85,
+      "name": "xmlrpc.beeps:"
+    },
+    {
+      "value": 86,
+      "name": "xmpp:"
+    },
+    {
+      "value": 87,
+      "name": "z39.50r:"
+    },
+    {
+      "value": 88,
+      "name": "z39.50s:"
+    },
+    {
+      "value": 89,
+      "name": "acr:"
+    },
+    {
+      "value": 90,
+      "name": "adiumxtra:"
+    },
+    {
+      "value": 91,
+      "name": "afp:"
+    },
+    {
+      "value": 92,
+      "name": "afs:"
+    },
+    {
+      "value": 93,
+      "name": "aim:"
+    },
+    {
+      "value": 94,
+      "name": "apt:"
+    },
+    {
+      "value": 95,
+      "name": "attachment:"
+    },
+    {
+      "value": 96,
+      "name": "aw:"
+    },
+    {
+      "value": 97,
+      "name": "barion:"
+    },
+    {
+      "value": 98,
+      "name": "beshare:"
+    },
+    {
+      "value": 99,
+      "name": "bitcoin:"
+    },
+    {
+      "value": 100,
+      "name": "bolo:"
+    },
+    {
+      "value": 101,
+      "name": "callto:"
+    },
+    {
+      "value": 102,
+      "name": "chrome:"
+    },
+    {
+      "value": 103,
+      "name": "chrome-extension:"
+    },
+    {
+      "value": 104,
+      "name": "com-eventbrite-attendee:"
+    },
+    {
+      "value": 105,
+      "name": "content:"
+    },
+    {
+      "value": 106,
+      "name": "cvs:"
+    },
+    {
+      "value": 107,
+      "name": "dlna-playsingle:"
+    },
+    {
+      "value": 108,
+      "name": "dlna-playcontainer:"
+    },
+    {
+      "value": 109,
+      "name": "dtn:"
+    },
+    {
+      "value": 110,
+      "name": "dvb:"
+    },
+    {
+      "value": 111,
+      "name": "ed2k:"
+    },
+    {
+      "value": 112,
+      "name": "facetime:"
+    },
+    {
+      "value": 113,
+      "name": "feed:"
+    },
+    {
+      "value": 114,
+      "name": "feedready:"
+    },
+    {
+      "value": 115,
+      "name": "finger:"
+    },
+    {
+      "value": 116,
+      "name": "fish:"
+    },
+    {
+      "value": 117,
+      "name": "gg:"
+    },
+    {
+      "value": 118,
+      "name": "git:"
+    },
+    {
+      "value": 119,
+      "name": "gizmoproject:"
+    },
+    {
+      "value": 120,
+      "name": "gtalk:"
+    },
+    {
+      "value": 121,
+      "name": "ham:"
+    },
+    {
+      "value": 122,
+      "name": "hcp:"
+    },
+    {
+      "value": 123,
+      "name": "icon:"
+    },
+    {
+      "value": 124,
+      "name": "ipn:"
+    },
+    {
+      "value": 125,
+      "name": "irc:"
+    },
+    {
+      "value": 126,
+      "name": "irc6:"
+    },
+    {
+      "value": 127,
+      "name": "ircs:"
+    },
+    {
+      "value": 128,
+      "name": "itms:"
+    },
+    {
+      "value": 129,
+      "name": "jar:"
+    },
+    {
+      "value": 130,
+      "name": "jms:"
+    },
+    {
+      "value": 131,
+      "name": "keyparc:"
+    },
+    {
+      "value": 132,
+      "name": "lastfm:"
+    },
+    {
+      "value": 133,
+      "name": "ldaps:"
+    },
+    {
+      "value": 134,
+      "name": "magnet:"
+    },
+    {
+      "value": 135,
+      "name": "maps:"
+    },
+    {
+      "value": 136,
+      "name": "market:"
+    },
+    {
+      "value": 137,
+      "name": "message:"
+    },
+    {
+      "value": 138,
+      "name": "mms:"
+    },
+    {
+      "value": 139,
+      "name": "ms-help:"
+    },
+    {
+      "value": 140,
+      "name": "ms-settings-power:"
+    },
+    {
+      "value": 141,
+      "name": "msnim:"
+    },
+    {
+      "value": 142,
+      "name": "mumble:"
+    },
+    {
+      "value": 143,
+      "name": "mvn:"
+    },
+    {
+      "value": 144,
+      "name": "notes:"
+    },
+    {
+      "value": 145,
+      "name": "oid:"
+    },
+    {
+      "value": 146,
+      "name": "palm:"
+    },
+    {
+      "value": 147,
+      "name": "paparazzi:"
+    },
+    {
+      "value": 148,
+      "name": "pkcs11:"
+    },
+    {
+      "value": 149,
+      "name": "platform:"
+    },
+    {
+      "value": 150,
+      "name": "proxy:"
+    },
+    {
+      "value": 151,
+      "name": "psyc:"
+    },
+    {
+      "value": 152,
+      "name": "query:"
+    },
+    {
+      "value": 153,
+      "name": "res:"
+    },
+    {
+      "value": 154,
+      "name": "resource:"
+    },
+    {
+      "value": 155,
+      "name": "rmi:"
+    },
+    {
+      "value": 156,
+      "name": "rsync:"
+    },
+    {
+      "value": 157,
+      "name": "rtmfp:"
+    },
+    {
+      "value": 158,
+      "name": "rtmp:"
+    },
+    {
+      "value": 159,
+      "name": "secondlife:"
+    },
+    {
+      "value": 160,
+      "name": "sftp:"
+    },
+    {
+      "value": 161,
+      "name": "sgn:"
+    },
+    {
+      "value": 162,
+      "name": "skype:"
+    },
+    {
+      "value": 163,
+      "name": "smb:"
+    },
+    {
+      "value": 164,
+      "name": "smtp:"
+    },
+    {
+      "value": 165,
+      "name": "soldat:"
+    },
+    {
+      "value": 166,
+      "name": "spotify:"
+    },
+    {
+      "value": 167,
+      "name": "ssh:"
+    },
+    {
+      "value": 168,
+      "name": "steam:"
+    },
+    {
+      "value": 169,
+      "name": "submit:"
+    },
+    {
+      "value": 170,
+      "name": "svn:"
+    },
+    {
+      "value": 171,
+      "name": "teamspeak:"
+    },
+    {
+      "value": 172,
+      "name": "teliaeid:"
+    },
+    {
+      "value": 173,
+      "name": "things:"
+    },
+    {
+      "value": 174,
+      "name": "udp:"
+    },
+    {
+      "value": 175,
+      "name": "unreal:"
+    },
+    {
+      "value": 176,
+      "name": "ut2004:"
+    },
+    {
+      "value": 177,
+      "name": "ventrilo:"
+    },
+    {
+      "value": 178,
+      "name": "view-source:"
+    },
+    {
+      "value": 179,
+      "name": "webcal:"
+    },
+    {
+      "value": 180,
+      "name": "wtai:"
+    },
+    {
+      "value": 181,
+      "name": "wyciwyg:"
+    },
+    {
+      "value": 182,
+      "name": "xfire:"
+    },
+    {
+      "value": 183,
+      "name": "xri:"
+    },
+    {
+      "value": 184,
+      "name": "ymsgr:"
+    },
+    {
+      "value": 185,
+      "name": "example:"
+    },
+    {
+      "value": 186,
+      "name": "ms-settings-cloudstorage:"
+    }
+  ]
+}

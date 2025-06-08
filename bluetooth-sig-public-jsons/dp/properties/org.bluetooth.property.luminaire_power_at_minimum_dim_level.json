@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_power_at_minimum_dim_level",
+    "name": "Luminaire Power at Minimum Dim Level",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.power",
+    "description": "This property represents the luminaire power at minimum dimming level."
+  }
+}

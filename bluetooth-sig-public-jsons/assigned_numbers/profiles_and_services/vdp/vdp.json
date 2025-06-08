@@ -1,0 +1,34 @@
+{
+  "video_codec_id": [
+    {
+      "value": 0,
+      "codec": "H.263 Baseline",
+      "specified_in": "VDP",
+      "used_in": "VDP"
+    },
+    {
+      "value": 1,
+      "codec": "MPEG-4 Visual",
+      "specified_in": "VDP",
+      "used_in": "VDP"
+    },
+    {
+      "value": 2,
+      "codec": "H.263 Profile 3",
+      "specified_in": "VDP",
+      "used_in": "VDP"
+    },
+    {
+      "value": 4,
+      "codec": "H.263 Profile 8",
+      "specified_in": "VDP",
+      "used_in": "VDP"
+    },
+    {
+      "value": 255,
+      "codec": "Vendor Specific (formerly Non-VDP)",
+      "specified_in": "VDP",
+      "used_in": "VDP"
+    }
+  ]
+}

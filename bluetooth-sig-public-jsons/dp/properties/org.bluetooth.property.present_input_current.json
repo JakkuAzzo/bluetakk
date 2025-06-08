@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_input_current",
+    "name": "Present Input Current",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.electric_current",
+    "description": "This property represents the input current for the device."
+  }
+}

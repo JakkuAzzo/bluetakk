@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.uv_index",
+    "name": "UV Index",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.uv_index",
+    "description": "This property represents the UV index as measured by the device."
+  }
+}

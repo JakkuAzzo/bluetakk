@@ -1,0 +1,77 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 3
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 1
+    },
+    {
+      "parameter": "Value",
+      "size": 2,
+      "description": [
+        "Bitfield",
+        "0b1 = supported",
+        "0b0 = not supported"
+      ],
+      "value": [
+        {
+          "key": "Bit 0",
+          "definition": "8000 Hz"
+        },
+        {
+          "key": "Bit 1",
+          "definition": "11025 Hz"
+        },
+        {
+          "key": "Bit 2",
+          "definition": "16000 Hz"
+        },
+        {
+          "key": "Bit 3",
+          "definition": "22050 Hz"
+        },
+        {
+          "key": "Bit 4",
+          "definition": "24000 Hz"
+        },
+        {
+          "key": "Bit 5",
+          "definition": "32000 Hz"
+        },
+        {
+          "key": "Bit 6",
+          "definition": "44100 Hz"
+        },
+        {
+          "key": "Bit 7",
+          "definition": "48000 Hz"
+        },
+        {
+          "key": "Bit 8",
+          "definition": "88200 Hz"
+        },
+        {
+          "key": "Bit 9",
+          "definition": "96000 Hz"
+        },
+        {
+          "key": "Bit 10",
+          "definition": "176400 Hz"
+        },
+        {
+          "key": "Bit 11",
+          "definition": "192000 Hz"
+        },
+        {
+          "key": "Bit 12",
+          "definition": "384000 Hz"
+        }
+      ]
+    }
+  ]
+}

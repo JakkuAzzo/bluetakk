@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_indoor_ambient_temperature",
+    "name": "Present Indoor Ambient Temperature",
+    "group": "org.bluetooth.property_group.ambient_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_8",
+    "description": "This property represents an indoor ambient air temperature as measured by a temperature sensor. This property is typically used for indoor sensors, and is not intended for outdoor use."
+  }
+}

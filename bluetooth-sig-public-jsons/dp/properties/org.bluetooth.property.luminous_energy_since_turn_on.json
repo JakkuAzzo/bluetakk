@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminous_energy_since_turn_on",
+    "name": "Luminous Energy Since Turn On",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.luminous_energy",
+    "description": "This property represents the luminous energy produced by a light source or a lighting fixture since it was turned on."
+  }
+}

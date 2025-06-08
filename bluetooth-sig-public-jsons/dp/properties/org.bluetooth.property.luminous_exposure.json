@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminous_exposure",
+    "name": "Luminous Exposure",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.luminous_exposure",
+    "description": "This property represents the total recorded luminous exposure as measured by a lux meter. This property can be used to monitor luminous exposure of an illuminated work of art and adjust light levels or to take the art piece out of the exhibition when the exposure is too high."
+  }
+}

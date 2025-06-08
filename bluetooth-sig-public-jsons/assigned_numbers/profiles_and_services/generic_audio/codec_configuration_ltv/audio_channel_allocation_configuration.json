@@ -1,0 +1,19 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 5
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 3
+    },
+    {
+      "parameter": "Value",
+      "size": 4,
+      "description": "4-octet bitfield of Audio Location values"
+    }
+  ]
+}

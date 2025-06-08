@@ -1,0 +1,24 @@
+{
+  "mesh_proxy_pdu_types": [
+    {
+      "name": "Network PDU",
+      "value": 0,
+      "description": "The message is a Network PDU"
+    },
+    {
+      "name": "Mesh Beacon",
+      "value": 1,
+      "description": "The message is a mesh beacon"
+    },
+    {
+      "name": "Proxy Configuration",
+      "value": 2,
+      "description": "The message is a proxy configuration message"
+    },
+    {
+      "name": "Provisioning PDU",
+      "value": 3,
+      "description": "The message is a Provisioning PDU"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_date_of_manufacture",
+    "name": "Device Date of Manufacture",
+    "group": "org.bluetooth.property_group.general_device_information",
+    "characteristic": "org.bluetooth.characteristic.date_utc",
+    "description": "This property represents the manufacturing date for the device."
+  }
+}

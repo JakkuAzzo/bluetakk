@@ -5,7 +5,14 @@ import shutil
 import asyncio
 import json
 from datetime import datetime
-from bleak import BleakScanner
+
+try:
+    from bleak import BleakScanner
+except ImportError:
+    class BleakScanner:
+        @staticmethod
+        async def discover(*args, **kwargs):
+            return []
 
 
 
@@ -117,7 +124,9 @@ def check_and_setup(os_type):
         print("All required dependencies are installed and configured.")
         return True
 # ----------------- OS-Specific Monitoring -----------------
-def run_os_monitoring(os_type):
+def run_os_monitoring(os_type=None):
+    if os_type is None:
+        os_type = sys.platform
     if os_type == "osx":
         print("Launching Wireshark to analyze the Bluetooth interface...")
         try:
@@ -238,37 +247,39 @@ def visualize_results(live=False):
     except ImportError:
         print("bleak_stats module not found.")
         return
-    
     if live:
         print("Starting live updating visualization...")
-        bleak_stats.live_update_stats("filtered_scan_results.json")
+        live_update = getattr(bleak_stats, "live_update_stats", None)
+        if live_update:
+            live_update("filtered_scan_results.json")
+        else:
+            print("live_update_stats not found in bleak_stats.")
     else:
         print("Generating visualization from last captured session...")
-        # Determine the data file based on the platform.
-        if sys.platform == "darwin":
-            data_file = "capture.btsnoop"
-        else:
-            data_file = "filtered_scan_results.json"
-        
-        if not os.path.exists(data_file):
-            print(f"Data file '{data_file}' not found. Cannot generate static visualization.")
-            return
-        
+        data_file = "capture.btsnoop" if sys.platform == "darwin" else "filtered_scan_results.json"
         with open(data_file, "r") as f:
             try:
                 data = json.load(f)
             except json.decoder.JSONDecodeError:
                 data = {}
-        bleak_stats.show_stats(data)
+        show_stats = getattr(bleak_stats, "show_stats", None)
+        if show_stats:
+            show_stats(data)
+        else:
+            print("show_stats not found in bleak_stats.")
 
 # ----------------- Module Interface -----------------
 if __name__ == "__main__":
-    if check_and_setup():
-        run_os_monitoring()
-        platform = sys.platform
-        if platform == "darwin":
+    import sys
+    os_type = sys.platform
+    if check_and_setup(os_type):
+        run_os_monitoring(os_type)
+        if os_type == "darwin":
             asyncio.run(run_deepble_live_scan())
             export_os_capture()
-        elif platform.startswith("win"):
+        elif os_type.startswith("win"):
             asyncio.run(run_windows_live_scan())
+            export_os_capture()
+        elif os_type.startswith("linux"):
+            asyncio.run(run_deepble_live_scan())
             export_os_capture()

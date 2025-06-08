@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_lightness_prolong",
+    "name": "Light Control Lightness Prolong",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.perceived_lightness",
+    "description": "This property represents the light lightness level of a light or a group of lights when in a prolong state."
+  }
+}

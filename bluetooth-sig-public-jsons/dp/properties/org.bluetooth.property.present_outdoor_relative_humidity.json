@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_outdoor_relative_humidity",
+    "name": "Present Outdoor Relative Humidity",
+    "group": "org.bluetooth.property_group.environmental",
+    "characteristic": "org.bluetooth.characteristic.humidity",
+    "description": "This property represents an outdoor relative humidity measured by a humidity sensor. This property is typically for sensors designed to measure outdoor environmental humidity and is not intended to be used for measuring indoor environmental humidity."
+  }
+}

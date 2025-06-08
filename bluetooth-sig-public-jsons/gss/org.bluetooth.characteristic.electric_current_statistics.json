@@ -1,0 +1,39 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.electric_current_statistics",
+    "name": "Electric Current Statistics",
+    "description": "The Electric Current Statistics characteristic is used to represent a set of statistical electric current values.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Average Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Standard Deviation Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Minimum Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Maximum Electric Current Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Electric Current characteristic in \\autoref{sec:org.bluetooth.characteristic.electric_current}"
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}"
+      }
+    ]
+  }
+}

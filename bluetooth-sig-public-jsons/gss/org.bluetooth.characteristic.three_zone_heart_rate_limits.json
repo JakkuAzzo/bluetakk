@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.three_zone_heart_rate_limits",
+    "name": "Three Zone Heart Rate Limits",
+    "description": "The Three Zone Heart Rate Limits characteristic is used to represent the limits between the heart rate zones for the three-zone heart rate definition (Hard, Moderate, and Light) of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Three Zone Heart Rate Limits - Light (Fat burn) / Moderate (Aerobic) Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      },
+      {
+        "field": "Three Zone Heart Rate Limits - Moderate (Aerobic) / Hard (Anaerobic) Limit",
+        "type": "uint8",
+        "size": "1",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute"
+      }
+    ]
+  }
+}

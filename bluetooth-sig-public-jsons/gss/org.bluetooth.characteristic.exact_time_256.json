@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.exact_time_256",
+    "name": "Exact Time 256",
+    "description": "The Exact Time 256 characteristic is used to represent the day, date, and time, including fractions of seconds.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Day Date Time",
+        "type": "struct",
+        "size": "8",
+        "description": "Refer to the Day Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.day_date_time}."
+      },
+      {
+        "field": "Fractions256",
+        "type": "uint8",
+        "size": "1",
+        "description": "The number of 1/256 fractions of a second. Valid range 0\u2013255."
+      }
+    ]
+  }
+}

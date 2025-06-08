@@ -1,0 +1,91 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.enhanced_intermediate_cuff_pressure",
+    "name": "Enhanced Intermediate Cuff Pressure",
+    "description": "The Enhanced Intermediate Cuff Pressure characteristic is used to represent enhanced intermediate Cuff Pressure values for display purposes while a measurement is in progress and includes a UTC time stamp and a user facing time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.enhanced_intermediate_cuff_pressure/field/flags}."
+      },
+      {
+        "field": "Intermediate Cuff Pressure Value",
+        "type": "medfloat16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.pressure.millimetre_of_mercury\nor\nBase Unit: org.bluetooth.unit.pressure.pascal;\nM = 1, d = 3, and b = 0\nIf bit 0 of the Flags field is set to 0, units are mmHG, else units are kPa."
+      },
+      {
+        "field": "Time Stamp",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Unit: Seconds since Epoch Start\nSee \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/time_stamp}.\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Pulse Rate",
+        "type": "medfloat16",
+        "size": "0 or 2",
+        "description": "Unit: org.bluetooth.unit.period.beats_per_minute\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "User ID",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_measurement/field/user_id}.\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Measurement Status",
+        "type": "boolean[16]",
+        "size": "0 or 2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.blood_pressure_measurement/field/measurement_status}.\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "User Facing Time",
+        "type": "uint32",
+        "size": "0 or 4",
+        "description": "Unit: Seconds since Epoch Start\nSee \\autoref{sec:org.bluetooth.characteristic.enhanced_blood_pressure_measurement/field/user_facing_time}.\nPresent if bit 5 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Intermediate Cuff Pressure Measurement Units Flag\n0 = Intermediate Cuff Pressure in units of mmHg\n1 = Intermediate Cuff Pressure in units of kPa"
+          },
+          {
+            "bit": "1",
+            "description": "Time Stamp Flag\n0 = Time Stamp not present\n1 = Time Stamp present"
+          },
+          {
+            "bit": "2",
+            "description": "Pulse Rate Flag\n0 = Pulse Rate not present\n1 = Pulse Rate present"
+          },
+          {
+            "bit": "3",
+            "description": "User ID Flag\n0 = User ID not present\n1 = User ID present"
+          },
+          {
+            "bit": "4",
+            "description": "Measurement Status Flag\n0 = Measurement Status not present\n1 = Measurement Status present"
+          },
+          {
+            "bit": "5",
+            "description": "User Facing Time Flag\n0 = User Facing Time not present\n1 = User Facing Time present"
+          },
+          {
+            "bit": "6",
+            "description": "Epoch Start 2000 Flag\n0 = Epoch start is January 1, 1900 (00:00:00)\n1 = Epoch start is January 1, 2000 (00:00:00)"
+          },
+          {
+            "bit": "7",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

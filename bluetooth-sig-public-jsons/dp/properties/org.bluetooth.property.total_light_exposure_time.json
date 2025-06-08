@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_light_exposure_time",
+    "name": "Total Light Exposure Time",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the total recorded sensing duration of a light sensor (typically a photodetector)."
+  }
+}

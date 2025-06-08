@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminous_efficacy",
+    "name": "Luminous Efficacy",
+    "group": "org.bluetooth.property_group.lighting",
+    "characteristic": "org.bluetooth.characteristic.luminous_efficacy",
+    "description": "This property represents the present luminous efficacy of a light source or a lighting fixture. The luminous efficacy is the luminous flux produced by the device divided by its electrical input. Luminous efficacy typically is dependent on drive conditions, and the value reported represents the efficacy at present drive conditions."
+  }
+}

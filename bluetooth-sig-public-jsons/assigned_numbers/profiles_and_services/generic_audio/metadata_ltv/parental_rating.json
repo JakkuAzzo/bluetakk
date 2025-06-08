@@ -1,0 +1,40 @@
+{
+  "supported_ltv_structure": [
+    {
+      "parameter": "Length",
+      "size": 1,
+      "value": 2
+    },
+    {
+      "parameter": "Type",
+      "size": 1,
+      "value": 6
+    },
+    {
+      "parameter": "Value",
+      "size": 1,
+      "description": [
+        "Bits 0-3 Value representing the parental rating.",
+        " ",
+        "The numbering scheme aligns with Annex F of EN 300 707 v1.2.1 which defines parental rating for viewing.",
+        " ",
+        "https://www.etsi.org",
+        "ETSI EN 300 707 V1.2.1 (2002-12)"
+      ],
+      "value": [
+        {
+          "key": 0,
+          "definition": "no rating"
+        },
+        {
+          "key": 1,
+          "definition": "recommended for listeners of any age"
+        },
+        {
+          "key": "Other values",
+          "definition": "recommended for listeners of age Y years, where Y = value + 3 years. e.g., 0x05 = recommended for listeners of 8 years or older."
+        }
+      ]
+    }
+  ]
+}

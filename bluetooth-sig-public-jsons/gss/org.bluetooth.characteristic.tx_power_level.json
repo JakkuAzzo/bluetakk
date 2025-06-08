@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.tx_power_level",
+    "name": "Tx Power Level",
+    "description": "The Tx Power Level characteristic is used to represent the current radiated transmit power level.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Tx Power",
+        "type": "sint8",
+        "size": "1",
+        "description": "Base Unit: org.bluetooth.unit.logarithmic_radio_quantity.decibel\nAllowed range is -100 to 20.\nAll other values are reserved for future use."
+      }
+    ]
+  }
+}

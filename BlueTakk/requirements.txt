@@ -22,3 +22,4 @@ PyYAML==6.0.2
 six==1.17.0
 tzdata==2025.1
 PyQt6==6.6.1
+pytest

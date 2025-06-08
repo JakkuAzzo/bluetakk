@@ -1,0 +1,119 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.location_and_speed",
+    "name": "Location and Speed",
+    "description": "The Location and Speed characteristic is used to represent data related to a location and speed sensor. Note that it is possible for this characteristic to exceed the default LE ATT_MTU size.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[16]",
+        "size": "2",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.location_and_speed/field/flags}"
+      },
+      {
+        "field": "Instantaneous Speed",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.velocity.metres_per_second\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 of a m/s\nPresent if bit 0 of Flags field is set to 1"
+      },
+      {
+        "field": "Total Distance",
+        "type": "uint24",
+        "size": "0 or 3",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -1, b = 0\nUnit is 1/10 m\nPresent if bit 1 of Flags field is set to 1"
+      },
+      {
+        "field": "Location - Latitude",
+        "type": "sint32",
+        "size": "0 or 4",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nRepresented values: M = 1, d = -7, b = 0\nUnit is 1*10\\textsuperscript{-7} degrees\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "Location - Longitude",
+        "type": "sint32",
+        "size": "0 or 4",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nRepresented values: M = 1, d = -7, b = 0\nUnit is 1*10\\textsuperscript{-7} degrees\nPresent if bit 2 of Flags field is set to 1"
+      },
+      {
+        "field": "Elevation",
+        "type": "sint24",
+        "size": "0 or 3",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1/100 m\nPresent if bit 3 of Flags field is set to 1"
+      },
+      {
+        "field": "Heading",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Base Unit: org.bluetooth.unit.plane_angle.degree\nRepresented values: M = 1, d = -2, b = 0\nUnit is 1*10\\textsuperscript{-2} degrees\nPresent if bit 4 of Flags field is set to 1"
+      },
+      {
+        "field": "Rolling Time",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Unit: org.bluetooth.unit.time.second\nPresent if bit 5 of Flags field is set to 1"
+      },
+      {
+        "field": "UTC Time",
+        "type": "struct",
+        "size": "0 or 7",
+        "description": "Refer to Date Time characteristic in \\autoref{sec:org.bluetooth.characteristic.date_time}.\nPresent if bit 6 of Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Instantaneous Speed Present"
+          },
+          {
+            "bit": "1",
+            "description": "Total Distance Present"
+          },
+          {
+            "bit": "2",
+            "description": "Location Present"
+          },
+          {
+            "bit": "3",
+            "description": "Elevation Present"
+          },
+          {
+            "bit": "4",
+            "description": "Heading Present"
+          },
+          {
+            "bit": "5",
+            "description": "Rolling Time Present"
+          },
+          {
+            "bit": "6",
+            "description": "UTC Time Present"
+          },
+          {
+            "bit": "7\u20138",
+            "description": "Position Status:\n0b00 = No Position\n0b01 = Position Ok\n0b10 = Estimated Position\n0b11 = Last Known Position"
+          },
+          {
+            "bit": "9",
+            "description": "Speed and Distance format:\n0 = 2D\n1 = 3D"
+          },
+          {
+            "bit": "10\u201311",
+            "description": "Elevation Source:\n0b00 = Positioning System\n0b01 = Barometric Air Pressure\n0b10 = Database Service (or similar)\n0b11 = Other"
+          },
+          {
+            "bit": "12",
+            "description": "Heading Source\n0 = Heading based on movement\n1 = Heading based on magnetic compass"
+          },
+          {
+            "bit": "13\u201315",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

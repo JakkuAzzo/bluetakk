@@ -5,10 +5,25 @@ import time
 import asyncio
 import subprocess
 from datetime import datetime
-from bleak import BleakScanner, BleakClient
-import nest_asyncio
-nest_asyncio.apply()
-import matplotlib.pyplot as plt  # For live chart closing
+
+try:
+    from bleak import BleakScanner, BleakClient
+except ImportError:
+    BleakScanner = None
+    BleakClient = None
+try:
+    import nest_asyncio
+    nest_asyncio.apply()
+except ImportError:
+    pass
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    plt = None
+try:
+    import pandas as pd
+except ImportError:
+    pd = None
 
 # Import modules
 import deepBle_discovery_tool as deep
@@ -17,8 +32,6 @@ from utility_scripts import check_bt_utilities as bt_util
 from utility_scripts.check_bt_utilities import detect_os
 import bleak_stats  # BLE session statistics module
 from peripheral_simulator import DEVICE_PROFILES, start_simulator
-
-import pandas as pd  # Used for vulnerability result visualization
 
 current_os = None
 active_sessions: dict[str, asyncio.subprocess.Process] = {}
@@ -82,6 +95,9 @@ def visualize_vuln_results(results):
     if not results:
         print("No vulnerability test results to display.")
         return
+    if pd is None or plt is None:
+        print("pandas or matplotlib is not available for visualization.")
+        return
     # Create a DataFrame for nicer formatting.
     df = pd.DataFrame(results)
     # Reorder columns if present.
@@ -94,7 +110,7 @@ def visualize_vuln_results(results):
     ax.axis('tight')
     ax.axis('off')
     table = ax.table(cellText=df.values,
-                     colLabels=df.columns,
+                     colLabels=list(df.columns),
                      cellLoc='center',
                      loc='center')
     table.auto_set_font_size(False)
@@ -113,6 +129,29 @@ def list_sessions():
             to_remove.append(addr)
     for addr in to_remove:
         active_sessions.pop(addr, None)
+
+def ensure_venv_and_requirements():
+    import sys
+    import subprocess
+    import os
+    import platform
+    venv_dir = os.path.join(os.path.dirname(__file__), ".venv_auto")
+    if not os.path.exists(venv_dir):
+        print(f"Creating virtual environment at {venv_dir}...")
+        subprocess.run([sys.executable, "-m", "venv", venv_dir], check=True)
+    pip_path = os.path.join(venv_dir, "bin", "pip") if not sys.platform.startswith("win") else os.path.join(venv_dir, "Scripts", "pip.exe")
+    if sys.platform == "darwin":
+        req_file = "mac_requirements.txt"
+    elif sys.platform.startswith("win"):
+        req_file = "win_requirements.txt"
+    else:
+        req_file = "requirements.txt"
+    req_path = os.path.join(os.path.dirname(__file__), req_file)
+    if os.path.exists(pip_path) and os.path.exists(req_path):
+        print(f"Installing requirements from {req_file} in {venv_dir}...")
+        subprocess.run([pip_path, "install", "--force-reinstall", "-r", req_path], check=True)
+    else:
+        print(f"Could not find pip at {pip_path} or requirements at {req_path}.")
 
 async def main_menu():
     if not bt_util.check_and_setup():
@@ -194,6 +233,7 @@ async def main_menu():
             print("Invalid option. Please try again.")
 
 if __name__ == "__main__":
+    ensure_venv_and_requirements()
     current_os = get_current_device()
     bt_util.check_and_setup()
     asyncio.get_event_loop().run_until_complete(main_menu())

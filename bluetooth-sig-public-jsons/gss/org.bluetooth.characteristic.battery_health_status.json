@@ -1,0 +1,67 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.battery_health_status",
+    "name": "Battery Health Status",
+    "description": "The Battery Health Status characteristic is used to represent several aspects of battery health.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Flags",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.battery_health_status/field/flags}."
+      },
+      {
+        "field": "Battery Health Summary",
+        "type": "uint8",
+        "size": "0 or 1",
+        "description": "Represents aggregation of the overall health of the battery where 100% represents new working condition and 0% represents the end of its expected lifetime when replacement is required. The value within this range is determined by the implementation.\nUnit is percentage with a resolution of 1.\nAllowed range is 0 to 100.\nBase unit: org.bluetooth.unit.percentage\nPresent if bit 0 of the Flags field is set to 1"
+      },
+      {
+        "field": "Cycle Count",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Represents the count value of charge cycles where one charge cycle is a discharge equivalent to the capacity of the battery at full charge in its current condition.\nUnit is unitless with a resolution of 1.\nPresent if bit 1 of the Flags field is set to 1"
+      },
+      {
+        "field": "Current Temperature",
+        "type": "sint8",
+        "size": "0 or 1",
+        "description": "Represents the current temperature of the battery.\nBase Unit: org.bluetooth.unit.thermodynamic_temperature.degree_celsius\nA raw value of 0x7F represents: Greater than 126.\nA raw value of 0x80 represents: Less than -127.\nPresent if bit 2 of the Flags field is set to 1"
+      },
+      {
+        "field": "Deep Discharge Count",
+        "type": "uint16",
+        "size": "0 or 2",
+        "description": "Represents the number of times the battery was completely discharged.\nUnit is unitless with a resolution of 1.\nPresent if bit 3 of the Flags field is set to 1"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Flags",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Battery Health Summary Present"
+          },
+          {
+            "bit": "1",
+            "description": "Cycle Count Present"
+          },
+          {
+            "bit": "2",
+            "description": "Current Temperature Present"
+          },
+          {
+            "bit": "3",
+            "description": "Deep Discharge Count Present"
+          },
+          {
+            "bit": "4\u20137",
+            "description": "RFU"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.light_control_time_fade",
+    "name": "Light Control Time Fade",
+    "group": "org.bluetooth.property_group.light_control",
+    "characteristic": "org.bluetooth.characteristic.time_millisecond_24",
+    "description": "This property represents the time a light takes to transition from a run state to a prolong state. The run state is the state when the light is running at normal light level, the prolong state is an intermediate state of a light between the run state and the standby state."
+  }
+}

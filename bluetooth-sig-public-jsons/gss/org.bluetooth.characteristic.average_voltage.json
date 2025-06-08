@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.average_voltage",
+    "name": "Average Voltage",
+    "description": "The Average Voltage characteristic is used to represent average voltage over a period of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Voltage Value",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Voltage characteristic in \\autoref{sec:org.bluetooth.characteristic.voltage}."
+      },
+      {
+        "field": "Sensing Duration",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to the Time Exponential 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.time_exponential_8}."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.power_specification",
+    "name": "Power Specification",
+    "description": "The Power Specification characteristic is used to represent a specification of power values.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Power Value",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to Power characteristic in \\autoref{sec:org.bluetooth.characteristic.power}"
+      },
+      {
+        "field": "Typical Power Value",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to Power characteristic in \\autoref{sec:org.bluetooth.characteristic.power}"
+      },
+      {
+        "field": "Maximum Power Value",
+        "type": "struct",
+        "size": "3",
+        "description": "Refer to Power characteristic in \\autoref{sec:org.bluetooth.characteristic.power}"
+      }
+    ]
+  }
+}

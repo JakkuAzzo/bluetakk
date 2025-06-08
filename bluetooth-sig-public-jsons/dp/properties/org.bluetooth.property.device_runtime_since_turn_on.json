@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_runtime_since_turn_on",
+    "name": "Device Runtime Since Turn On",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.time_hour_24",
+    "description": "This property represents the total time the element has been operating in the On-state since it was turned on the last time. A value of 0 represents that the run time is not known."
+  }
+}

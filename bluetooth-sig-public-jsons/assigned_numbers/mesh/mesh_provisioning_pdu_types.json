@@ -1,0 +1,74 @@
+{
+  "mesh_provisioning_pdu_types": [
+    {
+      "name": "Provisioning Invite",
+      "value": 0,
+      "description": "Invites an unprovisioned device (the intended Provisionee) to join a mesh network"
+    },
+    {
+      "name": "Provisioning Capabilities",
+      "value": 1,
+      "description": "Indicates the capabilities of the Provisionee"
+    },
+    {
+      "name": "Provisioning Start",
+      "value": 2,
+      "description": "Indicates the provisioning method selected by the Provisioner based on the capabilities of the Provisionee"
+    },
+    {
+      "name": "Provisioning Public Key",
+      "value": 3,
+      "description": "Contains the Public Key of the Provisionee or the Provisioner"
+    },
+    {
+      "name": "Provisioning Input Complete",
+      "value": 4,
+      "description": "Indicates that the user has completed inputting a value"
+    },
+    {
+      "name": "Provisioning Confirmation",
+      "value": 5,
+      "description": "Contains the provisioning confirmation value of the Provisionee or the Provisioner"
+    },
+    {
+      "name": "Provisioning Random",
+      "value": 6,
+      "description": "Contains the provisioning random value of the Provisionee or the Provisioner"
+    },
+    {
+      "name": "Provisioning Data",
+      "value": 7,
+      "description": "Includes the assigned unicast address of the primary element, a network key, NetKey Index, Flags, and the IV Index"
+    },
+    {
+      "name": "Provisioning Complete",
+      "value": 8,
+      "description": "Indicates that provisioning is complete"
+    },
+    {
+      "name": "Provisioning Failed",
+      "value": 9,
+      "description": "Indicates that provisioning was unsuccessful"
+    },
+    {
+      "name": "Provisioning Record Request",
+      "value": 10,
+      "description": "Indicates a request to retrieve a provisioning record fragment from the Provisionee"
+    },
+    {
+      "name": "Provisioning Record Response",
+      "value": 11,
+      "description": "Contains a provisioning record fragment or an error status, sent in response to a Provisioning Record Request"
+    },
+    {
+      "name": "Provisioning Records Get",
+      "value": 12,
+      "description": "Indicates a request to retrieve the list of IDs of the provisioning records that the Provisionee supports."
+    },
+    {
+      "name": "Provisioning Records List",
+      "value": 13,
+      "description": "Contains the list of IDs of the provisioning records that the Provisionee supports."
+    }
+  ]
+}

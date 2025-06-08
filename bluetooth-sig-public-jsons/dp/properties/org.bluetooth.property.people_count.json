@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.people_count",
+    "name": "People Count",
+    "group": "org.bluetooth.property_group.occupancy",
+    "characteristic": "org.bluetooth.characteristic.count_16",
+    "description": "This property represents the number of people present in a space or in a building. This property could be measured by counting the number of people entering and leaving a space, or by using a camera."
+  }
+}

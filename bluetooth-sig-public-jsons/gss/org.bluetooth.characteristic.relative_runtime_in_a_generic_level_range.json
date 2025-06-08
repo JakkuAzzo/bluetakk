@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.relative_runtime_in_a_generic_level_range",
+    "name": "Relative Runtime in a Generic Level Range",
+    "description": "The Relative Runtime in a Generic Level Range characteristic is used to represent a runtime in a generic level range.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Relative Value",
+        "type": "struct",
+        "size": "1",
+        "description": "Refer to Percentage 8 characteristic in \\autoref{sec:org.bluetooth.characteristic.percentage_8}"
+      },
+      {
+        "field": "Minimum Generic Level",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Generic Level characteristic in \\autoref{sec:org.bluetooth.characteristic.generic_level}"
+      },
+      {
+        "field": "Maximum Generic Level",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to Generic Level characteristic in \\autoref{sec:org.bluetooth.characteristic.generic_level}"
+      }
+    ]
+  }
+}

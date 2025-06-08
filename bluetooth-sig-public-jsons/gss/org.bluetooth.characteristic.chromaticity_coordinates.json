@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.chromaticity_coordinates",
+    "name": "Chromaticity Coordinates",
+    "description": "The Chromaticity Coordinates characteristic is used to represent a chromaticity coordinate.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Chromaticity x-coordinate",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Chromaticity Coordinate characteristic in \\autoref{sec:org.bluetooth.characteristic.chromaticity_coordinate}"
+      },
+      {
+        "field": "Chromaticity y-coordinate",
+        "type": "struct",
+        "size": "2",
+        "description": "Refer to the Chromaticity Coordinate characteristic in \\autoref{sec:org.bluetooth.characteristic.chromaticity_coordinate}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.software_revision_string",
+    "name": "Software Revision String",
+    "description": "The Software Revision String characteristic is used to represent the revision of the software within the device.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Software Revision",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.heart_rate_control_point",
+    "name": "Heart Rate Control Point",
+    "description": "The Heart Rate Control Point characteristic is used to enable device-specific procedures related to a heart rate sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Heart Rate Control Point",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.heart_rate_control_point/field/heart_rate_control_point}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Heart Rate Control Point",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Reserved for Future Use"
+          },
+          {
+            "value": "0x01",
+            "description": "Reset Energy Expended\nResets the value of the Energy Expended field in the Heart Rate Measurement characteristic to 0"
+          },
+          {
+            "value": "0x02\u20130xFF",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

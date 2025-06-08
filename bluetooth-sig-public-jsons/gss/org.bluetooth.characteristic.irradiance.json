@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.irradiance",
+    "name": "Irradiance",
+    "description": "The Irradiance characteristic is used to represent the irradiance, the radiant flux received by a surface per unit area.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Irradiance",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.irradiance.watt_per_square_metre\nRepresented values: M = 1, d = -1, b = 0\nUnit is in watt per square meter with a resolution of 0.1 W/m\\textsuperscript{2}."
+      }
+    ]
+  }
+}

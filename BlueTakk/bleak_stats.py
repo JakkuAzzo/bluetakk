@@ -159,10 +159,10 @@ def open_detail_window(data, title):
     ax.axis('off')
     
     # Create buttons for actions below the text.
-    btn_copy = Button(plt.axes([0.1, 0.01, 0.15, 0.07]), "Copy Data")
-    btn_save_json = Button(plt.axes([0.3, 0.01, 0.15, 0.07]), "Save JSON")
-    btn_save_pdf = Button(plt.axes([0.5, 0.01, 0.15, 0.07]), "Save PDF")
-    btn_run_vuln = Button(plt.axes([0.7, 0.01, 0.15, 0.07]), "Run Vuln Scan")
+    btn_copy = Button(plt.axes((0.1, 0.01, 0.15, 0.07)), "Copy Data")
+    btn_save_json = Button(plt.axes((0.3, 0.01, 0.15, 0.07)), "Save JSON")
+    btn_save_pdf = Button(plt.axes((0.5, 0.01, 0.15, 0.07)), "Save PDF")
+    btn_run_vuln = Button(plt.axes((0.7, 0.01, 0.15, 0.07)), "Run Vuln Scan")
     
     def copy_callback(event):
         try:
@@ -192,7 +192,7 @@ def open_detail_window(data, title):
     btn_save_pdf.on_clicked(save_pdf_callback)
     btn_run_vuln.on_clicked(run_vuln_callback)
     
-    plt.show()
+    show_and_limit_figures(fig)
 
 def open_new_page_window(page, devices):
     """
@@ -218,7 +218,7 @@ def open_new_page_window(page, devices):
                             open_detail_window(dev, f"Details for {dev.get('name', 'Unknown')}")
                             break
         fig_new.canvas.mpl_connect("pick_event", on_pick)
-    plt.show()
+    show_and_limit_figures(fig_new)
 
 def async_live_update_detailed_stats_data(live_data):
     """
@@ -233,12 +233,12 @@ def async_live_update_detailed_stats_data(live_data):
     # --- Create Page-Open Buttons (each opens a new window for its page) ---
     button_labels = ["Frequency", "Company", "Map", "Recommendation"]
     # Positions (in figure coordinates): adjust as needed.
-    button_positions = [
-        [0.1, 0.92, 0.15, 0.06],
-        [0.3, 0.92, 0.15, 0.06],
-        [0.5, 0.92, 0.15, 0.06],
-        [0.7, 0.92, 0.15, 0.06]
-    ]
+    button_positions = (
+        (0.1, 0.92, 0.15, 0.06),
+        (0.3, 0.92, 0.15, 0.06),
+        (0.5, 0.92, 0.15, 0.06),
+        (0.7, 0.92, 0.15, 0.06)
+    )
     # Instead of switching the main figure’s page, each button opens a new window.
     def make_new_window_callback(page):
         def callback(event):
@@ -254,7 +254,7 @@ def async_live_update_detailed_stats_data(live_data):
     
     # --- Create a Slider for the main Frequency view ---
     # Initialize with default max=10 to avoid identical limit warnings.
-    slider_ax = fig.add_axes([0.1, 0.05, 0.3, 0.03])
+    slider_ax = fig.add_axes((0.1, 0.05, 0.3, 0.03))
     slider_bar = Slider(ax=slider_ax, label="Bar Offset", valmin=0, valmax=10, valinit=0, valstep=1)
     def update_offset(val):
         global _bar_offset
@@ -293,7 +293,7 @@ def async_live_update_stats_data(live_data):
     fig.canvas.manager.set_window_title("Live Scan Visualization")
 
     # Create a slider widget for scrolling through table rows.
-    slider_ax = fig.add_axes([0.70, 0.05, 0.25, 0.03])  # below the right subplot 
+    slider_ax = fig.add_axes((0.70, 0.05, 0.25, 0.03))  # below the right subplot 
     slider = Slider(
         ax=slider_ax,
         label='Row Offset',
@@ -363,9 +363,9 @@ def async_live_update_stats_data(live_data):
                 # Calculate button vertical position.
                 y = bbox.y1 - (i+1)*cell_height + (cell_height - btn_height) / 2
                 # Define positions for three buttons.
-                pos1 = [bbox.x1 + x_offset, y, btn_width, btn_height]
-                pos2 = [bbox.x1 + x_offset + btn_width + 0.005, y, btn_width, btn_height]
-                pos3 = [bbox.x1 + x_offset + 2*(btn_width + 0.005), y, btn_width, btn_height]
+                pos1 = (bbox.x1 + x_offset, y, btn_width, btn_height)
+                pos2 = (bbox.x1 + x_offset + btn_width + 0.005, y, btn_width, btn_height)
+                pos3 = (bbox.x1 + x_offset + 2*(btn_width + 0.005), y, btn_width, btn_height)
                 btn1 = Button(plt.axes(pos1), "Vuln", color='lightgray', hovercolor='yellow')
                 btn2 = Button(plt.axes(pos2), "Copy Name", color='lightgray', hovercolor='yellow')
                 btn3 = Button(plt.axes(pos3), "Copy Addr", color='lightgray', hovercolor='yellow')
@@ -479,6 +479,14 @@ def load_latest_session(device_address=""):
     with open(latest_file, "r") as f:
         session_data = json.load(f)
     return session_data.get("current_session_details")
+
+def show_and_limit_figures(fig):
+    plt.show()
+    # Close all but the last two figures
+    figs = list(map(plt.figure, plt.get_fignums()))
+    while len(figs) > 2:
+        f = figs.pop(0)
+        plt.close(f)
 
 def main():
     parser = argparse.ArgumentParser(description="Bluetooth Session Stats")

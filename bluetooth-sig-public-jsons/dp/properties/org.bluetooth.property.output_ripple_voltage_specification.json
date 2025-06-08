@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.output_ripple_voltage_specification",
+    "name": "Output Ripple Voltage Specification",
+    "group": "org.bluetooth.property_group.power_supply_output",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the maximum allowed relative ripple voltage for the device. The relative ripple voltage is the ripple value divided by the average output voltage. See the Average Output Voltage property in \\autoref{sec:org.bluetooth.property.average_output_voltage}."
+  }
+}

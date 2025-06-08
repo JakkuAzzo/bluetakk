@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminaire_nominal_maximum_ac_mains_voltage",
+    "name": "Luminaire Nominal Maximum AC Mains Voltage",
+    "group": "org.bluetooth.property_group.luminaire",
+    "characteristic": "org.bluetooth.characteristic.voltage",
+    "description": "This property represents the luminaire nominal maximum AC mains voltage."
+  }
+}

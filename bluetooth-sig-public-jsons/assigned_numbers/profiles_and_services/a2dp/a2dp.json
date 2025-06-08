@@ -1,0 +1,40 @@
+{
+  "audio_codec_id": [
+    {
+      "value": 0,
+      "codec": "SBC",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    },
+    {
+      "value": 1,
+      "codec": "MPEG-1, 2 Audio",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    },
+    {
+      "value": 2,
+      "codec": "MPEG-2, 4 AAC",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    },
+    {
+      "value": 3,
+      "codec": "MPEG-D USAC",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    },
+    {
+      "value": 4,
+      "codec": "ATRAC Family",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    },
+    {
+      "value": 255,
+      "codec": "Vendor Specific (formerly Non-A2DP)",
+      "specified_in": "A2DP",
+      "used_in": "A2DP"
+    }
+  ]
+}

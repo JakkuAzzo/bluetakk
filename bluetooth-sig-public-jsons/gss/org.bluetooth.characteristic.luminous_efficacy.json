@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.luminous_efficacy",
+    "name": "Luminous Efficacy",
+    "description": "The Luminous Efficacy characteristic is used to represent a measure of luminous efficacy.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Luminous Efficacy",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit is lumen per watt with a resolution of 0.1.\nMinimum: 0\nMaximum: 1800\nRepresented values: M = 1, d = -1, b = 0\nUnit: org.bluetooth.unit.luminous_efficacy.lumen_per_watt\nA value of 0xFFFF represents \"value is not known\".\nAll other values are Prohibited."
+      }
+    ]
+  }
+}

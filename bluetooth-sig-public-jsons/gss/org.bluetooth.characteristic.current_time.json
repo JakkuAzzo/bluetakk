@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.current_time",
+    "name": "Current Time",
+    "description": "The Current Time characteristic is used to represent the exact time and the reason for adjustment.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Exact Time 256",
+        "type": "struct",
+        "size": "9",
+        "description": "Refer to the Exact Time 256 characteristic in \\autoref{sec:org.bluetooth.characteristic.exact_time_256}"
+      },
+      {
+        "field": "Adjust Reason",
+        "type": "boolean[8]",
+        "size": "1",
+        "description": "This field represents reason(s) for adjusting time.\n0: Manual Time Update\n1: External Reference Time Update\n2: Change of Time Zone\n3: Change of DST\n4\u20137: Reserved for Future Use"
+      }
+    ]
+  }
+}

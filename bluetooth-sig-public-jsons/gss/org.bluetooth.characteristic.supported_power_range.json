@@ -1,0 +1,27 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.supported_power_range",
+    "name": "Supported Power Range",
+    "description": "The Supported Power Range characteristic is used to represent the power range supported by a fitness machine.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Minimum Power",
+        "type": "sint16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.power.watt"
+      },
+      {
+        "field": "Maximum Power",
+        "type": "sint16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.power.watt"
+      },
+      {
+        "field": "Minimum Increment",
+        "type": "uint16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.power.watt"
+      }
+    ]
+  }
+}

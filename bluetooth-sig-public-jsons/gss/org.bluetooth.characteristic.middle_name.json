@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.middle_name",
+    "name": "Middle Name",
+    "description": "The Middle Name characteristic is used to represent the middle name of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Middle Name",
+        "type": "utf8s",
+        "size": "variable",
+        "description": "UTF-8 string"
+      }
+    ]
+  }
+}

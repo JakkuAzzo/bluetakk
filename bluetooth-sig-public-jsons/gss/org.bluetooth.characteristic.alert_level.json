@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.alert_level",
+    "name": "Alert Level",
+    "description": "The Alert Level characteristic is used to represent the level of an alert.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Alert Level",
+        "type": "uint8",
+        "size": "1",
+        "description": "0x00: No Alert\n0x01: Mild Alert\n0x02: High Alert\n0x03\u20130xFF: Reserved for Future Use"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_exponential_8",
+    "name": "Time Exponential 8",
+    "description": "The Time Exponential 8 characteristic is used to represent a measure of a period of time in seconds.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Time Exponential 8",
+        "type": "uint8",
+        "size": "1",
+        "description": "The time duration is given by the value 1.1\\textsuperscript{N\u201364} in seconds, with N being the raw 8-bit value.\nMinimum: 0.0\nMaximum: 66560641\nUnit: org.bluetooth.unit.time.second\nA raw value of 0x00 represents 0 seconds.\nA raw value of 0xFE represents the total life of the device.\nA raw value of 0xFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

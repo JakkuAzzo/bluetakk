@@ -1,0 +1,79 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.body_composition_feature",
+    "name": "Body Composition Feature",
+    "description": "The Body Composition Feature characteristic is used to represent the supported features of a body composition sensor.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Body Composition Feature",
+        "type": "boolean[32]",
+        "size": "4",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.body_composition_feature/field/body_composition_feature}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Body Composition Feature",
+        "description": "The bits of this field are defined below.",
+        "values": [
+          {
+            "bit": "0",
+            "description": "Time Stamp Supported"
+          },
+          {
+            "bit": "1",
+            "description": "Multiple Users Supported"
+          },
+          {
+            "bit": "2",
+            "description": "Basal Metabolism Supported"
+          },
+          {
+            "bit": "3",
+            "description": "Muscle Percentage Supported"
+          },
+          {
+            "bit": "4",
+            "description": "Muscle Mass Supported"
+          },
+          {
+            "bit": "5",
+            "description": "Fat Free Mass Supported"
+          },
+          {
+            "bit": "6",
+            "description": "Soft Lean Mass Supported"
+          },
+          {
+            "bit": "7",
+            "description": "Body Water Mass Supported"
+          },
+          {
+            "bit": "8",
+            "description": "Impedance Supported"
+          },
+          {
+            "bit": "9",
+            "description": "Weight Supported"
+          },
+          {
+            "bit": "10",
+            "description": "Height Supported"
+          },
+          {
+            "bit": "11\u201314",
+            "description": "Weight Measurement Resolution\n0b0000 = Not specified\n0b0001 = Resolution of 0.5 kg or 1 lb.\n0b0010 = Resolution of 0.2 kg or 0.5 lb.\n0b0011 = Resolution of 0.1 kg or 0.2 lb.\n0b0100 = Resolution of 0.05 kg or 0.1 lb.\n0b0101 = Resolution of 0.02 kg or 0.05 lb.\n0b0110 = Resolution of 0.01 kg or 0.02 lb.\n0b0111 = Resolution of 0.005 kg or 0.01 lb.\nAll other values = Reserved for Future Use"
+          },
+          {
+            "bit": "15\u201317",
+            "description": "Height Measurement Resolution\n0b000 = Not specified\n0b001 = Resolution of 0.01 meter or 1 inch\n0b010 = Resolution of 0.005 meter or 0.5 inch\n0b011 = Resolution of 0.001 meter or 0.1 inch\nAll other values = Reserved for Future Use"
+          },
+          {
+            "bit": "18\u201331",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

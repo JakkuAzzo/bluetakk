@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.force",
+    "name": "Force",
+    "description": "The Force characteristic is used to represent the force being applied to an object along a given axis.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Force",
+        "type": "sint32",
+        "size": "4",
+        "description": "Base Unit: org.bluetooth.unit.force.newton\nRepresented values: M = 1, d = -3, b = 0\nUnit is Newton with a resolution of 1/1000 N (1 mN).\nA value of 0x7FFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.precise_total_device_energy_use",
+    "name": "Precise Total Device Energy Use",
+    "group": "org.bluetooth.property_group.energy_management",
+    "characteristic": "org.bluetooth.characteristic.energy_32",
+    "description": "This property represents the total energy used by a device over its lifetime."
+  }
+}

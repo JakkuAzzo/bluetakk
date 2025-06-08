@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.total_device_off_on_cycles",
+    "name": "Total Device Off On Cycles",
+    "group": "org.bluetooth.property_group.warranty_and_service",
+    "characteristic": "org.bluetooth.characteristic.count_24",
+    "description": "This property represents the total recorded count of transitions from an Off-state to an On-state for a device."
+  }
+}

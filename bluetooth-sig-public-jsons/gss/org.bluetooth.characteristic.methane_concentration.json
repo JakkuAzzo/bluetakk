@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.methane_concentration",
+    "name": "Methane Concentration",
+    "description": "The Methane Concentration characteristic is used to represent a measure of methane (CH\\textsubscript{4}) concentration.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Methane Concentration",
+        "type": "medfloat16",
+        "size": "2",
+        "description": "Unit: org.bluetooth.unit.concentration.parts_per_billion\nThe special value NRes is used to report a value outside the available range and resolution, possibly resulting from an overflow or underflow situation.\nThe special value NaN is used to report an invalid result from a computation step or to indicate missing data due to the hardware\u2019s inability to provide a valid measurement, perhaps from sensor perturbation."
+      }
+    ]
+  }
+}

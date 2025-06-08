@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.light_output",
+    "name": "Light Output",
+    "description": "The Light Output characteristic is used to represent a measure of the total quantity of visible light emitted by a source per unit of time.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Light Output",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is Lumen with resolution of 1.\nMinimum is 0\nMaximum 16777213\nRepresented values: M = 1, d = 0, b = 0\nUnit: org.bluetooth.unit.illuminance.lumen\nA value of 0xFFFFFE represents \"value is not valid\".\nA value of 0xFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

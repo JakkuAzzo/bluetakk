@@ -1,0 +1,35 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.boolean",
+    "name": "Boolean",
+    "description": "The Boolean characteristic is used to represent the predefined Boolean values.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Boolean",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.boolean/field/boolean}"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Boolean",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0",
+            "description": "False"
+          },
+          {
+            "value": "1",
+            "description": "True"
+          },
+          {
+            "value": "2\u2013255",
+            "description": "Prohibited"
+          }
+        ]
+      }
+    ]
+  }
+}

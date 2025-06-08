@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.device_operating_temperature_statistical_values",
+    "name": "Device Operating Temperature Statistical Values",
+    "group": "org.bluetooth.property_group.device_operating_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_statistics",
+    "description": "This property represents the average, standard deviation, minimum, and maximum operating temperatures and the data recording period as recorded by a temperature sensor. A value of 0 for the data recording period indicates that the period is the lifetime of the sensor.\nExample use case: These lifetime values for the operating temperature of an LED fixture can be used to predict the remaining lifetime of the fixture, which is strongly dependent on the operating temperature."
+  }
+}

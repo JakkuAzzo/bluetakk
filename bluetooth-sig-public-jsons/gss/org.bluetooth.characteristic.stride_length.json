@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.stride_length",
+    "name": "Stride Length",
+    "description": "The Stride Length characteristic is used to represent the stride length of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Stride Length",
+        "type": "uint16",
+        "size": "2",
+        "description": "Base Unit: org.bluetooth.unit.length.metre\nRepresented values: M = 1, d = -3, b = 0\nUnit is meter with a resolution of 0.001 m (e.g., 1 mm)"
+      }
+    ]
+  }
+}

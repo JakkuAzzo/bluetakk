@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_illuminance",
+    "name": "Present Illuminance",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.illuminance",
+    "description": "This property represents the illuminance as measured by a lux meter."
+  }
+}

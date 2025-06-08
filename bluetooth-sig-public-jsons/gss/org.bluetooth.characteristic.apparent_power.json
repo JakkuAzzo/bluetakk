@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.apparent_power",
+    "name": "Apparent Power",
+    "description": "The Apparent Power characteristic is used to represent the product of the quadratic mean values of voltage and current.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Apparent Power",
+        "type": "uint24",
+        "size": "3",
+        "description": "Unit is volt ampere with resolution of 0.1.\nMinimum: 0\u00a0\nMaximum: 1677721.3\nRepresented values: M = 1, d = -1, b = 0\nUnit: org.bluetooth.unit. electrical_apparent_power.volt_ampere\nA value of 0xFFFFFE represents \"value is not valid\".\nA value of 0xFFFFFF represents \"value is not known\"."
+      }
+    ]
+  }
+}

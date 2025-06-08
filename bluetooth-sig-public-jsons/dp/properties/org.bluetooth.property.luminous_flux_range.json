@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.luminous_flux_range",
+    "name": "Luminous Flux Range",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.luminous_flux_range",
+    "description": "This property represents the luminous flux range of a device as specified by the manufacturer of a light source or a lighting fixture. Minimum Luminous Flux represents the start of the range and Maximum Luminous Flux represents the end of the range."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.time_update_state",
+    "name": "Time Update State",
+    "description": "The Time Update State characteristic is used to represent the status of the time update process and the result of the last update in a time server.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Current State",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Idle\n1: Update Pending\n2\u2013255: Reserved for Future Use"
+      },
+      {
+        "field": "Result",
+        "type": "uint8",
+        "size": "1",
+        "description": "0: Successful\n1: Cancelled\n2: No connection to reference\n3: Reference responded with an error\n4: Timeout\n5: Update not attempted after reset\n6\u2013255: Reserved for Future Use"
+      }
+    ]
+  }
+}

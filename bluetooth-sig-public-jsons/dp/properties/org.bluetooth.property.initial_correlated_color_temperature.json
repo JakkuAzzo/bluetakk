@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.initial_correlated_color_temperature",
+    "name": "Initial Correlated Color Temperature",
+    "group": "org.bluetooth.property_group.photometry",
+    "characteristic": "org.bluetooth.characteristic.correlated_color_temperature",
+    "description": "This property represents the initial correlated color temperature associated with a device such as a color-tunable light. The value typically is measured by a spectrometer or a chroma meter, but can also be reported by a device that is aware of its chromaticity values, either by measurement or as a result of an association of its operating parameters with a color model. This property typically is configured by the manufacturer of the device."
+  }
+}

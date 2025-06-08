@@ -1,0 +1,108 @@
+{
+  "mmdl_light_purposes": [
+    {
+      "name": "Uplight",
+      "value": 0
+    },
+    {
+      "name": "Uplight Left",
+      "value": 1
+    },
+    {
+      "name": "Uplight Center",
+      "value": 2
+    },
+    {
+      "name": "Uplight Right",
+      "value": 3
+    },
+    {
+      "name": "Downlight",
+      "value": 4
+    },
+    {
+      "name": "Downlight Left",
+      "value": 5
+    },
+    {
+      "name": "Downlight Center",
+      "value": 6
+    },
+    {
+      "name": "Downlight Right",
+      "value": 7
+    },
+    {
+      "name": "Inside",
+      "value": 8
+    },
+    {
+      "name": "Outside",
+      "value": 9
+    },
+    {
+      "name": "Backlight",
+      "value": 10
+    },
+    {
+      "name": "Floodlight",
+      "value": 11
+    },
+    {
+      "name": "Tasklight",
+      "value": 12
+    },
+    {
+      "name": "Tasklight Left",
+      "value": 13
+    },
+    {
+      "name": "Tasklight Center",
+      "value": 14
+    },
+    {
+      "name": "Tasklight Right",
+      "value": 15
+    },
+    {
+      "name": "Warming Light",
+      "value": 16
+    },
+    {
+      "name": "Emergency Light",
+      "value": 17
+    },
+    {
+      "name": "Night Light",
+      "value": 18
+    },
+    {
+      "name": "Indicator Light",
+      "value": 19
+    },
+    {
+      "name": "Undercabinet Light",
+      "value": 20
+    },
+    {
+      "name": "Accent Light",
+      "value": 21
+    },
+    {
+      "name": "Strip Light",
+      "value": 22
+    },
+    {
+      "name": "Troffer Light",
+      "value": 23
+    },
+    {
+      "name": "High Bay Light",
+      "value": 24
+    },
+    {
+      "name": "Wall Pack Light",
+      "value": 25
+    }
+  ]
+}

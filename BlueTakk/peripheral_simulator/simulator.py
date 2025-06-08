@@ -7,24 +7,55 @@ services and characteristics.
 """
 
 import sys
+import platform
+
+IS_MAC = sys.platform == "darwin"
+IS_WIN = sys.platform.startswith("win")
+IS_LINUX = sys.platform.startswith("linux")
 
 try:
     from Foundation import NSObject
     import CoreBluetooth
     from PyObjCTools import AppHelper
-except Exception:  # pragma: no cover - import failure on non-mac platforms
-    CoreBluetooth = None  # type: ignore
-    NSObject = object  # type: ignore
-    class AppHelper:  # pragma: no cover - dummy fallback
+except ImportError:
+    Foundation = None
+    CoreBluetooth = None
+    NSObject = object
+    class AppHelper:
         @staticmethod
         def runConsoleEventLoop(*a, **k):
-            raise RuntimeError("CoreBluetooth not available")
+            print("Peripheral simulation is only available on macOS with CoreBluetooth.")
+            return
 
-    # placeholder constants so the module imports on non-mac platforms
-    CBCharacteristicPropertyRead = 0
-    CBCharacteristicPropertyWrite = 0
-    CBAttributePermissionsReadable = 0
-    CBAttributePermissionsWriteable = 0
+# --- Cross-platform Peripheral Simulator ---
+class CrossPlatformPeripheralSimulator:
+    """A simple in-memory BLE peripheral simulator for Windows/Linux."""
+    def __init__(self, profile):
+        self.profile = profile
+        self.running = False
+        self.services = profile.get("services", [])
+        self.name = profile.get("name", "SimPeripheral")
+
+    def start(self):
+        self.running = True
+        print(f"[SIM] Peripheral '{self.name}' started with services: {self.services}")
+        print("[SIM] (Note: This is an in-memory simulation. No real BLE advertising is performed.)")
+
+    def stop(self):
+        self.running = False
+        print(f"[SIM] Peripheral '{self.name}' stopped.")
+
+# placeholder constants so the module imports on non-mac platforms
+CBCharacteristicPropertyRead = 0
+CBCharacteristicPropertyWrite = 0
+CBAttributePermissionsReadable = 0
+CBAttributePermissionsWriteable = 0
+
+def is_supported_platform():
+    plat = sys.platform
+    if plat.startswith("win") or plat.startswith("linux") or plat == "darwin":
+        return True
+    return False
 
 if CoreBluetooth is not None:
     class PeripheralDelegate(NSObject):
@@ -120,14 +151,26 @@ DEVICE_PROFILES = {
 
 def start_simulator(device_type: str = "speaker") -> None:
     """Start advertising the specified fake device profile."""
+    if not is_supported_platform():
+        raise RuntimeError("This simulator is only supported on Windows, Linux, and macOS.")
     if CoreBluetooth is None:
         raise RuntimeError("CoreBluetooth not available. Simulator only works on macOS with PyObjC installed.")
     if device_type not in DEVICE_PROFILES:
         raise ValueError(f"Unknown device profile: {device_type}")
 
     profile = DEVICE_PROFILES[device_type]
-    PeripheralDelegate.alloc().initWithProfile_(profile)
-    AppHelper.runConsoleEventLoop(installInterrupt=True)
+    if IS_MAC:
+        PeripheralDelegate.alloc().initWithProfile_(profile)
+        print(f"[macOS] Starting CoreBluetooth simulator for profile: {device_type}")
+        AppHelper.runConsoleEventLoop(installInterrupt=True)
+    elif IS_WIN or IS_LINUX:
+        print(f"[SIM] Starting cross-platform in-memory simulator for profile: {device_type}")
+        sim = CrossPlatformPeripheralSimulator(profile)
+        sim.start()
+        return sim
+    else:
+        print("Unsupported platform for peripheral simulation.")
+        return
 
 
 if __name__ == "__main__":  # pragma: no cover - manual use

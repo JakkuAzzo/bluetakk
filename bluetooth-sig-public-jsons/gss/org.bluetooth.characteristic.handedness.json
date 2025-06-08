@@ -1,0 +1,43 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.handedness",
+    "name": "Handedness",
+    "description": "The Handedness characteristic is used to represent the handedness of a user.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Handedness",
+        "type": "uint8",
+        "size": "1",
+        "description": "See \\autoref{sec:org.bluetooth.characteristic.handedness/field/handedness}."
+      }
+    ],
+    "fields": [
+      {
+        "name": "Handedness",
+        "description": "The values of this field are defined below.",
+        "values": [
+          {
+            "value": "0x00",
+            "description": "Left handed"
+          },
+          {
+            "value": "0x01",
+            "description": "Right handed"
+          },
+          {
+            "value": "0x02",
+            "description": "Ambidextrous"
+          },
+          {
+            "value": "0x03",
+            "description": "Unspecified"
+          },
+          {
+            "value": "0x04\u20130xFF",
+            "description": "Reserved for Future Use"
+          }
+        ]
+      }
+    ]
+  }
+}

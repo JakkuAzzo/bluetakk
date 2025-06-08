@@ -1,0 +1,15 @@
+{
+  "characteristic": {
+    "identifier": "org.bluetooth.characteristic.estimated_service_date",
+    "name": "Estimated Service Date",
+    "description": "The Estimated Service Date characteristic is used to represent the estimated date when replacement or servicing is required.\nThe structure of this characteristic is defined below.",
+    "structure": [
+      {
+        "field": "Estimated Service Date",
+        "type": "uint24",
+        "size": "3",
+        "description": "Estimated service date specified as days elapsed since the Epoch (Jan 1, 1970) in the Coordinated Universal Time (UTC) time zone.\nRefer to the Date UTC characteristic in \\autoref{sec:org.bluetooth.characteristic.date_utc}.\nBase unit: org.bluetooth.unit.time.day"
+      }
+    ]
+  }
+}

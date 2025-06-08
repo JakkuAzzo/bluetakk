@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.present_input_ripple_voltage",
+    "name": "Present Input Ripple Voltage",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.percentage_8",
+    "description": "This property represents the measured relative ripple voltage value. The relative ripple voltage is the ripple voltage value divided by the average voltage (as reported by the Average Input Voltage property in \\autoref{sec:org.bluetooth.property.average_input_voltage}).\nExample use case: For early detection of power supply failure, identifying whether capacitors in a power supply are starting to fail based on an increase in the ripple voltage."
+  }
+}

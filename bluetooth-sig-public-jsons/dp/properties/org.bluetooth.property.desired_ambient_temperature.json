@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.desired_ambient_temperature",
+    "name": "Desired Ambient Temperature",
+    "group": "org.bluetooth.property_group.ambient_temperature",
+    "characteristic": "org.bluetooth.characteristic.temperature_8",
+    "description": "This property represents a desired ambient air temperature as set on a temperature control such as a user-controlled dial."
+  }
+}

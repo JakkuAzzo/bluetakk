@@ -1,0 +1,9 @@
+{
+  "property": {
+    "identifier": "org.bluetooth.property.input_over_current_event_statistics",
+    "name": "Input Over Current Event Statistics",
+    "group": "org.bluetooth.property_group.electrical_input",
+    "characteristic": "org.bluetooth.characteristic.event_statistics",
+    "description": "This property represents a count of the total number of over-current events, the average duration of the events, time elapsed since the over-current event, and the total data recording period.\nExample use case: To verify whether manufacturer warranty conditions have been maintained."
+  }
+}
