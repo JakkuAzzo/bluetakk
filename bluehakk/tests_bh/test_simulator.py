@@ -27,4 +27,4 @@ async def _fake_discover(*args, **kwargs):
     return [DummyDevice("FakeSpeaker")]
 
 class DummyCharacteristic:
-    # ...existing code...
+    pass
