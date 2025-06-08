@@ -1,4 +1,5 @@
 import sys
+import os
 import asyncio
 import subprocess
 from types import SimpleNamespace
@@ -76,10 +77,27 @@ import replay_attack
 from utility_scripts import check_bt_utilities as bt_util
 from peripheral_simulator import DEVICE_PROFILES, start_simulator
 
+
+class SessionWindow(QWidget):
+    """Simple window representing a running shell session."""
+
+    def __init__(self, address: str):
+        super().__init__()
+        self.address = address
+        self.setWindowTitle(f"Session {address}")
+        layout = QVBoxLayout()
+        self.setLayout(layout)
+        # Launch blueshell detached
+        self.proc = subprocess.Popen(
+            [sys.executable, "blueshell.py", "--device_address", address],
+            start_new_session=True,
+        )
+
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Bluehakk GUI")
+        self.choose_adapter()
         layout = QVBoxLayout()
 
         btn_scan = QPushButton("Detailed Scan")
@@ -106,11 +124,21 @@ class MainWindow(QWidget):
         btn_sim.clicked.connect(self.start_simulator)
         layout.addWidget(btn_sim)
 
+        btn_shell = QPushButton("New Shell Session")
+        btn_shell.clicked.connect(self.new_session)
+        layout.addWidget(btn_shell)
+
         btn_replay = QPushButton("Replay Attack Test")
         btn_replay.clicked.connect(self.replay_test)
         layout.addWidget(btn_replay)
 
+        self.sessions = []
         self.setLayout(layout)
+
+    def choose_adapter(self):
+        adapter, ok = QInputDialog.getText(self, "Adapter", "Adapter path (blank for auto):")
+        if ok and adapter:
+            os.environ["BLEAK_SELECTED_ADAPTER"] = adapter
 
     def detailed_scan(self):
         asyncio.run(deep.run_detailed_scan())
@@ -158,6 +186,13 @@ class MainWindow(QWidget):
         address, ok = QInputDialog.getText(self, "Target", "Device address:")
         if ok and address:
             asyncio.run(replay_attack.automatic_replay_test(address))
+
+    def new_session(self):
+        address, ok = QInputDialog.getText(self, "Target", "Device address:")
+        if ok and address:
+            win = SessionWindow(address)
+            self.sessions.append(win)
+            win.show()
 
 
 def main():

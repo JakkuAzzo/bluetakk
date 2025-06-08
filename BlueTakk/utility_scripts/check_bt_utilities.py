@@ -318,4 +318,19 @@ def visualize_results(live=False):
         with open(data_file, "r") as f:
             try:
                 data = json.load(f)
+            except json.decoder.JSONDecodeError:
+                data = {}
+        bleak_stats.show_stats(data)
+
+# ----------------- Module Interface -----------------
+if __name__ == "__main__":
+    if check_and_setup():
+        run_os_monitoring()
+        os_type = detect_os()
+        if os_type == "mac":
+            asyncio.run(run_deepble_live_scan())
+            export_os_capture()
+        elif os_type == "windows":
+            asyncio.run(run_windows_live_scan())
+            export_os_capture()
 
