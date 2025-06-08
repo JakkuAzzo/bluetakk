@@ -97,7 +97,10 @@ def store_session_details(device, details):
 
 def launch_shell_session(address: str) -> None:
     """Launch blueshell in a detached subprocess and track it."""
-    cmd = [sys.executable, "blueshell.py", "--device_address", address]
+    script = "blueshell.py"
+    if not os.path.exists(script):
+        raise FileNotFoundError(script)
+    cmd = [sys.executable, script, "--device_address", address]
     proc = subprocess.Popen(cmd, start_new_session=True)
     active_sessions[address] = proc
     print(f"Started shell session for {address} (PID {proc.pid})")
@@ -240,16 +243,18 @@ async def main_menu():
             print("Generating static visualization from last captured session...")
             bt_util.visualize_results(live=False)
         elif option == "5":
-            if current_os == 'nt':
-                print("Launching Windows MITM Proxy...")
-                target_address = input("Enter the target BLE device address: ").strip()
-                subprocess.run(["python3", "win_mitm.py", target_address])
-            elif current_os == 'osx':
-                print("Launching Mac-in-the-Middle Proxy...")
-                target_address = input("Enter the target BLE device address: ").strip()
-                subprocess.run(["python3", "mac_mitm.py", target_address])
+            target_address = input("Enter the target BLE device address: ").strip()
+            script = "win_mitm.py" if current_os == 'nt' else "mac_mitm.py" if current_os == 'osx' else None
+            if script is None:
+                print("MITM proxy not supported on this OS.")
             else:
-                print("Unsupported...")
+                print(f"Launching {'Windows' if current_os=='nt' else 'Mac'} MITM Proxy...")
+                try:
+                    subprocess.run(["python3", script, target_address], check=True)
+                except FileNotFoundError:
+                    print(f"{script} not found. Feature not installed.")
+                except Exception as exc:
+                    print(f"Failed to launch {script}: {exc}")
         elif option == "6":
             print("Exiting Bluehakk CLI.")
             break
@@ -270,7 +275,12 @@ async def main_menu():
         elif option == "8":
             addr = input("Device address for shell session: ").strip()
             if addr:
-                launch_shell_session(addr)
+                try:
+                    launch_shell_session(addr)
+                except FileNotFoundError:
+                    print("blueshell.py not found. Unable to start session.")
+                except Exception as exc:
+                    print(f"Failed to launch shell: {exc}")
         elif option == "9":
             list_sessions()
         else:

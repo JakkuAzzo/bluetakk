@@ -13,19 +13,40 @@ def parse_arguments():
     return parser.parse_args()
 
 async def get_shell_uuids(device_address):
+    """Detect the shell service UUIDs or return sensible defaults."""
     try:
         uuids = await bleak_discover_2.get_shell_service_uuids(device_address)
         if uuids:
             return uuids
-        else:
-            print("No UUIDs returned by get_shell_service_uuids; using fallback values.")
     except Exception as e:
-        print("Error in get_shell_service_uuids:", e)
-    # Fallback placeholder UUIDs—update these as needed.
+        print("Detection via bleak_discover_2 failed:", e)
+
+    try:
+        async with BleakClient(device_address) as client:
+            services = await client.get_services()
+            for service in services:
+                desc = service.description.lower()
+                if "shell" in desc or "cmd" in desc or service.uuid.startswith("0000ffe0"):
+                    read_uuid = None
+                    write_uuid = None
+                    for char in service.characteristics:
+                        if "read" in char.properties and not read_uuid:
+                            read_uuid = char.uuid
+                        if "write" in char.properties and not write_uuid:
+                            write_uuid = char.uuid
+                    if read_uuid and write_uuid:
+                        return {
+                            "shell_service_uuid": service.uuid,
+                            "read_char_uuid": read_uuid,
+                            "write_char_uuid": write_uuid,
+                        }
+    except Exception as exc:
+        print("Fallback detection failed:", exc)
+
     return {
-        "shell_service_uuid": "0000xxxx-0000-1000-8000-00805f9b34fb",
-        "read_char_uuid":    "0000yyyy-0000-1000-8000-00805f9b34fb",
-        "write_char_uuid":   "0000zzzz-0000-1000-8000-00805f9b34fb"
+        "shell_service_uuid": "0000feed-0000-1000-8000-00805f9b34fb",
+        "read_char_uuid": "0000fe01-0000-1000-8000-00805f9b34fb",
+        "write_char_uuid": "0000fe02-0000-1000-8000-00805f9b34fb",
     }
 
 async def shell_session(client: BleakClient, read_char_uuid, write_char_uuid):
@@ -70,11 +91,11 @@ async def main():
         return
 
     async with BleakClient(device_address) as client:
-        if client.is_connected:
-            print(f"Connected to {device_name}")
-            await shell_session(client, READ_CHAR_UUID, WRITE_CHAR_UUID)
-        else:
+        if not client.is_connected:
             print("Failed to connect.")
+            return
+        print(f"Connected to {device_name}")
+        await shell_session(client, READ_CHAR_UUID, WRITE_CHAR_UUID)
             
 if __name__ == '__main__':
     asyncio.run(main())
