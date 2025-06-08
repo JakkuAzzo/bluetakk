@@ -8,6 +8,7 @@ services and characteristics.
 
 import sys
 import platform
+from typing import TYPE_CHECKING, Optional
 
 IS_MAC = sys.platform == "darwin"
 IS_WIN = sys.platform.startswith("win")
@@ -26,6 +27,17 @@ except ImportError:
         def runConsoleEventLoop(*a, **k):
             print("Peripheral simulation is only available on macOS with CoreBluetooth.")
             return
+
+if TYPE_CHECKING:  # pragma: no cover - type hints only
+    from CoreBluetooth import (  # noqa: F401
+        CBPeripheralManager,
+        CBManagerStatePoweredOn,
+        CBUUID,
+        CBMutableCharacteristic,
+        CBMutableService,
+        CBAdvertisementDataLocalNameKey,
+        CBAdvertisementDataServiceUUIDsKey,
+    )
 
 # --- Cross-platform Peripheral Simulator ---
 class CrossPlatformPeripheralSimulator:
@@ -66,22 +78,22 @@ if CoreBluetooth is not None:
             if self is None:
                 return None
             self.profile = profile
-            self.peripheralManager = CoreBluetooth.CBPeripheralManager.alloc().initWithDelegate_queue_options_(
+            self.peripheralManager = getattr(CoreBluetooth, "CBPeripheralManager").alloc().initWithDelegate_queue_options_(
                 self, None, None
             )
             return self
 
         def peripheralManagerDidUpdateState_(self, manager):  # pragma: no cover
-            if manager.state() == CoreBluetooth.CBManagerStatePoweredOn:
+            if manager.state() == getattr(CoreBluetooth, "CBManagerStatePoweredOn"):
                 self._setup()
 
         def _setup(self):  # pragma: no cover - requires macOS
             services = []
             for svc in self.profile["services"]:
-                uuid = CoreBluetooth.CBUUID.UUIDWithString_(svc["uuid"])
+                uuid = getattr(CoreBluetooth, "CBUUID").UUIDWithString_(svc["uuid"])
                 chars = []
                 for char in svc.get("characteristics", []):
-                    c_uuid = CoreBluetooth.CBUUID.UUIDWithString_(char["uuid"])
+                    c_uuid = getattr(CoreBluetooth, "CBUUID").UUIDWithString_(char["uuid"])
                     props = char.get(
                         "properties",
                         CBCharacteristicPropertyRead,
@@ -90,11 +102,11 @@ if CoreBluetooth is not None:
                         "permissions",
                         CBAttributePermissionsReadable,
                     )
-                    c = CoreBluetooth.CBMutableCharacteristic.alloc().initWithType_properties_value_permissions_(
+                    c = getattr(CoreBluetooth, "CBMutableCharacteristic").alloc().initWithType_properties_value_permissions_(
                         c_uuid, props, None, perms
                     )
                     chars.append(c)
-                service = CoreBluetooth.CBMutableService.alloc().initWithType_primary_(
+                service = getattr(CoreBluetooth, "CBMutableService").alloc().initWithType_primary_(
                     uuid, True
                 )
                 service.setCharacteristics_(chars)
@@ -104,9 +116,9 @@ if CoreBluetooth is not None:
                 self.peripheralManager.addService_(service)
 
             adv_data = {
-                CoreBluetooth.CBAdvertisementDataLocalNameKey: self.profile["name"],
-                CoreBluetooth.CBAdvertisementDataServiceUUIDsKey: [
-                    CoreBluetooth.CBUUID.UUIDWithString_(svc["uuid"])
+                getattr(CoreBluetooth, "CBAdvertisementDataLocalNameKey"): self.profile["name"],
+                getattr(CoreBluetooth, "CBAdvertisementDataServiceUUIDsKey"): [
+                    getattr(CoreBluetooth, "CBUUID").UUIDWithString_(svc["uuid"])
                     for svc in self.profile["services"]
                 ],
             }
@@ -149,7 +161,7 @@ DEVICE_PROFILES = {
 }
 
 
-def start_simulator(device_type: str = "speaker") -> None:
+def start_simulator(device_type: str = "speaker") -> Optional[CrossPlatformPeripheralSimulator]:
     """Start advertising the specified fake device profile."""
     if not is_supported_platform():
         raise RuntimeError("This simulator is only supported on Windows, Linux, and macOS.")

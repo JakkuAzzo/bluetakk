@@ -3,6 +3,34 @@ import os
 import asyncio
 import subprocess
 from types import SimpleNamespace
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from PyQt6.QtWidgets import (
+        QApplication,
+        QWidget,
+        QVBoxLayout,
+        QPushButton,
+        QInputDialog,
+        QMessageBox,
+        QTabWidget,
+        QTextEdit,
+        QHBoxLayout,
+        QLabel,
+        QLineEdit,
+        QComboBox,
+        QTableWidget,
+        QTableWidgetItem,
+        QSplitter,
+        QProgressBar,
+        QColorDialog,
+        QStyleFactory,
+        QSplashScreen,
+        QDialog,
+        QDialogButtonBox,
+    )
+    from PyQt6.QtGui import QColor, QPalette, QPixmap
+    from PyQt6.QtCore import Qt, QTimer
 
 try:  # Import PyQt6 if available, otherwise provide minimal stubs
     from PyQt6.QtWidgets import (

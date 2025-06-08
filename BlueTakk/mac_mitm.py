@@ -3,6 +3,16 @@ import logging
 from bleak import BleakClient
 from bleak.exc import BleakError
 import objc
+from typing import TYPE_CHECKING
+
+try:
+    from Foundation import NSObject
+except Exception:  # pragma: no cover - fallback when pyobjc missing
+    class NSObject:  # type: ignore[misc]
+        pass
+
+if TYPE_CHECKING:
+    from CoreBluetooth import CBPeripheralManager  # pragma: no cover
 
 def safe_define_objc_class(name, bases, attrs):
     class_list = getattr(objc, "classList", None)
@@ -12,14 +22,20 @@ def safe_define_objc_class(name, bases, attrs):
             return look_up_class(name)
     return type(name, bases, attrs)
 
-# Import CoreBluetooth classes via pyobjc
-objc.loadBundle("CoreBluetooth", globals(), bundle_path="/System/Library/Frameworks/CoreBluetooth.framework")
+# Import CoreBluetooth classes via pyobjc if available
+if hasattr(objc, "loadBundle"):
+    objc.loadBundle(
+        "CoreBluetooth",
+        globals(),
+        bundle_path="/System/Library/Frameworks/CoreBluetooth.framework",
+    )
 
 # Renamed delegate to avoid conflict with Bleak's PeripheralDelegate.
 class MITMPeripheralDelegate(NSObject):
     # This delegate intercepts BLE events from the central.
     def initWithMITMProxy_(self, proxy):
-        self = objc.super(MITMPeripheralDelegate, self).init()
+        objc_super = getattr(objc, "super", super)
+        self = objc_super(MITMPeripheralDelegate, self).init()
         if self is None:
             return None
         self.proxy = proxy
@@ -69,8 +85,11 @@ class MacMITMProxy:
         raise BleakError(f"Failed to connect to target after {max_retries} attempts.")
 
     def setup_peripheral_manager(self):
-        # Using pyobjc to create a CBPeripheralManager instance
-        from CoreBluetooth import CBPeripheralManager
+        # Using pyobjc to create a CBPeripheralManager instance if available
+        try:
+            from CoreBluetooth import CBPeripheralManager
+        except Exception:  # pragma: no cover - missing pyobjc
+            return None
         manager = CBPeripheralManager.alloc().initWithDelegate_queue_options_(None, None, None)
         # Instantiate our custom delegate with a new name.
         delegate = MITMPeripheralDelegate.alloc().initWithMITMProxy_(self)
@@ -86,6 +105,8 @@ class MacMITMProxy:
     def forward_read(self, char_uuid):
         # Forward a read request from the central to the target peripheral.
         try:
+            if not self.target_services:
+                return b""
             # Find the corresponding characteristic in the target services.
             for service in self.target_services:
                 for char in service.characteristics:

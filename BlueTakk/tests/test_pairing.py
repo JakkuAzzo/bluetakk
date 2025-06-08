@@ -1,5 +1,8 @@
 import asyncio
-import pytest
+try:
+    import pytest
+except Exception:  # pragma: no cover - pytest may be missing
+    pytest = None
 from peripheral_simulator import VirtualPeripheral, simulate_exchange
 
 
@@ -24,5 +27,6 @@ def test_pair_request_modifier():
     a = VirtualPeripheral("A")
     b = VirtualPeripheral("B")
     a.pair(b, request_modifier=modifier)
+    assert a.last_pair_request is not None
     assert a.last_pair_request["address"] == "XX"
     assert captured["name"] == "B"
