@@ -74,12 +74,26 @@ def load_all_references_from_log(log_filename="bluetooth_sig_jsons.txt"):
     return refs
 
 # --- Global Reference Data Loaded on Startup ---
-COMPANY_IDENTIFIERS_PATH = "bluetooth-sig-public-jsons/assigned_numbers/company_identifiers/company_identifiers.json"
-CLASS_OF_DEVICE_PATH = "bluetooth-sig-public-jsons/assigned_numbers/core/class_of_device.json"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+COMPANY_IDENTIFIERS_PATH = os.path.join(
+    BASE_DIR,
+    "bluetooth-sig-public-jsons",
+    "assigned_numbers",
+    "company_identifiers",
+    "company_identifiers.json",
+)
+CLASS_OF_DEVICE_PATH = os.path.join(
+    BASE_DIR,
+    "bluetooth-sig-public-jsons",
+    "assigned_numbers",
+    "core",
+    "class_of_device.json",
+)
+LOG_FILE_PATH = os.path.join(BASE_DIR, "bluetooth_sig_jsons.txt")
 
 CHIPSET_LOOKUP = load_company_identifiers(COMPANY_IDENTIFIERS_PATH)
 COD_DATA = load_class_of_device(CLASS_OF_DEVICE_PATH)
-REFERENCE_DATA = load_all_references_from_log()
+REFERENCE_DATA = load_all_references_from_log(LOG_FILE_PATH)
 
 print(f"Loaded {len(CHIPSET_LOOKUP)} company identifiers:")
 
@@ -110,13 +124,37 @@ def lookup_details(query, category=None):
 def decode_manufacturer_data(manufacturer_data):
     for key in manufacturer_data.keys():
         hex_key = f"0x{key:04X}"
-        print(f"Comparing manufacturer key {key} converted to {hex_key}")
         if hex_key in CHIPSET_LOOKUP:
-            return f"{CHIPSET_LOOKUP[hex_key]} ({hex_key})"
+            info = CHIPSET_LOOKUP[hex_key]
+            name = info.get("name", "Unknown")
+            return f"{name} ({hex_key})"
     return "Unknown"
 
 def decode_class_of_device(cod_value):
-    return f"Class of Device: {cod_value}"
+    try:
+        val = int(cod_value, 0) if isinstance(cod_value, str) else int(cod_value)
+    except Exception:
+        return f"Class of Device: {cod_value}"
+    major = (val >> 8) & 0x1F
+    minor = (val >> 2) & 0x3F
+    services = val >> 13
+    major_entry = next(
+        (d for d in COD_DATA.get("cod_device_class", []) if d.get("major") == major),
+        None,
+    )
+    major_name = major_entry.get("name") if major_entry else "Unknown"
+    minor_name = None
+    if major_entry and major_entry.get("minor"):
+        m = next((mi for mi in major_entry["minor"] if mi.get("value") == minor), None)
+        if m:
+            minor_name = m.get("name")
+    service_names = [
+        s["name"]
+        for s in COD_DATA.get("cod_services", [])
+        if services & (1 << s.get("bit", 0))
+    ]
+    svc_str = ", ".join(service_names) if service_names else "No services"
+    return f"{major_name} / {minor_name or 'Unknown'}; Services: {svc_str}"
 
 def generate_fingerprint(device):
     """Return a simple fingerprint string based on advertisement data."""
@@ -188,8 +226,8 @@ async def _quick_device(device):
         print("  ↳ Class of Device not available.")
     print(f"  ↳ Fingerprint: {generate_fingerprint(device)}")
 
-async def run_quick_scan():
-    devices = await BleakScanner.discover()
+async def run_quick_scan(timeout: float = 5.0):
+    devices = await BleakScanner.discover(timeout=timeout)
     if not devices:
         print("No BLE devices found.")
         return
@@ -238,8 +276,8 @@ async def _detailed_device(device):
     print(f"  ↳ Fingerprint: {generate_fingerprint(device)}")
     print("  Full device details:", device)
 
-async def run_detailed_scan():
-    devices = await BleakScanner.discover()
+async def run_detailed_scan(timeout: float = 10.0):
+    devices = await BleakScanner.discover(timeout=timeout)
     if not devices:
         print("No BLE devices found.")
         return
@@ -414,12 +452,12 @@ def main_menu():
                 print("Using existing JSON reference files.")
             CHIPSET_LOOKUP = load_company_identifiers(COMPANY_IDENTIFIERS_PATH)
             COD_DATA = load_class_of_device(CLASS_OF_DEVICE_PATH)
-            REFERENCE_DATA = load_all_references_from_log()
+            REFERENCE_DATA = load_all_references_from_log(LOG_FILE_PATH)
             print("References updated.")
         elif choice == "2":
-            asyncio.run(run_quick_scan())
+            asyncio.run(run_quick_scan(timeout=5.0))
         elif choice == "3":
-            asyncio.run(run_detailed_scan())
+            asyncio.run(run_detailed_scan(timeout=10.0))
         elif choice == "4":
             asyncio.run(run_live_scan())
         elif choice == "5":
