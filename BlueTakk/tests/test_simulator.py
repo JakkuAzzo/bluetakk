@@ -106,6 +106,7 @@ def test_cli_vuln_path(monkeypatch, capsys):
 
     inputs = iter(["2", "AA:BB:CC:DD:EE:FF", "6"])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    monkeypatch.setenv("BLEAK_SELECTED_ADAPTER", "test")
 
     bluehakk.current_os = "posix"
     asyncio.run(bluehakk.main_menu())

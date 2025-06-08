@@ -21,6 +21,20 @@ from peripheral_simulator import DEVICE_PROFILES, start_simulator
 import pandas as pd  # Used for vulnerability result visualization
 
 current_os = None
+active_sessions: dict[str, asyncio.subprocess.Process] = {}
+
+def choose_adapter():
+    """Prompt the user to select a Bluetooth adapter or use auto-detect."""
+    if os.environ.get("BLEAK_SELECTED_ADAPTER"):
+        print(f"Using adapter {os.environ['BLEAK_SELECTED_ADAPTER']}")
+        return
+    adapter = input(
+        "Enter adapter path to use (blank for auto detect): ").strip()
+    if adapter:
+        os.environ["BLEAK_SELECTED_ADAPTER"] = adapter
+        print(f"Using adapter {adapter}")
+    else:
+        print("Auto-detecting adapter")
 
 def get_current_device():
     """Determine the simplified OS string."""
@@ -52,6 +66,13 @@ def store_session_details(device, details):
         json.dump({"current_session_details": session_data}, f, indent=4)
     print(f"Session details saved to {filename}")
 
+def launch_shell_session(address: str) -> None:
+    """Launch blueshell in a detached subprocess and track it."""
+    cmd = [sys.executable, "blueshell.py", "--device_address", address]
+    proc = subprocess.Popen(cmd, start_new_session=True)
+    active_sessions[address] = proc
+    print(f"Started shell session for {address} (PID {proc.pid})")
+
 def visualize_vuln_results(results):
     """
     Displays the vulnerability test results using a table.
@@ -81,9 +102,22 @@ def visualize_vuln_results(results):
     plt.title("Vulnerability Test Results")
     plt.show()
 
+def list_sessions():
+    """Display active sessions and remove finished ones."""
+    to_remove = []
+    for addr, proc in active_sessions.items():
+        running = proc.poll() is None
+        status = "running" if running else "closed"
+        print(f"{addr}: {status} (PID {proc.pid})")
+        if not running:
+            to_remove.append(addr)
+    for addr in to_remove:
+        active_sessions.pop(addr, None)
+
 async def main_menu():
     if not bt_util.check_and_setup():
         return
+    choose_adapter()
     bt_util.run_os_monitoring()
     
     while True:
@@ -95,6 +129,8 @@ async def main_menu():
         print("5. MITM Proxy (Windows/Mac)")
         print("6. Exit")
         print("7. Start Peripheral Simulator")
+        print("8. Launch Shell Session")
+        print("9. List Active Sessions")
         option = input("Choose an option: ").strip()
         
         if option == "1":
@@ -148,6 +184,12 @@ async def main_menu():
                     print("Invalid selection")
             except Exception as exc:
                 print(f"Failed to start simulator: {exc}")
+        elif option == "8":
+            addr = input("Device address for shell session: ").strip()
+            if addr:
+                launch_shell_session(addr)
+        elif option == "9":
+            list_sessions()
         else:
             print("Invalid option. Please try again.")
 

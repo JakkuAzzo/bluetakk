@@ -19,11 +19,23 @@ class VirtualPeripheral:
         self.name = name
         self.peer: VirtualPeripheral | None = None
         self.inbox: asyncio.Queue[str] = asyncio.Queue()
+        self.last_pair_request: dict | None = None
 
-    def pair(self, other: "VirtualPeripheral") -> None:
-        """Pair this peripheral with another."""
+    def pair(self, other: "VirtualPeripheral", request_modifier=None) -> None:
+        """Pair this peripheral with another.
+
+        A ``request_modifier`` callable can be supplied to modify the
+        connection request. It receives a dictionary with ``name`` and
+        ``address`` keys and should return a dictionary that will be stored on
+        the peer as ``last_pair_request``. This is a light-weight stand in for
+        the reverse pairing behaviour in real devices.
+        """
+        request = {"name": other.name, "address": getattr(other, "address", "")}
+        if request_modifier:
+            request = request_modifier(request) or request
         self.peer = other
         other.peer = self
+        self.last_pair_request = request
 
     async def send(self, data: str) -> None:
         """Send a text payload to the paired peripheral."""
