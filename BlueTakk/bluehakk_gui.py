@@ -423,10 +423,31 @@ def ensure_venv_and_requirements():
         print(f"Could not find pip at {pip_path} or requirements at {req_path}.")
 
 def main():
-    ensure_venv_and_requirements()
     app = QApplication(sys.argv)
+    YES = getattr(QMessageBox, 'Yes', 0x00004000)
+    NO = getattr(QMessageBox, 'No', 0x00010000)
+    question = getattr(QMessageBox, 'question', None)
+    if question is not None:
+        choice = question(
+            None,
+            "Setup",
+            "Do you want to (re)install requirements and update Bluetooth SIG references?",
+            YES | NO,
+            NO
+        )
+    else:
+        choice = NO
+    if choice == YES:
+        ensure_venv_and_requirements()
+        try:
+            subprocess.run([sys.executable, "utility_scripts/update_bluetooth_sig_jsons.py"], check=True)
+        except Exception as e:
+            if hasattr(QMessageBox, 'warning'):
+                QMessageBox.warning(None, "Reference Update", f"Failed to update references: {e}")
+            else:
+                print(f"Failed to update references: {e}")
+    # Show splash and GUI immediately, then load references in the background
     app.setStyle(QStyleFactory.create("Fusion"))
-    # Set a modern color palette
     palette = QPalette()
     palette.setColor(QPalette.ColorRole.Window, QColor(30, 30, 40))
     palette.setColor(QPalette.ColorRole.WindowText, QColor(220, 220, 220))
@@ -448,7 +469,7 @@ def main():
         window = MainWindow()
         window.show()
         splash.finish(window)
-    QTimer.singleShot(1200, start_gui)
+    QTimer.singleShot(200, start_gui)
     sys.exit(app.exec())
 
 if __name__ == "__main__":

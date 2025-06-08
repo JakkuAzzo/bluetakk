@@ -1,3 +1,0 @@
-from bleak import BleakScanner, BleakClient
-
-# ...existing code...

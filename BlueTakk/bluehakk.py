@@ -53,14 +53,29 @@ def choose_adapter():
 def get_current_device():
     """Determine the simplified OS string."""
     global current_os
-    os_type = detect_os()
-    current_os = {
+    # Use sys.platform for robust OS detection
+    plat = sys.platform
+    if plat == "darwin":
+        os_type = "mac"
+    elif plat.startswith("win"):
+        os_type = "windows"
+    elif plat.startswith("linux") or plat == "linux" or plat == "linux2":
+        os_type = "linux"
+    elif plat == "ish":
+        os_type = "ish"
+    else:
+        os_type = None
+    os_map = {
         "windows": "nt",
         "mac": "osx",
         "linux": "posix",
         "ish": "posix",
-    }.get(os_type)
-    print(f"{os_type.capitalize()} detected." if current_os else "Unsupported OS.")
+    }
+    current_os = os_map[os_type] if os_type in os_map else None
+    if current_os and os_type:
+        print(f"{str(os_type).capitalize()} detected.")
+    else:
+        print("Unsupported OS.")
     return current_os
 
 def store_session_details(device, details):
@@ -136,16 +151,18 @@ def ensure_venv_and_requirements():
     import sys
     import subprocess
     import os
-    import platform
     venv_dir = os.path.join(os.path.dirname(__file__), ".venv_auto")
     if not os.path.exists(venv_dir):
         print(f"Creating virtual environment at {venv_dir}...")
         subprocess.run([sys.executable, "-m", "venv", venv_dir], check=True)
     pip_path = os.path.join(venv_dir, "bin", "pip") if not sys.platform.startswith("win") else os.path.join(venv_dir, "Scripts", "pip.exe")
+    # Use sys.platform for accurate OS detection
     if sys.platform == "darwin":
         req_file = "mac_requirements.txt"
     elif sys.platform.startswith("win"):
         req_file = "win_requirements.txt"
+    elif sys.platform.startswith("linux") or sys.platform == "linux" or sys.platform == "linux2":
+        req_file = "requirements.txt"
     else:
         req_file = "requirements.txt"
     req_path = os.path.join(os.path.dirname(__file__), req_file)
@@ -156,8 +173,33 @@ def ensure_venv_and_requirements():
         print(f"Could not find pip at {pip_path} or requirements at {req_path}.")
 
 async def main_menu():
-    if not bt_util.check_and_setup():
-        return
+    # Check dependencies and auto-install if missing
+    missing = bt_util.check_and_setup()
+    if missing is False:
+        # Try to auto-install missing utilities for macOS
+        plat = sys.platform
+        if plat == "darwin":
+            print("Attempting to auto-install missing macOS utilities...")
+            # Try to install the configuration profile if missing
+            profile_path = os.path.join("utility_scripts", "BluetoothProfileForMac", "Bluetooth_macOS.mobileconfig")
+            if not os.path.exists(profile_path):
+                # Download or copy a default profile if possible
+                try:
+                    import urllib.request
+                    url = "https://developer.apple.com/bug-reporting/profiles-and-logs/?name=bluetooth"  # Apple official page
+                    print("Could not auto-download Bluetooth_macOS.mobileconfig.\nPlease download it manually from:")
+                    print("  https://developer.apple.com/bug-reporting/profiles-and-logs/?name=bluetooth")
+                    print(f"and place it at: {profile_path}\nContinuing, but BLE packet capture may not work until this is done.")
+                except Exception as e:
+                    print(f"Failed to provide download instructions: {e}")
+            # Re-run dependency check
+            if not bt_util.check_and_setup():
+                print("Dependency check still failed. You may continue, but BLE packet capture may not work until you manually install the missing configuration profile.")
+                # Optionally, continue instead of return
+                # return
+        else:
+            print("Dependency check failed. Please install/configure the missing utilities and re-run the tool.")
+            return
     choose_adapter()
     bt_util.run_os_monitoring()
     
