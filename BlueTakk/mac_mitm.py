@@ -5,13 +5,7 @@ from bleak.exc import BleakError
 try:
     import objc
 except Exception:  # pragma: no cover - missing pyobjc
-    import types
-    objc = types.SimpleNamespace(
-        classList=lambda: [],
-        lookUpClass=lambda name: None,
-        loadBundle=lambda *a, **k: None,
-        super=super,
-    )
+    objc = None
 from typing import TYPE_CHECKING
 
 try:
@@ -24,6 +18,8 @@ if TYPE_CHECKING:
     from CoreBluetooth import CBPeripheralManager  # pragma: no cover
 
 def safe_define_objc_class(name, bases, attrs):
+    if objc is None:
+        return type(name, bases, attrs)
     class_list = getattr(objc, "classList", None)
     look_up_class = getattr(objc, "lookUpClass", None)
     if class_list and look_up_class:
@@ -32,7 +28,7 @@ def safe_define_objc_class(name, bases, attrs):
     return type(name, bases, attrs)
 
 # Import CoreBluetooth classes via pyobjc if available
-if hasattr(objc, "loadBundle"):
+if objc is not None and hasattr(objc, "loadBundle"):
     objc.loadBundle(
         "CoreBluetooth",
         globals(),
