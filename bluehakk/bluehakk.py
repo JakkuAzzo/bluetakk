@@ -118,7 +118,8 @@ async def main_menu():
             visualize_vuln_results(results)
         elif option == "3":
             print("\nLaunching session stats (using bleak_stats.py)...")
-            subprocess.run(["python3", "bleak_stats.py"])
+            stats_path = os.path.join(os.path.dirname(__file__), "bleak_stats.py")
+            subprocess.run(["python3", stats_path])
         elif option == "4":
             print("Generating static visualization from last captured session...")
             bt_util.visualize_results(live=False)
@@ -126,11 +127,13 @@ async def main_menu():
             if current_os == 'nt':
                 print("Launching Windows MITM Proxy...")
                 target_address = input("Enter the target BLE device address: ").strip()
-                subprocess.run(["python3", "win_mitm.py", target_address])
+                script = os.path.join(os.path.dirname(__file__), "win_mitm.py")
+                subprocess.run(["python3", script, target_address])
             elif current_os == 'osx':
                 print("Launching Mac-in-the-Middle Proxy...")
                 target_address = input("Enter the target BLE device address: ").strip()
-                subprocess.run(["python3", "mac_mitm.py", target_address])
+                script = os.path.join(os.path.dirname(__file__), "mac_mitm.py")
+                subprocess.run(["python3", script, target_address])
             else:
                 print("Unsupported...")
         elif option == "6":
@@ -148,6 +151,8 @@ async def main_menu():
                     start_simulator(items[idx])
                 else:
                     print("Invalid selection")
+            except ValueError:
+                print("Invalid selection. Please enter the profile number.")
             except Exception as exc:
                 print(f"Failed to start simulator: {exc}")
         else:

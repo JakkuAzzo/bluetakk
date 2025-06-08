@@ -97,7 +97,8 @@ def store_session_details(device, details):
 
 def launch_shell_session(address: str) -> None:
     """Launch blueshell in a detached subprocess and track it."""
-    script = "blueshell.py"
+    script_dir = os.path.dirname(__file__)
+    script = os.path.join(script_dir, "blueshell.py")
     if not os.path.exists(script):
         raise FileNotFoundError(script)
     cmd = [sys.executable, script, "--device_address", address]
@@ -273,13 +274,19 @@ async def main_menu():
             visualize_vuln_results(results)
         elif option == "3":
             print("\nLaunching session stats (using bleak_stats.py)...")
-            subprocess.run(["python3", "bleak_stats.py"])
+            stats_path = os.path.join(os.path.dirname(__file__), "bleak_stats.py")
+            subprocess.run(["python3", stats_path])
         elif option == "4":
             print("Generating static visualization from last captured session...")
             bt_util.visualize_results(live=False)
         elif option == "5":
             target_address = input("Enter the target BLE device address: ").strip()
-            script = "win_mitm.py" if current_os == 'nt' else "mac_mitm.py" if current_os == 'osx' else None
+            if current_os == 'nt':
+                script = os.path.join(os.path.dirname(__file__), 'win_mitm.py')
+            elif current_os == 'osx':
+                script = os.path.join(os.path.dirname(__file__), 'mac_mitm.py')
+            else:
+                script = None
             if script is None:
                 print("MITM proxy not supported on this OS.")
             else:
@@ -305,6 +312,8 @@ async def main_menu():
                     start_simulator(items[idx])
                 else:
                     print("Invalid selection")
+            except ValueError:
+                print("Invalid selection. Please enter the profile number.")
             except Exception as exc:
                 print(f"Failed to start simulator: {exc}")
         elif option == "8":
