@@ -91,7 +91,8 @@ def ensure_wireshark():
 
 def check_macos_dependencies():
     errors = []
-    profile_path = os.path.join("utility_scripts", "BluetoothProfileForMac", "Bluetooth_macOS.mobileconfig")
+    # Always resolve relative to this script's directory
+    profile_path = os.path.join(os.path.dirname(__file__), "BluetoothProfileForMac", "Bluetooth_macOS.mobileconfig")
     if not os.path.exists(profile_path):
         errors.append(f"Configuration profile not found: {profile_path}")
 
@@ -118,13 +119,14 @@ def check_macos_dependencies():
 
 def check_windows_dependencies():
     errors = []
+    # Always resolve to this script's directory
+    btpack_path = os.path.join(os.path.dirname(__file__), "BluetoothToolforWindows", "BluetoothTestPlatformPack-1.14.0.msi")
+    if not os.path.exists(btpack_path):
+        errors.append(f"Bluetooth Test Platform Pack MSI not found: {btpack_path}")
     if not ensure_wireshark():
         errors.append(
             "Wireshark is not installed. Packet capture will be disabled unless installed."
         )
-    btpack_path = os.path.join("utility_scripts", "BluetoothToolforWindows", "BluetoothTestPlatformPack-1.14.0.msi")
-    if not os.path.exists(btpack_path):
-        errors.append(f"Bluetooth Test Platform Pack MSI not found: {btpack_path}")
     return errors
 
 def check_linux_dependencies():
@@ -167,10 +169,7 @@ def check_and_setup() -> bool:
         return False
     else:
         print("All required dependencies are installed and configured.")
-        try:
-            subprocess.run([sys.executable, "-m", "pip", "install", "-r", req], check=True)
-        except Exception as exc:
-            print(f"Failed to install Python requirements from {req}: {exc}")
+        # REMOVE: auto pip install here, let main script handle it
         return True
 
 # ----------------- OS-Specific Monitoring -----------------

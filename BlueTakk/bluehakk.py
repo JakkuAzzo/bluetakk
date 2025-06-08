@@ -150,56 +150,91 @@ def list_sessions():
     for addr in to_remove:
         active_sessions.pop(addr, None)
 
-def ensure_venv_and_requirements():
+def ensure_venv_and_requirements(force_install=None):
     import sys
     import subprocess
     import os
-    venv_dir = os.path.join(os.path.dirname(__file__), ".venv_auto")
+    import platform
+    plat = sys.platform
+    # Detect OS and requirements file
+    if plat == "darwin":
+        os_name = "macOS"
+        req_file = "mac_requirements.txt"
+    elif plat.startswith("win"):
+        os_name = "Windows"
+        req_file = "win_requirements.txt"
+    elif plat.startswith("linux") or plat == "linux" or plat == "linux2":
+        os_name = "Linux"
+        req_file = "requirements.txt"
+    else:
+        os_name = plat
+        req_file = "requirements.txt"
+    # Search for requirements file in both current and parent directory
+    script_dir = os.path.dirname(__file__)
+    cwd = os.getcwd()
+    req_path_candidates = [
+        os.path.join(script_dir, req_file),
+        os.path.join(cwd, req_file)
+    ]
+    req_path = next((p for p in req_path_candidates if os.path.exists(p)), None)
+    venv_dir = os.path.join(script_dir, ".venv_auto")
     if not os.path.exists(venv_dir):
         print(f"Creating virtual environment at {venv_dir}...")
         subprocess.run([sys.executable, "-m", "venv", venv_dir], check=True)
     pip_path = os.path.join(venv_dir, "bin", "pip") if not sys.platform.startswith("win") else os.path.join(venv_dir, "Scripts", "pip.exe")
-    # Use sys.platform for accurate OS detection
-    if sys.platform == "darwin":
-        req_file = "mac_requirements.txt"
-    elif sys.platform.startswith("win"):
-        req_file = "win_requirements.txt"
-    elif sys.platform.startswith("linux") or sys.platform == "linux" or sys.platform == "linux2":
-        req_file = "requirements.txt"
+    # Prompt user to force install requirements
+    if force_install is None:
+        while True:
+            resp = input(f"Detected OS: {os_name}. Force install all required pip modules for this OS? (y/n/skip): ").strip().lower()
+            if resp in ("y", "yes"): force_install = True; break
+            if resp in ("n", "no", "skip"): force_install = False; break
+    if force_install:
+        if os.path.exists(pip_path) and req_path:
+            print(f"Installing requirements from {req_path} in {venv_dir}...")
+            try:
+                subprocess.run([pip_path, "install", "--force-reinstall", "-r", req_path], check=True)
+            except Exception as exc:
+                print(f"Failed to install Python requirements from {req_path}: {exc}")
+        else:
+            print(f"Could not find pip at {pip_path} or requirements at {req_path}.")
     else:
-        req_file = "requirements.txt"
-    req_path = os.path.join(os.path.dirname(__file__), req_file)
-    if os.path.exists(pip_path) and os.path.exists(req_path):
-        print(f"Installing requirements from {req_file} in {venv_dir}...")
-        subprocess.run([pip_path, "install", "--force-reinstall", "-r", req_path], check=True)
-    else:
-        print(f"Could not find pip at {pip_path} or requirements at {req_path}.")
+        print("Skipping pip requirements installation.")
 
 async def main_menu():
     # Check dependencies and auto-install if missing
     missing = bt_util.check_and_setup()
     if missing is False:
-        # Try to auto-install missing utilities for macOS
         plat = sys.platform
         if plat == "darwin":
             print("Attempting to auto-install missing macOS utilities...")
-            # Try to install the configuration profile if missing
             profile_path = os.path.join("utility_scripts", "BluetoothProfileForMac", "Bluetooth_macOS.mobileconfig")
-            if not os.path.exists(profile_path):
-                # Download or copy a default profile if possible
+            if os.path.exists(profile_path):
+                print(f"Found Bluetooth_macOS.mobileconfig at {profile_path}. Attempting to install profile...")
                 try:
-                    import urllib.request
-                    url = "https://developer.apple.com/bug-reporting/profiles-and-logs/?name=bluetooth"  # Apple official page
-                    print("Could not auto-download Bluetooth_macOS.mobileconfig.\nPlease download it manually from:")
-                    print("  https://developer.apple.com/bug-reporting/profiles-and-logs/?name=bluetooth")
-                    print(f"and place it at: {profile_path}\nContinuing, but BLE packet capture may not work until this is done.")
+                    # Use the macOS 'profiles' command to install the configuration profile
+                    subprocess.run(["sudo", "profiles", "install", "-type", "configuration", "-path", profile_path], check=True)
+                    print("Bluetooth_macOS.mobileconfig installed successfully.")
                 except Exception as e:
-                    print(f"Failed to provide download instructions: {e}")
+                    print(f"Failed to install Bluetooth_macOS.mobileconfig: {e}")
+            else:
+                print(f"Profile not found at {profile_path}. Please ensure it exists.")
             # Re-run dependency check
             if not bt_util.check_and_setup():
                 print("Dependency check still failed. You may continue, but BLE packet capture may not work until you manually install the missing configuration profile.")
-                # Optionally, continue instead of return
-                # return
+        elif plat.startswith("win"):
+            print("Attempting to auto-install missing Windows Bluetooth Test Platform utilities...")
+            btpack_path = os.path.join("utility_scripts", "BluetoothToolforWindows", "BluetoothTestPlatformPack-1.14.0.msi")
+            if os.path.exists(btpack_path):
+                print(f"Found BluetoothTestPlatformPack at {btpack_path}. Attempting to install...")
+                try:
+                    subprocess.run(["msiexec", "/i", btpack_path, "/qn"], check=True)
+                    print("BluetoothTestPlatformPack installed successfully.")
+                except Exception as e:
+                    print(f"Failed to install BluetoothTestPlatformPack: {e}")
+            else:
+                print(f"BluetoothTestPlatformPack not found at {btpack_path}. Please ensure it exists.")
+            if not bt_util.check_and_setup():
+                print("Dependency check still failed. Please install/configure the missing utilities and re-run the tool.")
         else:
             print("Dependency check failed. Please install/configure the missing utilities and re-run the tool.")
             return
