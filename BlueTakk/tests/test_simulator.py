@@ -119,3 +119,10 @@ def test_cli_vuln_path(monkeypatch, capsys):
     out = capsys.readouterr().out
     assert "Vulnerability testing completed" in out
 
+
+def test_supported_platform_ish(monkeypatch):
+    from peripheral_simulator import simulator as sim
+
+    monkeypatch.setattr(sim.sys, "platform", "ish", raising=False)
+    assert sim.is_supported_platform()
+
