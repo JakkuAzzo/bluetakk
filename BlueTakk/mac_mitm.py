@@ -2,7 +2,16 @@ import asyncio
 import logging
 from bleak import BleakClient
 from bleak.exc import BleakError
-import objc
+try:
+    import objc
+except Exception:  # pragma: no cover - missing pyobjc
+    import types
+    objc = types.SimpleNamespace(
+        classList=lambda: [],
+        lookUpClass=lambda name: None,
+        loadBundle=lambda *a, **k: None,
+        super=super,
+    )
 from typing import TYPE_CHECKING
 
 try:
@@ -63,8 +72,7 @@ class MacMITMProxy:
         self.target_services = None
         # Setup logging
         logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
-        # Peripheral Manager setup (pseudocode)
-        self.peripheral_manager = self.setup_peripheral_manager()
+        self.peripheral_manager = None
 
     async def connect_to_target(self, max_retries=3, retry_delay=2):
         for attempt in range(1, max_retries + 1):
@@ -85,21 +93,53 @@ class MacMITMProxy:
         raise BleakError(f"Failed to connect to target after {max_retries} attempts.")
 
     def setup_peripheral_manager(self):
-        # Using pyobjc to create a CBPeripheralManager instance if available
+        """Create a peripheral manager mirroring the target's services."""
         try:
-            from CoreBluetooth import CBPeripheralManager
+            from CoreBluetooth import (
+                CBPeripheralManager,
+                CBUUID,
+                CBMutableService,
+                CBMutableCharacteristic,
+                CBCharacteristicPropertyRead,
+                CBCharacteristicPropertyWrite,
+                CBAttributePermissionsReadable,
+                CBAttributePermissionsWriteable,
+                CBAdvertisementDataLocalNameKey,
+                CBAdvertisementDataServiceUUIDsKey,
+            )
         except Exception:  # pragma: no cover - missing pyobjc
+            logging.info("CoreBluetooth not available; running without advertising")
             return None
+
         manager = CBPeripheralManager.alloc().initWithDelegate_queue_options_(None, None, None)
-        # Instantiate our custom delegate with a new name.
         delegate = MITMPeripheralDelegate.alloc().initWithMITMProxy_(self)
         manager.setDelegate_(delegate)
-        # Setup advertising with target_services information (pseudocode)
-        advertising_data = {
-            # Fill in with appropriate keys like CBAdvertisementDataServiceUUIDsKey, etc.
+
+        if not self.target_services:
+            return manager
+
+        first_service = next(iter(self.target_services), None)
+        if not first_service:
+            return manager
+
+        m_service = CBMutableService.alloc().initWithType_primary_(CBUUID.UUIDWithString_(first_service.uuid), True)
+        m_chars = []
+        for char in first_service.characteristics:
+            props = CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite
+            perms = CBAttributePermissionsReadable | CBAttributePermissionsWriteable
+            m_char = CBMutableCharacteristic.alloc().initWithType_properties_value_permissions_(
+                CBUUID.UUIDWithString_(char.uuid), props, None, perms
+            )
+            m_chars.append(m_char)
+        m_service.setCharacteristics_(m_chars)
+        manager.addService_(m_service)
+
+        adv_data = {
+            CBAdvertisementDataLocalNameKey: "BTProxy",
+            CBAdvertisementDataServiceUUIDsKey: [CBUUID.UUIDWithString_(first_service.uuid)],
         }
-        manager.startAdvertising_(advertising_data)
-        logging.info("Started peripheral advertising as proxy for target.")
+        manager.startAdvertising_(adv_data)
+        logging.info("Started peripheral advertising as proxy for target")
         return manager
 
     def forward_read(self, char_uuid):
@@ -129,6 +169,8 @@ class MacMITMProxy:
     async def run(self):
         try:
             await self.connect_to_target()
+            self.target_services = await self.client.get_services()
+            self.peripheral_manager = self.setup_peripheral_manager()
         except BleakError as e:
             print(f"Could not connect to target: {e}")
             return
