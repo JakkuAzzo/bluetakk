@@ -1,6 +1,9 @@
 import asyncio
 from types import SimpleNamespace
-import pytest
+try:
+    import pytest
+except Exception:  # pragma: no cover - pytest may be missing
+    pytest = None
 
 import deepBle_discovery_tool as deep
 import bleshellexploit as ble
@@ -74,6 +77,8 @@ def test_gui_triggers_scan(monkeypatch):
     try:
         from PyQt6.QtWidgets import QApplication
     except Exception:
+        QApplication = None  # type: ignore[assignment]
+    if QApplication is None:
         pytest.skip("PyQt6 not available")
 
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
@@ -100,7 +105,8 @@ def test_cli_vuln_path(monkeypatch, capsys):
         visualize_results=lambda live=False: None,
     )
     monkeypatch.setattr(bluehakk, "bt_util", bt_util_mock)
-    monkeypatch.setattr(bluehakk.subprocess, "run", lambda *a, **k: None)
+    import types
+    monkeypatch.setattr(bluehakk, "subprocess", types.SimpleNamespace(run=lambda *a, **k: None))
     monkeypatch.setattr(ble, "run_exploit", lambda addr: [{"service_uuid": "s", "char_uuid": "c", "response": "ok"}])
     monkeypatch.setattr(bluehakk, "visualize_vuln_results", lambda r: None)
 
@@ -108,8 +114,8 @@ def test_cli_vuln_path(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
     monkeypatch.setenv("BLEAK_SELECTED_ADAPTER", "test")
 
-    bluehakk.current_os = "posix"
-    asyncio.run(bluehakk.main_menu())
+    bluehakk.current_os = "posix"  # type: ignore[attr-defined]
+    asyncio.run(bluehakk.main_menu())  # type: ignore[attr-defined]
     out = capsys.readouterr().out
     assert "Vulnerability testing completed" in out
 

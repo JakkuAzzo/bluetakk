@@ -263,6 +263,11 @@ async def run_windows_live_scan():
     print(f"Filtered scan results saved to {output_file}.")
 
 async def run_deepble_live_scan():
+    try:
+        from bleak import BleakScanner
+    except ImportError:
+        print("Bleak is not installed. Please install bleak to use live scan.")
+        return
     cancel_event = asyncio.Event()
 
     async def wait_for_cancel():

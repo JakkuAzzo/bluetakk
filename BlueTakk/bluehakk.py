@@ -34,7 +34,8 @@ import bleak_stats  # BLE session statistics module
 from peripheral_simulator import DEVICE_PROFILES, start_simulator
 
 current_os = None
-active_sessions: dict[str, asyncio.subprocess.Process] = {}
+# Track shell sessions keyed by device address
+active_sessions: dict[str, subprocess.Popen[bytes]] = {}
 
 def choose_adapter():
     """Prompt the user to select a Bluetooth adapter or use auto-detect."""
@@ -109,10 +110,11 @@ def visualize_vuln_results(results):
     fig, ax = plt.subplots(figsize=(max(8, len(df.columns)*1.2), max(2, len(df)*0.5)))
     ax.axis('tight')
     ax.axis('off')
-    table = ax.table(cellText=df.values,
-                     colLabels=list(df.columns),
-                     cellLoc='center',
-                     loc='center')
+    table = ax.table(
+        cellText=df.values.tolist(),
+        colLabels=list(df.columns),
+        cellLoc='center',
+        loc='center')
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     plt.title("Vulnerability Test Results")

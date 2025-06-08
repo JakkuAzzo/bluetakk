@@ -89,8 +89,14 @@ def draw_page(page, devices, ax, bar_offset=0, bar_display_count=10):
         if companies:
             unique_comps = list(set(companies))
             comp_counts = [companies.count(c) for c in unique_comps]
-            ax.pie(comp_counts, labels=unique_comps, autopct='%1.1f%%',
-                   startangle=90, colors=plt.cm.Pastel1.colors)
+            pastel = plt.cm.get_cmap("Pastel1")
+            ax.pie(
+                comp_counts,
+                labels=unique_comps,
+                autopct='%1.1f%%',
+                startangle=90,
+                colors=pastel.colors,
+            )
             ax.set_title("Devices by Company")
         else:
             ax.text(0.5, 0.5, "No Data", ha="center", va="center")
@@ -199,7 +205,9 @@ def open_new_page_window(page, devices):
     Opens a new static Matplotlib window showing the specified page using the current device data.
     """
     fig_new, ax_new = plt.subplots(figsize=(10, 6))
-    fig_new.canvas.manager.set_window_title(f"Detailed View - {page}")
+    manager = fig_new.canvas.manager
+    if manager is not None:
+        manager.set_window_title(f"Detailed View - {page}")
     # Draw the requested page once.
     draw_page(page, devices, ax_new)
     # (Optionally, for the "bar" page, attach a pick_event to allow double-clicks to open a detail window.)
@@ -228,7 +236,9 @@ def async_live_update_detailed_stats_data(live_data):
     global _global_anim_detailed, _bar_offset
     plt.ion()
     fig, ax = plt.subplots(figsize=(12, 8))
-    fig.canvas.manager.set_window_title("Live Detailed Scan – Frequency View")
+    manager = fig.canvas.manager
+    if manager is not None:
+        manager.set_window_title("Live Detailed Scan – Frequency View")
     
     # --- Create Page-Open Buttons (each opens a new window for its page) ---
     button_labels = ["Frequency", "Company", "Map", "Recommendation"]
@@ -290,7 +300,9 @@ def async_live_update_stats_data(live_data):
     """
     plt.ion()  # Enable interactive mode.
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
-    fig.canvas.manager.set_window_title("Live Scan Visualization")
+    manager = fig.canvas.manager
+    if manager is not None:
+        manager.set_window_title("Live Scan Visualization")
 
     # Create a slider widget for scrolling through table rows.
     slider_ax = fig.add_axes((0.70, 0.05, 0.25, 0.03))  # below the right subplot 

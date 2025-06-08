@@ -12,7 +12,8 @@ async def main():
     print(f"Attempting to connect to {address}...")
     try:
         async with BleakClient(address) as client:
-            connected = await client.is_connected()
+            # ``is_connected`` is a boolean property, not a coroutine
+            connected = client.is_connected
             print(f"Connected: {connected}")
             if connected:
                 print("Services:")
