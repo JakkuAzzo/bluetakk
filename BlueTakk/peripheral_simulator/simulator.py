@@ -180,7 +180,8 @@ if CoreBluetooth is not None:
         """Delegate that sets up services and starts advertising."""
 
         def initWithProfile_(self, profile):  # type: ignore[override]
-            self = super().init()
+            # Use correct super() for PyObjC
+            self = super(PeripheralDelegate, self).init()
             if self is None:
                 return None
             self.profile = profile
@@ -283,7 +284,9 @@ def start_simulator(device_type: str = "speaker") -> Optional[CrossPlatformPerip
             raise RuntimeError(
                 "CoreBluetooth not available. Simulator only works on macOS/iSH with PyObjC installed."
             )
-        PeripheralDelegate.alloc().initWithProfile_(profile)
+        # Patch: Use NSObject.init() instead of super() for PyObjC compatibility
+        delegate = PeripheralDelegate.alloc().init()
+        delegate.initWithProfile_(profile)
         print(
             f"[macOS] Starting CoreBluetooth simulator for profile: {device_type}"
         )
