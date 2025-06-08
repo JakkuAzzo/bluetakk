@@ -2,20 +2,13 @@ import asyncio
 import logging
 from uuid import UUID
 from bleak import BleakClient
-try:
+
+try:  # pragma: no cover - optional winrt dependency
     import winrt.windows.devices.bluetooth.genericattributeprofile as gatt
     import winrt.windows.devices.bluetooth.advertisement as adv
-except Exception:  # pragma: no cover - winrt may be missing
-    import types
-    gatt = types.SimpleNamespace(
-        GattServiceProvider=types.SimpleNamespace(create_async=lambda *a, **k: types.SimpleNamespace(error=1, service_provider=None)),
-        GattServiceProviderError=types.SimpleNamespace(success=0),
-        GattLocalCharacteristicParameters=lambda: types.SimpleNamespace(),
-        GattCharacteristicProperties=types.SimpleNamespace(read=1, write=2),
-        GattProtectionLevel=types.SimpleNamespace(plain=1),
-        GattServiceProviderAdvertisingParameters=lambda: types.SimpleNamespace(is_connectable=True, is_discoverable=True),
-    )
-    adv = types.SimpleNamespace()
+except Exception:  # pragma: no cover - winrt may be missing entirely
+    gatt = None
+    adv = None
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 
@@ -43,6 +36,9 @@ class WindowsMITMProxy:
         logging.info("Connected to target: %s", self.target_address)
 
     async def setup_gatt_server(self):
+        if gatt is None:
+            logging.info("winrt not available; skipping local GATT server setup")
+            return
         if not self.target_services:
             return
         first_service = next(iter(self.target_services), None)
@@ -93,6 +89,9 @@ class WindowsMITMProxy:
         """
         Event handler invoked when a connected central requests a read.
         """
+        if not self.local_characteristic:
+            args.request.respond_error(1)
+            return
         char_uuid = self.local_characteristic.uuid  # This should correspond to the target’s characteristic.
         logging.info("Read requested on characteristic %s", char_uuid)
         try:
@@ -109,6 +108,9 @@ class WindowsMITMProxy:
         """
         Event handler invoked when a connected central writes to the characteristic.
         """
+        if not self.local_characteristic:
+            args.request.respond_error(1)
+            return
         char_uuid = self.local_characteristic.uuid
         write_request = args.request
         data = write_request.value

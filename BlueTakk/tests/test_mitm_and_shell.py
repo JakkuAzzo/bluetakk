@@ -15,14 +15,32 @@ def _ensure_bleak_exc():
 
 def test_mac_mitm_import(monkeypatch):
     _ensure_bleak_exc()
-    monkeypatch.setitem(sys.modules, "objc", types.ModuleType("objc"))
+    import builtins
+
+    real_import = builtins.__import__
+
+    def fake_import(name, globals=None, locals=None, fromlist=(), level=0):
+        if name.startswith("objc") or name.startswith("Foundation") or name.startswith("CoreBluetooth"):
+            raise ImportError
+        return real_import(name, globals, locals, fromlist, level)
+
+    monkeypatch.setattr(builtins, "__import__", fake_import)
     import mac_mitm
     importlib.reload(mac_mitm)
     assert hasattr(mac_mitm, "MacMITMProxy")
 
 def test_win_mitm_import(monkeypatch):
     _ensure_bleak_exc()
-    monkeypatch.setitem(sys.modules, "winrt", types.ModuleType("winrt"))
+    import builtins
+
+    real_import = builtins.__import__
+
+    def fake_import(name, globals=None, locals=None, fromlist=(), level=0):
+        if name.startswith("winrt"):
+            raise ImportError
+        return real_import(name, globals, locals, fromlist, level)
+
+    monkeypatch.setattr(builtins, "__import__", fake_import)
     import win_mitm
     importlib.reload(win_mitm)
     assert hasattr(win_mitm, "WindowsMITMProxy")
