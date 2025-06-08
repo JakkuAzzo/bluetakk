@@ -62,35 +62,100 @@ class CrossPlatformPeripheralSimulator:
 class LinuxPeripheralSimulator(CrossPlatformPeripheralSimulator):
     """Simulator that attempts to use BlueZ or aiobleserver on Linux."""
 
+    def __init__(self, profile):
+        super().__init__(profile)
+        self._peripheral = None
+
     def start(self):
         try:
-            import aiobleserver  # type: ignore
+            from bluezero import adapter, peripheral  # type: ignore
 
-            print(
-                "[Linux] aiobleserver detected. Starting placeholder advertisement."
-            )
+            adapter_addr = list(adapter.Adapter.available())[0].address
+            self._peripheral = peripheral.Peripheral(adapter_addr, local_name=self.name)
+
+            for srv_id, svc in enumerate(self.services, start=1):
+                self._peripheral.add_service(srv_id=srv_id, uuid=svc["uuid"], primary=True)
+                for char_id, char in enumerate(svc.get("characteristics", []), start=1):
+                    flags = []
+                    props = char.get("properties", 0)
+                    if props & CBCharacteristicPropertyRead:
+                        flags.append("read")
+                    if props & CBCharacteristicPropertyWrite:
+                        flags.extend(["write", "write-without-response"])
+                    self._peripheral.add_characteristic(
+                        srv_id=srv_id,
+                        chr_id=char_id,
+                        uuid=char["uuid"],
+                        value=[],
+                        notifying=False,
+                        flags=flags,
+                    )
+
+            self._peripheral.publish()
+            self.running = True
+            print(f"[Linux] Advertising '{self.name}' using BlueZ")
         except Exception:
             print(
-                "[Linux] aiobleserver not available. Falling back to in-memory simulation."
+                "[Linux] BlueZ/bluezero not available. Falling back to in-memory simulation."
             )
-        super().start()
+            super().start()
+
+    def stop(self):
+        if self._peripheral is not None:
+            try:
+                self._peripheral.unpublish()
+            except Exception:
+                pass
+        super().stop()
 
 
 class WindowsPeripheralSimulator(CrossPlatformPeripheralSimulator):
     """Simulator using WinRT advertisement APIs when available."""
 
+    def __init__(self, profile):
+        super().__init__(profile)
+        self._publisher = None
+
     def start(self):
         try:
-            import winsdk.windows.devices.bluetooth.advertisement as win_adv  # type: ignore
-
-            print(
-                "[Windows] WinRT BLE advertisement API detected. Starting placeholder advertisement."
+            from uuid import UUID
+            from winsdk.windows.devices.bluetooth.advertisement import (
+                BluetoothLEAdvertisement,
+                BluetoothLEAdvertisementPublisher,
+                BluetoothLEAdvertisementDataSection,
+                BluetoothLEAdvertisementDataTypes,
             )
+            from winsdk.windows.storage.streams import DataWriter
+
+            adv = BluetoothLEAdvertisement()
+            adv.local_name = self.name
+
+            for svc in self.services:
+                writer = DataWriter()
+                writer.write_bytes(UUID(svc["uuid"]).bytes_le)
+                section = BluetoothLEAdvertisementDataSection(
+                    BluetoothLEAdvertisementDataTypes.uuid128_complete,
+                    writer.detach_buffer(),
+                )
+                adv.data_sections.append(section)
+
+            self._publisher = BluetoothLEAdvertisementPublisher(adv)
+            self._publisher.start()
+            self.running = True
+            print(f"[Windows] Advertising '{self.name}' using WinRT")
         except Exception:
             print(
                 "[Windows] WinRT BLE API not available. Falling back to in-memory simulation."
             )
-        super().start()
+            super().start()
+
+    def stop(self):
+        if self._publisher is not None:
+            try:
+                self._publisher.stop()
+            except Exception:
+                pass
+        super().stop()
 
 # placeholder constants so the module imports on non-mac platforms
 CBCharacteristicPropertyRead = 0
