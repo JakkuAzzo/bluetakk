@@ -17,16 +17,6 @@ except Exception:  # pragma: no cover - fallback when pyobjc missing
 if TYPE_CHECKING:
     from CoreBluetooth import CBPeripheralManager  # pragma: no cover
 
-def safe_define_objc_class(name, bases, attrs):
-    if objc is None:
-        return type(name, bases, attrs)
-    class_list = getattr(objc, "classList", None)
-    look_up_class = getattr(objc, "lookUpClass", None)
-    if class_list and look_up_class:
-        if name in class_list():
-            return look_up_class(name)
-    return type(name, bases, attrs)
-
 # Import CoreBluetooth classes via pyobjc if available
 if objc is not None and hasattr(objc, "loadBundle"):
     objc.loadBundle(
@@ -55,10 +45,6 @@ class MITMPeripheralDelegate(NSObject):
         peripheralManager.respondToRequest_withResult_(request, 0)  # 0 for success
 
     # Additional delegate methods can be defined here.
-
-PeripheralDelegate = safe_define_objc_class("PeripheralDelegate", (NSObject,), {
-    # ...class attributes and methods...
-})
 
 # MITM Proxy Class
 class MacMITMProxy:
